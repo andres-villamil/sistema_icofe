@@ -1,0 +1,715 @@
+{% load static %}
+{% load sass_tags %}
+
+<!doctype html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="Sistemas de información SEN">
+   <title>Oferta y Demanda SEN | Sistema de identificación y caracterización de oferta y demanda
+      estadística del SEN</title>
+
+   <link href="{% static 'libraries/animate/animate.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'libraries/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'libraries/bootstrapSelect/css/bootstrap-select.min.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'libraries/bootstrapToggle/css/bootstrap-toggle.min.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'libraries/hover/hover.min.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'libraries/datepicker/tempusdominus.min.css' %}" rel="stylesheet" type="text/css">
+
+   <link rel="shortcut icon" href="https://www.dane.gov.co/templates/beez_20/favicon.ico">
+   <link rel="shortcut icon" href="{%  static 'images/favicon.png' %}">
+
+   <!-- Styles Sass -->
+   <link href="{% sass_src  'stylesLayout/layout.scss' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'stylesLayout/layout.css' %}" rel="stylesheet" type="text/css">
+
+   <!-- material Icon -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+   <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+   <script src="{% static 'js/printThis.js' %}"></script>
+   
+
+
+   <!--Introjs -->
+   <script type="text/javascript" src="{% static 'libraries/introjs/intro.js' %}"> </script>
+   <link href="{% static 'libraries/introjs/assets/css/demo.css' %}" rel="stylesheet">
+   <link href="{% static  'libraries/introjs/introjs.css'%}" rel="stylesheet">
+
+   <!--library introjs -->
+   <script type="text/javascript">
+      document.getElementById('startButton').onclick = function () {
+         introJs().setOption('doneLabel', 'Salir').setOption('tooltipPosition', 'auto').setOption(
+            'positionPrecedence', ['left', 'right', 'bottom', 'top']).start().oncomplete(function () {
+            window.location.href = '';
+         });
+      };
+   </script>
+
+</head>
+
+<body>
+
+   
+   <!-- start Menu desktop -->
+   <section id="view-desktop" class="d-none d-lg-block fixed-top">
+      <div class="row no-gutters">
+
+
+         <!-- start navbar -->
+
+         <!-- menu user autenticado -->
+         {% if  user.is_authenticated %}
+
+         <!-- navbar open -->
+         <div id="navbarOpen" class="col-lg-2">
+            <nav class="shadow-sm">
+               <div class="d-flex flex-row justify-content-end">
+                  <div class="linkContact d-flex flex-row">
+                     <a class="btn btn_linkIcons hvr-shrink" href="mailto:sen@dane.gov.co" target="_blank"
+                        title="sen@dane.gov.co">
+                        <i class="material-icons ">email</i>
+                     </a>
+                     <!--               <a class="btn btn_linkIcons hvr-shrink" href="tel:+0313879300" target="_blank" title="3879300">
+                <i class="material-icons ">phone</i>
+              </a> -->
+                     <a class="btn btn_linkIcons hvr-shrink" href="tel:+018000912002" target="_blank"
+                        title="01-8000-912002">
+                        <i class="material-icons ">phone</i>
+                     </a>
+                     <a class="btn btn_linkIcons hvr-shrink" href="https://goo.gl/maps/3JBTDDVFuweGM2B59"
+                        target="_blank" title="Carrera 59 Nro. 26 - 70 Int 1">
+                        <i class="material-icons">domain</i>
+                     </a>
+                  </div>
+                  <div class="hvr-grow">
+                     <button class="btn btn_closeMenu" onclick="fnc_hide_sidebar()" title="Contraer"><i
+                           class=" material-icons ">menu_open</i></button>
+                  </div>
+               </div>
+               <hr class="m-0 p-0">
+               <!-- <p class="text-center m-0 p-0 titleManuales">Manuales</p> -->
+               <div class="btn-group my-1 btn-manuales" role="group" aria-label="Basic example">
+                  <a href="/media/manualdeUsuario/Manual_de_usuario.pdf"
+                     class="btn btn_primary btn-xs mx-1 hvr-backward" title="Manual de usuario" target="_blank"><i
+                        class="material-icons mt-1">info</i></a>
+                  <a href="/media/manualdeUsuario/Manual_operaciones_estadisticas.pdf"
+                     class="btn btn_primary btn-xs mx-1 hvr-bob" title="Manual de operaciones estadísticas"
+                     target="_blank"><i class="material-icons mt-1">assessment</i></a>
+                  <a href="/media/manualdeUsuario/Manual_registros administrativos.pdf"
+                     class="btn btn_primary btn-xs mx-1 hvr-bob" title="Manual de registros administrativos"
+                     target="_blank"><i class="material-icons mt-1">fact_check</i></a>
+                     <a href="/media/manualdeUsuario/Manual_demandas_informacion.pdf"
+                     class="btn btn_primary btn-xs mx-1 hvr-forward" title="Manual demandas de información"
+                     target="_blank"><i class="material-icons mt-1">ballot</i></a>
+               </div>
+
+               <!--                <div class="list-group">
+                  <a href="../../media/manualdeUsuario/Manual_de_usuario.pdf"
+                     class="list-group-item list-group-item-action" target="_blank">
+                     <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">cloud_download</i> <span class="ml-2">Manual de usuario</span>
+                     </div>
+                  </a>
+               </div> -->
+               <hr class="m-0 p-0">
+               <div class="list-group">
+                  <div class="">
+                     <a id="inicioLink" href="{% url 'login:loggedin' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">home</i> <span class="ml-2">Mi entidad</span>
+                        </div>
+                     </a>
+                     <a id="consultaLink" href="{% url 'ooee:consulta_ooee' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">visibility</i> <span class="ml-2">Sistema de consulta</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row ml-1">
+                     <h5 class="titleNavItem ml-3">Inventarios de oferta estadística</h5>
+                     <!-- <hr class="lineNavItem"> -->
+                  </div>
+                  <div class="list-group">
+                     <a id="oelink" href="{% url 'ooee:all_ooee' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-1">Operaciones estadísticas</span>
+                        </div>
+                     </a>
+                     <a id="ralink" href="{% url 'rraa:all_rraa' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-1">Registros Administrativos</span>
+                        </div>
+                     </a>
+                     <a id="ddiLink" href="{% url 'demandas:admin_ddi' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-1">Demandas de Información</span>
+                        </div>
+                     </a>
+                 
+                     <!-- <a href="#" class="list-group-item list-group-item-action disabled" style="visibility: hidden;">
+                <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">folder</i> <span class="ml-2">Sistemas de información</span>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action disabled" style="visibility: hidden;">
+                <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">folder</i> <span class="ml-2">Demandas de información</span>
+                </div>
+              </a> -->
+                  </div>
+               </div>
+               {% if user.is_authenticated and user.profile.role.id == 1  %}
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row ml-3">
+                     <h5 class="titleNavItem">Administración</h5>
+                     <hr class="lineNavItem">
+                  </div>
+                  <div class="list-group">
+                     <a id="userLink" href="{% url 'login:adminUsuarios' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">settings</i> <span class="ml-2">Administración de usuario</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               {% else %}
+               <div class="spacingNavItem" style="visibility: hidden;">
+                  <div class="d-flex flex-row ml-3">
+                     <h6 class="titleNavItem">Administración</h6>
+                     <hr class="lineNavItem">
+                  </div>
+                  <div class="list-group">
+                     <a href="{% url 'login:adminUsuarios' %}" class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">settings</i> <span class="ml-2">Administración de usuario</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               {% endif %}
+               <div class="spacingNavItem">
+                  <div class="ml-1">
+                     <h6 class="titleNavItem">Directorio</h6>
+                     <p class="textaditional">Este inventario contiene información de:</p>
+                     <hr class="lineNavItem">
+                  </div>
+                  <div id="directorio" class="list-group">
+                     {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+                     <a href="{% url 'entities:all_entities' %}" class="list-group-item list-group-item-action py-1">
+                        {% else %}
+                        <a href="{% url 'entities:publish_entities' %}"
+                           class="list-group-item list-group-item-action py-0">
+                           {% endif %}
+                           <div class="d-flex flex-row hvr-shrink">
+                              <div class="ml d-flex flex-column justify-content-center align-items-center">
+                                 <h3>{{ count_entities }}</h3>
+                                 <p class="text-uppercase">entidades</p>
+                              </div>
+                              <div class="ml d-flex justify-content-center align-items-center">
+                                 <i class="material-icons">business</i>
+                              </div>
+                           </div>
+                        </a>
+                  </div>
+               </div>
+               <div class="d-flex justify-content-center">
+                  <a href="https://www.sen.gov.co/" class="btn">
+                     <img class="img-fluid py-1" src="/media/logos/logoSEnAmplio.png" alt="Logo SEN">
+                  </a>
+               </div>
+            </nav>
+         </div>
+
+         <!-- navbar close -->
+         <div id="navbarClose" class="col-lg-1">
+            <nav class="shadow-sm">
+               <div class="d-flex flex-row justify-content-end">
+                  <div class="hvr-grow">
+                     <button class="btn btn_closeMenu" onclick="fnc_show_sidebar()" title="Expandir"><i
+                           class=" material-icons">menu</i></button>
+                  </div>
+               </div>
+               <hr>
+               <div class="list-group mt-2">
+                  <a href="#" class="list-group-item list-group-item-action" target="_blank">
+                     <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">cloud_download</i> <span class="ml-2">Manuales de usuario</span>
+                     </div>
+                  </a>
+               </div>
+               <hr>
+               <div class="list-group">
+                  <div class="spacingNavItem">
+                     <a id="inicioLink2" href="{% url 'login:loggedin' %}"
+                        class="list-group-item list-group-item-action" title="Inicio">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">home</i> <span class="ml-2">Mi entidad</span>
+                        </div>
+                     </a>
+                     <a id="consultaLink2" href="{% url 'ooee:consulta_ooee' %}"
+                        class="list-group-item list-group-item-action" title="Módulo de consulta">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">visibility</i> <span class="ml-2">SC</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Inventarios</h6>
+                  </div>
+                  <div class="list-group">
+                     <a id="oeLink2" href="{% url 'ooee:all_ooee' %}"
+                        class="list-group-item list-group-item-action" title="Operaciones estadísticas">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-2">OOEE</span>
+                        </div>
+                     </a>
+                     <a id="raLink2" href="{% url 'rraa:all_rraa' %}"
+                        class="list-group-item list-group-item-action" title="Registros administrativos">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-2">RRAA</span>
+                        </div>
+                     </a>
+                     <a id="ddiLink2" href="{% url 'demandas:admin_ddi' %}"
+                        class="list-group-item list-group-item-action" title="Demandas de información">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-2">DDA</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               {% if user.is_authenticated and user.profile.role.id == 1  %}
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Administración</h6>
+                  </div>
+                  <div class="list-group">
+                     <a id="userLink2" href="{% url 'login:adminUsuarios' %}"
+                        class="list-group-item list-group-item-action" title="Administración de usuarios">
+                        <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                           <i class="material-icons">settings</i>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               {% else %}
+               <div class="spacingNavItem" style="visibility: hidden;">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Administración</h6>
+                  </div>
+                  <div class="list-group">
+                     <a id="userLink2" href="{% url 'login:adminUsuarios' %}"
+                        class="list-group-item list-group-item-action" title="Administración de usuarios">
+                        <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                           <i class="material-icons">settings</i>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               {% endif %}
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Directorio</h6>
+                  </div>
+                  <div id="directorio" class="list-group">
+                     {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+                     <a href="{% url 'entities:all_entities' %}" class="list-group-item list-group-item-action ">
+                        {% else %}
+                        <a href="{% url 'entities:publish_entities' %}" class="list-group-item list-group-item-action ">
+                           {% endif %}
+                           <div class="d-flex flex-column justify-content-center align-items-center hvr-shrink">
+                              <h4>{{ count_entities}}</h4>
+                              <p>entidades</p>
+                           </div>
+                        </a>
+                  </div>
+               </div>
+            </nav>
+         </div>
+         <!-- End menu user autenticado -->
+         {% else %}
+         <!-- ---------------------------------------------------------------------------------- -->
+         <!-- menu user noutenticado -->
+         <!-- navbar open -->
+         <div id="navbarOpen" class="col-lg-2">
+            <nav class="shadow-sm">
+               <div class="d-flex flex-row justify-content-end">
+                  <div class="linkContact d-flex flex-row">
+                     <a class="btn btn_linkIcons hvr-shrink" href="mailto:sen@dane.gov.co" target="_blank"
+                        title="sen@dane.gov.co">
+                        <i class="material-icons">email</i>
+                     </a>
+                     <!--               <a class="btn btn_linkIcons hvr-shrink" href="tel:+0313879300" target="_blank" title="3879300">
+                <i class="material-icons">phone</i>
+              </a> -->
+                     <a class="btn btn_linkIcons hvr-shrink" href="tel:+018000912002" target="_blank"
+                        title="01-8000-912002">
+                        <i class="material-icons ">phone</i>
+                     </a>
+                     <a class="btn btn_linkIcons hvr-shrink" href="https://goo.gl/maps/3JBTDDVFuweGM2B59"
+                        target="_blank" title="Carrera 59 Nro. 26 - 70 Int 1">
+                        <i class="material-icons">domain</i>
+                     </a>
+                  </div>
+                  <div class="hvr-grow">
+                     <button class="btn btn_closeMenu" onclick="fnc_hide_sidebar()" title="Contraer"><i
+                           class=" material-icons">menu_open</i></button>
+                  </div>
+               </div>
+               <div class="d-flex justify-content-center">
+                  <a href="https://www.sen.gov.co/" class="btn">
+                     <img class="img-fluid py-1" src="/media/logos/Logo-SEN_2.png" alt="Logo SEN">
+                  </a>
+               </div>
+               <div class="list-group">
+                  <div class="spacingNavItem">
+                     <a id="consultaLink3" href="{% url 'ooee:consulta_ooee' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">visibility</i> <span class="ml-2">Sistema de consulta</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row ml-1">
+                     <h6 class="titleNavItem">Inventarios de oferta estadística</h6>
+                     <hr class="lineNavItem">
+                  </div>
+                  <div class="list-group">
+                     <a id="oelink3" href="{% url 'ooee:consulta_module' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-1">Operaciones estadísticas</span>
+                        </div>
+                     </a>
+                     <a id="raLink3" href="{% url 'rraa:consulta_rraa' %}"
+                        class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-1">Registros Administrativos</span>
+                        </div>
+                     </a>
+                     <a id="ddiLink3" href="{% url 'demandas:consulta_ddi' %}"
+                     class="list-group-item list-group-item-action">
+                     <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">folder</i> <span class="ml-1">Demandas de Información</span>
+                     </div>
+                  </a>
+                     <!-- <a href="#" class="list-group-item list-group-item-action disabled" style="visibility: hidden;">
+                <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">folder</i> <span class="ml-2">Sistemas de información</span>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action disabled" style="visibility: hidden;">
+                <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">folder</i> <span class="ml-2">Demandas de información</span>
+                </div>
+              </a> -->
+                  </div>
+               </div>
+               <div class="spacingNavItem" style="visibility: hidden;">
+                  <div class="d-flex flex-row ml-3">
+                     <h6 class="titleNavItem">Administración</h6>
+                     <hr class="lineNavItem">
+                  </div>
+                  <div class="list-group">
+                     <a href="{% url 'login:adminUsuarios' %}" class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">settings</i> <span class="ml-2">Administración de usuario</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="spacingNavItem">
+                  <div class="ml-1">
+                     <h6 class="titleNavItem">Directorio</h6>
+                     <p class="textaditional">Este inventario contiene información de:</p>
+                     <hr class="lineNavItem">
+                  </div>
+                  <div id="directorio" class="list-group">
+                     {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+                     <a href="{% url 'entities:all_entities' %}" class="list-group-item list-group-item-action ">
+                        {% else %}
+                        <a href="{% url 'entities:publish_entities' %}" class="list-group-item list-group-item-action ">
+                           {% endif %}
+                           <div class="d-flex flex-row hvr-shrink">
+                              <div class="ml d-flex flex-column justify-content-center align-items-center">
+                                 <h3>{{ count_entities }}</h3>
+                                 <p class="text-uppercase">entidades</p>
+                              </div>
+                              <div class="ml d-flex justify-content-center align-items-center">
+                                 <i class="material-icons">business</i>
+                              </div>
+                           </div>
+                        </a>
+                  </div>
+               </div>
+               <p class="copyright py-1">DIRPEN - V2.0 - 2020</p>
+            </nav>
+         </div>
+         <!-- navbar close -->
+         <div id="navbarClose" class="col-lg-1">
+            <nav class="shadow-sm">
+               <div class="d-flex flex-row justify-content-end">
+                  <div class="hvr-grow">
+                     <button class="btn btn_closeMenu" onclick="fnc_show_sidebar()" title="Expandir"><i
+                           class=" material-icons">menu</i></button>
+                  </div>
+               </div>
+               <div class="d-flex justify-content-center">
+                  <a href="https://www.sen.gov.co/" class="btn">
+                     <img class="img-fluid py-1" src="/media/logos/Logo-SEN_2.png" alt="Logo SEN">
+                  </a>
+               </div>
+               <div class="list-group">
+                  <div class="spacingNavItem">
+                     <a id="consultaLink4" href="{% url 'ooee:consulta_ooee' %}"
+                        class="list-group-item list-group-item-action" title="Módulo de consulta">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">visibility</i> <span class="ml-2">SC</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Inventarios</h6>
+                  </div>
+                  <div class="list-group">
+                     <a id="oeLink4" href="{% url 'ooee:consulta_module' %}"
+                        class="list-group-item list-group-item-action" title="Operaciones estadísticas">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-2">OOEE</span>
+                        </div>
+                     </a>
+                     <a id="raLink4" href="{% url 'rraa:consulta_rraa' %}"
+                        class="list-group-item list-group-item-action" title="Registros administrativos ">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-2">RRAA</span>
+                        </div>
+                     </a>
+                     <a id="ddiLink4" href="{% url 'demandas:consulta_ddi' %}"
+                        class="list-group-item list-group-item-action" title="Demandas de información">
+                        <div class="d-flex align-items-center hvr-shrink">
+                           <i class="material-icons">folder</i> <span class="ml-2">DDA</span>
+                        </div>
+                     </a>
+                     <!--  <a href="#" class="list-group-item list-group-item-action disabled" style="visibility: hidden;"
+                title="Sistemas de información">
+                <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">folder</i> <span class="ml-2">SI</span>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action disabled" style="visibility: hidden;"
+                title="Demandas de información">
+                <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">folder</i> <span class="ml-2">DE</span>
+                </div>
+              </a> -->
+                  </div>
+               </div>
+               <div class="spacingNavItem" style="visibility: hidden;">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Administración</h6>
+                  </div>
+                  <div class="list-group">
+                     <a href="{% url 'login:adminUsuarios' %}" class="list-group-item list-group-item-action"
+                        title="Administración de usuarios">
+                        <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                           <i class="material-icons">settings</i>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="spacingNavItem">
+                  <div class="d-flex flex-row justify-content-center">
+                     <h6 class="titleNavItem">Directorio</h6>
+                  </div>
+                  <div id="directorio" class="list-group">
+                     {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+                     <a href="{% url 'entities:all_entities' %}" class="list-group-item list-group-item-action ">
+                        {% else %}
+                        <a href="{% url 'entities:publish_entities' %}" class="list-group-item list-group-item-action ">
+                           {% endif %}
+                           <div class="d-flex flex-column justify-content-center align-items-center hvr-shrink">
+                              <h3>{{ count_entities}}</h3>
+                              <p>entidades</p>
+                           </div>
+                        </a>
+                  </div>
+               </div>
+               <div class="list-group mt-2">
+                  <a href="#" class="list-group-item list-group-item-action">
+                     <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">cloud_download</i> <span class="ml-2">Manual de usuario</span>
+                     </div>
+                  </a>
+               </div>
+            </nav>
+         </div>
+         {% endif%}
+
+         <!-- end navbar -->
+
+
+
+         <div id="content" class="col-lg-10">
+            <header id="backgroundheader" class="shadow-sm">
+               <div class="container-fluid">
+                  <div class="row row-no-gutters align-items-center">
+                     <div class="col-lg-9 offset-lg-1">
+                        <h1 class="title_App text-uppercase">Sistema de identificación y caracterización de oferta y
+                           demanda
+                           estadística del SEN</h1>
+                     </div>
+                     <div class="col-lg-2 d-flex flex-row align-items-center justify-content-center">
+                        <div class="dataUser">
+                           <h2 class="text-uppercase">{{ user.username }}</h2>
+                           <h3><i>{{ user.profile.role.name }}</i></h3>
+                        </div>
+                        {% if  user.is_authenticated %}
+                        <div>
+                           <button id="avatar" type="button" class="btn closeSesion hvr-shrink">
+                              <img class="rounded mx-auto d-block"
+                                 src="https://ui-avatars.com/api/?name={{ user.username }}&rounded=true&background=607D8B&bold=true&color=ffffff"
+                                 alt="" />
+                           </button>
+                        </div>
+                        {% else %}
+                        <div>
+                           <button id="avatar" type="button" class="btn closeSesion hvr-shrink">
+                              <a href="{% url 'login:inicioSesion' %}">
+                                 <div class="login-logout">
+                                    <i class="material-icons mi">person</i>
+                                 </div>
+                                 <p class="linklogout">Iniciar sesión</p>
+                              </a>
+                           </button>
+
+                        </div>
+                        {% endif %}
+                     </div>
+                     <div id="popoverAvatar" class="shadow-md">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'login:cerrar_sesion' %}" class="btn btn_link btn-block"><i>Cerrar
+                              sesión</i></a>
+                        {% endif %}
+                     </div>
+                  </div>
+               </div>
+            </header>
+            <div class="container-fluid mt-5 overflowContent">
+               <div class="row">
+                  <div class="col-lg-12">
+                     {% block content %}
+
+                     {% endblock %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- end Menu desktop -->
+
+   <section id="view-mobile" class="d-block d-lg-none">
+      <div class="row mx-3">
+         <div class="col-12 d-flex justify-content-center mb-3">
+            <span class="img-fluid material-icons icoComputer">
+               computer
+            </span>
+         </div>
+         <div class="col-12">
+            <p class="text-center">
+               Para una correcta visualización y ejecución de las funciones, este aplicativo se visualiza unicamente en
+               pantallas con resoluciones mayores a <b>960px</b>
+         </div>
+         </p>
+
+      </div>
+   </section>
+</body>
+
+<script src="{% static 'libraries/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'libraries/bootstrapSelect/js/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'libraries/bootstrapToggle/js/bootstrap-toggle.min.js' %}"></script>
+<script src="{% static 'libraries/datepicker/moment.min.js' %}"></script>
+<script src="{% static 'libraries/datepicker/es.js' %}"></script>
+<script src="{% static 'libraries/datepicker/tempusdominus.min.js' %}"></script>
+<script src="{% static 'js/ocultar.js' %}"></script>
+<script>
+   $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+
+
+      var pathname = window.location.pathname;
+      //console.log(pathname);
+
+      if (pathname == "{% url 'login:loggedin' %}") {
+         $("#inicioLink").addClass("activate");
+         $("#inicioLink2").addClass("activate");
+
+      } else if (pathname == "{% url 'ooee:consulta_ooee' %}") {
+         $("#consultaLink").addClass("activate");
+         $("#consultaLink2").addClass("activate");
+         $("#consultaLink3").addClass("activate");
+         $("#consultaLink4").addClass("activate");
+
+      } else if (pathname == "{% url 'ooee:all_ooee' %}") {
+         $("#oelink").addClass("activate");
+         $("#oeLink2").addClass("activate");
+
+      } else if (pathname == "{% url 'rraa:all_rraa' %}") {
+         $("#ralink").addClass("activate");
+         $("#raLink2").addClass("activate");
+
+      }else if (pathname == "{% url 'demandas:admin_ddi' %}") {
+         $("#ddiLink").addClass("activate");
+         $("#ddiLink2").addClass("activate");
+
+      } else if (pathname == "{% url 'ooee:consulta_module' %}") {
+         $("#oelink3").addClass("activate");
+         $("#oelink4").addClass("activate");
+
+      } else if (pathname == "{% url 'rraa:consulta_rraa' %}") {
+         $("#raLink3").addClass("activate");
+         $("#raLink4").addClass("activate");
+      
+      }else if(pathname == "{% url 'demandas:consulta_ddi' %}") {
+         $("#ddiLink3").addClass("activate");
+         $("#ddiLink4").addClass("activate");
+         
+      } else if (pathname == "{% url 'login:adminUsuarios' %}") {
+         $("#userLink").addClass("activate");
+         $("#userLink2").addClass("activate");
+      }
+
+   });
+
+</script>
+
+</html>
+
+
+
+<!-- modals -->
+
+<div id="popupEntities" class="modal fade" role="dialog" tabindex="-1" aria-h|idden="true"></div>
+<div id="popupEntitiesPublish" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true"></div>
+<div id="popupEntitiesFase" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true"></div>
+<div id="popupUser" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true"></div>

@@ -1,0 +1,266 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+<!-- librerias para paginación de tablas -->
+<!-- css -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'libraries/dataTables/css/dataTables.bootstrap4.min.css' %}">
+<!-- end -->
+
+<div id="loader"></div>
+
+<div id="container">
+
+<div id="allEntities" class="container-fluid">
+    <h2 class="text-center text-uppercase mb-5">Directorio de entidades que producen operaciones estadísticas y registros administrativos</h2>
+     <p class="text-center">
+        Este directorio está compuesto por <b>{{ count_entities }}</b> entidades colombianas de carácter público, privado y mixto, que producen operaciones estadísticas o que poseen registros administrativos utilizados para la producción de información estadística oficial. </p>
+</div>
+
+<div class="py-3">
+    <p class="text-center">
+        Si desea buscar una entidad específica, seleccione ‘buscar’.
+    </p>
+</div>
+
+
+
+{%  if user.is_authenticated and user.profile.role.id == 3 %}
+
+<div class="d-flex flex-row justify-content-start">
+    <a href="{% url 'entities:entitie_edit' user.profile.entidad.pk %}" type="submit"
+        class="save btn btn_primary btn-sm hvr-shrink">
+        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+            <span class="ml-2">Editar Entidad</span>
+        </div>
+    </a>
+
+</div>
+<br>
+
+
+
+{% endif %}
+
+
+
+{% if entities %}
+
+
+<div id="tableAll">
+    <table class="table table-borderless table-hover  table-sm" id="entities_table_published">
+        <thead class="kulerTableHead">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Página Web</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">OOEE</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entitie in entities %}
+            <tr>
+                <td><span class="textContentTable">{{ entitie.nombre  }}</span></td>
+                {% if entitie.pagina_web == None %}
+
+                    <td><span class="textContentTable"><a href="" target="_blank"> </a></span></td>
+
+                {% else %}
+                    <td><span class="textContentTable"><a href="{{ entitie.pagina_web  }}"
+                        target="_blank">{{ entitie.pagina_web }}</a></span></td>
+                    
+                {% endif %}
+               
+                {% if entitie.telefono == None %}
+                    <td><span class="textContentTable"></span></td>
+                {%else %}
+                    <td><span class="textContentTable">{{ entitie.telefono }}</span></td>
+                {% endif %}
+               <!-- total de operaciones por entidad  -->
+                    {% for val_oe in total_oe %}
+                        {% if val_oe.entidad_oe == entitie.pk %}
+                <td><span class="textContentTable">{{ val_oe.numberOe }}</span></td>
+                        {% endif %}
+                {% endfor %}
+                <!-- end total de operaciones por entidad  -->
+
+                <td class="d-flex flex-row justify-content-center">
+                    {%  if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5  %}
+
+                   <a href="{% url 'entities:entities_detail' entitie.pk %}" data-toggle="tooltip" data-placement="top" title="Detalle">
+                        <i class="material-icons miKuller hvr-shrink">add_circle</i>
+                    </a>
+
+                    <a href="{% url 'entities:entitie_edit' entitie.pk %}" data-toggle="tooltip" data-placement="top" title="Editar">
+                        <i class="material-icons miKuller hvr-shrink">unarchive</i>
+                    </a>
+                </td>
+
+                {% else %}
+             <a href="{% url 'entities:entities_detail' entitie.pk %}" data-toggle="tooltip" data-placement="top" title="Ver ficha de caracterización">
+                <p style="font-family:OpenSans, sans-serif; font-size: 0.9rem;">Ver ficha</p>
+                    </a>
+                </td>
+
+                {% endif %}
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-info" role=" alert">
+            <h2 class="text-center text-uppercase">error 204</h2>
+            <h4 class="pt-3"> No hay entidades disponibles en este momento</h4>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+</div>
+<!-- js -->
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/jquery.dataTables.min.js' %}">
+</script>
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/dataTables.bootstrap4.min.js' %}">
+</script>
+
+<!-- Script by tables -->
+<script>
+    $(document).ready(function () {
+        $('#entities_table_published').DataTable({
+            language: {
+                "decimal": "",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entidades",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entidades",
+                "infoFiltered": "(Filtrado de _MAX_ total Entidades)",
+                "infoPostFix": "",
+                "thousands": ",",
+
+                "lengthMenu": "Mostrar _MENU_ ",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "<button id='btn-Big' class='btn btn_primarySearch btn-small' onclick='searchClose()'><div class='d-flex flex-row justify-content-center'><i class = 'material-icons mt-1 pr-2' > search </i> Buscar </div></button>",
+                "searchPlaceholder": "Buscar entidad",
+                "zeroRecords": "Sin resultados encontrados",
+
+                "paginate": {
+                    "first": " Inicio ",
+                    "last": " Fin ",
+                    "next": " >> ",
+                    "previous": " << "
+                },
+            },
+            "pagingType": "full_numbers",
+            "iDisplayLength": 10,
+            "lengthMenu": [
+                [10, 20, 30, 40, 50, -1],
+                [10, 20, 30, 40, 50, "Todos"]
+            ],
+
+            //pagination center
+            "sDom": '<"d-flex flex-row align-items-center justify-content-between view-filter"<"btn-group"<"#btnAdd.mx-1"><"#btnAll.mx-1"><"#btnDisable.mx-1">><l><"buscador-small"><"buscador-big"f>>t<"d-flex flex-row align-items-center justify-content-between view-pagination dataTables_paginate"<"#btnReport"><i><p>>',
+
+            "ordering": false
+        });
+
+        //search code
+        $('.buscador-small').append(
+            '<button id="btn-Small" class="btn btn_primary btn-small hvr-shrink" onclick="searchOpen()"><div class=" d-flex flex-row justify-content-center"><i class = "material-icons mt-1 pr-2" > search </i> Buscar </div></button> '
+        )
+        $('.buscador-big').hide()
+        //end search code
+
+
+
+        var roleFuente = "3";
+        var roleInvitado = "2";
+        var authenticated = "{{user.is_authenticated}}"
+        var role = "{{user.profile.role.id}}"
+        var entidad = "{{user.profile.entidad.pk}}"
+        console.log("entidad", entidad, "role", typeof (role), "roleFuente", typeof (roleFuente))
+
+        if (authenticated === 'False' || roleInvitado === role || roleFuente === role) {
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+            $('#btnAll').addClass("d-none");
+            $('#btnDisable').addClass("d-none");
+            $('#btnAll').addClass("d-none")
+        }
+
+        if (roleFuente === role) {
+            var button =
+                '<a id="btnCreateEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">unarchive</i> <span class="ml-2">Editar entidad</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+            $('#btnDisable').addClass("d-none")
+
+        } else {
+            var button =
+                '<a id="btnCreateEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">create</i> <span class="ml-2">Crear entidad</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').click(function () {
+                $("#btnCreateEntities").attr("href", "{% url 'entities:created_entities'  %}");
+            })
+        }
+
+        var btnReport =
+            '<a id="btnReportEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i> <span class="ml-2">Descargue el inventario</span></div></a>';
+        $('#btnReport').append(btnReport);
+        $('#btnReport').click(function () {
+            $("#btnReportEntities").attr("href",
+                "{% url 'entities:report_entities' %}");
+        })
+
+        var btnEntitiesAll =
+            '<a id="btnEntitiesAll" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">visibility</i> <span class="ml-2">ver todas</span></div></a>';
+        $('#btnAll').append(btnEntitiesAll);
+        $('#btnAll').click(function () {
+            $("#btnEntitiesAll").attr("href",
+                "{% url 'entities:all_entities' %}");
+        })
+
+
+
+        var btnEntitieDisabled =
+            '<a id="btnEntitieDisabled" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">visibility_off</i> <span class="ml-2">No Publicadas</span></div></a>';
+        $('#btnDisable').append(btnEntitieDisabled);
+        $('#btnDisable').click(function () {
+            $("#btnEntitieDisabled").attr("href",
+                "{% url 'entities:disable_entities' %}");
+        })
+
+
+
+
+    });
+
+
+
+    function openModal(url) {
+        $('#popupEntitiesPublish').load(url, function () {
+            $(this).modal('show');
+        });
+        return false;
+    }
+
+    function closeModal() {
+        $('#popupEntitiesPublish').modal('hide');
+        return false;
+    }
+
+    function preloader(){
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("container").style.display = "block";
+    }//preloader
+    window.onload = preloader;
+
+</script>
+
+{% endblock content %}

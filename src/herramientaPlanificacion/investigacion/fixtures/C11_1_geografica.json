@@ -1,0 +1,61 @@
+[
+    {
+        "fields": {
+            "opc_desag": "Geográfica"
+        },
+        "model":"ooee.desagregacioninformacion",
+        "pk": 1  
+    },
+
+    {
+        "fields": {
+            "opc_desag": 1,  
+            "des_geo": "Nacional"
+        },
+        "model": "ooee.desagregaciongeografica",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "opc_desag": 1,  
+            "des_geo": "Regional"
+        },
+        "model": "ooee.desagregaciongeografica",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "opc_desag": 1,  
+            "des_geo": "Departamental"
+        },
+        "model": "ooee.desagregaciongeografica",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "opc_desag": 1,  
+            "des_geo": "Áreas metropolitanas"
+        },
+        "model": "ooee.desagregaciongeografica",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "opc_desag": 1,  
+            "des_geo": "Municipal"
+        },
+        "model": "ooee.desagregaciongeografica",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "opc_desag": 1,  
+            "des_geo": "Otro (s)"
+        },
+        "model": "ooee.desagregaciongeografica",
+        "pk": 6
+    }
+    ]
+
+
+

@@ -1,0 +1,94 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////* Kuller app *//////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Color Theme Swatches in Hex */
+$kuler_sistemaInventario-1-hex: #005E66;
+$kuler_sistemaInventario-2-hex: #428B94;
+$kuler_sistemaInventario-3-hex: #00343C;
+$kuler_sistemaInventario-4-hex: #607D8B;
+$kuler_sistemaInventario-5-hex: #34515E;
+
+/* Color Theme Swatches in RGBA */
+$kuler_sistemaInventario-1-rgba: rgba(0, 94, 102, 1);
+$kuler_sistemaInventario-2-rgba: rgba(66, 139, 148, 1);
+$kuler_sistemaInventario-3-rgba: rgba(0, 52, 60, 1);
+$kuler_sistemaInventario-4-rgba: rgba(96, 125, 139, 1);
+$kuler_sistemaInventario-5-rgba: rgba(52, 81, 94, 1);
+
+/* Color Theme Swatches in HSLA */
+$kuler_sistemaInventario-1-hsla: hsla(184, 100, 20, 1);
+$kuler_sistemaInventario-2-hsla: hsla(186, 38, 41, 1);
+$kuler_sistemaInventario-3-hsla: hsla(188, 100, 11, 1);
+$kuler_sistemaInventario-4-hsla: hsla(199, 18, 46, 1);
+$kuler_sistemaInventario-5-hsla: hsla(198, 28, 28, 1);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////* Kuller gray scale *///////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Color Theme Swatches in Hex */
+$Kuler-GrayScale-1-hex: #222222;
+$Kuler-GrayScale-2-hex: #656565;
+$Kuler-GrayScale-3-hex: #ABABAB;
+$Kuler-GrayScale-4-hex: #EAEAEA;
+$Kuler-GrayScale-5-hex: #F5F5F5;
+
+/* Color Theme Swatches in RGBA */
+$Kuler-GrayScale-1-rgba: rgba(34, 34, 34, 1);
+$Kuler-GrayScale-2-rgba: rgba(101, 101, 101, 1);
+$Kuler-GrayScale-3-rgba: rgba(171, 171, 171, 1);
+$Kuler-GrayScale-4-rgba: rgba(234, 234, 234, 1);
+$Kuler-GrayScale-5-rgba: rgba(245, 245, 245, 1);
+
+/* Color Theme Swatches in HSLA */
+$Kuler-GrayScale-1-hsla: hsla(0, 0, 13, 1);
+$Kuler-GrayScale-2-hsla: hsla(0, 0, 39, 1);
+$Kuler-GrayScale-3-hsla: hsla(0, 0, 67, 1);
+$Kuler-GrayScale-4-hsla: hsla(0, 0, 91, 1);
+$Kuler-GrayScale-5-hsla: hsla(0, 0, 96, 1);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////* Kuller font size *////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$kuler-white: #ffff;
+$kuler-black: $Kuler-GrayScale-1-hex;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////* Kuller font */////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@font-face {
+    font-family: BarlowRegular;
+    src: url('../font/Barlow/BarlowCondensed-Regular.ttf');
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../font/Open_Sans/OpenSans-Regular.ttf');
+    font-weight: normal;
+}
+
+$Barlow: 'BarlowRegular',
+sans-serif;
+$Open: 'OpenSans',
+sans-serif;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////* Kuller font size *////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$px: 12;
+$h1: unquote((48/ $px)+'rem');
+$h2: unquote((36/ $px)+'rem');
+$h3: unquote((24/ $px)+'rem');
+$h4: unquote((18/ $px)+'rem');
+$h5: unquote((16/ $px)+'rem');
+$h6: unquote((14/ $px)+'rem');
+$p: unquote((12/ $px)+'rem');
+$ps: unquote((9/ $px)+'rem');
+$ms: unquote((8/ $px)+'rem');
+$m: unquote((10/ $px)+'rem');

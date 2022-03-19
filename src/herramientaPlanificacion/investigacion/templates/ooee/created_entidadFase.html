@@ -1,0 +1,104 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 3 or user.profile.role.id == 4 or user.profile.role.id == 5  %}
+
+<div id="modalStyles" class="modal-dialog modal-xl modal-dialog-centered " role="document">
+    <div class="modal-content">
+        <div id="createForms" class="container-fluid">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede crear una nueva operación estadística. Todos los campos descritos a continuación deben ser diligenciados.">
+        modulo Entidad que participa en algunas de las fases del proceso estadístico</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'entities:all_entities' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form action="" method="POST" class="w-100">{% csrf_token %}
+                <div class="form-row">
+                    <div class="col-12 col-lg-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Entidad</span>
+                            </div>
+                            {{ EntidadFase_form.nombre }}
+
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-12 col-lg-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Fases del proceso estadistico</span>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-lg-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Fases</span>
+                            </div>
+                            <div class="col-2">Fase 1: {{ EntidadFase_form.fases }} </div>
+                           
+                        </div>
+                    </div>
+                </div>
+    
+            <div class="d-flex flex-row justify-content-start">
+                <button type="submit" class="save btn btn_primary btn-sm hvr-shrink">
+                    <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+                        <span class="ml-2">Guardar</span>
+                    </div>
+                </button>
+
+                <button type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" data-dismiss="modal">
+                    <div class="d-flex align-items-center"><i class="material-icons">close</i>
+                      <span class="ml-2">Cerrar</span>
+                    </div>
+                  </button>    
+
+            </div>
+
+        </form>
+    </div>
+        </div>
+    </div>
+</div>    
+
+{% else %}
+
+
+<br><br>
+<div class="container row justify-content-md-center">
+    <div class="col-md-12 alert alert-info text-center" role="alert">
+        <h3>El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h3><br>
+
+    </div>
+</div>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
+

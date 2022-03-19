@@ -1,0 +1,39 @@
+[
+    {
+        "model": "ooee.seguimientoanual",
+        "pk": 1, 
+        "fields": {
+            "seg_anual": "Plan de mejoramiento en ejecución"
+          
+        }
+    }, 
+    {
+        "model": "ooee.seguimientoanual", 
+        "pk": 2,
+        "fields": {
+            "seg_anual": "Plan de mejoramiento cumplido"
+         
+        }
+    },
+    {
+        "model": "ooee.seguimientoanual", 
+        "pk": 3,
+        "fields": {
+            "seg_anual": "Plan de mejoramiento con cumplimiento parcial"
+         
+        }
+    },
+    {
+        "model": "ooee.seguimientoanual", 
+        "pk": 4,
+        "fields": {
+            "seg_anual": "Plan de mejoramiento vencido"
+         
+        }
+    }
+]
+
+
+
+
+

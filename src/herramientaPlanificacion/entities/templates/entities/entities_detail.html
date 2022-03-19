@@ -1,0 +1,316 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+    <div id="detalleEntities" class="container border rounded p-0">{% csrf_token %}
+      <!-- header -->
+      <div class="d-flex flex-row align-items-center no-gutters shadow-sm">
+        <div class="backgroundCode">
+          <div class="tabCode flex-fill ">
+            <h2 class="mx-3 py-1">{{ entitie.codigo }}</h2>
+          </div>
+        </div>
+        <div class="backgroundHeaderModal shadow-sm w-100">
+          <h3 class="mx-2 py-1">{{ entitie.nombre }}</h3>
+        </div>
+      </div>
+      <!-- Body -->
+      <div class="d-flex flex-row no-gutters ">
+        <!-- col left -->
+        <div class=" backgroundGray py-3">
+          <div class="">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="d-flex flex-column">
+                  <p class="p-0 mb-0 titleDetailItem">Nit:</p>
+                  {% if entitie.nit == None %}
+                      <p class="p-0 mb-0 contentTitleDetailItem"></p>
+                  {% else %}
+                      <p class="p-0 mb-0 contentTitleDetailItem">{{ entitie.nit }}</p>
+                  {% endif %}
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex flex-column">
+                  <p class="p-0 mb-0 titleDetailItem">Tipo de entidad:</p>
+                  <p class="p-0 mb-0 contentTitleDetailItem">{{ entitie.tipo_entidad }}</p>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex flex-column">
+                  <p class="p-0 mb-0 titleDetailItem">Orden territorial:</p>
+                  {% if entitie.ord_ter == None %}
+                    <p class="p-0 mb-0 contentTitleDetailItem"></p>
+                  {% else %}
+                    <p class="p-0 mb-0 contentTitleDetailItem">{{ entitie.ord_ter }}</p>
+                  {% endif %}
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex flex-column">
+                  <p class="p-0 mb-0 titleDetailItem">Dirección:</p>
+                  {% if entitie.direccion == None %}
+                    <p class="p-0 mb-0 contentTitleDetailItem"></p>
+                  {% else %}
+                    <p class="p-0 mb-0 contentTitleDetailItem">{{ entitie.direccion }}</p>
+                  {% endif %}
+                  
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex flex-column">
+                  <p class="p-0 mb-0 titleDetailItem">Teléfono:</p>
+                  {% if entitie.telefono == None %}
+                    <p class="p-0 mb-0 contentTitleDetailItem"></p>
+                  {% else %}
+                    <p class="p-0 mb-0 contentTitleDetailItem">{{ entitie.telefono }}</p>
+                  {% endif %}
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex flex-column">
+                  <p class="p-0 mb-0 titleDetailItem">Página web:</p>
+                  {% if entitie.pagina_web == None %}
+                      <a class="p-0 mb-0 contentTitleDetailItem btn_link" href="#" target="_blank"
+                      rel="noopener noreferrer">
+                          <p></p>
+                      </a>
+                  {% else %}
+                    <a class="p-0 mb-0 contentTitleDetailItem btn_link" href="{{ entitie.pagina_web }}" target="_blank"
+                    rel="noopener noreferrer">
+                        <p>{{ entitie.pagina_web }} </p>
+                    </a>
+                  {% endif  %}
+                  
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Col right -->
+        <div class="w-100">
+          <!-- Director -->
+          <div class="spacingData">
+            <div class="header shadow-sm">
+              <h3 class="py-2 text-uppercase">director de la entidad</h3>
+            </div>
+            <div class="dataDirectorc container-fluid">
+              <div class="d-flex flex-row">
+                <div class="w-75">
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1 ">Nombre</div>
+                    {% if entitie.nombre_dir == None %}
+                        <div class=" bkgContentData px-2 py-1 mr-2 w-100"></div>
+                    {% else %}
+                      <div class=" bkgContentData px-2 py-1 mr-2 w-100">{{ entitie.nombre_dir }}</div>
+                    {% endif %}
+                  
+                  </div>
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1">Cargo</div>
+                    {% if entitie.cargo_dir == None %}
+                        <div class=" bkgContentData  px-2 py-1 mr-2 w-100"></div>
+                    {% else %}
+                      <div class=" bkgContentData  px-2 py-1 mr-2 w-100">{{ entitie.cargo_dir }}</div>
+                    {% endif %}
+                    
+                  </div>
+                </div>
+                <div class="w-25">
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1"> <i class="material-icons mi">
+                        alternate_email
+                      </i>
+                    </div>
+                    {% if entitie.correo_dir == None %} 
+                        <div class=" bkgContentData px-2 py-1 w-100"></div>
+                    {% else %}
+                        <div class=" bkgContentData px-2 py-1 w-100">{{ entitie.correo_dir }}</div>
+                    {% endif %}
+                  
+                  </div>
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1"><i class="material-icons mi">
+                        phone
+                      </i>
+                    </div>
+                    {% if entitie.telefono_dir == None  %}
+                        <div class=" bkgContentData  px-2 py-1 w-100"><span class="italic"> Ext:</span>
+                        </div>
+
+                    {% else %}
+                        <div class=" bkgContentData  px-2 py-1 w-100">{{ entitie.telefono_dir }}<span class="italic"> Ext:
+                          {{ entitie.extension_dir }}</span>
+                        </div>
+                    {% endif %}
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Director -->
+          <!-- Oficina -->    
+          <div class="spacingData">
+            <div class="header shadow-sm">
+              <h3 class="py-2 text-uppercase">Oficina de información estadística, oficina de planeación o similar</h3>
+            </div>
+            <div class="dataDirectorc container-fluid">
+              <div class="d-flex flex-row">
+                <div class="w-75">
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1">Nombre</div>
+                    {% if entitie.nombre_pla == None %}
+                      <div class=" bkgContentData px-2 py-1 mr-2 w-100"></div>
+                    {% else %}
+                      <div class=" bkgContentData px-2 py-1 mr-2 w-100">{{ entitie.nombre_pla }}</div>
+                    {% endif %}
+                  </div>
+
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1">Cargo</div>
+                    {% if entitie.cargo_pla == None %}
+                      <div class=" bkgContentData  px-2 py-1 mr-2 w-100"></div>
+                    {% else %}
+                      <div class=" bkgContentData  px-2 py-1 mr-2 w-100">{{ entitie.cargo_pla }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="w-25">
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1"> <i class="material-icons mi">
+                        alternate_email
+                      </i>
+                    </div>
+                    {% if entitie.correo_pla == None %}
+                        <div class=" bkgContentData  px-2 py-1 w-100"></div>
+                    {% else %}
+                        <div class=" bkgContentData  px-2 py-1 w-100">{{ entitie.correo_pla }}</div>
+                    {% endif %}
+                    
+                  </div>
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1"><i class="material-icons mi">
+                        phone
+                      </i>
+                    </div>
+                    {% if entitie.telefono_pla == None %}
+                    <div class=" bkgContentData  px-2 py-1 w-100"><span class="italic">  Ext: </span>
+                    </div>
+                    {% else %}
+                        <div class=" bkgContentData  px-2 py-1 w-100">{{ entitie.telefono_pla }}<span class="italic"> Ext:
+                          {{ entitie.extension_pla }}</span>
+                        </div>
+                    {%endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Oficina --> 
+          <!-- Delegado --> 
+          <div class="spacingData">
+            <div class="header shadow-sm">
+              <h3 class="py-2 text-uppercase">Delegado SEN</h3>
+            </div>
+            <div class="dataDirectorc container-fluid">
+              <div class="d-flex flex-row">
+                <div class="w-75">
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1">Nombre</div>
+                    {% if  entitie.nombre_cont == None %}
+                        <div class=" bkgContentData px-2 py-1 mr-2 w-100"></div>
+                    {% else %}
+                        <div class=" bkgContentData px-2 py-1 mr-2 w-100">{{ entitie.nombre_cont }}</div>
+                    {% endif %}
+                        </div>
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1">Cargo</div>
+                    {% if entitie.cargo_cont == None %}
+                        <div class=" bkgContentData px-2 py-1 mr-2 w-100"></div>
+                    {% else %}
+                        <div class=" bkgContentData px-2 py-1 mr-2 w-100">{{ entitie.cargo_cont }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="w-25">
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1"> <i class="material-icons mi">
+                        alternate_email
+                      </i>
+                    </div>
+                    {% if entitie.correo_cont == None %}
+                        <div class=" bkgContentData px-2 py-1 w-100"></div>
+                    {% else %}
+                        <div class=" bkgContentData px-2 py-1 w-100">{{ entitie.correo_cont }}</div>
+                    {% endif %}
+                  </div>
+                  <div class="d-flex flex-row mb-3">
+                    <div class="bkgTitleDta px-2 py-1"><i class="material-icons mi">
+                        phone
+                      </i>
+                    </div>
+                    {% if entite.telefono_cont == None %}
+                      <div class=" bkgContentData px-2 py-1 w-100"><span class="italic"> Ext: {{ entitie.extension_cont }} </span></div>
+                    {% else %}
+                        <div class=" bkgContentData px-2 py-1 w-100">{{ entitie.telefono_cont }}<span class="italic"> Ext:
+                          {{ entitie.extension_cont }}</span></div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Delegado -->        
+        </div>
+        <!-- End Col right --> 
+      </div>
+      <!-- End Body --> 
+    </div>
+
+   
+    <div class="container-fluid border-top mt-3">
+      <div class="d-flex flex-row justify-content-end py-3">
+
+        {%   if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5  %}
+        <a href="{% url 'entities:entitie_edit' pk=entitie.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-2">
+          <div class="d-flex align-items-center"><i class="material-icons">edit</i>
+            <span class="ml-2">Editar Entidad</span>
+          </div>
+        </a>
+        {% endif %}
+
+        <button id="print_btn" type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" onclick="fnc_print()">
+          <div class="d-flex align-items-center"><i class="material-icons">print</i>
+            <span class="ml-2">Imprimir</span>
+          </div>
+        </button>
+
+        
+<script>
+var options = {
+      debug: false, 
+      importCSS: true,
+      printContainer: true,
+      pageTitle: "Entidad",
+      header: '<p style="margin-bottom:3vh; text-align:center;">sistema de identificación y caracterización de oferta y demanda estadística del SEN - Módulo de entidades registradas</p>', 
+}
+
+function fnc_print() {
+$('#detalleEntities').printThis(options);
+}
+</script>
+
+      
+  <a href="{% url 'entities:publish_entities' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+  <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+  <span class="ml-2">Volver</span></div>
+  </a>
+      </div>
+    </div>
+
+
+
+
+{% endblock %}

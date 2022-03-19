@@ -1,0 +1,16 @@
+{% extends "base/base2.html"  %}
+ 
+ 
+{% block content %}
+
+
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-info" role="alert">            
+            <h2>Finalizó sesión. <a href="{% url 'login:inicioSesion' %}">Click Aquí</a> para iniciar sesión de nuevo.</h2>
+        </div>
+    </div>
+</div>
+ 
+
+{% endblock %}

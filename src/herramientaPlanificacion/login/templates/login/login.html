@@ -1,0 +1,114 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+
+<div id="login_form">
+  <div class="container-fluid my-5">
+    <div class="row justify-content-center mb-4">
+      <div class="d-flex flex-column">
+        <h2 class="text-uppercase text-center">bienvenido (a)</h2>
+        <p class="my-2 text-center">
+          Para ingresar por favor digite su usuario y contraseña:
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="material-icons white">
+                  person
+                </i>
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Usuario"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              name="username"
+              id="username"
+            />
+          </div>
+          <div class="errorlogin">
+            {{ form.errors.username }}
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="material-icons white">
+                  lock
+                </i>
+              </span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Contraseña"
+              aria-label="password"
+              aria-describedby="basic-addon1"
+              name="password"
+              id="password"
+            />
+          </div>
+          <div class="errorlogin">
+            {{ form.errors.password }}
+          </div>
+        </div>
+        {% if messages %} {% for message in messages %}
+        <small id="formHelp" class="form-text text-muted {{ message.tags }} ">
+          <div class="d-flex flex-row align-items-start alert-danger">
+            <i class="material-icons miReport mr-2">
+              error
+            </i>
+            {{ message }}
+          </div>
+        </small>
+        {% endfor %} {% endif %}
+        <div class="text-right">
+          <a class="btn btn_link" href="{% url 'password_reset' %}"
+            >¿Olvidó su contraseña?</a
+          >
+        </div>
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn_primary btn-block text-uppercase hvr-shrink mt-4"
+          >
+            ingresar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="container w-50">
+      <div class="row mt-4">
+        <div class="col-4 d-flex justify-content-center">
+          <a class="hvr-shrink" href="mailto:sen@dane.gov.co" target="_blank" rel="noopener noreferrer">
+            <i class="material-icons blue">
+              mail
+            </i>
+          </a>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+          <a class="hvr-shrink" href="tel:+0313879300" target="_blank" rel="noopener noreferrer">
+            <i class="material-icons blue">
+              phone
+            </i>
+          </a>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+          <a class="hvr-shrink" href="https://goo.gl/maps/3JBTDDVFuweGM2B59" target="_blank" rel="noopener noreferrer">
+            <i class="material-icons blue">
+              domain
+            </i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

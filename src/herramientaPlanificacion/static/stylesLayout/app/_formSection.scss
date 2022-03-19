@@ -1,0 +1,1117 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+#createForms,
+#editForms {
+   display: none;
+
+   h2 {
+      font-family: $Barlow;
+      font-size: $h3;
+      font-weight: bold;
+      color: $kuler_sistemaInventario-1-hex;
+   }
+
+   .backgroundTitle {
+      background-color: $kuler_sistemaInventario-1-hex;
+      border-radius: 4px;
+
+      p {
+         font-family: $Barlow;
+         color: $kuler-white;
+      }
+
+      h5 {
+         font-family: $Barlow;
+         color: $kuler-white;
+         text-align: center;
+         padding: 0.8vh 0vw;
+      }
+   }
+
+   .vresp {
+      font-family: $Barlow;
+      font-size: $h5;
+      font-weight: bold;
+      color: $kuler_sistemaInventario-1-hex;
+   }
+
+   .bgresp {
+      background-color: $Kuler-GrayScale-5-rgba;
+      margin-top: 3vh;
+   }
+
+   .bgresp1 {
+      background-color: $Kuler-GrayScale-5-rgba;
+      
+   }
+
+  
+  
+
+   .input-group-text {
+      background-color: $kuler_sistemaInventario-1-hex;
+      border: solid 1px $kuler_sistemaInventario-1-hex;
+      font-family: $Barlow;
+      font-weight: $p;
+      color: $kuler-white;
+   }
+
+   .mi {
+      font-size: $p;
+      color: $kuler-white;
+   }
+
+   #formHelp {
+      ul {
+         padding-inline-start: 0px !important;
+
+         li {
+            list-style-type: none !important;
+            font-family: $Open;
+            font-size: $ps;
+            color: Red;
+         }
+      }
+
+      .miReport {
+         margin-top: 0.3vh;
+         margin-right: 0.5vw;
+         font-size: 0.8rem !important;
+         color: red;
+      }
+   }
+
+   .errorQuestion11 {
+      font-family: $Open;
+      font-size: $ps;
+      color: Red;
+   }
+
+   .bkgInputQuestion1 {
+      background-color: $kuler_sistemaInventario-1-hex;
+      border-radius: 4px 4px 0 0;
+
+      p {
+         margin-bottom: 0px;
+         padding: 0.5vh 0vw;
+         font-family: $Barlow;
+         font-size: $p;
+         color: $kuler-white;
+         text-align: center;
+      }
+   }
+
+   .bkgQuestionsRadioButton {
+      p {
+         padding-top: 1.5vh;
+         font-family: $Barlow;
+         font-size: $h6;
+         font-weight: bold;
+      }
+   }
+
+   #check-fase,
+   #faseOpc,
+   #id_tipo_operacion,
+   #check-marco_estad,
+   #check-nome_clas,
+   #id_opc_desag,
+   #id_des_zona,
+   #check-conoce_otra,
+   #check-hp_siste_infor,
+   #id_ra_activo {
+      justify-content: space-between;
+      list-style: none !important;
+      padding-top: 0.5vh;
+
+      li {
+         position: relative;
+         display: block;
+         padding: 0 1vw;
+
+         label {
+            display: flex;
+            align-items: center;
+
+            @include media(ds) {
+               font-size: 0.8rem;
+            }
+
+            input {
+               margin-right: 0.5vw;
+            }
+         }
+      }
+   }
+
+   #id_norma,
+   #id_requerimientos,
+   #id_pri_usuarios,
+   #id_uni_observacion,
+   #id_obt_dato,
+   #id_tipo_probabilistico,
+   #id_tipo_no_probabilistico,
+   #id_tipo_marco,
+   #id_docs_des,
+   #id_lista_conc,
+   #id_nombre_cla,
+   #id_cob_geo,
+   #id_des_geo,
+   #id_des_grupo,
+   #id_fuentes,
+   #id_med_obt,
+   #id_periodicidad,
+   #id_h_proc,
+   #id_a_resul,
+   #id_m_dif,
+   #id_f_publi,
+   #id_fre_dif,
+   #id_pro_dif,
+   #id_otro_prod,
+   #id_tema_compartido,
+   #id_sala_esp,
+   .selectFase,
+   #id_norma_ra,
+   #id_doc_met_ra,
+   #id_con_est_ra,
+   #id_nomb_cla,
+   #id_recole_dato,
+   #id_fre_rec_dato,
+   #id_herr_u_pro,
+   #id_seg_inf,
+   #id_frec_alm_bd,
+   #id_cob_geograf,
+   #id_no_hay_acceso,
+   #id_tema_compart {
+      list-style: none !important;
+      padding-inline-start: 0vw !important;
+
+      li {
+         position: relative;
+         display: block;
+         padding: 0 1vw;
+
+         label {
+            display: flex;
+            align-items: center;
+
+            @include media(ds) {
+               font-size: 0.95rem;
+            }
+
+            input {
+               margin-right: 0.5vw;
+            }
+         }
+      }
+   }
+
+   #id_obt_dato {
+      li {
+         padding: 20vh 1vw !important;
+      }
+   }
+
+   #sP4Mc_1 {
+      margin-top: 11vh;
+   }
+
+   #sP4Mc_2 {
+      margin-top: 23vh;
+   }
+
+   .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+      width: 100% !important;      
+   }
+
+
+   #id_cob_geo,
+   #id_otro_prod {
+      li {
+         margin-top: 1vh !important;
+      }
+   }
+
+   #id_des_zona {
+      justify-content: space-around !important;
+   }
+
+   .heigthTextArea {
+      height: 10vh !important;
+   }
+
+   #accordiontemaCompartido,
+   #accordionSalaEspecializada {
+      button {
+         height: calc(1.5em + 0.5rem + 2px) !important;
+         font-size: 0.875rem !important;
+         color: #485057 !important;
+         padding: 0.25rem 0.5rem !important;
+         border: 1px solid #ced4da !important;
+      }
+   }
+
+   .custom-file-label::after {
+      content: "Elegir" !important;
+   }
+
+   .bullet {
+      background-color: $Kuler-GrayScale-4-hex;
+      border-radius: 4px;
+      padding: 0.2vh 0.5vw;
+   }
+
+   .labelTitle {
+      font-size: $ps;  
+      font-weight: 600;    
+      color: $kuler_sistemaInventario-2-rgba;
+   }
+
+   .spacing11 {
+      @include media(ds) {
+         margin-top: 1vh;
+      }
+   }
+
+   .bkgevaluación {
+      border: solid 1px $kuler_sistemaInventario-1-hex;
+      border-radius: 4px;
+   }
+}
+
+.introjs-helperLayer {
+   background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.introjs-helperNumberLayer {
+   background: $kuler_sistemaInventario-4-hex !important;
+   border: solid 1px $kuler_sistemaInventario-5-hex !important;
+   font-family: $Barlow !important;
+}
+
+.invalidRed {
+   border: solid 1px red !important;
+}
+
+.mb-1medio {
+   margin-bottom: 0.8vh;
+
+   @include media(ds) {
+      margin-bottom: 0.8vh;
+   }
+}
+
+.mb-2medio {
+   margin-bottom: 2.6vh;
+
+   @include media(ds) {
+      margin-bottom: 3vh;
+   }
+}
+
+.mb-3medio {
+   margin-bottom: 1.2vh;
+
+   @include media(ds) {
+      margin-bottom: 1.5vh;
+   }
+}
+
+.blankSpace {
+   margin-top: 20vh;
+
+   @include media(ds) {
+      margin-top: 30vh;
+   }
+}
+
+.blankSpace2 {
+   margin-top: 10vh;
+
+   @include media(ds) {
+      margin-top: 13vh;
+   }
+}
+
+.blankSpace3 {
+   margin-top: 20vh;
+
+   @include media(ds) {
+      margin-top: 26vh;
+   }
+}
+
+.blankSpace4,
+.blankSpace5 {
+   margin-top: 3vh;
+}
+
+.blankSpace6 {
+   margin-top: 2rem;
+
+   @include media(ds) {
+      margin-top: 5vh;
+   }
+}
+
+.blankSpace7 {
+   margin-top: 10vh;
+
+   @include media(ds) {
+      margin-top: 18vh;
+   }
+}
+
+.blankSpace8 {
+   margin-top: 13vh;
+
+   @include media(ds) {
+      margin-top: 17vh;
+   }
+}
+
+.blankSpace9 {
+   margin-top: 15vh;
+
+   @include media(ds) {
+      margin-top: 21vh;
+   }
+}
+
+.blankSpace10 {
+   margin-top: 22vh;
+
+   @include media(ds) {
+      margin-top: 31vh;
+   }
+}
+
+.misize {
+   font-size: 1rem !important;
+}
+
+#id_org_in_cual {
+   margin-top: 13vh;
+}
+
+#id_otra_ce_cual {
+   margin-top: 2vh;
+}
+
+#id_sistema_inf_cual {
+   margin-top: 11vh;
+}
+
+#id_otro_c {
+   margin-top: 2vh;
+}
+
+#id_otra_cual_fre {
+   margin-top: 23vh;
+
+   @include media(ds) {
+      margin-top: 31vh;
+   }
+}
+
+#id_otra_herram {
+   margin-top: 22vh;
+
+   @include media(dm) {
+      margin-top: 24vh;
+   }
+
+   @include media(dl) {
+      margin-top: 31vh;
+   }
+}
+
+#id_otra_cual_s {
+   margin-top: 9vh;
+
+   @include media(dm) {
+      margin-top: 11vh;
+   }
+}
+
+#id_otra_alm_bd {
+   margin-top: 22vh;
+}
+
+#id_cual_regio {
+   margin-top: 7vh;
+
+   @include media(dm) {
+      margin-top: 8vh;
+   }
+}
+
+#id_cob_geograf {
+   li {
+      margin-top: 1.5vh !important;
+   }
+}
+
+#id_otra_no_acceso {
+   margin-top: 14vh;
+}
+
+.wrapComments2 {
+   height: 53vh;
+
+   @include media(dm) {
+      height: 64vh;
+   }
+
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+
+.bootstrap-select {
+   .dropdown-menu {
+      transform: none !important;
+      margin-top: 4vh !important;
+      min-width: 0px !important;
+      width: 60.5vw !important;
+
+      @include media(dm) {
+         margin-top: 4.6vh !important;
+         width: 60.2vw !important;
+      }
+
+      .inner {
+         margin-top: 0 !important;
+
+         .dropdown-item {
+            font-size: $ps;
+         }
+      }
+   }
+
+   .inner {
+      overflow-x: hidden !important;
+
+      li {
+         width: 97%;
+      }
+   }
+
+
+}
+
+#id_variable_file,
+#id_anexos,
+#id_variableRecol_file {
+   width: 70vw !important;
+}
+
+input[type="file"i] {
+   border: solid 1px #4f4f4f !important;
+   border-radius: 4px !important;
+}
+
+#id_otra_doc_cual {
+   margin-top: 9vh;
+
+   @include media(ds) {
+      margin-top: 13vh;
+   }
+}
+
+#id_user_dane,
+#id_indicador_ods {
+   width: 90%;
+}
+
+.dateEval {
+   font-size: 0.6rem;
+}
+
+#createForms #id_norma_ra {
+   li {
+      padding-top: 1rem;
+   }
+}
+
+#id_cp_ra,
+#id_ley_ra,
+#id_decreto_ra,
+#id_otra_ra {
+   margin-top: 0.8rem;
+}
+
+
+@include media (ds) {
+   #id_norma {
+      li {
+         margin-top: 1.2vh;
+      }
+   }
+
+   #id_requerimientos {
+      li {
+         margin-top: 1.4vh;
+      }
+   }
+
+   #id_pri_usuarios {
+      li {
+         margin-top: 0.4vh;
+      }
+   }
+
+   #id_uni_observacion {
+      li {
+         margin-top: 1.5vh;
+      }
+   }
+
+   #id_lista_conc {
+      li {
+         margin-top: 2vh;
+      }
+   }
+
+   #id_org_in_cuales {
+      margin-top: 6vh;
+   }
+
+   #id_otra_cual_conp {
+      margin-top: 5vh;
+   }
+
+   .blankSpace9 {
+      margin-top: 12vh;
+   }
+
+   #id_con_est_ra {
+      li {
+         margin-top: 1vh;
+      }
+   }
+
+   #id_org_in_cual {
+      margin-top: 20vh;
+   }
+
+   #id_recole_dato {
+      li {
+         margin-top: 1vh;
+      }
+   }
+
+   #id_otro_c {
+      margin-top: 4vh;
+   }
+
+   #id_otra_cual_s {
+      margin-top: 14vh;
+   }
+
+   #id_otra_no_acceso {
+      margin-top: 18vh;
+   }
+
+   #id_des_geo {
+      li {
+         margin-bottom: 2.8vh !important;
+      }
+   }
+
+   #id_con_est_ra {
+      li {
+         margin-top: 2vh;
+      }
+   }
+
+   #id_ent_ordnac_cual,
+   #id_leye_dec_cual {
+      margin-top: 0.5vh;
+   }
+
+   #id_otra_ce_cual {
+      margin-top: 5vh;
+   }
+
+   #id_cob_geograf {
+      li {
+         margin-top: 3vh !important;
+      }
+   }
+
+   #id_recole_dato {
+      li {
+         margin-top: 1.5vh !important;
+      }
+   }
+
+   #id_sistema_inf_cual {
+      margin-top: 14vh;
+   }
+
+   #geografica::before {
+      content: "11.1.  " !important;
+      font-weight: bold;
+      margin-right: 0.5rem;
+
+   }
+
+   #zona::before {
+      content: "11.2.  " !important;
+      font-weight: bold;
+      margin-right: 0.5rem;
+
+   }
+
+   #grupos::before {
+      content: "11.3.  " !important;
+      font-weight: bold;
+      margin-right: 0.5rem;
+
+   }
+
+   /* nuevo estilos pregunta 5 */
+   #id_ri_ocde {
+      margin-top: 0.5rem !important;
+   }
+
+   #id_ri_ci {
+      margin-top: 1.2rem !important;
+   }
+
+   #id_ri_pnd,
+   #id_ri_cem,
+   #id_ri_pstc,
+   #id_ri_otro {
+      margin-top: 0.1rem !important;
+   }
+
+   #id_pres_rep,
+   #id_misnit,
+   #id_org_cont,
+   #id_o_ent_o_nac,
+   #id_ent_o_terr,
+   #id_gremios,
+   #id_ent_privadas,
+   #id_dep_misma_entidad,
+   #id_academia {
+      margin-top: 1.5rem !important;
+   }
+
+   #id_des_tot_dep,
+   #id_des_cual_dep,
+   #id_des_tot_are_metr,
+   #id_des_cual_are_metr,
+   #id_des_tot_mun,
+   #id_des_cual_mun,
+   #id_des_tot_otro,
+   #id_des_cual_otro {
+      margin-top: 0.5rem !important;
+   }
+
+   #id_tot_regional {
+      margin-top: 8.5rem !important;
+   }
+
+   #id_cual_regional,
+   #id_cual_dep,
+   #id_cual_are_metr,
+   #id_cual_mun {
+      margin-top: 0.2rem !important;
+   }
+
+   #id_tot_dep,
+   #id_tot_are_metr,
+   #id_tot_mun,
+   #id_tot_otro {
+      margin-top: 2rem !important;
+   }
+
+   #id_otro_docs {
+      margin-top: 9rem !important;
+   }
+
+   #id_des_grupo_otro {
+      margin-top: 11rem !important;
+   }
+
+   #id_per_otro {
+      margin-top: 9rem !important;
+   }
+
+   #id_difundir_otro {
+      margin-top: 9rem !important;
+   }
+
+   #spacingQuestion11_1 {
+      margin-top: 5rem !important;
+   }
+}
+
+/* nuevo estilos pregunta 5 */
+#id_ri_ocde,
+#id_ri_ci,
+#id_ri_pnd,
+#id_ri_cem,
+#id_ri_pstc,
+#id_ri_otro {
+   margin-top: 0.1rem;
+}
+
+#id_pres_rep,
+#id_misnit,
+#id_org_cont,
+#id_o_ent_o_nac,
+#id_ent_o_terr,
+#id_gremios,
+#id_ent_privadas,
+#id_dep_misma_entidad,
+#id_academia {
+   margin-top: 1.6rem;
+}
+
+#id_des_tot_dep,
+#id_des_cual_dep,
+#id_des_tot_are_metr,
+#id_des_cual_are_metr,
+#id_des_tot_mun,
+#id_des_cual_mun,
+#id_des_tot_otro,
+#id_des_cual_otro {
+   margin-top: 1rem;
+}
+
+#id_tot_regional {
+   margin-top: 8.5rem;
+}
+
+#id_cual_regional,
+#id_cual_dep,
+#id_cual_are_metr,
+#id_cual_munm,
+#id_cual_otro {
+   margin-top: 0.2rem;
+}
+
+#id_tot_dep,
+#id_tot_are_metr,
+#id_tot_mun,
+#id_tot_otro {
+   margin-top: 0.5rem;
+}
+
+#id_per_otro {
+   margin-top: 10rem;
+}
+
+#id_otro_docs {
+   margin-top: 10rem;
+}
+
+#id_des_grupo_otro {
+   margin-top: 12rem;
+}
+
+#id_difundir_otro {
+   margin-top: 10rem;
+}
+
+#spacingQuestion11_1 {
+   margin-top: 5.5rem;
+}
+
+/* Demandas*/
+
+
+.question {   
+      padding-top: 1.5vh;
+      font-family: $Open;
+      font-size: 0.9rem;
+      font-weight: 600;
+}
+
+
+#id_pm_b_4_0,
+#id_pm_b_4_1,
+#id_pm_b_4_2,
+#id_pm_b_4_3,
+#id_pm_b_4_4,
+#id_pm_b_4_5,
+#id_pm_b_4_6,
+#id_pm_b_4_7,
+#id_pm_b_4_8,
+#id_pm_b_4_9,
+#id_pm_b_4_10,
+#id_pm_b_4_11 {      
+   margin-bottom: 1.1rem;
+  
+}
+
+#id_pm_b_5 {   
+   
+   li {
+      font-size: 0.9rem;
+      padding-left: 0.5rem;                 
+      list-style: none;  
+      padding-bottom: 0.3rem;
+   }
+    
+}
+
+
+
+
+
+
+#id_ministerios_text {
+   margin-top: 6vh;
+}
+
+#id_academia_text,
+#id_entidadesordenterr_text,
+#id_oentidadesordenal_text,
+#id_gremios_text,
+#id_entiprivadas_text,
+#id_dependenentidad_text,
+#id_oentidadesordenal_text,
+#id_orgcontrol_text {
+   margin-top: 1.1vh;
+}
+
+#id_rraa_pmb11,
+#id_ooee_pmb11 {
+   margin-top: 1.2vh;
+}
+
+#id_otra_cual_11_1_d {
+   margin-top: 16vh;
+}
+
+
+#id_otro_cual_text {
+   margin-top: 7vh;
+}
+
+#id_otros_c_text {
+   margin-top: 16vh;
+}
+
+#id_otra_cual_text_a {
+   margin-top: 21vh;
+}
+
+#id_otra_cual_text_b {
+   margin-top: 20vh;
+}
+
+#id_otra_cual_text_c {
+   margin-top: 16vh;
+}
+
+#id_compl_dem_a,
+#id_comple_dem_b,
+#id_validacion_ddi,
+#id_pm_b_14,
+#id_pm_b_13,
+#id_pm_b_13_geo,
+#id_pm_b_13_zona,
+#id_pm_b_12,
+#id_pm_b_8,
+#id_total_si_no_pmb7,
+#id_pm_b_4,
+#id_pm_b_3,
+#id_quien_identddi,
+#id_comite_est{
+
+   li {
+   font-size: 0.9rem;
+   padding-left: 0.5rem;                 
+   list-style: none; 
+   }   
+
+}
+
+#id_opc_apr_ra,
+#id_opc_apr_oe,
+#id_pm_b_11_1{
+
+   li {
+   font-size: 0.8rem;                
+   list-style: none; 
+   padding-bottom: 0.7rem;
+   }
+}
+
+#id_genera_nuev{
+
+   li {
+   font-size: 0.8rem;                
+   list-style: none; 
+   padding-bottom: 0.5rem;
+   }
+}
+
+
+
+
+
+#id_pm_b_6{
+
+   li {
+   font-size: 0.85rem;
+   padding-left: 0.5rem;                 
+   list-style: none; 
+   padding-bottom: 0.5rem;
+   }   
+
+}
+
+#id_pm_b_6_0,
+#id_pm_b_6_1,
+#id_pm_b_6_2,
+#id_pm_b_6_3,
+#id_pm_b_6_4,
+#id_pm_b_6_5,
+#id_pm_b_6_6{
+   margin-top: 2vh;
+}
+
+
+#id_cuentasecomacroec_text,
+#id_plansecterrcom_text,
+#id_objdessost_text {
+   margin-top: 3vh;
+}
+
+#id_orgcooper_text,
+#id_otroscomprInt_text,
+#id_otros_text {
+   margin-top: 4.5vh;
+}
+
+#id_inc_varia_cual {      
+   margin-top: 8vh;
+  
+}
+
+
+
+/*  ¿Quién identificó la demanda de información? */
+#id_quien_identddi_0,
+#id_quien_identddi_1,
+#id_quien_identddi_2,
+#id_quien_identddi_3{
+   margin-top: 1vh;
+}
+#id_quien_identddi_4{
+   margin-top: 18vh;
+}
+
+#entidadOpcion_resp {
+   .bootstrap-select .dropdown-menu{
+      max-width: 95%!important;
+   }
+}
+#entidadOpcion{
+   margin-top: 16vh;
+}
+/*  end ¿Quién identificó la demanda de información? */
+
+/* pregunta 11 ddi */
+
+
+/* opciones ooee */
+#id_opc_apr_oe_0,
+#id_opc_apr_oe_1,
+#id_opc_apr_oe_2,
+#id_opc_apr_oe_3,
+#id_opc_apr_oe_4,
+#id_opc_apr_oe_4{
+   margin-top: 1vh;
+}
+
+#id_cam_preg_cual,
+#id_am_des_tem_cual,
+#id_am_des_geo_cual,
+#id_dif_resul_cual{
+   margin-top: 2vh;
+}
+#id_opc_aprov_cual{
+   margin-top: 4vh;
+}
+/* opciones ooee */
+
+/* opciones rraa */
+#id_opc_apr_ra_0,
+#id_opc_apr_ra_1,
+#id_opc_apr_ra_2{
+   margin-top: 2vh;
+}
+#id_inc_varia_cual,
+#id_camb_pregu_cual{      
+   margin-top: 2vh; 
+}
+#id_otros_aprov_ra {
+   margin-top: 3vh; 
+}
+/* opciones rraa */
+
+/* opciones generacion */
+#id_genera_nuev_0,
+#id_genera_nuev_1,
+#id_genera_nuev_2{
+   margin-top: 2vh; 
+}
+
+#id_nueva_oe,
+#id_indi_cual{
+   margin-top: 2vh; 
+}
+#id_gen_nueva{
+   margin-top: 3vh; 
+}
+
+
+
+p.tranformp{
+   max-width: 450px;
+   max-height: 400px;
+   white-space: nowrap;
+   overflow: auto;
+}
+
+/* opciones generacion */
+
+/* end pregunta 11 */
+
+
+   .labelTitle2 {
+      font-size: $ps;      
+      color: $kuler_sistemaInventario-4-rgba;
+   } 
+   .labelTitle3 {
+      font-size: $ps;    
+      font-weight: 600;  
+      text-transform: uppercase;
+      color: $kuler_sistemaInventario-1-rgba;
+      padding-left: 1rem;
+   } 
+   #id_otro_cual {      
+      margin-top: 12vh;     
+   } 
+
+
+#loader {
+   position: fixed;
+   left: 0px;
+   top: 0px;
+   width: 100%;
+   height: 100%;
+   z-index: 9999;
+   background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat rgb(249,249,249);
+   opacity: .8;
+   cursor: wait;
+}
+
+

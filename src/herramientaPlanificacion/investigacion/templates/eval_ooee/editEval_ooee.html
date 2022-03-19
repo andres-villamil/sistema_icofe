@@ -1,0 +1,316 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 6  %}
+
+<!-- Modulo de evaluación de calidad -->
+
+<div id="loader"></div>
+<div id="editForms">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede editar la evaluación realizada a una operación estadística. Todos los campos descritos a continuación deben ser diligenciados,
+        recuerde que una vez guardados los cambios no se podrán recuperar">
+        módulo para editar Evaluación de calidad </h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'ooee:all_ooee' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-11">
+
+        <!-- Mensaje de error o success-->
+       {% for message in messages %}
+       <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+           <p class="d-flex flex-row align-items-center justify-content-center mt-3">
+               {% if message.tags == "alert-danger" %}
+                   <span class="material-icons mr-3">warning</span>
+               {% elif message.tags == "alert-success" %}
+                   <span class="material-icons mr-3">done_outline</span>
+               {% endif %}
+               {{ message }}
+           </p>
+       </div>
+       {% endfor %}
+        <!--End  Mensaje de error o  success-->
+
+        <form action="" method="POST" class="w-100" enctype="multipart/form-data">{% csrf_token %}
+            <div class="container mt-4">
+                <div id="moduleEvaluacion" class="colorBkgTest">                  
+                    <div class="row">
+                       
+                        <div class="col-12 col-lg-12 mt-3">                
+                            <div class="card-body"> 
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Operación estadística evaluada:</span>
+                                    </div>
+                                    {{  editEvaluacionCalidad_form.post_oe }}
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Estado de la evaluación:</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.est_evaluacion }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group input-group-sm date" id="evaluacion_year"
+                                        data-target-input="nearest">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Año:</span>
+                                        </div>
+                                        {{ editEvaluacionCalidad_form.year_eva }}
+                                        <div class="input-group-append" data-target="#evaluacion_year"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i
+                                                    class="material-icons misize">calendar_today</i>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Observaciones:</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.observ_est }}
+
+                                    <!-- Validaciones error-->
+                                    {% if editEvaluacionCalidad_form.errors.observ_est %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ editEvaluacionCalidad_form.errors.observ_est }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Metodología:</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.metodologia }}
+                                </div>
+                                    
+                                <div id="resulBymetod" class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Resultado:</span>
+                                    </div>
+                                    <!--  resultados Norma ntcpe 1000 -->
+                                    {{ editEvaluacionCalidad_form.res_evaluacion }}
+
+                                    <!--  resultados matriz de requisitos -->
+                                    {{ editEvaluacionCalidad_form.res_mzrequi }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Observaciones:</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.observ_resul }}
+
+                                    <!-- Validaciones error-->
+                                    {% if editEvaluacionCalidad_form.errors.observ_resul %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ editEvaluacionCalidad_form.errors.observ_resul }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <div class="bkgInputQuestion1 mb-1">
+                                            <p>Desde</p>
+                                        </div>
+                                        <div class="input-group input-group-sm date" id="evaluacion_vigencia_desde"
+                                            data-target-input="nearest">
+                                            {{ editEvaluacionCalidad_form.vigencia_desde }}
+                                            <div class="input-group-append" data-target="#evaluacion_vigencia_desde"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i
+                                                        class="material-icons misize">calendar_today</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="bkgInputQuestion1 mb-1">
+                                            <p>Hasta</p>
+                                        </div>
+                                        <div class="input-group input-group-sm date" id="evaluacion_vigencia_hasta"
+                                            data-target-input="nearest">
+                                            {{ editEvaluacionCalidad_form.vigencia_hasta }}
+                                            <div class="input-group-append" data-target="#evaluacion_vigencia_hasta"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i
+                                                        class="material-icons misize">calendar_today</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Plan de mejoramiento:</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.pla_mejoramiento }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Seguimiento anual (Vigilancia):</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.seg_vig }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Observaciones:</span>
+                                    </div>
+                                    {{ editEvaluacionCalidad_form.obs_seg_anual }}
+                                    <!-- Validaciones error-->
+                                    {% if editEvaluacionCalidad_form.errors.obs_seg_anual %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ editEvaluacionCalidad_form.errors.obs_seg_anual }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="save btn btn_primary btn-block btn-sm hvr-shrink" data-step="3"
+        data-intro="Para actualizar la evaluación de clic">
+                            <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                                <i class="material-icons">send</i>
+                                <span class="ml-2">Enviar evaluación</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </form>
+
+</div>
+<!-- end  Modulo de evaluación de calidad -->
+
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<script>
+
+$(function () {
+        
+        $("#evaluacion_year").datetimepicker({
+            format: 'DD/MM/YYYY',
+            locale: 'es'
+        });
+        $("#evaluacion_vigencia_desde").datetimepicker({
+            format: 'DD/MM/YYYY',
+            locale: 'es'
+        });
+        $("#evaluacion_vigencia_hasta").datetimepicker({
+            format: 'DD/MM/YYYY',
+            locale: 'es'
+        });
+
+        // al inciar pagina
+        if ( $('select[name=metodologia]').val() ==  "ntcpe 1000"){
+                $('#resulBymetod').show()
+                $('#id_res_evaluacion').show()
+                $('#id_res_mzrequi').hide()
+        }else if ($('select[name=metodologia]').val() ==  "matriz de requisitos"){
+                $('#resulBymetod').show()
+                $('#id_res_mzrequi').show()
+                $('#id_res_evaluacion').hide()
+        }else if ($('select[name=metodologia]').val() == "") {
+                $('#resulBymetod').hide()
+                $('#id_res_mzrequi').hide()
+                $('#id_res_evaluacion').hide()
+        } 
+
+        $("#id_metodologia").change(function () {
+            var status = this.value;
+            //alert(status)
+            if (status == "ntcpe 1000") {
+                $('#resulBymetod').show()
+                $('#id_res_evaluacion').show()
+                $('#id_res_mzrequi').hide()
+            }
+            else if (status == "matriz de requisitos") {
+                $('#resulBymetod').show()
+                $('#id_res_mzrequi').show()
+                $('#id_res_evaluacion').hide()
+            }
+            else if (status == "") {
+                $('#resulBymetod').hide()
+                $('#id_res_mzrequi').hide()
+                $('#id_res_evaluacion').hide()
+            } 
+        });
+        
+        // Operación que se evalua
+        $('#id_post_oe option:not(:selected)').attr('disabled',true);
+        $('#id_post_oe').addClass('form-control form-control-sm')
+       
+});
+
+     // Mostrar Mensaje de carga
+     function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("editForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+    
+
+</script>
+
+
+
+{% endblock %}

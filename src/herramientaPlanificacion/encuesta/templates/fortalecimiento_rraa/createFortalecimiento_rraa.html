@@ -1,0 +1,543 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 7 %}
+
+<!-- Modulo de fortalecimiento de RRAA -->
+<div id="loader"></div>
+
+<div id="editForms">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede registrar el fortalecimiento del Registro Administrativo. Todos los campos descritos a continuación deben ser diligenciados.">
+        Fortalecimiento del Registro Administrativo</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'rraa:all_rraa' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if registered %}
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div class="alert alert-success" role="alert">
+                <h3 class="text-center">El fortalecimiento del Registro Administrativo</h3>
+                <h4 class="text-center pt-3">ha sido creado con éxito.</h4>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+
+    <div class="col-11">
+
+        <!-- Mensaje de error si el formulario tiene errores-->
+            {% if messages %}
+                {% for message in messages %}
+                <div class="container">
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <div class="alert alert-warning" role="alert">
+                            <h2 class="text-center text-uppercase">Error <span class="material-icons">
+                                warning
+                                </span></h2>
+                            <h4 class="pt-3"> {{ message }}</h4>
+                        </div>
+                    </div>
+                </div>                   
+                {% endfor %}
+            {% endif %}
+        <!--End  Mensaje de error si el formulario tiene errores-->
+
+        <form action="" method="POST" class="w-100" enctype="multipart/form-data">{% csrf_token %}
+            <div class=" container mt-4">
+                <div id="moduleFortalecimiento" class="colorBkgTest">
+                    <!-- historial de fortalecimiento -->
+                    <div class="row">
+                        <div class="col-12 col-lg-12 mt-3">
+                            <div class="accordion" id="accordionExample"  data-step="2"
+                                data-intro="Despliegue y visualice el fortalecimiento del registro administrativo">
+                                <div class="card mb-4  mt-3  ">
+                                    <div>
+                                        <!-- observaciones de fortalecimiento -->
+                                        {% if planFortalecimiento.count == 1 %}
+                                            <h2>
+                                                <button class="btn btn_primary btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                                        Existe: {{ planFortalecimiento.count }}  fortalecimiento
+                                                        <span class="material-icons">
+                                                            keyboard_arrow_down
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                        {% elif planFortalecimiento.count == 0 %} 
+                                            <h2 class="text-center">No hay fortalecimiento RRAA</h2>
+                                        {% else %}
+                                            <h2>
+                                                <button class="btn btn_primary btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                                        Existen: {{ planFortalecimiento.count }}  fortalecimientos
+                                                        <span class="material-icons">
+                                                            keyboard_arrow_down
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                        {% endif %}
+                                    </div>
+                                    <div class="wrapComments collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        {% for plan in planFortalecimiento %}
+                                        <div class="p-1">
+                                            <div class="d-flex flex-column">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <div class="d-flex flex-column align-items-center" style="margin-left: 1rem;">
+                                                            <img class="rounded mx-auto d-block"
+                                                                src="https://ui-avatars.com/api/?name={{ plan.name_dilige }}&rounded=true&background=607D8B&bold=true&color=ffffff"
+                                                                alt="" />
+                                                            <p class="font-weight-bold text-center">
+                                                                <span
+                                                                    class="text-uppercase">{{ plan.name_dilige }}
+                                                                </span>
+                                                            </p>
+                                                            <span class=" ml-2 text-muted font-weight-normal dateEval">
+                                                                <i>{{ plan.fecha_reg_sis }}</i>
+                                                            </span>
+                                                            <div class="mt-4">
+                                                                <a id="deleteFilter" href="{% url 'rraa:edit_fortal' plan.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                                                                    <div class="d-flex align-items-center hvr-shrink">
+                                                                        <span class="material-icons">
+                                                                            create
+                                                                        </span>
+                                                                        <span class="ml-2 text-left">Editar fortalecimiento </span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-10">
+                                                            <div class="row mb-3">
+                                                                <div class="col-12 col-lg-6">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Diagnóstico del RA:</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-right pl-2 borderGreen " style="width: -webkit-fill-available;">
+                                                                            {% if plan.diagnostico_ra == True %}
+                                                                                Si
+                                                                            {% else %}
+                                                                                No
+                                                                            {% endif %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-lg-6">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Año:</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-right pl-2 borderGreen " style="width: -webkit-fill-available;">
+                                                                        {{ plan.year_diagnostico|date:'Y' }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Módulo o sección 
+                                                                                diagnosticado</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-right pl-2
+                                                                            borderGreen " style="width: -webkit-fill-available;">
+                                                                            {{ plan.mod_sec_diagn }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Plan de fortalecimiento 
+                                                                                aprobado por la entidad:</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-right pl-2
+                                                                            borderGreen" style="width: -webkit-fill-available;">
+                                                                            {% if plan.plan_fort_aprob == True %}
+                                                                                Si
+                                                                            {% else %}
+                                                                                No
+                                                                            {% endif %}       
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Fecha de aprobación 
+                                                                                del Plan de Fortalecimiento:</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-right pl-2
+                                                                            borderGreen"  style="width: -webkit-fill-available;">
+                                                                            <div class="text-uppercase">{{ plan.fecha_aprobacion }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Seguimiento a la implementación 
+                                                                                del Plan de fortalecimiento:</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-righ px-2
+                                                                            borderGreen"  style="width: -webkit-fill-available;">
+                                                                            {{ plan.seg_imple_plan }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Fecha de inicio del implementación 
+                                                                                del Plan de Fortaleciemiento</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-righ px-2 
+                                                                            borderGreen" style="width: -webkit-fill-available;">
+                                                                            {{ plan.fecha_inicio_plan }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Fecha de último seguimiento 
+                                                                                a la implementación del Plan 
+                                                                                de Fortalecimiento:</span>
+                                                                        </div>
+                                                                        <div class="ml-2 border rounded-righ px-2 
+                                                                            borderGreen" style="width: -webkit-fill-available;">
+                                                                            {{ plan.fecha_ultimo_seguimiento }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-3">
+                                                                <div class="col-12">
+                                                                    <div class="d-flex flex-row input-group-sm">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Fecha de finalización
+                                                                        del Plan de fortalecimiento:</span>
+                                                                </div>
+                                                                <div class="ml-2 border rounded-righ px-2 
+                                                                    borderGreen" style="width: -webkit-fill-available;">
+                                                                    {{ plan.fecha_finalizacion }}
+                                                                </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                        <hr class="my-2">
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>                          
+                    </div>                     
+                    <!-- End historial fortalecimiento -->
+                    <div class="row" >
+                        <div class="col-12 col-lg-12">
+                            <div class="card-body">
+                                
+                                <!--Nombre del registro administrativo-->
+                                <h2 class="text-uppercase text-center mb-5" data-step="3" data-intro="Diligencie los campos a continuación 
+                                    para elaborar el fortalecimiento del registro administrativo. ">
+                                    {{ post_ra }}</h2> 
+                                
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Diagnóstico del RA:</span>
+                                    </div>
+                                    {{ createFortalecimiento_ra_form.diagnostico_ra }}
+                                </div>
+                                <div id="dialogSINO_Diagnostico" class="alert alert-primary" role="alert">
+                                    <div class="d-flex flex-row justify-content-center">
+                                        <span class="mr-2">Si la respuesta de la pregunta es <b>"SI"</b> de clic en el switch para habilitar las opciones y viceversa. </span>
+                                        <img class="img-fluid" style="width: 2vw;" src="../../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                                    </div>
+                                </div>
+                                <div id="fortalecimiento1" style="display: none;">
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group input-group-sm date" id="year_diagnostico"
+                                            data-target-input="nearest">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Año de diagnóstico de rraa:</span>
+                                            </div>
+                                            {{ createFortalecimiento_ra_form.year_diagnostico }}
+                                            <div class="input-group-append" data-target="#year_diagnostico"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i
+                                                        class="material-icons misize">calendar_today</i>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>
+
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Módulo o sección diagnosticado:</span>
+                                        </div>
+                                        {{ createFortalecimiento_ra_form.mod_sec_diagn }}
+
+                                        <!-- Validaciones error-->
+                                        {% if createFortalecimiento_ra_form.errors.mod_sec_diagn %}
+                                        <small id="formHelp" class="form-text text-muted">
+                                            <div class="d-flex flex-row align-items-start">
+                                                <i class="material-icons miReport">
+                                                    error
+                                                </i>
+                                                {{  createFortalecimiento_ra_form.errors.mod_sec_diagn }}
+                                            </div>
+                                        </small>
+                                        {% endif %}
+                                        <!--  end error -->
+                                    </div>
+
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Plan de fortalecimiento
+                                                aprobado por la entidad:</span>
+                                        </div>
+                                        {{ createFortalecimiento_ra_form.plan_fort_aprob }}
+                                    </div>
+                                    <div id="dialogSINO_PlaAprobado" class="alert alert-primary" role="alert">
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <span class="mr-2">Si la respuesta de la pregunta es <b>"SI"</b> de clic en el switch para habilitar las opciones y viceversa. </span>
+                                            <img class="img-fluid" style="width: 2vw;" src="../../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                                        </div>
+                                    </div>
+                                        <div id="planAprobado" style="display: none;">
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <div class="bkgInputQuestion1 mb-1">
+                                                        <p>Fecha de aprobación del Plan de Fortalecimiento</p>
+                                                    </div>
+                                                    <div class="input-group input-group-sm date" id="fecha_aprobacion"
+                                                        data-target-input="nearest">
+                                                        {{ createFortalecimiento_ra_form.fecha_aprobacion }}
+                                                        <div class="input-group-append" data-target="#fecha_aprobacion"
+                                                            data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i
+                                                                    class="material-icons misize">calendar_today</i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Seguimiento a la implementación
+                                                        del Plan de fortalecimiento:</span>
+                                                </div>
+                                                {{ createFortalecimiento_ra_form.seg_imple_plan }}
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col">
+                                                        <div class="bkgInputQuestion1 mb-1">
+                                                            <p class="">Fecha de inicio de la implementación
+                                                                del Plan de Fortaleciemiento</p>
+                                                        </div>
+                                                        <div class="input-group input-group-sm date" id="fecha_inicio_plan"
+                                                            data-target-input="nearest">
+                                                            {{ createFortalecimiento_ra_form.fecha_inicio_plan }}
+                                                            <div class="input-group-append" data-target="#fecha_inicio_plan"
+                                                                data-toggle="datetimepicker">
+                                                                <div class="input-group-text"><i
+                                                                        class="material-icons misize">calendar_today</i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="bkgInputQuestion1 mb-1">
+                                                            <p class="">Fecha de último seguimiento 
+                                                                a la implementación del Plan de Fortalecimiento</p>
+                                                        </div>
+                                                        <div class="input-group input-group-sm date" id="fecha_ultimo_seguimiento"
+                                                            data-target-input="nearest">
+                                                            {{ createFortalecimiento_ra_form.fecha_ultimo_seguimiento }}
+                                                            <div class="input-group-append" data-target="#fecha_ultimo_seguimiento"
+                                                                data-toggle="datetimepicker">
+                                                                <div class="input-group-text"><i
+                                                                        class="material-icons misize">calendar_today</i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col">
+                                                        <div class="bkgInputQuestion1 mb-1">
+                                                            <p class="">Fecha de finalización de la implementación del Plan de fortalecimiento</p>
+                                                        </div>
+                                                        <div class="input-group input-group-sm date" id="fecha_finalizacion"
+                                                            data-target-input="nearest">
+                                                            {{ createFortalecimiento_ra_form.fecha_finalizacion }}
+                                                            <div class="input-group-append" data-target="#fecha_finalizacion"
+                                                                data-toggle="datetimepicker">
+                                                                <div class="input-group-text"><i
+                                                                        class="material-icons misize">calendar_today</i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="save btn btn_primary btn-block btn-sm hvr-shrink" data-step="4" data-intro="Envíe el fortalecimiento, dando clic">
+                            <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                                <i class="material-icons">send</i>
+                                <span class="ml-2">Enviar fortalecimiento</span>
+                            </div>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+
+</div>
+<!-- end  Modulo fortalecimiento -->
+
+{% endif %}
+
+    {% else %}
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div class="alert alert-warning" role="alert">
+                <h2 class="text-center text-uppercase">error 401</h2>
+                <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+                <a class="alert-link" href="{% url 'login:loggedin' %}">
+                    <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+<script>
+
+    $(function () {
+            
+            $("#year_diagnostico").datetimepicker({
+                format: 'YYYY',
+                locale: 'es'
+            });
+            $("#fecha_aprobacion").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#fecha_inicio_plan").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#fecha_ultimo_seguimiento").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#fecha_finalizacion").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            
+    
+                   
+    });
+
+    $(document).ready(function(){
+
+            //------------------#### diagnsotico ####-------------------------------------//
+
+            $('input:checkbox[name=diagnostico_ra]').on('change', function () {
+                var fasesOptionSelected = new Array();
+                $("input:checkbox[name=diagnostico_ra]:checked").each(function () {
+                    fasesOptionSelected.push($(this).val());
+                })
+                if (fasesOptionSelected[0] === "on") {
+                    $('#fortalecimiento1').show()
+                    $('#dialogSINO_Diagnostico').hide()
+                } else {
+                    $("#fortalecimiento1").hide() 
+                    $('#dialogSINO_Diagnostico').show()
+                }
+            });
+            //------------------#### plan aprobado  ####-------------------------------------//
+
+            $('input:checkbox[name=plan_fort_aprob]').on('change', function () {
+                var fasesOptionSelected = new Array();
+                $("input:checkbox[name=plan_fort_aprob]:checked").each(function () {
+                    fasesOptionSelected.push($(this).val());
+                })
+                if (fasesOptionSelected[0] === "on") {
+                    $('#planAprobado').show()
+                    $('#dialogSINO_PlaAprobado').hide()
+                    
+                } else {
+                    $("#planAprobado").hide() 
+                    $('#dialogSINO_PlaAprobado').show()
+                }
+            });
+
+    });
+
+
+     // Mostrar Mensaje de carga
+     function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("editForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+    
+    </script>
+
+
+{% endblock %}

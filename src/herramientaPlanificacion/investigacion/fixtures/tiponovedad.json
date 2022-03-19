@@ -1,0 +1,72 @@
+[
+    {
+        "model": "ooee.tiponovedad",
+        "pk": 1, 
+        "fields": {
+            "tipo_novedad": "Cambio de contenido"
+          
+        }
+    }, 
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 2,
+        "fields": {
+            "tipo_novedad": "Fusión"
+         
+        }
+    }, 
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 3, 
+        "fields": {
+            "tipo_novedad": "División"
+          
+        }
+    },
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 4,
+        "fields": {
+            "tipo_novedad": "Eliminación"
+            
+            
+        }
+    }, 
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 5, 
+        "fields": {
+            "tipo_novedad": "No continúa"
+           
+
+        }
+    },
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 6, 
+        "fields": {
+            "tipo_novedad": "Reactivación"
+           
+
+        }
+    },
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 7, 
+        "fields": {
+            "tipo_novedad": "Cambio de entidad responsable"
+           
+
+        }
+    },
+    {
+        "model": "ooee.tiponovedad", 
+        "pk": 8, 
+        "fields": {
+            "tipo_novedad": "Ninguna"
+           
+
+        }
+    }
+
+]

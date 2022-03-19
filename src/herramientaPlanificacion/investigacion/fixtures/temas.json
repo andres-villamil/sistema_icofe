@@ -1,0 +1,212 @@
+[
+    {
+        "model": "ooee.tema",
+        "pk": 1, 
+        "fields": {
+            "nombre": "Agricultura, Gandería y Pesca"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 2,
+        "fields": {
+            "nombre": "Salud"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 3, 
+        "fields": {
+            "nombre": "Comercio"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 4,
+        "fields": {
+            "nombre": "Moneda, Banca y Finanzas"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 5, 
+        "fields": {
+            "nombre": "Condiciones y Calidad Ambiental"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 6,
+        "fields": {
+            "nombre": "Cuentas Económicas"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 7, 
+        "fields": {
+            "nombre": "Nivel, Calidad y Condiciones de Vida"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 8,
+        "fields": {
+            "nombre": "Índices de Precios y Costos"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 9, 
+        "fields": {
+            "nombre": "Justicia"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 10,
+        "fields": {
+            "nombre": "Transporte"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 11, 
+        "fields": {
+            "nombre": "Educación, Ciencia, Tecnología e Innovación"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 12,
+        "fields": {
+            "nombre": "Actividad Política y Asociativa"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 13, 
+        "fields": {
+            "nombre": "Cultura"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 14,
+        "fields": {
+            "nombre": "Asentamientos Humanos y Salud Ambiental"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 15, 
+        "fields": {
+            "nombre": "Eventos Extremos y Desastres"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 16,
+        "fields": {
+            "nombre": "Protección Ambiental, Gestión y Participación/Acción Ciudadana"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 17, 
+        "fields": {
+            "nombre": "Recursos Ambientales y Su Uso"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 18,
+        "fields": {
+            "nombre": "Residuos"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 19, 
+        "fields": {
+            "nombre": "Construcción"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 20,
+        "fields": {
+            "nombre": "Finanzas Públicas y Estadísticas Fiscales"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 21, 
+        "fields": {
+            "nombre": "Minero Energético"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 22,
+        "fields": {
+            "nombre": "Industria"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 23, 
+        "fields": {
+            "nombre": "Servicios (Turismo, Hoteles, Restaurantes y Otros)"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 24,
+        "fields": {
+            "nombre": "Tecnologías de la Información y las comunicaciones"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 25, 
+        "fields": {
+            "nombre": "Administración Pública"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 26,
+        "fields": {
+            "nombre": "Demografía y Población"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 27, 
+        "fields": {
+            "nombre": "Deporte y Recreación"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 28,
+        "fields": {
+            "nombre": "Mercado Laboral y Seguridad Social"
+        }
+    }, 
+    {
+        "model": "ooee.tema",
+        "pk": 29, 
+        "fields": {
+            "nombre": "Seguridad y Defensa"
+        }
+    }, 
+    {
+        "model": "ooee.tema", 
+        "pk": 30,
+        "fields": {
+            "nombre": "Servicios Públicos Domiciliarios"
+        }
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "model": "rraa.conceptoestandarizadorraa",
+        "pk": 1, 
+        "fields": {
+            "con_est_ra": "DANE"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa", 
+        "pk": 2,
+        "fields": {
+            "con_est_ra": "OCDE"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa", 
+        "pk": 3, 
+        "fields": {
+            "con_est_ra": "ONU"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa",
+        "pk": 4, 
+        "fields": {
+            "con_est_ra": "EUROSTAT"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa", 
+        "pk": 5,
+        "fields": {
+            "con_est_ra": "Otro organismo Internacional"
+        }
+    },
+    {
+        "model": "rraa.conceptoestandarizadorraa",
+        "pk": 6, 
+        "fields": {
+            "con_est_ra": "Otra entidad de orden nacional"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa", 
+        "pk": 7,
+        "fields": {
+            "con_est_ra": "Leyes, decretos, etc."
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa", 
+        "pk": 8, 
+        "fields": {
+            "con_est_ra": "Creación propia"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa",
+        "pk": 9, 
+        "fields": {
+            "con_est_ra": "Otra (s)"
+        }
+    }, 
+    {
+        "model": "rraa.conceptoestandarizadorraa", 
+        "pk": 10,
+        "fields": {
+            "con_est_ra": "No utiliza conceptos estandarizados"
+        }
+    }
+]

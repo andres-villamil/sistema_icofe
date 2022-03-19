@@ -1,0 +1,44 @@
+[
+    {
+        "model": "ooee.productosdifundir",
+        "pk": 1, 
+        "fields": {
+           "pro_dif": "Cuadros de salida (tablas)"
+        }
+    }, 
+    {
+        "model": "ooee.productosdifundir", 
+        "pk": 2,
+        "fields": {
+           "pro_dif": "Boletín estadístico"
+        }
+    }, 
+    {
+        "model": "ooee.productosdifundir", 
+        "pk": 3, 
+        "fields": {
+           "pro_dif": "Anuario"
+        }
+    },
+    {
+        "model": "ooee.productosdifundir", 
+        "pk": 4,
+        "fields": {
+           "pro_dif": "Mapas estadísticos"            
+        }
+    }, 
+    {
+        "model": "ooee.productosdifundir", 
+        "pk": 5, 
+        "fields": {
+           "pro_dif": "Bases de datos interactivas"
+        }
+    },
+    {
+        "model": "ooee.productosdifundir", 
+        "pk": 6,
+        "fields": {
+           "pro_dif": "Otro (s)"            
+        }
+    }
+]

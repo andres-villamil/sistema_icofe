@@ -1,0 +1,37 @@
+[
+    {
+        "model": "rraa.normarraa",
+        "pk": 1, 
+        "fields": {
+            "norma_ra": "Constitución Política"
+        }
+    }, 
+    {
+        "model": "rraa.normarraa", 
+        "pk": 2,
+        "fields": {
+            "norma_ra": "Ley"
+        }
+    }, 
+    {
+        "model": "rraa.normarraa", 
+        "pk": 3, 
+        "fields": {
+            "norma_ra": "Decreto (Nacional, departamental, municipal)"
+        }
+    }, 
+    {
+        "model": "rraa.normarraa",
+        "pk": 4, 
+        "fields": {
+            "norma_ra": "Otra (Resolución, ordenanza, acuerdo)"
+        }
+    }, 
+    {
+        "model": "rraa.normarraa", 
+        "pk": 5,
+        "fields": {
+            "norma_ra": "Ninguna"
+        }
+    }
+]

@@ -1,0 +1,50 @@
+#packages#
+#############
+*.7z
+*.dmg
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+#logs and databases#
+###################
+*.log
+
+
+#OS generated files#
+###################
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Thrashes
+ehthumbs.db
+Thumbs.db
+
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+package-lock.json
+
+
+src/herramientaPlanificacion/.vscode/settings.json
+src/herramientaPlanificacion/*/__pycache__
+src/herramientaPlanificacion/*/migrations
+
+src/herramientaPlanificacion/media/ooees/variables
+src/herramientaPlanificacion/media/ooees/anexos
+
+
+
+
+#django migrations#
+*.pyc

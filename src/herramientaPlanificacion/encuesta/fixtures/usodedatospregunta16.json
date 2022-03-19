@@ -1,0 +1,23 @@
+[
+    {
+        "model": "rraa.usodedatosrraa",
+        "pk": 1, 
+        "fields": {
+            "uso_dato": "Si"
+        }
+    }, 
+    {
+        "model": "rraa.usodedatosrraa", 
+        "pk": 2,
+        "fields": {
+            "uso_dato": "No"
+        }
+    }, 
+    {
+        "model": "rraa.usodedatosrraa", 
+        "pk": 3, 
+        "fields": {
+            "uso_dato": "No sabe"
+        }
+    }
+]

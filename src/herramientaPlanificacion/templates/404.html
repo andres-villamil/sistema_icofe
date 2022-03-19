@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="DANE-ANCardenasC" />
+    <meta name="description" content="hju" />
+    <meta name="keywords" content="hju" />
+    <meta name="robots" content="index, follow" />
+    <link
+      href="{% static 'libraries/animate/animate.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/bootstrapSelect/css/bootstrap-select.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/bootstrapToggle/css/bootstrap-toggle.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/hover/hover.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/errorpages/css/errorPage.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.dane.gov.co/templates/t3_bs3_blank/favicon.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>DANE | ¡Ha ocurrido un error! - Error 404</title>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <article>
+          <div class="container container_root error_404">
+            <div class="row">
+              <div class="col-12 col-lg-1"></div>
+              <div class="col-12 col-lg-10">
+                <div class="col-12 d-flex justify-content-center mb-1">
+                  <h1 class="my-1 text-center">404</h1>
+                </div>
+                <div class="col-12 d-flex justify-content-center mb-1">
+                  <h3 class="text-center">¡Ha ocurrido un error!</h3>
+                </div>
+                <div class="col-12 line_dane d-flex justify-content-center mb-2">
+                  <img
+                    src="/media/errorPages/linea-de-color_2019.gif"
+                    alt="Linea divisora DANE"
+                  />
+                </div>
+
+                <div class="col-12 d-flex justify-content-center mb-2">
+                  <p class="text-center">La página solicitada no se puede encontrar</p>
+                </div>
+                <div class="col-12 d-flex justify-content-center mb-2">
+                  <a
+                    class="btn btn_primary"
+                    href="{% url 'ooee:consulta_ooee' %}"
+                    role="button"
+                    >Regresar a la página anterior</a
+                  >
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <div id="logos_redes" class="my-4">
+                    <div id="logo_instagram" class="mx-3"></div>
+                    <div id="logo_twitter" class="mx-3"></div>
+                    <div id="logo_facebook" class="mx-3"></div>
+                    <div id="logo_youtube" class="mx-3"></div>
+                  </div>
+                </div>
+                <hr class="" />
+                <div class="col-12">
+                  <p class="text-center">
+                    Si las dificultades persisten, pónganse en contacto con el
+                    administrador de este sitio
+                  </p>
+                  <a
+                    class="btn btn_enlace d-flex justify-content-center"
+                    href="mailto:Sen@dane.gov.co"
+                    alt="Correo de soporte DANE | sen"
+                    target="_blank"
+                    >Sen@dane.gov.co</a
+                  >
+                </div>
+              </div>
+              <div class="col-12 col-lg-1"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="{% static 'libraries/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libraries/bootstrapSelect/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'libraries/bootstrapToggle/js/bootstrap-toggle.min.js' %}"></script>
+    <script src="{% static 'libraries/errorpages/js/errorPage.min.js' %}"></script>
+  </body>
+</html>

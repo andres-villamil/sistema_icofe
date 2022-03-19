@@ -1,0 +1,16 @@
+[
+    {
+        "model": "entities.estadoentidad",
+        "pk": 1, 
+        "fields": {
+            "estado": "Publicada"
+        }
+    }, 
+    {
+        "model": "entities.estadoentidad", 
+        "pk": 2,
+        "fields": {
+            "estado": "Despublicada"
+        }
+    }
+]

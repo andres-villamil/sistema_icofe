@@ -1,0 +1,54 @@
+
+[
+    {
+        "model": "ooee.resultadoevalmatriz",
+        "pk": 1, 
+        "fields": {
+            "res_matriz": "A (Certificada por 3 años)"
+          
+        }
+    }, 
+    {
+        "model": "ooee.resultadoevalmatriz", 
+        "pk": 2,
+        "fields": {
+            "res_matriz": "B (Certificada por 2 años)"
+         
+        }
+    }, 
+    {
+        "model": "ooee.resultadoevalmatriz", 
+        "pk": 3, 
+        "fields": {
+            "res_matriz": "C (Certificada por 1 año)"
+          
+        }
+    },
+    {
+        "model": "ooee.resultadoevalmatriz", 
+        "pk": 4,
+        "fields": {
+            "res_matriz": "No se certifica"
+            
+        }
+    },
+    {
+        "model": "ooee.resultadoevalmatriz", 
+        "pk": 5,
+        "fields": {
+            "res_matriz": "Certificada por 5 años"
+            
+        }
+    },
+    {
+        "model": "ooee.resultadoevalmatriz", 
+        "pk": 6,
+        "fields": {
+            "res_matriz": "Certificada por 10 años"
+            
+        }
+    }
+]
+
+
+

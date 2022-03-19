@@ -1,0 +1,5537 @@
+commit b22dd0524996895643a95cda9964c8f4008f09b0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 5 11:27:50 2021 -0500
+
+    se carga archivo requirements.txt con las librerias empleadas para el funcionamiento de la aplicación
+
+commit 11a78cef19992c921220f687332da652738bd520
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 4 15:23:02 2021 -0500
+
+    ajustes de validaciones pregunta 12 módulo B demandas de información
+
+commit c333cc3608d74a22b700eaf3928cfa65ad16d6dc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 4 14:15:48 2021 -0500
+
+    Ajustes de vh en respuestas de pregunta 11
+
+commit 014379a46d1146cddafef394dcb13738e14ff6c6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 4 14:07:18 2021 -0500
+
+    ajustes de validación para el módulo de validación de la demanda
+
+commit 8da480629ab3612fbe029aa3d4733d22f7f428e9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 4 13:31:30 2021 -0500
+
+    Se agregan campos de nombre, estado, área temática y tema en reportes de ultimas novedades para ooee, rraa y ddi
+
+commit e976715d85db1180faff3ac99305f32af54def8f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 4 09:55:39 2021 -0500
+
+    Ajustes de estilos para pregunta 6 del módulo B
+
+commit e36cce82cd7eb0e545488138a92b3705d38994d1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 18:43:43 2021 -0500
+
+    se quitan campos None en reportes de demandas de información
+
+commit e3619cbb36ec2b11a75fed27e01c9d60d33844a8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 17:53:07 2021 -0500
+
+    validaciones de pregunta 9 en formulario de crear y editar demandas de información
+
+commit c0bed36955b79e8369ecea638913c1eaea941717
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 17:34:50 2021 -0500
+
+    se agrega valicación para cambiar estado de demanda de información a Archivado cuando se selecciona que no es una demanda de información
+
+commit b16f9174e9f904daf66c2718d63b96e26ea83926
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 17:17:03 2021 -0500
+
+    se realiza reporte para ultimas novedades de demandas de información}
+
+commit 46878a9754b471df81ff7cb064936085fe228612
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 15:59:01 2021 -0500
+
+    reporte de ultimas novedades para operaciones estadísticas
+
+commit 334a1fbec0a7741d5d8194ac51edfe5dc5459029
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 14:58:53 2021 -0500
+
+    ajuste de identación en views.py de rraa
+
+commit 00d8095a5e3d5ef728ec1b7fb78d7aebfe5d093a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 14:57:36 2021 -0500
+
+    ajustes de query para reporte de ultimas novedades
+
+commit 57bbd4db17f3dd1244bcc07e4c668e928fdde025
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 13:26:28 2021 -0500
+
+    ajustes de query reporte ultima novedad
+
+commit 0eb8783ff9765f7c4e2421bada595d29504edef2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 3 13:22:13 2021 -0500
+
+    reporte de ultimas novedades para registros administrativos
+
+commit e69741de607fe5699189bb476e333d165fb42866
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Nov 2 17:02:31 2021 -0500
+
+    ajuste de vista de administración para entidades consumidoras de información
+
+commit c497edd141fccb7b6795a7f10f1702f607c74d19
+Merge: d5dd7f4 0e5f065
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Nov 2 11:05:12 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit d5dd7f4bd8edbbf930e45b8725ea04c7db55ad9d
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Nov 2 11:04:50 2021 -0500
+
+    Cambiar los textos de los instructivos para la vista del formulario crear demandas
+
+commit 0e5f065eeaba225d2e513226f8335a61e8290bcb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 22:45:45 2021 -0500
+
+    se alinean las respuestas de la pregunta 11 en el formulario de editar demanda de información
+
+commit 6b6ba8d8b57b440179021b7613a1c0363c10de4b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 18:43:20 2021 -0500
+
+    funcionalidad para generar reporte en excel de entidades consumidoras de información
+
+commit ac23abbbf000ddccfa2d2f124425ca8d2bcd43df
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 18:11:36 2021 -0500
+
+    se ajustan textos de los cuadros de las vistas del módulo de consulta y de administración para la pregunta 6
+
+commit b806bdf4488d98fe7f2e3b616ca743f2f96c91da
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 16:18:09 2021 -0500
+
+    se agrega manual de diligenciamiento del formulario f2 de caracterización de demandas de información
+
+commit 69bae749340bafada4b2c4ffc4e3558896f3a324
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 15:10:54 2021 -0500
+
+    ajuste de estilos en pregunta 13 para ficha tecnica
+
+commit 2db2e06fe681ce8bcd4564fcef367a4d4c6b4692
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 15:04:46 2021 -0500
+
+    Ajustes de impresión en ficha técnica
+
+commit 6ff395013d40c95104e7743f08b1c40423720b15
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 29 14:22:07 2021 -0500
+
+    Ajustes de encabezados de reportes y se agrega link a los botones de reporte
+
+commit 784a44dfad3410283c54b7f097e26ac0b360ee27
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Oct 28 21:14:08 2021 -0500
+
+    reporte segun filtros de la vista de consulta de ddi
+
+commit 56b1575f0d707706c6814e2e42ce4316dff7c2f2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Oct 28 10:54:03 2021 -0500
+
+    funcionalidad para reporte en formato excel de las demandas de información en estado publicado
+
+commit 1ad3c5ecf04b011d6c58afe6ac3eb37c34ecc03e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Oct 27 22:28:11 2021 -0500
+
+    reporte de todas las demandas con todos los modulos del formulario de carcetrización
+
+commit d24eeb64aeeb6659b946a4862c21e077ab758717
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Oct 27 18:32:03 2021 -0500
+
+    ajuste de funcionalidad para envio de correo cuando es devuelta la demanda de información
+
+commit d2263d8fff5f4a4463e1cb0f6d41ad484d7865c1
+Merge: 697212c d7817af
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 26 20:45:51 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 697212cf1cc79f31a625ddf8085fd7504a50f3a2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 26 20:45:16 2021 -0500
+
+    funcionalidad para generar reporte en excel hasta la pregunta 8 del módulo del inventario de demandas
+
+commit d7817af1ffa1f03715b732a7694cc7ab5c166a97
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Oct 26 17:11:00 2021 -0500
+
+    Ajustar estilos a la vista de editar demandas y al formulario de la pregunta 11
+
+commit 5409e7f9fd36bbef5988d1550309bb0d9c681a29
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 26 09:07:41 2021 -0500
+
+    widget para campo activo del formulario de editar pregunta 11
+
+commit d88b9e153d314462ff7e988e122d76463bf7de6c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 26 08:48:49 2021 -0500
+
+    mensajes de success error en el formulario de editar pregunta 11
+
+commit 6328dcf08b700b5ee6ac13bdaa0b77d8655f3fb9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 21:20:38 2021 -0500
+
+    Ajustes de atributo title en formularios de crear y editar ddi para envio de notificaciones7
+
+commit ea39e44059aeed56c396f4e6f2595e4d4efb2176
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 21:05:10 2021 -0500
+
+    Se agrega campo otra entidad en pregunta 10 del formulario de crear demandas de información
+
+commit 42b3268997e9e3d35422194a4c44c6194dd55795
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 20:57:11 2021 -0500
+
+    funcionalidad para envio de notificaciones por correo electronico cuando se editan las preguntas del formulario de editar ddi
+
+commit 4485bacb4d8912af3ae3a93c733e58661a939b38
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 18:28:27 2021 -0500
+
+    validaciones para estados según el rol en el formulario de crear y editar ddi
+
+commit 480a14788c386d3fd2094ebfa3e5e6288a81faad
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 17:58:12 2021 -0500
+
+    se agrega campo de entidad consumidora de información en formulario de crear ddi
+
+commit d83bcbc996864da87a49b4b06fc768e4a33cca2d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 16:53:36 2021 -0500
+
+    validaciones de pregunta 11 en formulario de crear
+
+commit 4e58fad6266c63559d28f72e1ef374d04906c851
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 12:52:26 2021 -0500
+
+    se soluciona bug en formulario editar que creaba respuesta a la pregunta 11 vacias en formulario de editar
+
+commit 6d9bf5f8623ef57cc99cebcac1ab94b6b2a8735f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 12:25:05 2021 -0500
+
+    ajustes de guardado many to many en formulario de editar pregunta 11
+
+commit 4a47cf882d0762239fd44f9214a9832f8fa10bb0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 25 12:15:08 2021 -0500
+
+    validaciones según flujo de constetacíon en pregunta 11 del formulario de editar ddi
+
+commit 5a49523a2bb3b09a85f7a3493dd5bd09a49b94e6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Oct 24 19:34:24 2021 -0500
+
+    estilos para opciones de respuesta de la pregunta 11 del módulo B
+
+commit 3a4e88f51e95e8404b27c8ff09d188c1d50a94f0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Oct 24 19:11:44 2021 -0500
+
+    estilos de la pregunta ¿Quién identificó la demanda de información? en la opción entidad en los formualrios de crear y editar ddi
+
+commit 26655819fecc1eae99e65a09f46ebe0aad400e98
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Oct 24 17:59:28 2021 -0500
+
+    desarrollo de funcionalidad de formulario para editar pregunta 11 del módulo B
+
+commit fc6189b86472cbc6d59bd2635313f516624f3ee0
+Merge: 952e3b0 e1dca5d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 22 18:33:44 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 952e3b0a42320c82174123d1b41afdc92f461532
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 22 18:33:05 2021 -0500
+
+    Ajuste de estructura en respuestas de pregunta 11  en formulario de editar
+
+commit e1dca5d571dc2239c4222e1bbf46075c468cb063
+Merge: 5121b9f d6fd07a
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Fri Oct 22 15:12:21 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 5121b9fb02d85d8e278c45d95d5b2900c5ac5bf1
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Fri Oct 22 15:12:09 2021 -0500
+
+    Ajustar la alineacion y separacion de los campos del formulario
+
+commit b416c598d10a59ae659c29b8bb261174521ecf40
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 22 14:24:15 2021 -0500
+
+    se quitan los permisoss a la usuaria mpriveras de ooee y rraa
+
+commit d6fd07acfd9422f64f09db7aa6ede97802c38229
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 22 11:23:59 2021 -0500
+
+    Vista de administración de las entidades consumidoras de información
+
+commit 72281818345004ccfe757db1acfc26b94377bf53
+Merge: 6eb5a36 d5da568
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 22 10:03:15 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 6eb5a36cce56fded9c7293dc268428de2ba42bd7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 22 10:03:05 2021 -0500
+
+    vista de administración para entidades consumidoras de información
+
+commit d5da56844f2c420e74624a668ceac3a0266fe554
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Fri Oct 22 09:48:43 2021 -0500
+
+    Implementar estilos para el formulario de la vista de crear nueva demanda
+
+commit 411c50b842ea9cf6bb77335a7f527c3cb9561a4b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Oct 20 10:12:44 2021 -0500
+
+    se incluye campo de entidad consumidora en modelo de demandas
+
+commit aea37e8fec0ef1ae9ed155886fe817947fac4987
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 19 19:17:09 2021 -0500
+
+    ajustes de validaciones en forms.py de los length
+
+commit b85ecdce3bd1cdebb93f97c882a695b7ac9a91f8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 19 19:02:59 2021 -0500
+
+    Ajustes de length en modelo
+
+commit a06b1b06dcccb9bd4326c491dd9651a003a30257
+Merge: 461ad95 637a804
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 19 18:19:44 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 461ad95f5994d207c3cf041688f1dbe60acaf34c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 19 18:19:00 2021 -0500
+
+    ajustes de length en modelo
+
+commit 637a804ec70e7d05d6edfeaea81954f262330d25
+Merge: 88c8cec 4b4f52d
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Oct 19 17:59:30 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 88c8cec794c8a0046e33b2981ce7e5ebd6618a21
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Oct 19 17:58:58 2021 -0500
+
+    Crear estilos para el formulario de crear demandas de informacion
+
+commit 61f1ef94a2eadaa2d75712f8276958609e62f49b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 19 15:42:18 2021 -0500
+
+    se crea modelo y forms para consumidores de información
+
+commit 4b4f52d96fb6598716301623d42310d3498a0d3a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 19 11:35:13 2021 -0500
+
+    se agregan validaciones para pregunta 10 campo otra entidad en formulario de editar
+
+commit 31e7fdea17b8e9146e55956292c3efc7070a2976
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 15 18:21:37 2021 -0500
+
+    se agrega campo otra entidad en la pregunta 10 del formulario de editar
+
+commit c5fdf635e3db7ec83f300434a77d00cce1abf176
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 15 17:55:29 2021 -0500
+
+    validaciones para los modulos de complemento de demanda
+
+commit d38b77dcdeaa2ee7b409c57d4bf8140fccf354a9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 15 14:29:06 2021 -0500
+
+    se agrega enlazan botones de editar demandas de información en el módulo de consulta y de administración
+
+commit 7b63a5d46140a1e74235448d8a2ff4148db3bb79
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Oct 14 16:14:34 2021 -0500
+
+    Modulo de novedades, criticas y comentarios
+
+commit 1a129d9220f7bbca2b513ec44735ce076761aec0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Oct 14 11:12:12 2021 -0500
+
+    Módulo de complemento de demanda
+
+commit 26da77104671e712077fda9ee8444be26547be89
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Oct 13 21:16:11 2021 -0500
+
+    Ajustes de modelo para pregunta 11 y su funcionalidad en el formulario de editar demanda
+
+commit 618900fb101de654e711d330c14c047e366f92ef
+Merge: d1dec93 44f1a38
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Oct 13 19:09:16 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit d1dec933e76f7152a3bf39b40536a5fa57385491
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Oct 13 19:09:00 2021 -0500
+
+    pregunta 11 en formulario de crear y desarrollo de formulario de editar demandas de información
+
+commit 44f1a383932353d577ccd5e491ec8951f91e29f7
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Oct 12 15:35:35 2021 -0500
+
+    Ajustar contenido para los instructivos de la pagina de Bienvenida y de Consulta
+
+commit d20b53147f7e581bef41bfa02136b4dccb681838
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 11 16:14:50 2021 -0500
+
+    Ajustes de modelo de datos para pregunta 11 y validaciones y funcionalidad para el campo de codigo ddi
+
+commit 6df915253ac5cbf997680711f641640b2bac6edf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Oct 8 15:56:37 2021 -0500
+
+    validaciones pregunta 3 Módulo A y ajsutes de visualización del módulo A identificación para roles administrador, revisor y tematico
+
+commit 3193f86ac85b45156ea557b7408320a139e3e398
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Wed Oct 6 14:08:43 2021 -0500
+
+    Ajustes estilos de NavBar y estilos estado en ficha tecnica
+
+commit ae32429228ec4f8f1ea0726a75510418e5a92016
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 5 16:58:50 2021 -0500
+
+    pruebas de tamaño de fuente para navbar
+
+commit d9fce011c02a0ccb15d2985878bdf8de8f58f418
+Merge: 8af1938 d1bc78b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 5 16:15:13 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 8af1938aafa7b00332a9b3da5dc77e521d081688
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 5 14:55:53 2021 -0500
+
+    ajustes de validaciones para pregunta 7
+
+commit c3d6a2523342dfb9292ff66677ef2fc0cc97aefd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 5 13:03:30 2021 -0500
+
+    Ajustes en pregunta 10 y validaciones para campos de telefono
+
+commit d1bc78be53ab0e1c67d23c0c9f0731a8044e2aaa
+Merge: 422d4c7 2b69f10
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Oct 5 10:39:47 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 422d4c7ceb25869d2ece5ef746fcf5b203ce9ef6
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Tue Oct 5 10:39:26 2021 -0500
+
+    Estlilos en el NavBar del menu de navegacion
+
+commit 2b69f1014ba47807870c8f025dfe7ba26b31adff
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Oct 4 11:05:00 2021 -0500
+
+    Ajustes para funcionalidad de mostrar totales de demandas en pantalla de bienvenida
+
+commit c582dd383994378cebfe526dc3542c2cceb12414
+Merge: 00be421 66b8843
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Fri Oct 1 12:24:55 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 00be42172096a991f44a38937cc51efdeeeb99ea
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Fri Oct 1 12:24:42 2021 -0500
+
+    Ajustes de estilo ficha tecnica para las preguntas SI
+
+commit 66b88439603c855ae7959d64de13d98bd2ee5705
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 30 18:00:23 2021 -0500
+
+    funcionalidad para buscador por nombre de demandas en el módulo de administración
+
+commit e3dd84a9d90d4b670e42a2baabc05d10408373e8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 30 17:30:40 2021 -0500
+
+    filtros por usuarios tematicos y roles en elmódulo de administración
+
+commit 8d2438af9af63420868f41e4f8e2f75c3d1c3fcb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 30 15:48:57 2021 -0500
+
+    Ajustes de configuración smpt con office365 para correo del sen
+
+commit fb5ef77723a7ea8b238937c04cbd7d18fa6d69e2
+Merge: 300d1f2 d529ab5
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Thu Sep 30 11:00:19 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 300d1f206643edb4a11c5411ab499cf374c8a7d4
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Thu Sep 30 11:00:03 2021 -0500
+
+    Ajustes de estilos en la ficha tecnica
+
+commit d529ab538489572b86c9579e6afacefd190b1e46
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 30 10:58:37 2021 -0500
+
+    Ajuste de modelo para modulos de novedades, criticas y actualización
+
+commit 1cca4c1af698dfb78cf3f63c50d6714da554e98f
+Merge: d25bab6 1c82ea0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 30 10:53:02 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit d25bab661824c72677bc54bfd396f09cac59add8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 30 10:51:53 2021 -0500
+
+    Filtros de módulo de administración hasta el usuario aobando
+
+commit 1c82ea0df544adb8121a203ee6ba9bd1f56ea594
+Merge: c33ce55 6f35fc5
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Sep 30 10:51:51 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit c33ce55082dba02e60665250dd44b9a33e2cef40
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Sep 30 10:50:35 2021 -0500
+
+    Se agrega atributo title en forms de crear demanda
+
+commit 6f35fc56a031cbba386300eee9f686acc921d0b6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 29 11:38:05 2021 -0500
+
+    se agregan datos de estado y codigo a ficha técnica
+
+commit 82b05b61284a31dcc4e53a25966108f9452584a8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 29 10:15:38 2021 -0500
+
+    Ajustes de menu navbar según la vista en la que se encuentre el usuario
+
+commit ea11472f9e1ab793cf3105d7a62f3e2152da5f82
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 28 17:48:35 2021 -0500
+
+    vista de administración de demandas por entidad solicitante
+
+commit 83011b6f3707ae9f0242badc69369cd51130f5e0
+Merge: 57169da 197a85d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 28 16:12:17 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 57169da4748b82aadd5582b2247ee0343802904e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 28 16:11:08 2021 -0500
+
+    se crea filtro por pregunta 6 La información solicitada responde a los siguientes requerimientos en el módulo de consulta de demandas de información
+
+commit 197a85dc8e9bddc1c87f29211a93d221d42b84e9
+Merge: 208fc27 24199cf
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Mon Sep 27 19:27:36 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 208fc27ada149e9ea32baf06ec239664dbd6ad95
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Mon Sep 27 19:25:48 2021 -0500
+
+    Estilos y estructura html de ficha tecnica demandas de informacion
+
+commit 24199cf99e84b87677a8e4fe538845f82ba3573c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 27 13:08:09 2021 -0500
+
+    Querys para mostrar total de demanadas de información publicadas y por area tematica en módulo de consulta para pagina del SEN
+
+commit 398c61ef87d96c1601a445879186225093fc5506
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 27 13:01:47 2021 -0500
+
+    Querys para mostrar total de demanadas de información publicadas y por area tematica en módulo de consulta
+
+commit 6daf1353637b79f77b81cb3be0ab50ea9b60d039
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 27 12:43:04 2021 -0500
+
+    Ajustes de query por rol para vista de bienvenida con los totales por demandas de información por rol y por usuario tematico
+
+commit 92a77f55877c6f22b931b2ff2c08ec7390c6a4d1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 23 19:14:49 2021 -0500
+
+    Ajuste de buscador por nombre de demanda de información en los campos many to many
+
+commit 112f8b4e92057425299c613274258c26dc84c5db
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 23 17:44:50 2021 -0500
+
+    Busacdor por nombre de demanda de información en módulo de consulta
+
+commit 7a02dca91221827ee8af63012dd4da1b86259802
+Merge: dd8c83f 0a38fac
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 22 14:36:51 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 0a38facd9f1bcdca6181e1a5c3220af76406722f
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Wed Sep 22 13:49:58 2021 -0500
+
+    Vista de bienvenida en el modulo de administracion
+
+commit dd8c83fc516f824186057c9acb156330d7c5e011
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 22 12:39:18 2021 -0500
+
+    validaciones según flujo de respuestas en la pregunta 7 del módulo B
+
+commit 247b3f11406ff217816cd956c13300e79a957f8d
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Wed Sep 22 11:37:19 2021 -0500
+
+    Estilos y html de la vista de ficha tecnica
+
+commit c516d085db76f5228326b6d02c96323669b80bf8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 21 15:52:09 2021 -0500
+
+    validaciones javascript para flujo de contestación en el formulario de crear demanda
+
+commit 5fe4c6e5d0344870143974ff5811239c00cdbaf8
+Merge: 186fcac dd8baf8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 15 16:37:40 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 186fcacdc3fd3b436b3e9f38e59448f4c585cdac
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 15 16:37:23 2021 -0500
+
+    pruebas con la pregunta 11
+
+commit 37b30b4051e9544c94f68d7a1c23e64963ecf3f1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 15 10:53:35 2021 -0500
+
+    se realiza la consulta para traer los datos many to many de la ficha tecnica
+
+commit b437acb90f1d1b114048c983bfd9155d41c48362
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 14 17:33:06 2021 -0500
+
+    Se agregan logos a ficha técnica cuando se va a realizar la impresión en formato pdf
+
+commit 9dd063be3d2c5bf5c6703bef1e6c34ac4bec6ebc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 14 16:41:23 2021 -0500
+
+    funcionalidad para mostrar datos en ficha ténica de demandas de información
+
+commit 6edf948f9d3189da495f5095a635bd428427a355
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 13 17:12:27 2021 -0500
+
+    se crea template y url para ficha técnica de demanda de información
+
+commit 089c54d023aa282dbb7db5354b54147e8e65a5f2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 13 16:28:10 2021 -0500
+
+    Formulario de crear demanda de información hasta el módulo D
+
+commit dd8baf8d97c905d7a8ec7767c246060ed9a7945c
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Mon Sep 13 11:01:17 2021 -0500
+
+    Ajustar icono de manual, cambiar el mensaje del tool tip y la descripción en los módulos
+
+commit a6da853b2d583c7bdf71795f617410853b23cdee
+Merge: 97e37a5 d4d2930
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 10 17:29:49 2021 -0500
+
+    Merge branch 'demandas' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion into demandas
+
+commit 97e37a5ba9b2e34b1efee7be61d96d178f43c0be
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 10 17:29:03 2021 -0500
+
+    formulario de crear demanda de información con validaciones de numeros de caracteres hasta la pregunta 8 del módulo B
+
+commit 7754005b8baa78afe113a147ec5125393f38ceb8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 10 11:25:46 2021 -0500
+
+    Validaciones de número maximo de caracteres para preguntas del modulo A y del módulo B hasta la pregunta 4
+
+commit d4d2930325579b24368ea36dde07dbcb812ef0ef
+Author: Leon V Sanchez S <cfragalec@dane.gov.co>
+Date:   Thu Sep 9 16:21:57 2021 -0500
+
+    ajustes sobre las vistas modulo de consulta SEN, modulo de consulta ooee y archivo base2
+
+commit 30e2ea449e96e8f897bee1caed08157670a52625
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 8 17:04:16 2021 -0500
+
+    se crea template de formulario de creación de demandas finalizado el módulo A
+
+commit b93ae04818bd814e7ad4aa1dcea5fe148b98b7f1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 7 16:16:46 2021 -0500
+
+    se agrega validación de la demanda en modelo de datos
+
+commit 4e611f4f14c20f5156d01ea07bde000e54053a47
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 7 14:31:35 2021 -0500
+
+    Ajustes de modelo de datos para demandad de información
+
+commit 6248656fe85cc18c4ff12243c58fa23b81332317
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 2 15:05:35 2021 -0500
+
+    Ajuste de tabla para visualizar demandas de información en el módulon de consulta
+
+commit fa636b287454c03ee8caaf93a11b07787cea1d8c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 2 14:55:03 2021 -0500
+
+    creación de template para formulario de crear demanda de información
+
+commit a35a27ca778787ebbb7afb717c5c63092c085f2f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 2 09:57:13 2021 -0500
+
+    Se implementan las tablas para el modelo de datos de las secciones de comentarios, novedades y criticas para ddi
+
+commit 69fef81456c5f70b714e02b95f584fbf8ae051e2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 1 17:09:22 2021 -0500
+
+    se crea vista para consulta de demandas de información en el módulo externo
+
+commit 6854c1d270581b691594d245b43532e45d3498e5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 1 16:42:33 2021 -0500
+
+    Implementación de modelo de datos
+
+commit ddcb673e134c6933b3570f495f0d14b2e9ead247
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Aug 18 16:26:55 2021 -0500
+
+    se crea app de demandas, archivo routers.py y se configura el settings.py para conexión de base de datos local
+
+commit c5259d8e4b2aae3447becf65a8ecc364ccc9a8e9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Aug 3 09:45:36 2021 -0500
+
+    Se agrega mensaje de descarga en fichas tecnicas de ooee y rraa para el reporte en excel
+
+commit 4e34f0488fc6eb9e6ee12e3f437a3fea6cc28f91
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 19 13:41:45 2021 -0500
+
+    Se agrega al usuario eeguayazans y se le asignan los permisos de visualización sobre las ooee y rraa que hacen parte de los temas  i) Moneda, banca y finanzas; ii) Finanzas públicas y estadísticas fiscales; e iii) Índices de Precios y costos
+
+commit 283fb2a8352e397a98147e41a12889d660c5c1da
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 6 17:43:05 2021 -0500
+
+    Se agrega la usuaria pczambranog y se gragan los permisos de visualización de ooee y rraa por tema 11, 12 y 25
+
+commit ab6a9089abb0ebdc7f17745faa14bf25a7ed7e6d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 28 15:03:02 2021 -0500
+
+    Ajustes de subject para notificaciones por correo para ooeee
+
+commit c721a1c594b05019fb7c4222ccdd3e5f703ec357
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 28 15:00:38 2021 -0500
+
+    se reemplazan los saltos de linea en el subject de envio de correos de notificaciones
+
+commit fd412bff76b00c047fdfa000b8d97b9f7ef468ed
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 28 14:51:18 2021 -0500
+
+    Ajuste de subject para envios de notificaciones cuando se edita un rraa
+
+commit 971dd8b04bf0e69eb518cdc7d068ce23357bb448
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 28 10:37:11 2021 -0500
+
+    Se agrega a la usuaria mjpradag y se le ajustan los permisos de visualización para ooee y rraa de las cual es responsable
+
+commit 823d53e2daf3f44431a2096ccdff9185391700c8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 14 17:02:52 2021 -0500
+
+    Se agrega ooee620 para que el usuario aramosh pueda visualizarla
+
+commit 7858f31a1988b028db037448adb06471b68e0aa3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 14 16:35:48 2021 -0500
+
+    Se incluye campo de correo electronico del responsable de la ooee en url de servicio para el funcionario harold roncancio y se reemplaza usuario dcpenab por aramosh
+
+commit b3489cf4ec0fa4a23023892c460813051c598111
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 11 17:24:30 2021 -0500
+
+    Se ocultan ooee y rraa en estado archivado para el rol de la fuente
+
+commit 31e534a19f0a4acccd28744f8d1bc2edc73ea8e1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 6 16:42:13 2021 -0500
+
+    identación en reporte por filtros rraa
+
+commit 19bcbb77144c893b82fe1abc354154f5821d6d63
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 4 16:22:28 2021 -0500
+
+    se quita el usuario frherreran de los permisos de visualización de ooee y rraa y se remplaza por gavargasr
+
+commit dc31bff7022f6b5adcfcc64ade39aa1d7326dbfc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 4 16:07:35 2021 -0500
+
+    se ajusta campos de area tematica y tema para que no sean cambiados por el rol fuente en formularios de editar ooee y rraa
+
+commit ea91c81d765b7888246b68d7e4d79d487133430d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 21 12:03:17 2021 -0500
+
+    Se crea servicio para consultar ooeee con la entidad responsable para que el ingeniero harold realice preubas en el desarrollo
+
+commit 73cb1c6b00432b5619c32618e96a03a8ee5b76dc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 19 17:05:07 2021 -0500
+
+    se crea usuario cequinonesl_2 para que puedan compartir este usuario y diligencias oooe: 221, 9, 360, 451, 13, 222, 37
+
+commit 368ab1ca156c1f4c0317aeac0227a7525061f0f8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Mar 24 15:28:18 2021 -0500
+
+    Ajustes de validaciones para pregunta 3 del modulo c forms, crear y editar cuando se selcciona opcion 1 y 3 u opcion 1 y 4
+
+commit 4f9e97007f4b1d011f44fa9508c50cf199226e0f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Mar 18 17:13:25 2021 -0500
+
+    ajuste de validaciones para pregunta 3 del modulo C cuando se marca opción 1 o opcion 2 o opcion 1 y opcion 2
+
+commit 7728c504f05200fba4965db35dc66e95684cb67a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Mar 17 14:23:20 2021 -0500
+
+    ajustes de links para botones de acciones en vista de all_rraa
+
+commit 298be63d6c5c1beb7eed1fc678c075c671957aca
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Mar 17 14:11:02 2021 -0500
+
+    se asignan permisos de visualización de ooee370 para el usuario kjdavilaa
+
+commit 0ef1799ecc33eb952f90164a50692214784721d4
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 15 16:50:59 2021 -0500
+
+    se incluyen mensajes de ayuda para diligenciar la pregunta 4 del módulo C en los formularios de crear y editar operación estadística
+
+commit a578957dd831e95ec6d1effb72b16b34f89542f9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Mar 10 10:07:27 2021 -0500
+
+    se realiza ajuste en los formularios de crear para deshabilitar selector de entidades y el rol fuente no lo pueda editar
+
+commit 59deae239d7426dea06a20f710c4e405fc3ab3fa
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 9 14:30:04 2021 -0500
+
+    se agrega filtro de entidad en vista de administración all_ooee y all_rraa
+
+commit ea61703770ce7ef447eb293550ed88562ec48c77
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 8 12:17:30 2021 -0500
+
+    Se deshabilita selector de entidad principal en los formulario de crear ooee y rraa
+
+commit f228a8a50e8a29063e05ef9057a69f2da8f2b916
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 8 10:51:28 2021 -0500
+
+    Se ajustan condicionales para la pregunta 3 del modulo C al seleccionar opcion 1,3 y 5
+
+commit 8ca312d93646446e93daf2ca37b72b07acfdb8dc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Mar 5 10:53:31 2021 -0500
+
+    se deshabilita selector de entidad principal en registro administrativos para rol de fuente
+
+commit 2be88cf3be763574b3ccfa4c6b6902d51736ba52
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Mar 5 10:43:21 2021 -0500
+
+    Se deshabilita el selector de entidad principal para los roles fuente
+
+commit 82026012f8babfd588d4ab8bb2f8f6ac60bf0e1c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Feb 26 17:29:15 2021 -0500
+
+    se agrega usuario nchudtr y se le dan permisos para visualizar las oe272, oe273 y oe274, al usuario jpcardozot se le asigan la oe370
+
+commit cf3c7fe3749721ba417066aa6496b664ea6a234f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 25 10:36:22 2021 -0500
+
+    se agrege label desde y hasta en pregunta 7 del módulo F de los formularios de crear y editar ooee
+
+commit 002f6a763dd7ed91883568fdd548123dd6d780dd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 23 16:35:49 2021 -0500
+
+    se realiza refactory de la vista de registros adminsitrativos en el módulo de administración para mejorar tiempos de carga
+
+commit 455075c947292a864e4b58bfa5921635b1952d04
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 23 15:13:52 2021 -0500
+
+    se realiza refactory de la vista de operaciones estadísticas en el módulo de administración para mejorar tiempos de carga
+
+commit 26be1b769729dad428a55fcb0f45433c2b2baab5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 22 16:24:07 2021 -0500
+
+    se ajusta el length para los nombres de ooeee y rraa en models.py
+
+commit c6c75804953f44d314662938f5f7c90ed4cbee2f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 22 15:37:45 2021 -0500
+
+    ajuste de ficha de caracterización de operación estadística se agrega campos de otras entidades responsables
+
+commit 30da14c41dba63270e51681497cb1768b981fd30
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Feb 19 19:01:44 2021 -0500
+
+    Se realiza reporte de ooee completo adicionando las entidades responsables
+
+commit db7f5fd4748ddfeaf495e4b11d21085020249bf6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 18 20:21:17 2021 -0500
+
+    permisos de edición para usuarias ambernalc y alsoto en OE600 Y OE427
+
+commit bb79af82435639f8c582f8efb9129afc0143acc5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 17 19:17:08 2021 -0500
+
+    ajuste de pregunta 6 de rraa
+
+commit de069e969ad60300307ce3323e9f3f87c53ea153
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 17 18:46:15 2021 -0500
+
+    se agrega campo de orden territorial en formularios de crear editar entidades y en ficha tecnica
+
+commit a62c76bd1ff2e7658c3ce4d62a372277878c983d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 17 16:00:16 2021 -0500
+
+    se agrega campo orden territorial en reporte de entidades
+
+commit 62120b6c90f8ed876dea77a9c230be54b27c9de3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 17 11:15:10 2021 -0500
+
+    se realiza permisos de usuario para ambernalc y se agregan los campos en reporte completo de Estado de la operación estadística  Validación de la operación estadística
+
+commit b246f38ce5bed353a33ed1148f9eb87d1130ed39
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 17 10:12:38 2021 -0500
+
+    se agrega critica y novedad a reporte completo de ooee
+
+commit 767ca5258672130925247bb5ed28cd06a1815390
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 16 18:42:58 2021 -0500
+
+    se crea tabla de orden territorial y field ord_ter para aplicación de entidades
+
+commit dc21fc8a22c9170b7f12a5378dcbd2bc4dc5754c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 16 18:09:47 2021 -0500
+
+    ajuste de error 500 con usuaria de la entidad ministerio de ambiente se graga funcion para quitar saltos de linea en el subject de notificacion de correos
+
+commit de3f2f42ba8e00819cde3568a832f0184a0d5f41
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 16 13:17:22 2021 -0500
+
+    ajuste de modelo de datos de ooee para campo ca_anual, se agrega validación en formulario de crear y editar ooee para campo ca_anual y se crean reportes de ooee y rraaa completos y se crean los botones en la vista de bienvenida
+
+commit 180f44fae7dcd5390d04beef84c37c7ae3791d70
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 16 11:04:16 2021 -0500
+
+    test para guardar ooee 334
+
+commit 5cb70f484b907572798061f6cafa4f0b755e51e2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 16 10:17:45 2021 -0500
+
+    refactory vista de consulta para registros administrativos
+
+commit c759eb229037e1c0e9e06bebdd5d33666e8381ee
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 15 19:29:21 2021 -0500
+
+    refactory vista de consulta para operaciones estadísticas
+
+commit b7506a1d4e059d77beeeb9060243eba0c9453252
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 11 21:36:23 2021 -0500
+
+    se descomenta envio de notificación rraa
+
+commit 7c5ef3d1d7ae7dd12110efe21e8fbefbe9b953de
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 11 21:29:46 2021 -0500
+
+    prueba de guardado ok en ra269
+
+commit bf3fc815fd478f3dc542838289147a17c2246ab3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 11 21:15:43 2021 -0500
+
+    pruebas de rraa cambio de estado con rol fuente
+
+commit 2a495a0b48b9cc3182dcfcb4697cd325d1914aec
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 11 15:10:29 2021 -0500
+
+    se realizan mejoras a los querys del modulo de rraa
+
+commit 5fde4199e485970543aeb188b614f0a4e1e166f7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 11 14:22:31 2021 -0500
+
+    se realiza mejora a los querys del módulo de administración de usuarios
+
+commit ec37cf2030656a9260d46fa56c729b0feb1e5f2f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 11 10:53:15 2021 -0500
+
+    se realiza mejoras a las consultas de los querys del modulo de ooee
+
+commit ec5ba99d2754977659ff1840b891860a80872aed
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 10 11:31:39 2021 -0500
+
+    se realiza cambio de operaciones para los usarios dane: apcasasv, dacobaledam, jepalaciosm, eforerom
+
+commit 388bbcae3b916c7e4f8055870058b7338f273e28
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 9 11:00:15 2021 -0500
+
+    envio de correo de notificación para rraa
+
+commit 710906126b9b2c301cdc60ec3af644df0531d917
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 9 10:17:56 2021 -0500
+
+    pruebas de fecha en rrraa
+
+commit 10688036a30b86b846cc1033e3ad22388d4044e9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 9 10:00:03 2021 -0500
+
+    se ajustan cpermisos para el rol de validadro en el modulo J de ooee el modulo E de rraaa
+
+commit 6a8b802a4c0013c5262635f49ed59f2b546848d1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 8 15:04:11 2021 -0500
+
+    Ajustes de formularios de evaluacion de calidad y de fortalecimiento
+
+commit 2650d16775760508cc58719f3f60783a20a9a33f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 8 14:54:01 2021 -0500
+
+    ajustes de formulario de crear usuario
+
+commit 2647597f2145a9d53f5dd7381624db6921928982
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 8 08:44:39 2021 -0500
+
+    se descomenta envio de correos
+
+commit 7b6b6cf12428a369d9502a972965422401c7b23f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Feb 5 15:08:41 2021 -0500
+
+    pruebas mod security rraa
+
+commit 5da56d4bc79bfa4d1b06911a74dc05c07ec0a078
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Feb 5 14:48:30 2021 -0500
+
+    pruebas para modsecurity
+
+commit f08ce08c7792e4a97c8814e5d0d2ee539c6bd6b7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 21:33:53 2021 -0500
+
+    pruebas con ooee 270
+
+commit eecaca4f2021d940d5a53227df8a2b4954d05457
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 21:14:49 2021 -0500
+
+    pruebas ooee 270
+
+commit 3808e68008cb2ecf441a2601e8d8c975cca45eb5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 20:07:44 2021 -0500
+
+    prueba de guardado de archivo ok
+
+commit 2e6cb1ac80f0b7b8013a09675cbe6286214c4d8d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 19:47:03 2021 -0500
+
+    pruebas de guardado en ooee 35
+
+commit e8418df8f9b98fa1f31bfaa727b142f7f7fde803
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 19:41:43 2021 -0500
+
+    se agrega mensaje de descarga para los reportes en excel
+
+commit 01c5fb35ce80fa2dfe4948d8a03ee2c1bedba213
+Merge: 076b448 2790f7f
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Feb 4 12:09:14 2021 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 076b4489f6ed0421852a1fb3c6ee90826b96fe61
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Feb 4 12:09:02 2021 -0500
+
+    Se agrega campos solicitados por Monica Pinzon a los reportes del Aplicativo
+
+commit 2790f7f1d2e33095918780c01bc893eeb52ec325
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 11:44:10 2021 -0500
+
+    Se arregla paginación para las vistas que contienen tablas
+
+commit 5109e81be775f165936c743fdf7ef750eb16c2c1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 10:57:31 2021 -0500
+
+    Se agrega mensaje de procesamiento para las vistas de las app de entidades, adminusuarios y modulos de consulta de rraa y ooee
+
+commit 37aec8c41c6b595d70502575050697ede7dbc636
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 09:42:25 2021 -0500
+
+    se agrega nueva celda al reporte de todas las operaciones para el estado
+
+commit 2d722bdcc50fbb0ad909c47f71f73663da5af089
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Feb 4 08:43:57 2021 -0500
+
+    se quitan los print de los views.py
+
+commit 1ee464733bbfd7e2b6a8d22223b6fda633deb9c3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Feb 3 20:42:39 2021 -0500
+
+    se dan permisos al usuario mppulidor  y se agrega mensaje de procesamiento al cargar formularios
+
+commit 7de0f1f0d0d2e9f14927dcc7449f5d8e94991eef
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 2 14:50:03 2021 -0500
+
+    se ajusta el correo de la funcionaria stephany daza para envio de notifciaciones
+
+commit 8ce3c60e1f0b68c29d6a8dbf6b2ee4303f6001b0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Feb 2 12:15:00 2021 -0500
+
+    se ajusta redirecionamiento al editar entidades
+
+commit de4edcca61720b4c8d457ef8ee536d14e876a73e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Feb 1 16:00:09 2021 -0500
+
+    Ajustes para ficha tecnica de registros administrativos
+
+commit 7dfa26760452d4f80778be219018e15db31067fe
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jan 29 12:56:13 2021 -0500
+
+    se borra codigo de prueba con el usuario cjtorresb para visualizar ooee
+
+commit 88412c98ebc5e4013e15940dcc4f6c81db03c160
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jan 29 11:46:55 2021 -0500
+
+    validaciones para novedades de ooee y rraa
+
+commit f6eae843925b5285f432d14f49ddfe096ab39247
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jan 29 10:56:50 2021 -0500
+
+    vista de nuevas operaciones por coordinadores dimpe, cuentas nacionales y censos
+
+commit 913dedabe3ebc0982dae78b5e5ac8f3ddb661eb2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jan 28 16:15:35 2021 -0500
+
+    pruebas de visualización para ooee para coordinadores dimpe, censos y cuentas nacionales
+
+commit da135a1e0f4ad83cacf96304258b9f17c782168c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jan 28 16:11:33 2021 -0500
+
+    pruebas para coordinadores de ooee
+
+commit 5c3c82332413632621311b1dc4a39f6409d5fef9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jan 28 11:45:38 2021 -0500
+
+    se otorga permisos sobre las ooee del dane a los coordinadores de dimpe, cuentas nacionales y censos y se realiza ajuste de la pregunta 11 del formulario de editar rraa
+
+commit dc443b7897ab68a698ba861b75bedb34b0b2618d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jan 27 15:58:29 2021 -0500
+
+    ajustes de repsonsable para envio de correo de notificaciones de edición para el usuario rctrianaa mientras se realiza la contratación de funcionarios contratistas del grupo de planificación
+
+commit f722cfcc4790e10d293be2abbc03fbe7fed59cc6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jan 26 09:16:05 2021 -0500
+
+    se comentan funcionalidad de envio de correo para realizar pruebas de edición de formularios con el rol fuente
+
+commit 690b6bdc1cdc8e69c5a693c93fe72e79f1b3605f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jan 22 16:09:41 2021 -0500
+
+    se ajusta tabla de modulo de consulta de rraa para el rol de tematico
+
+commit ebc8133c4635fee031284a5357c0c4f7f0c3f05e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 18 16:52:03 2020 -0500
+
+    ajustes de numero de caracteres para extensión de formulario de editar y crear entidad
+
+commit 429cee78bed12a66b504e94d6fdacd3c19a643ab
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 18 15:55:33 2020 -0500
+
+    se ajusta permiso de visualización de formularios de editar entidad para rol tematico
+
+commit 9e67800d9a6bce09ed67a8844f51e8f16ff14c16
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Nov 18 15:26:27 2020 -0500
+
+    Ajustes de textos para modulo de consulta y ajustes de textos para estados en formularios
+
+commit 2c6d5eb3f2ccc131ae14116feffb40de5a4dfd1f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 13 09:47:31 2020 -0500
+
+    Ajuste de numero de caracteres para modelo de comentarios y mensajes de error
+
+commit cd5c09232cdacc2aef296067f5c3023aca985ce5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 18:04:46 2020 -0500
+
+    se ajusta texto de cambio de estado en RRAA
+
+commit f1efc3e8f211d864e1e4c27b1e194dff1e0eb250
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 17:54:45 2020 -0500
+
+    se crea funcionalidad para envio de correo notificando a las fuentes que la ooee y/o rraa han sido devueltos y deben entrar a la plataforma a realizar los ajustes hechos por el tematico
+
+commit ade44a9e4d55a1f75b47835075335c7f2cf687c9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 16:23:20 2020 -0500
+
+    se ajusta path para descarga de manuales
+
+commit b56ec9e8b9f70ee92f2151be974499c9c4d024ca
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 16:01:09 2020 -0500
+
+    Se genera mensaje de alerta para cambios de estado y etiquetas para los campos de crear y editar RRAA y hay errores
+
+commit db2b916aacfae65d774b7baefd557e4739e2f61b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 15:39:19 2020 -0500
+
+    Se agrega mensaje al cambiar de estado y etiquetas para mostrar errores en formulario de editar OOEE
+
+commit 6fff0754021528d7a51ed23710102309691f8258
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 15:13:55 2020 -0500
+
+    se realiza ajuste del mensaje al cambiar estado y se agregan etiquetas para mostrar errores
+
+commit 353163452335ea58277f994565f0627fcbd288cb
+Merge: d1e1e99 bdb4888
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 14:43:15 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d1e1e99ff9c6cec17cae1cca17d23e42d56cb2bb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 14:43:07 2020 -0500
+
+    se ajusta boton volver para que retorne a la vista anterior
+
+commit bdb48888dfd522679b00deb2d6c2709f0b1d9fc9
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 14:40:00 2020 -0500
+
+    Ajuste de estilos en rraa
+
+commit 2fc7d36dbc3a25af0c77174ce487ed66e3e9c911
+Merge: 6ea95d2 32ce337
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 13:24:17 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 32ce337b0d76a5caf630615f537b5557f8c4e756
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 13:13:41 2020 -0500
+
+    adicion de estilos en vista de editar
+
+commit 03fdecb1a192b98407f05775417fe1bdfeb7196a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 13:09:10 2020 -0500
+
+    Adicion de estilos campos adicionales en editar
+
+commit 03ced4ce9aae6a1f67fd0aab1a12cebb631eac72
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 12:34:54 2020 -0500
+
+    Crear menaje ficah tecnica
+
+commit 6ea95d2300fd9c2d236346c59e257277b4177ac4
+Merge: 7d5e47e d672c41
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 12:21:47 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 7d5e47e830381efa35d07210f2d58916de6cad90
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 12:21:37 2020 -0500
+
+    pruebas de etiquetas de errores ok
+
+commit d672c4186ce0412f2ce42d289e2893f64a71acbe
+Merge: 48ac915 ed0b1e6
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 11:56:47 2020 -0500
+
+    Merge branch 'master' of codeversion.dane.gov.co:DIRPEN/portal-herramienta-planificacion
+
+commit 48ac915faac5ecb338dfb4b34c928450f2dba5a1
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 11:56:35 2020 -0500
+
+    Ajuste de ficha tecnica
+
+commit 4e08dbae31ca6d0411ff0580676e783b140eeed1
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Nov 6 11:56:13 2020 -0500
+
+    Inclusion de botones manuales
+
+commit ed0b1e6e3ee91bc3c15499670a7ae2135f62dec0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 11:33:10 2020 -0500
+
+    se quita el disabled del selector de la entidad para el formulario de ooee
+
+commit f5dd189fb5ce324a6997bb93361ce07149901b60
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 11:14:13 2020 -0500
+
+    pruebas de selector para entidad
+
+commit 15787a1bc0a7b225de2e9a0ab6f965332842a9ec
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 11:08:02 2020 -0500
+
+    ajustes de perfil en crear rraa
+
+commit 5e4a62e9cd21cd7112084934da2b54ec2513c2fa
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 10:39:16 2020 -0500
+
+    novedadform en rraa para ver errores
+
+commit f7c7bd1bf086bbe490e3e20d6c5318960e0505f3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 10:29:21 2020 -0500
+
+    visualización de errores por consola
+
+commit 6f7a2661a5dea7b35251291ae278c8c2c7fb5443
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 10:05:02 2020 -0500
+
+    identación en views.py de app ooee
+
+commit 6f2fda734c24103c76476e02002e946f13434007
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 09:59:05 2020 -0500
+
+    se inhabilitan funciones de enviar correo
+
+commit 7b49b77bbdfa4eb1779ceeb510b8ff2b0f9701a9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Nov 6 09:57:19 2020 -0500
+
+    pruebas con usuario ancardenasc como rol fuente
+
+commit 86bb421a79f20f4a3584d9f3930299b344f29acf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 5 17:47:23 2020 -0500
+
+    se coloca por defecto la entidad a la que pertenezco en el selector de entidad responsable en los formularios de crear ooee y rraa
+
+commit 9a421ef2dd5e14ce62ea52b49a8596f39169fd94
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 5 12:07:10 2020 -0500
+
+    se agrega el ultimo estado de la actualización de la novedad en los formularios de editar y oeee y rraa
+
+commit af8893988617045569fcae214a65abb1c4e017cd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 5 10:58:25 2020 -0500
+
+    se suben en la carpeta media los manuales para el diligenciamiento de los formularios f1 y f3
+
+commit 58f241377bb9f2e3e3ff19ac70664cf7c0b5ee20
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Nov 5 10:41:10 2020 -0500
+
+    se agrega estado de la actualización y fecha en las fichas técnicas de ooee y rraa
+
+commit 243ffc187708a42e95adeb7ec201af98ad41a03b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Oct 14 15:40:14 2020 -0500
+
+    Ajustes de responsive en label pregunta 11.1
+
+commit bd020535c22f4fc49c2206d6c68b80e617ba6827
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 13 14:20:13 2020 -0500
+
+    Ajustes de texto pregunta 11 del modulo C de operaciones estadísticas
+
+commit c63b7bdc6878c81b792600a3cc37430c03e84f22
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 13 10:37:15 2020 -0500
+
+    ajustes de permisos
+
+commit d37fe139055cf68fb22b1a593186b4e8de116822
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Oct 13 10:10:18 2020 -0500
+
+    Ajustes de lenght para formularios de novedades y criticas en ooee y rraa
+
+commit 6c75f60aa1903c04e08558ee8e067f7c8bd98e41
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 29 15:31:24 2020 -0500
+
+    Ajustes de pregunta 11 en formulario de editar y crear ooee porque para los usuarios es muy dificil de contestar
+
+commit 4e69a51a74c277005b3b8500f18c7af479637522
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 28 18:51:45 2020 -0500
+
+    Ajustes de funcionalidad para generar codigo de entidades
+
+commit cb319a6714fcfccdc77f3558b3a108e31a2725b6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 28 17:04:41 2020 -0500
+
+    Ajustes de codigos ooee y rrra en reportes xlsx y permisos para ver pestañas de critica y de novedad
+
+commit 47b8d8947139d2dda150bc1300326cb68bbc06fc
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Sat Sep 26 13:25:41 2020 -0500
+
+    Ajuste de responsive de input formulario crear y editar OE
+
+commit 7bf12abbb8cfb914b4f5823f1cc4378fd5aa434a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 25 15:27:02 2020 -0500
+
+    Ajustes de length para pregunta 4 modulo D ooee
+
+commit e7ae4d314c83809082ecdf63891eabf992530c24
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 23 14:42:19 2020 -0500
+
+    se ajusta texto de correo al crear usuario para las entidades externas
+
+commit b64c92ce5681c04bf0a8563d00f8fd52082dd851
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Sep 22 11:41:22 2020 -0500
+
+    se elimina usuario woangaritaf y se reasignan los temas agricultura(1)  para frherreran y tema comercio(3) para lhsanchezz
+
+commit 831988ba8fb0a2b11f8c35af182cb026cce4f256
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 18 11:51:22 2020 -0500
+
+    Ajustes de código pk para modulos de consulta rraa y ooee
+
+commit fddd6fab66fc2ed544b6edb96fad53375f1a4580
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 18 11:44:45 2020 -0500
+
+    Ajustes de codigo pk
+
+commit 6fc35a47dca440b18295db6d410bbeb5613a8ee4
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 18 11:31:31 2020 -0500
+
+    Ajustes de codigos ooee
+
+commit e8747ac9c18768c79bfb52123e7444711e1cf0ea
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 16 09:15:01 2020 -0500
+
+    ajustes de length para nit en entidades
+
+commit d33b1de0f5c2eec2f19f7b0946b97edec9deb283
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 14 18:34:34 2020 -0500
+
+    Ajustes de form de entidades
+
+commit acb142dd19ee50493ea20c986cbd51ccbf847fca
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 14 14:48:41 2020 -0500
+
+    ajustes de formulario entidad
+
+commit 4ff41cb1203a3fe5499bcf35f8f9f88c4f88459b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 14 07:38:51 2020 -0500
+
+    se declara variable filtros_tema_oe para vista de nuevas operaciones
+
+commit 46c35d4778430ca4d5ea1ef6cfc30d9b83642926
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 14 07:28:50 2020 -0500
+
+    envio de correo se descomenta
+
+commit 807789d2957be3bd3d9f63da97dc39b371775ce5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 11 20:58:39 2020 -0500
+
+    funcionalidad para mostrar nuevos ooee y rraa
+
+commit be4d0c68aaf04f4766d59f8afaf8dcf6b2b79335
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 11 14:26:49 2020 -0500
+
+    pruebas en vista bienvenido para nuevas ooee
+
+commit 8b59c71ba5ee2d1c104987eea08d9fbcd8a14d36
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 11 11:21:06 2020 -0500
+
+    Se descomenta envio de correo al editar
+
+commit 999c8fdf3a3e03f515b26b8dd917599641dcd72b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Sep 11 11:06:56 2020 -0500
+
+    Ajustes de pregunta 11 y se oculta none en tabla para el estado de la actualización
+
+commit 7e283007a945fa0b32fcb2956fd6124dcd99b775
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 10 16:35:22 2020 -0500
+
+    Ajustes de novedad al crear registro y operaciones y mostrar ultima novedad en vista de all_ooee y all_rraa
+
+commit 79c62b5fa21b98f95b4b1fa7ed667acd5305818d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Sep 9 11:44:59 2020 -0500
+
+    Ajuste d
+
+commit 6c61662f57d6375090294d42cd3704227c8174c0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 7 14:30:58 2020 -0500
+
+    Ajustes de permisos para usuaria aobandor
+
+commit ab3560637d446fd73af5d15ebb190737a35bf965
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Sep 7 10:27:06 2020 -0500
+
+    Se crea funcionalidad para poner obligatoria las opciones de la pregunta 11
+
+commit dbb3c7ff2080f539cf6c73f9e58a46d43183ce12
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 3 19:42:43 2020 -0500
+
+    se descomenta funcion para envio de notificaciones para correo
+
+commit aae57d6da53846dac6d6389c58a1dc40295f54e8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Sep 3 19:37:48 2020 -0500
+
+    se agregan numeración a pregunta 11 de ooee y se quitan condicionales de cambio de estado para roles de revisor y administrador
+
+commit 600344c0e430a2137e31335d1a502f1a911a6463
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Aug 5 17:39:16 2020 -0500
+
+    ajustes de length para seccion de actualización
+
+commit 63e819472b15f29751fa2d6d47e8d94fd97dacf0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 31 16:57:56 2020 -0500
+
+    Ajustes de validacion pregunta 13 formulario crear rraa
+
+commit 275a772ff28204c3e98f3be90f03dc68f2b63109
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 31 16:56:34 2020 -0500
+
+    Ajustes de validación pregunta 13 en editar rraa
+
+commit a6f0437ca65304f61a454f5450bb40c57093f15c
+Merge: ccdacb6 c7b8b9e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jul 21 11:24:37 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit ccdacb64a5c0286a6d046541d7b60b3a054a8c0d
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jul 21 11:24:25 2020 -0500
+
+    ajustes del target blank manual de usuario
+
+commit c7b8b9ec601091573f1ac3e0695289c4cb9e82d4
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 21 11:23:00 2020 -0500
+
+    Ajustes de fuente para texto ver ficha
+
+commit 01594ef6c2ee5da85ac3b2a287a96b7262cc4d46
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jul 21 11:05:02 2020 -0500
+
+    Ajustes para producción y cargue de manual de usuario
+
+commit f5c82d33bc12e030ac701ed3a978bf0089468553
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 17 14:00:40 2020 -0500
+
+    Cambio de http a hhtps a url enviada por correos
+
+commit a5d20c2818a75593097533600dc5e051bf676714
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 17 10:35:53 2020 -0500
+
+    Ajustes de redireccionamiento y mensajes de creación y edición en formularios de crear, editar fortalecimiento y evaluacion de calidad
+
+commit 45bac4f1cec0cbe2376d60a76614e9c8c9670ec3
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 15 18:29:18 2020 -0500
+
+    Colocar enlace en login
+
+commit b6134e373bd4e2ce8585d4f6ba28347c873d01f0
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 15 18:23:50 2020 -0500
+
+    Ajustes de tiutlo de login y cambio de ico en login
+
+commit 630cde820889e8f868d83af8b6ed862e655cabf2
+Merge: d694637 635a2b5
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 15 18:04:13 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d694637194f4a333a505e8d825c7ab9ca6078897
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 15 18:03:08 2020 -0500
+
+    Configuración de collapse en campos con adicion de datos
+
+commit 635a2b5b3cb11dde3c570bc6acd9a2e3bc856eea
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 15 18:02:43 2020 -0500
+
+    Ajustes de ver ficha en vista de entidades y se agrega el nombre de la entidad en las vistas de all_ooee y all_rraa para el rol de fuente
+
+commit 56a0e02822a794769f9986321747ee4913a3af0a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 15 16:12:48 2020 -0500
+
+    Ajuste de contenido
+
+commit 26b0dc2a6bf7afccc16d2408169954db6403b3f5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 15 15:52:06 2020 -0500
+
+    Ajustes historial de evaluacion de calidad
+
+commit ff4dbb8ec6283a818aaeca1f90204af6a0064ec8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 15 15:02:23 2020 -0500
+
+    se agregan las nuevas opciones para evaluación de calidad cuando se genera matriz de resultados
+
+commit 0362cc2b5b62a201f01973eeb168ce7b12ee6c11
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 14 15:44:27 2020 -0500
+
+    Ajustes de textos en las otras vistas de entidades
+
+commit 674ea9d018a890c19855eddbfb2f5dcd85bdd517
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jul 14 14:34:05 2020 -0500
+
+    Ajustes de contenido y cambio de textos
+
+commit d1273049aff2c5da508456505ef52a64464aae3e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 13 11:52:03 2020 -0500
+
+    Se cambia icono de detalle por texto Ver ficha para el módulo de consulta sin login
+
+commit 86de23ddd8c2371bcc28d8836b96bf44827a086f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 13 11:24:22 2020 -0500
+
+    Se ajustan title y placheholder de form.py de OOEE
+
+commit bfc4aa01563fc4d33a14f8a51372a5874000de92
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 13 11:13:11 2020 -0500
+
+    Ajustes de placeholder y title en forms.py de RRAA
+
+commit 1ff5721d36cf06ee0381423b00e6a1ef38e76948
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jul 9 17:08:44 2020 -0500
+
+    Ajustes de pregunta 16 en edit y create RRAA FORM
+
+commit e75366143ac1615bd58bcec3d7dacb36792c8f71
+Merge: f28ecfe f2cafc0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jul 9 16:54:54 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit f28ecfe17cbe7105a218667ffdab080aedcd454f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jul 9 16:54:47 2020 -0500
+
+    Ajustes de posición para campos de texto de opción otro en RRAA Y ooee
+
+commit f2cafc06d2fa782135f62d09e10dcde31196cac1
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jul 9 16:50:50 2020 -0500
+
+    Ajsutes en pregunta 16mB RA
+
+commit d536efb6b6b4944c8d1465b505dea9d57ec82325
+Merge: bf8fae9 8a04a5b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jul 9 16:22:03 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit bf8fae9e9faffc510aa7ec8c629c7ff9708e5301
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jul 9 16:21:35 2020 -0500
+
+    Ajuste de boton de manual de usuario y asistente en vista principal de rol activa
+
+commit 8a04a5bb1836dc02268f6bfc6ab123b07e6a2787
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jul 9 13:00:38 2020 -0500
+
+    Ajustes de filtros por tema y fase del sistema
+
+commit 4b60a6422fe8e78286f388450416d88a78a73ba9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jul 9 11:43:13 2020 -0500
+
+    se agrega favicon sen en los templates base, base2, base3
+
+commit 7f7c3c7a8edac8927a1f7090285fc4ac4ce0c011
+Merge: fc958a5 1db696c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 18:40:29 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit fc958a5ffbe0ca0993b77162aaa4b78a30cd5ac2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 18:40:14 2020 -0500
+
+    cambio de estado de ooee y rraa cuando esta en estado publicado y lo editan para que automaticamente se cambie a estado enviado
+
+commit 1db696c58d3a80dcad27cc8608ce4af75d6d742b
+Merge: 335e109 977c958
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 18:38:14 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 335e1091313eec76e43e1c539bca3ffad63e29e8
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 18:37:59 2020 -0500
+
+    Ajustes de responsive
+
+commit 977c9589a57910f49baaf972b384a56e69e2c98c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 18:28:12 2020 -0500
+
+    validaciones para crear y edit RRAA con nuevos ajustes
+
+commit fdc8ba71dd333a9dd01a895d907cb6b676c15206
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 17:53:18 2020 -0500
+
+    Ajustes de validaciones en crear y editar ooee
+
+commit 8918951d86ab16c2118b2e7c7797cb9256be847b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 16:48:25 2020 -0500
+
+    query para total de ooee y rraa en módulos de consulta de RRAA y OOEE
+
+commit 85620dad0296d88abb35976b068e2b29643485f4
+Merge: fe380a3 bc14e7b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 16:35:46 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit fe380a30f93e4c83e5bd8a37d00921a7e50dfea2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 16:35:13 2020 -0500
+
+    pruebas de validaciones en formulario  edit ooee
+
+commit bc14e7b489a54f3d061794e128fef2473bef1f7f
+Merge: 05051a0 d468c11
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 16:34:10 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 05051a0604a463cce810926792c2ff1a2e9630cb
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 16:33:54 2020 -0500
+
+    Ajustes de contenido Milena
+
+commit d468c11a656e93cdb9e12d006c850802450eeb0c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 13:06:16 2020 -0500
+
+    Se quitan los none de la vista de detalle y entidades publicadas en la app de entidades
+
+commit 9d2a04f1e67d33132ab2a712df8d6fc953aba65c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 12:57:14 2020 -0500
+
+    Ajustes de menu enviados por Milena
+
+commit a182138ec3d50b8c1a45b42f57469c46aa34acaa
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jul 8 12:02:53 2020 -0500
+
+    condicional para oculatr none de app entidades
+
+commit 72fe821c9cbedec056c5b9b34da479006da7725c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 11:48:05 2020 -0500
+
+    ajsutes de btn asistente en modulo de ocnsulta sen
+
+commit 13dce3ede69d8b878cdde9452db053f57d12a6ef
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 10:18:01 2020 -0500
+
+    Ajustes finales del modulo consulta sen
+
+commit fdee264e79becc4f193956032e3e34ad09c1dc45
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 10:11:37 2020 -0500
+
+    Ajustes de modulo de consulta con apreciaciones de MIlena
+
+commit 1e155bc0fe9f7c90f5190de8d5eafb9a9b082bdb
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Jul 8 09:26:58 2020 -0500
+
+    Adeucación de vista consulta sen
+
+commit ade33d7c9993ac80c984e3778135ad64fc8ef872
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 7 19:06:34 2020 -0500
+
+    validaciones para preguntas con opción otros en formulari de editar y crear OOEE
+
+commit db6f82c6afdf79f77b13a74f54eb2244d5a45c55
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 7 17:59:39 2020 -0500
+
+    pruebas de servicios json
+
+commit fb3676eea2a6ca302371fb4635a4dca9113ee34b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 7 17:20:46 2020 -0500
+
+    se crea vista para iframe de pagina sen
+
+commit 6154cb826ea28378d21217612e69d67729f74f2f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jul 7 14:56:08 2020 -0500
+
+    Validaciones para preguntas que contienen opción otros de formualrios crear y editar RRAA
+
+commit c5b6d1bd834a20473dc821114f8d987a5f26e414
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 6 17:17:26 2020 -0500
+
+    import lib messages para mensajes de formularios
+
+commit 46f3dae61d7c8f8b1943b9aeb3573de59dc2a52d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 6 16:18:05 2020 -0500
+
+    Se redirecciona formularios de editar ooee y rraa a la misma vista y se agregan mensajes success y error según el caso
+
+commit e34bb008e785ddff479f3b0af9d76e45b5a30733
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 6 14:54:29 2020 -0500
+
+    query para total de OOEE y RRAA en vista de modulo de consulta
+
+commit af712dfe68cb3ba6f513d8dfd788a02905aa3c86
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 6 14:43:48 2020 -0500
+
+    se crea tabla y json estados de critica y se agrega el campo en el formulario de editar
+
+commit 27035eb9755e7efb719cdb2e586ee50cbe2c72bc
+Merge: 44957a1 df0da45
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 6 13:57:41 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 44957a1905a04bc086eaaeab60b9d7add469d0da
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jul 6 13:57:27 2020 -0500
+
+    Ajustes de fomularios editar y crear rraa, mensajes guardado para cuando se crea OE y RA cambio de formato de variables
+
+commit df0da45b9fc120b693eedaca5d223cf0ee683935
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Jul 6 13:20:38 2020 -0500
+
+    Ajuste de archivo excel apra cargar variables RRAA
+
+commit ed472dfdb14b568c37adbe715d0a97a39982e12a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Jul 6 13:06:17 2020 -0500
+
+    Ajustes de accecibilidad enviados por DICE, Inlcusión de totales y ajsutes de responsive
+
+commit ee5b2d55c8ef7387ffd2e43121af2d6927c54c35
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 16:14:55 2020 -0500
+
+    Se agregan campos adicionales en reporte xlsx de RRAA
+
+commit ab9b3fbf1047e3aea70b63300e30c659afd026bb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 14:05:38 2020 -0500
+
+    Ajustes  de reportes por filtros con novedades y criticas
+
+commit 4d63cd7f8288bb8f3b5706f7690b719cd0c38a49
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 12:43:09 2020 -0500
+
+    ajustes de hoja 3 y 4 variables y resultados en reporte completo de OOEE
+
+commit 73ec117a197d1d5d9bfc0d19f1e391f0d4eb12db
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 11:13:59 2020 -0500
+
+    ajustes en base2
+
+commit 725989824c6a15e30a3e467c3b479f76aaff51e8
+Merge: 4af0314 07af054
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 10:50:37 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 4af031478d6345d5a816cbfbe0d473f8d478abc7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 10:50:25 2020 -0500
+
+    se agrega estado y validación de la oe en reporte xlsx
+
+commit 07af05444aa20c1d4b4eb2441bfcbf8a5a271716
+Merge: 3bddd71 5b06d97
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jul 3 10:32:44 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 3bddd71675c9b803a2263b06b3db84ecd250e1ce
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jul 3 10:32:33 2020 -0500
+
+    Aliminación de arrow de modulo de inicio
+
+commit 5b06d97c91f20a0cb7f0171b63fac86b92eb2692
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jul 3 10:30:19 2020 -0500
+
+    se agrega novedades en reporte completo y se ajustan estilos de select en filters.py de ooee y rraa
+
+commit b464996af1849630d0918de313adfd4b3308d5b1
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jul 3 10:08:36 2020 -0500
+
+    Cambio de colores tarjetas  modulo de consulta
+
+commit c6912332c219d679b9a414c89a1af093478d2360
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jul 3 10:01:01 2020 -0500
+
+    Adición de logos DANE, PResidencia, SEN
+
+commit 838660cdf12f0a03aefb7ac8cc0ab94c92583b7c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jul 2 19:54:24 2020 -0500
+
+    ajustes de modelos de campos adicionales ooee y rraa
+
+commit 317df70e71b031adad4e08e04a633c2450aaa204
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 30 15:36:11 2020 -0500
+
+    Ajustes estilos detail RRAA
+
+commit 0315483bd62e8bf817ec75d3140ecb1d5a3e5780
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 30 15:30:58 2020 -0500
+
+    Ajustes de if desagregacion vista de detalle
+
+commit 5d60a2fa31a62f2d19ceacca1a815235de61efe3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 30 15:22:52 2020 -0500
+
+    Desagregación geografica en vista de detalle RRAA Y OOEE
+
+commit 6172560ced212b6388be93c94c99430e717c245d
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 30 10:59:02 2020 -0500
+
+    Creación de mensaje para resolusiones mobiles
+
+commit 134567355125d09b7d301593cb10220ba4cea038
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 30 10:45:03 2020 -0500
+
+    Ajuste de login en mobile
+
+commit 839a85cb3d0c4f26924066c04b760e5e072f84e2
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 30 10:40:24 2020 -0500
+
+    Ajustes de errores en login
+
+commit 24332a7a5eedfedfccf8763592f4ae17748682be
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 30 10:29:57 2020 -0500
+
+    Ajustes de responsive 1366 para formularios de crear y editar RA
+
+commit 2695380777d97b5af9cff35fd84f944ef77d2fa7
+Merge: d40d73d 6607e50
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 30 10:12:20 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d40d73d65bbc546001d473d4d251bdad9632937b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 30 10:11:24 2020 -0500
+
+    Ajsuste de responsive en formulario editar y crear OE
+
+commit 6607e500c12b64d643ad440abbcaf0744df27211
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 26 18:08:39 2020 -0500
+
+    Se crea mensaje para resultados de filtros en vistas de  ooee_all, rraa_all, module_consulta_oe, module_consulta_ra
+
+commit 496c9a1b363a38d4dded3cb365252a7b01f7123c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 26 17:03:16 2020 -0500
+
+    Ajustes de vista de detalle de OOEE se agrega target_blank y clase capitalize
+
+commit fa827ba900dc0f91dba2a3fccb09b112ad54e6bf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 26 14:40:46 2020 -0500
+
+    Ajustes de length para extensiones de entidades
+
+commit 8c4dec4cc4d8d492f8f3812ec53e2ab01df0f2a7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 26 14:17:49 2020 -0500
+
+    adición de titulo buscar y adecuación responsive de formularios
+
+commit e43106c268434514ace384c620cb01ac7564e8cd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 26 11:50:56 2020 -0500
+
+    Ajustes de vista de logout
+
+commit 3a3729d32d1ba591e61286fbb184f419323f35fa
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 26 10:59:56 2020 -0500
+
+    Ajustes de correos de tematicos para OOEE y RRAA según temas
+
+commit 31839f635c44cbaa31ddf5b8c39ac8a09ae7ebbb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 26 08:35:12 2020 -0500
+
+    cambios de url en funciones para envios de correo electronico cunado se crea un usuario o se edita un rol
+
+commit b37ceac1fa28ce6afc29376cf41e1f5a0c004e8f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 21:54:42 2020 -0500
+
+    ajustes de media en settings_dev y settings_prod
+
+commit 6c4235857ed7ad7e6b06a92bb11b56337e843635
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 20:35:25 2020 -0500
+
+    Ajustes de permisos para rol de prospectiva y se agregan archivaos en la vista de inicio
+
+commit 0cdd59d8c385d9566e993808a4127cdfba2bee35
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 18:05:42 2020 -0500
+
+    se crea rol de prospectiva
+
+commit e9f8aa2b7e53423033b803bab408f542b240b33e
+Merge: 502ef8f 7a3e231
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 17:43:18 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 502ef8f556f57e41a8951d9dd63d2145c7d207b6
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 17:43:05 2020 -0500
+
+    Ajustes de widt en preguntar con bootstrap select
+
+commit 7a3e2315eaf8b1d99f9690d8b319b4ce055d2aed
+Merge: a5fd9ac 5cf092a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 17:40:01 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit a5fd9ac04cff69695301edb0d3a5d0f9982ae83e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 17:39:45 2020 -0500
+
+    pruebas para preguntas tipo formsets se cambia atributo before por after y checks para clonar sin marcar
+
+commit 5cf092a470ef676a7221f5bbf0e04ed6dd52ec72
+Merge: 2ea1072 e98b98f
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 17:35:12 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 2ea10723ba4f43beaca90f36ce3460c0672ca241
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 17:34:59 2020 -0500
+
+    Ajuste de asistente en formulario de fortalecimiento
+
+commit 037e97486d0ce75dbc34cc199f0e259d0a5a3684
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 17:25:38 2020 -0500
+
+    Ajustes de asistente en formulario de crear y editar RA
+
+commit e98b98f3a6602ac806e4338bd29a1072f5c50093
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Jun 25 15:44:39 2020 -0500
+
+    Se quitan comas en el atributo title para Forms RRAA y OOEE
+
+commit ee42eb714bbca70b22b388154d684187183926c0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 15:01:45 2020 -0500
+
+    ajustes de campo ra_activo para mostar string activo o inactivo cuando se hacen filtros en Modulos de consulta RRAA
+
+commit 5da834fa3723e5ca150afd44b97101b136099f6b
+Merge: 6b8663c 520b30b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 14:10:29 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 6b8663cc85ec0c672439c5c690959400ead27c38
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 25 14:10:07 2020 -0500
+
+    ajustes de formatos de fechas para que solución de bugs de envio de correos
+
+commit 520b30b136c8332630108a0a31558fb4f2f202f5
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 12:36:08 2020 -0500
+
+    Adecuación de fover en menú short
+
+commit 5a7ba0c0c806f2dd7217b471e83819087567cf53
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 12:07:49 2020 -0500
+
+    Activar btn en menu de moculo de consulta
+
+commit b746e3a8923597ed314d36d0030aec10dd9e40c7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 12:00:54 2020 -0500
+
+    Ajuste de responsive q12mc rraa
+
+commit 52300d1ca15d4899388b3beff566d176e76cd406
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 11:47:57 2020 -0500
+
+    Ajuste de responsive en p3mB rraa
+
+commit 1c3e84497119b172aa26a75a1f6a1262b834adb6
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 11:39:03 2020 -0500
+
+    Ocultar lent en modulos  de consulta
+
+commit a7479b61a3bb4231e6bd2a7204a1e6b80f181291
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 11:36:03 2020 -0500
+
+    Cambio ico crear usuario
+
+commit a6521b3b977760334979d3b53c78229fae12e708
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 25 11:26:59 2020 -0500
+
+    Ocultar overflow scroll selectForm
+
+commit 0b22593c318e829556ad62e812ca865f4cd70ff4
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 24 21:09:51 2020 -0500
+
+    solución checks formsets en RRAA
+
+commit 792180d4981619e81decb58f6f0da560b0ad44a8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 23 16:12:59 2020 -0500
+
+    ajustes de validacioen
+
+commit 4048bb1c0503d890de50cc11c5592bbb270ea73e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 23 15:57:04 2020 -0500
+
+    validaciones documentos metodologicos y mensaje de errores en template de crear y editar
+
+commit 1245c106738ef6baecd92f53317de7b53c6c18a8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 23 15:38:33 2020 -0500
+
+    Ajustes de historial para modulo de actualización en RRAA
+
+commit 95753304ec640acf8a2bbb9d08ca79dff879a38f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 23 11:49:24 2020 -0500
+
+    Ajustes de length en base de datos de RRAA
+
+commit 22280a71a5f930cbb2430776f369443526b803cd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 22 20:25:01 2020 -0500
+
+    validaciones para preguntas formset de OOEE y notificación por correo electronico si estas preguntas son editadas
+
+commit 8d8850a009967c9e96e6d3219e427ab59270270f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 22 19:51:43 2020 -0500
+
+    Validaciones de lenght para preguntas tipo formsets y notificacion de envio de correo si pregunstas formsets son editadas
+
+commit bc02a72aa7b347710e11deaaa7aadfc20baed7ef
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 22 17:37:08 2020 -0500
+
+    ajustes de estados del sitema para ooee y rraa y validaciones si ya para valores que ya existen en nombre de oe y nombre de ra
+
+commit 27751dcfca660da2193d549fe474c2adc71d7c82
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 19 21:24:12 2020 -0500
+
+    Ajuste de pregunta 4 modulo c en formulario editar oe y ajustes de fuentes en select
+
+commit 1625ec763ea13e48de17e791e6cecb6027b9904f
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 19 21:07:49 2020 -0500
+
+    Inclusion de estado archivado
+
+commit df036139650c5b6532d320e6aaf3529dfdaba116
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 19 16:47:55 2020 -0500
+
+    pruebas de estados de la ooee y rrraa
+
+commit bb7969b3af2b1774d0fece54a16e73bbe43a0c96
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 19 12:55:14 2020 -0500
+
+    Ajustes y validaciones de campos de telefono para ooee y entities
+
+commit 0d31cd9728f56a0be062e6951cf9297aa2cc9a03
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 19 12:38:28 2020 -0500
+
+    Ajustes de campos de telefono en app ooee
+
+commit 2027ad8c6e43e24eeecdf72bc2688b433b144c2d
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 18 18:14:43 2020 -0500
+
+    add class active en navbar principal
+
+commit b05cc161ba7ae373531fc426f045128d7a098435
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 18 15:30:21 2020 -0500
+
+    Ajuste de scroll horizontal en form editar RA
+
+commit b7d19b5a0b0320cf08cc786116e8ce5bcb84f5cb
+Merge: 1fb9b48 c0d5cec
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Jun 18 15:18:34 2020 -0500
+
+    mergue
+
+commit c0d5cecbc676c3df9b82ef0ae6dd1d33b20e6546
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 18 14:05:55 2020 -0500
+
+    Se crea archivo settings_prod.py  para realizar pruebas de despliegue en entorno de producción
+
+commit 4396d118070512cc355e18c4308f26b108ee2a67
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 18 12:41:31 2020 -0500
+
+    Se agrega campo para entidades responsables en app de RRAA y se cambia el tipo de cambio de telefono a BigIntegerField
+
+commit 5a92c7792c8ea23151693ad4a0b2579559b9e683
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 17 15:21:07 2020 -0500
+
+    Ajustes de pregunta 4 del modulo C de la app Operaciones estadísticas en formulario de editar, crear forms.py y reportes xlsx
+
+commit c175e7469d6d0845eb3c5009c0a592c61ddf7d8e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 19:24:32 2020 -0500
+
+    ajustes de estilos para preguntas de cargar archivo en formularios de crear y editar ooee y rraa
+
+commit 15bf0dde7e89d4c8ab9a81db9287a9e25d6510df
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 18:11:12 2020 -0500
+
+    validaciones para sección complemento RRAA en formulario de editar RA
+
+commit 1fb9b4862da7417aed246ca0ed8263aaffadeed4
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 15:58:29 2020 -0500
+
+    Prueba de active del navbar
+
+commit b93c77a84b6305d2a380ddcbcf5cc7b9df46e108
+Merge: 04b5522 bfce70d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 15:37:15 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 04b5522cc7cf00926503c4689444d03673d9f58f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 15:36:59 2020 -0500
+
+    validaciones para formulario de editar fortalecimiento de registro administrativo
+
+commit bfce70d03b4fbe6245e4cb0cf014a526d6e9969a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 14:06:46 2020 -0500
+
+    Ajuste de visualización cobertura geografica en detalle de RA
+
+commit a0ccbb87997fc1b8af304c637364d25e31a95911
+Merge: d7cb05b cd6af47
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 13:32:30 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d7cb05ba8c1c0ebf4e4d81a8b64447794d203e59
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 13:32:09 2020 -0500
+
+    Adición de margenes para versión laptop de boton editar fortalecimiento
+
+commit cd6af4743be5b4b68aee4347a9ee2da262a91fc6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 12:45:55 2020 -0500
+
+    Ajuste de query ooee y rraa publicados según área temática
+
+commit 9743424a08dc95fe66f19f859d8cc18cc1b8e0f5
+Merge: 9c3f863 f72f5da
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 12:36:12 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 9c3f8632b58870fa032052f0803a4ca00dd4eca3
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 12:36:00 2020 -0500
+
+    Vista de bienvenida con tablero de registros administrativos según estado
+
+commit f72f5daa7bc154000553fdca610f8e6b76810d9e
+Merge: dfef94b 8345fa9
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 12:07:51 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit dfef94b8e7930490624f4311e66cc6d32504796e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 12:07:12 2020 -0500
+
+    Adición estilos complemento RA
+
+commit 57a5ee0ad371bed34d018c6ee5898787d765eaa7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 11:47:07 2020 -0500
+
+    Ajustes de campos forms responsive form RA
+
+commit 1a0643644e0b6fc534e79020f422dae99af5920d
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 11:38:05 2020 -0500
+
+    Ocultar en vista detalle de OE campos de tema compartido y entidades responsables
+
+commit 628fd4052934e1fd7256be260394bd4d9c0df25b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 11:36:00 2020 -0500
+
+    Quitar puntos en temas compartidos en RA
+
+commit 456d8a1da5195d3d190061e566b797585737bfab
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 11:33:18 2020 -0500
+
+    Ajustes de nombres en codigo de RA y OE
+
+commit 8345fa9b57d247cdd6046bd7db4ab94d16fb3944
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 16 10:49:40 2020 -0500
+
+    vista de detalle RRAA mostrar opciones seleccionadas de pregunta de cobertura geografica
+
+commit d8f0586504471f4ee3e8092c00e5c42bfcc4b960
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 06:26:34 2020 -0500
+
+    Ajuste de estilos modulo detalle RRAA
+
+commit 4e9121064444ed550d8453b12c78db282c248eec
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 06:09:48 2020 -0500
+
+    Ajustes de estilos input file en formulario de crear y editar de RRAA y OOEE
+
+commit f9367f8e2d99abe5d6bf1f5c5000ce367ea769ba
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 05:33:36 2020 -0500
+
+    Ajuste de tamaño select pregunta 4mC
+
+commit a5b910c4683425240a5e50e5692700ba7d430e80
+Merge: b5ed943 3231949
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 16 05:13:23 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 3231949876705ddaaf5f123e5fbf469b90b08896
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 15 21:03:55 2020 -0500
+
+    Validaciones para formulario de editar y crear RRAA
+
+commit f6c07762a749018f88e92c46df065127978afccc
+Merge: 70a638d 53ad2d5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Jun 14 15:08:12 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 70a638d10726121f098426ae6c5c43374de072e7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Jun 14 15:07:55 2020 -0500
+
+    Ajustes de filtros para vistas de all_ooee y modulo de consulta según estado publicadas y perimisos por rol y usuario
+
+commit b5ed943a4b04cf44f7cebdb9e547c347a4fcc825
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 17:39:20 2020 -0500
+
+    Habilitación de campo entidad responsable
+
+commit 53ad2d58ebaf5bf9f65819640bfb84267caa9d55
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 17:23:13 2020 -0500
+
+    Add ico editar fortalecimiento y evaluación de calidad
+
+commit 19697d6e4a719030583cfe05a27c25f00c3bbfa7
+Merge: 2bde405 ac788d9
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 17:00:35 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 2bde4054869f44b99d86778789056d1fea61cb63
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 16:59:40 2020 -0500
+
+    Ajuste de campo codigo en formularios de crear y editar OOEE y RRAA
+
+commit ac788d9c74f72c25f04fe670377e67cee37d1979
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 12 16:50:01 2020 -0500
+
+    Se realiza funcionalidad para filtros en la vista de all_rraa y modulo consulta ra y descarga de reporte por filtros
+
+commit 5d6bf84f79b1364d48b1fc87894dfff34c3f9b3b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 16:29:06 2020 -0500
+
+    Ajuste e implementación para vista detalle de RRAA
+
+commit 49991eda3fcaf719c6b986257c0c3079cbc51bb2
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 15:37:08 2020 -0500
+
+    Ajuste de select en pregunta 4mC
+
+commit 56648ff1a4849bbbb541204c654fc7d83111254e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 13:05:39 2020 -0500
+
+    Ajsute e implementación de estructura historico modulo de evaluación de calidad
+
+commit c0c1de390b9329b94f2df20d52ecfa40c78c168f
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 12 12:45:04 2020 -0500
+
+    Ajsute de estructura historico fortalecimiento RRAA
+
+commit 24038fc205dd3b5f015326e2860921db351a6b72
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 10 20:19:01 2020 -0500
+
+    Se agregan los nuevos campos para la pregunta 9 del moudlo B Clasificaciones
+
+commit 5d628908706c336faa35702a8c4cf9eb488cf678
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 10 19:33:15 2020 -0500
+
+    Reporte de registros administrativos xlsx por filtro de publicado
+
+commit a4f43dc6598fcbaa91676614a51ea3e7745b2341
+Merge: 3a47de7 36132b7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 18:23:31 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 3a47de71ba29af9abb1ff5bccdabc6847b76e8cf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 18:23:12 2020 -0500
+
+    contadores para registros administrativos segun área tematica para la vista del modulo de consulta
+
+commit 36132b7338246d6ef9fea5ab57fdb406caa0c1ca
+Merge: 64b9625 4cbb742
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 17:49:31 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 64b9625c6ea0d4a41d94325d208f01729978ad48
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 17:48:44 2020 -0500
+
+    ajsutes de formualrio historico fortalecimiento
+
+commit 4cbb7429abe5be86bfcd627ec5bb57a6b7866ce7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 17:47:41 2020 -0500
+
+    se crea lista para RRAA Y OOEE con selectores de bootstrap multiple box
+
+commit c8139e40e3b47b605f767058745744aa9ddbac35
+Merge: 825be3a 89a3cad
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 15:42:06 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 825be3a16117c91fe7c2773611b072df67172c63
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 15:41:56 2020 -0500
+
+    pruebas de bootstrap select con lista de RRAA
+
+commit 89a3cadb4092434f773353818d55442a5df7eaea
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 15:36:05 2020 -0500
+
+    Ajuste de colores modulo fortalecimiento
+
+commit d40804e271eab4b10a8c4c85e0d8e7efe1930d5b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 13:31:08 2020 -0500
+
+    Actualización de modulo de consulta con inclusion de RRAA
+
+commit e3e0d6994fd289e5455d2d0f067b1f5bd27e141a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 12:21:20 2020 -0500
+
+    Activar rraa en navbar principal
+
+commit 9d9b95bf6939ceabd6fae03efa95b38ea5a40b8b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 12:15:55 2020 -0500
+
+    Cambio de campo codigo
+
+commit 1ca5d28bf04f9039b712806e69073555e8771f5e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 10:59:34 2020 -0500
+
+    Campo mensaje editar ooee
+
+commit 2c9e4eadeaa23d442fb00f45b7a2b3f0691d4243
+Merge: 3f140a4 2ed4043
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 10:55:21 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 3f140a42698f81b8b476378c1b3d364b1e5ce535
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 10:52:58 2020 -0500
+
+    Add estilos fortalecimiento
+
+commit 29881d5d209e6bff481c8d637d274148aaa46b70
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 10:44:10 2020 -0500
+
+    Add estados y estilos fortalecimiento
+
+commit 90a95d12d81931b15a68e92677c1da332dfabb45
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 10:13:23 2020 -0500
+
+    Inclusión de funcionaldiad pregunta 17 en formualrio editar
+
+commit ac41c09709b20f0e8b6d45f436c4e7b946ad9264
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 10:05:48 2020 -0500
+
+    Ajustes de navbar Edit RRAA
+
+commit 2ed40439959ee5331e3a04350c3045e15a752a3a
+Merge: 6e8faad e3218dc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 09:50:21 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 6e8faad985525dd49e190d8193986728e840a1db
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 9 09:50:12 2020 -0500
+
+    se agrega widget con attrs para campos tipo filefield
+
+commit e3218dcc5b422dcc63f46cb6bf267ce58ed53e6a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Jun 9 09:48:38 2020 -0500
+
+    Ajsutes modulo RRAA
+
+commit 88d6310c8029d840e73114f8ec3928212cfa3da4
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 19:43:39 2020 -0500
+
+    funcionalidad para enviar correos de notificación cuando se edita un registro administrativo
+
+commit f8c5c37ab85204a58944501514aa40521d1f7ba5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 17:21:56 2020 -0500
+
+    titulo para modulo de complemento RA
+
+commit e627a90ec78dc5a8fe1a5c01b62946f9105ed74a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 17:04:55 2020 -0500
+
+    estilos de pregunta 18 del formulario para crear y editar RRAA
+
+commit 02f08cc63cebc2562c66a61771b61c9889527a6e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 13:04:13 2020 -0500
+
+    se crea models views y modulo para criticas de registro administrativo
+
+commit d77bffe20e739c6a602e472de7fd2e9e901093cc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 10:26:20 2020 -0500
+
+    se agregan fields de COMPLEMENTO RA en formulario de editar RRAA con validaciones
+
+commit 83405134f85790df50fc5edda020cdb759bec47b
+Merge: 20c0ad0 813f891
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 09:38:16 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 20c0ad09766874af42049359f924597fcfa2219f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 8 09:38:03 2020 -0500
+
+    se crea modelo de complemento rraa
+
+commit 813f89152fddccf8523959764a7dd0267f8b45e2
+Merge: 82cfebc bdc87bd
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Jun 8 09:11:53 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 82cfebcb027d27604791734daa1f81f56ad28916
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Jun 8 09:10:47 2020 -0500
+
+    Textos de identificaciòn para cada pregunta del formulario F1
+
+commit bdc87bdfda9594ed7b1840b2151b26637de8a558
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Jun 7 18:23:13 2020 -0500
+
+    funcionalidad para la pregunta 18 tipo formset para los formularios de crear y editar RRAA
+
+commit f1eddac88208a4fbfa8aac3a34a859779a5ca7df
+Merge: f3dbbd3 8a07db2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 5 17:48:17 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit f3dbbd35cb5874dfbd7a779f5712eda04407c1f6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 5 17:47:50 2020 -0500
+
+    Correo de notificaciones cuando se edita una operación estadística en cualquier de sus preguntas
+
+commit 8a07db23ccd608eb628bd52556b204713b2a146a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 5 15:32:28 2020 -0500
+
+    Eliminar <hr> de formulario editar RA
+
+commit dc7983e80682ae7d922a128e1ea4a8d5cfc27548
+Merge: 02b6473 cf10ca9
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 5 15:31:10 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 02b6473e3ac032f35f8809ee107bcd4c28defcec
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 5 15:30:52 2020 -0500
+
+    Ajuste de estilos e inclusión de componente estado en formulario de editar RA
+
+commit cf10ca9f64ca1e0e24d3a03341264018d225cece
+Merge: 0f20956 e1f2be2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 5 14:59:14 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit e1f2be245fbe22a7a817d1113fe67f3204bf24da
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Fri Jun 5 14:58:41 2020 -0500
+
+    Creación de cabeceras para reporte excel de RRAA, preguntas 7 y 16
+
+commit 0f2095670710b0ebab9e2f4d4c9ab9e8443a3797
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 5 14:58:14 2020 -0500
+
+    pruebas de parametro title para identificar preguntas en envios de correo
+
+commit 99ff1a8286bf107d9ad57029ec767f6795c98960
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 5 13:43:25 2020 -0500
+
+    Ajuste de estilos formulario crear RA, inclusión de componente de estado.
+
+commit 5158d4d29f782c76f69b3b8af71dc102eca1c1ab
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Jun 5 11:24:13 2020 -0500
+
+    Ajuste de pregunta 4 modulo C en formulario crear y editar OOEE
+
+commit d71c66a3807d71a4ec2cc19aa10d5cfe25754fe2
+Merge: e7a0cc9 37397c3
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Fri Jun 5 10:36:39 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit e7a0cc98496242b8bfdfc0ce3334512e035defca
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Fri Jun 5 10:36:15 2020 -0500
+
+    Creación de cabeceras para reporte excel de RRAA
+
+commit 37397c31d6fdd607813867cf9029ab637f483a6d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Jun 5 10:00:45 2020 -0500
+
+    condicionales para envio de correos según el reponsable de la OOEE
+
+commit 99daae5feb55ecb1e6217d1766906a50bd0ccbd7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 4 21:35:18 2020 -0500
+
+    correo de notification para administrador y responsable de la oe según tema cuando se edita operación
+
+commit e5ed0f2f5d08a59cc27a9c9751b7d4481b84cec1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Jun 4 14:43:45 2020 -0500
+
+    Se crea template de modulo de consulta para registro adminsitrativos
+
+commit c20911a71c74394eabc3d28b6946b0a073e2cabd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 3 18:31:44 2020 -0500
+
+    Ajustes de filtros en mensajes de no hay resultados
+
+commit 5da95f8c34e8576fc5e77c8b44d2002f7208bf49
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 3 17:39:03 2020 -0500
+
+    Ajuste de filtros para mostrar mensajes cuando no hay resultados
+
+commit e5b00dba839fead50c84bd657e1623b075aee133
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 3 13:10:15 2020 -0500
+
+    Se crea vista con formulario para editar fortalecimiento de Registro administrativo
+
+commit 1adbff6a76751541273998a9658bc171a64878cf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Jun 3 12:25:48 2020 -0500
+
+    se crea modelo y vista de crear fortalecimiento de Registro Administrativo
+
+commit 3d6b43a77b2a772e896af9b7f6a9cc62cdbfe807
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 2 17:27:41 2020 -0500
+
+    Modulo de actualizaciones de en formulario de editar registro administrativo
+
+commit ed624a622b36e48c2c09f2942b92638124fbffc1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 2 15:20:34 2020 -0500
+
+    se inicia función para descargar reporte completo
+
+commit 9224818e36dad57546145a1ca83478ac75622973
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Jun 2 11:06:01 2020 -0500
+
+    plugin formeter js para barras de progreso
+
+commit fb2638b32c4c0bcf472dab1a4e6092764b5de867
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 1 19:27:12 2020 -0500
+
+    refactory funcion de reporte por filtros con login y sin login
+
+commit 2f2b1b753d9d7912e1d2cf1eb98b14a2517ad62a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 1 12:39:31 2020 -0500
+
+    Se crea vista para detalle de cada uno de los  registros administrativos
+
+commit 62c4a6c1e7f0beff19dde778d3d9a3a95021bad4
+Merge: 1878035 a2c0b32
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 1 10:48:03 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 187803577937203d639925943f584861477e54ac
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 1 10:47:54 2020 -0500
+
+    Se oculta boton de generar reporte en vistal all_oeee
+
+commit a2c0b32b77cb2ac9d4539012c16e6315f7d48216
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Jun 1 10:46:34 2020 -0500
+
+    Ajustes de margin en componente de estado
+
+commit cc55be5ce20666cab50a50b76704abeff64092e4
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Jun 1 10:45:01 2020 -0500
+
+    Ocultar btn j respecto al rol
+
+commit 7ea5c4dc8ca7d2daf6a4e67caabfaf327e1045f7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Jun 1 10:39:42 2020 -0500
+
+    Combinación de estilos de tooltip en modulo de consulta ooee
+
+commit be76886e73eec9d3b2f7e4c4e940416b20d87c81
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 1 10:37:13 2020 -0500
+
+    Ajustes de formularios de editar y crear rraa
+
+commit 126fb3012032236c4ee5a40f3a9ca97669b6d0a5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Jun 1 09:52:30 2020 -0500
+
+    se crea field cargar archivo en models registro administrativo para la pregunta 7
+
+commit cb737bca231da3a24f3ad4dff5da7a1e3015e215
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 31 18:14:28 2020 -0500
+
+    Ajustes de permisos campos adicionales modulo de operaciones estadísticas
+
+commit 946e806688539e590711c15d6006ba138c8c907a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 31 16:55:36 2020 -0500
+
+    Ajustes de pregunta de entidad fases
+
+commit f16d58e8bd75226b74de8a05a764aac895d31219
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 31 16:00:14 2020 -0500
+
+    solución de bug de modulo de validación para el rol tematico
+
+commit d30ca2df11f93be70df47f38976e65e091d9a1aa
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 31 15:32:39 2020 -0500
+
+    ajustes de estado de la operación estadística y validaciones de comentarios criticas actualizaciones y evaluación de calidad
+
+commit 7efc617dd866eab7bd83ed2546cd25167004eccf
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Sun May 31 13:25:26 2020 -0500
+
+    Cambio de estilos tooltips
+
+commit 2bb01afd3f1a226a03f833470893faae746abc24
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Sun May 31 10:34:48 2020 -0500
+
+    Creación de funcionaldiad de estado inicial de campo estado OOEE
+
+commit d4c587872395cfe1c8de972c284caa6cbfc64208
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sat May 30 19:26:06 2020 -0500
+
+    se crea vista y formulario para editar registro administrativo
+
+commit e138ccb11e0b600e675ed8fa6d479626af56c767
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sat May 30 17:07:20 2020 -0500
+
+    Formulario de crear RRAA y vista de todos los RRAA
+
+commit c0eb27fa72be269f30c52c3f015e8ce56c6ea71a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sat May 30 11:34:10 2020 -0500
+
+    se quita empty label de selector de estados y se ajusta json de roles
+
+commit 26eb6f4472c96f7f5d8a054eff13fd4c6a3b518e
+Merge: a7ce94a 25cd3a6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sat May 30 10:53:26 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit a7ce94aeb772edecbe79ac53b84b2f65e4b996f5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sat May 30 10:53:05 2020 -0500
+
+    pregunta 10 del formulario de crear rraa
+
+commit 25cd3a62faa36ce0e4481f7c31e05a91456e4c3b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Sat May 30 09:27:08 2020 -0500
+
+    Adición de tooltips a navbar de modulos en formulario editar y crear ooee
+
+commit a9a5757816b5ae4411fbcb1644783b936b88a739
+Merge: 96f5e5a 8102e5c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Sat May 30 09:15:07 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 96f5e5aafe9088cbec6b470b55ceec892fd08123
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Sat May 30 09:14:44 2020 -0500
+
+    Cambio y ajuste de componente estado de la operación estadística
+
+commit 8102e5c07295aaf6b1e0b836515c4a6670767e6b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 29 20:38:43 2020 -0500
+
+    Ajustes de pantalla de bienvenida para usuario con rol invitado
+
+commit a99b3d6dc84b429ef2742e6fab7f7c993ea5a07d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 29 20:33:30 2020 -0500
+
+    vista de bienvenida por usuario numero de operaciones a cargo, borrador, enviados, validado, devuelto, publicado
+
+commit 8f3c6158dfed71577fa5285ce687ab877c08a044
+Merge: 07b5e5d 1f342e0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 29 17:34:52 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 07b5e5d2ac85b7a36ac7ca91253afaf9a9bc80ea
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 29 17:32:50 2020 -0500
+
+    construcción de forms.py para registros administrativos
+
+commit 1f342e0c10ff461a4cc7861006fb4af182c58588
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 29 12:55:59 2020 -0500
+
+    Cambio de enlace paginas de error
+
+commit 80e798eb30952c9f934792fcaaf766a05d9913fc
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 29 12:49:47 2020 -0500
+
+    Ajuste de preguntas si y no en editar y crear entidad
+
+commit f0c52db98c19467354889648b09d20e7410c1686
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 29 09:31:01 2020 -0500
+
+    Ajustes de mensajes pregunsta 3 modulo c en formulario de editar OOEE
+
+commit 32c41202604cc2281854934c10617a5094675c0f
+Merge: f97b3af 2f11b9d
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu May 28 19:37:27 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit f97b3af0537ace71fff48254b0fd6b73555931ee
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu May 28 19:37:16 2020 -0500
+
+    Creacion de Json para APP RRAA
+
+commit 2f11b9d3d5d0b9725fa502b89f773bff8a5292e7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 19:26:24 2020 -0500
+
+    estado activa e inactiva y solución de correo dir
+
+commit 793790ac0902f9aae17722a20c24d464dc9adb85
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 18:58:03 2020 -0500
+
+    Se colocan tooltips en botones de acciones en la vista de consulta de las OOEEE
+
+commit 37e0c97238559beb96325059b496906a15c4133e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 18:32:13 2020 -0500
+
+    se ordenan alfabeticamente tema, area tematica, entidad, operacion estadística
+
+commit d99a199ad25730521ead870e5a97f7171bb7877a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 18:03:36 2020 -0500
+
+    Se organizan entidades y operaciones en orden alfabetico
+
+commit 69465d26322566ddd2704a2000a656e3e534a948
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 17:28:33 2020 -0500
+
+    validaciones pregunta 3 del modulo F mensajes de información
+
+commit c8e8af03bbf701568166a2a85658b4759fd16e46
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 15:40:02 2020 -0500
+
+    Ajustes de link en botones de volver cuando no estoy logueado
+
+commit c6bd2c49015cf9424f09cf6fc00d76ef71db945d
+Merge: bbd9d08 9d43cbe
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 15:32:02 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit bbd9d08caac29badb77dc03d0dbbc1308e9b4dbc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 15:31:19 2020 -0500
+
+    ajustes de planificación en preguntas del modulo F
+
+commit 9d43cbe31b8cf3f06fd71b6d88868fabb85c9aba
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu May 28 12:58:50 2020 -0500
+
+    Cambiar nombre placeholder en pregunta B3 por "Describa el requerimiento"
+
+commit 854a3b5e5205bc9e3fb24fe55f1d3cd13f94c369
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu May 28 12:47:38 2020 -0500
+
+    Ajuste de warp en titlulo de detalle OOEE
+
+commit 0337f7956b23547de515b8f615cefa21788e8ad6
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu May 28 12:44:45 2020 -0500
+
+    Redirecionamiento de enlaces en detalle entities
+
+commit fa5cba28fb2ced372cfa3f07a42b038a79a0d45f
+Merge: 99536fe 6ab0e29
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu May 28 12:39:53 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 99536fe11c075621c6d251e70ebae180ee269872
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu May 28 12:34:36 2020 -0500
+
+    Ajuste de estructura vista detalle OOEE
+
+commit 6ab0e29be427e3e9792cc73662c417c687ee68b8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 12:10:02 2020 -0500
+
+    se llama app rraa en settings_dev
+
+commit a45b8944895672134452be5420e74320f300a057
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 28 10:23:55 2020 -0500
+
+    tema compartido en reporte de detalle
+
+commit fe260b2ebf713d1bcecd267b78bcceb77316e0ae
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 27 20:00:26 2020 -0500
+
+    se borrra un archivo en media
+
+commit 783ec319ddf6e9a27a80b750470a8f3ecce07070
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 27 19:59:05 2020 -0500
+
+    permisos para usuarios de planificación por temas
+
+commit 9b2e1d181917df22a01518616825d79eeb5db6ed
+Merge: 19f9c76 46900e7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 27 18:27:04 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 19f9c7672e084a0273b5d40371d173d237c5b413
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 27 18:26:33 2020 -0500
+
+    Ajustes de reporte por filtros en modulo de consulta
+
+commit 46900e754d873f0f2b18b71676ed402066ff1c52
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed May 27 16:36:05 2020 -0500
+
+    Redireccionamiento de enlaces en páginas de errores
+
+commit 0fe0970989217718f0e317ff57f3f832a09b4f62
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed May 27 16:26:52 2020 -0500
+
+    Ajuste de libreria printThis para modulo de entidades
+
+commit 59c6ed58a2b0e7e05cf05dff7b5eab45f08b3c72
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Wed May 27 14:39:17 2020 -0500
+
+    Ajuste plugin PrintThis modulo OOEE
+
+commit f28ad1d3f758427d52ff71e9228d15c16b16c051
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 27 09:24:56 2020 -0500
+
+    nuevos ajustes de length
+
+commit 416f60a9870c1702343a0749281f1dd70a1ba37b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 26 18:40:40 2020 -0500
+
+    ajustes de length
+
+commit 834bf87f8229bbdc1ecc9b4519335c2e37e80807
+Merge: ab29ac3 c8015bd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 26 13:42:42 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit ab29ac316537e978b21084f3ba4de76d064ba411
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 26 13:42:17 2020 -0500
+
+    se incluye str en formato xlsx
+
+commit c8015bd74bfea000f878ecd17c3f241530bba4dc
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 11:21:28 2020 -0500
+
+    Adición de titulos en asistentes
+
+commit dbd57a337819abe3761489144d6998deb09f7e3f
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 10:59:58 2020 -0500
+
+    cambio de tiutlos para modulo de evaluaicon de calidad
+
+commit 2135967525cf43d7d3f70e9418781aa0d6e52c8b
+Merge: ef7e991 5146876
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 10:30:04 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit ef7e99177713bcc9aa1626d829f0f432a0e9ec47
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 10:29:42 2020 -0500
+
+    Cambio de titulo modulo de consulta
+
+commit 521cc8f63d6a776f4a99cb0584c1d01f1eb560a5
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 10:26:27 2020 -0500
+
+    Ajsute de estilos págian bienvenida
+
+commit 3c21b256a26ccf50e850829d06841c94a7fb1aa7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 10:19:11 2020 -0500
+
+    Ajuste de textos asistentes
+
+commit 514687637372392d4fd931cb6c48ff051c5f06b2
+Merge: c38fc4f a8da2f2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 26 09:58:53 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit c38fc4fbc54fb69128299fa34f7153698eaadfda
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 26 09:58:34 2020 -0500
+
+    ajustes de length en campo de población objetivo
+
+commit a8da2f2a187546001c31a3a486502ccc6e588f0c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 09:30:24 2020 -0500
+
+    Adicón de textos asistente modulo de evaluación
+
+commit 212f5bce895ef82f197d6d0cafb5edda89ebaf7c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 06:19:52 2020 -0500
+
+    Adición de textos asistente en modulo ooee
+
+commit 747ca8f7f4f1e3de700be469a20125929dfcfe59
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue May 26 05:38:15 2020 -0500
+
+    Rertirar clase capitalize de todo el documento
+
+commit 3c775a092493a7e39ebb5acf6975e052b5524f21
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 25 22:07:28 2020 -0500
+
+    comentarios para preguntas modulo f
+
+commit 635f921d54aa5e646e4299c444505f112736430d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 25 18:43:48 2020 -0500
+
+    se quitan los styles border del reporte completo de las operaciones
+
+commit 4558fb793ece0c21321f70d88561ffb455ebb779
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 25 16:02:28 2020 -0500
+
+    se quita imagen del sen de los reportes xlsx
+
+commit f4bf810ab0f67731f53f61cb46c01bb2b4880ce0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 25 15:26:39 2020 -0500
+
+    pruebas de imagen en reporte xlsx
+
+commit 2c720ee13251cfeaad7cf6121faf359171f772bc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 25 10:10:49 2020 -0500
+
+    Validación de campo res_est_url en formulario de crear
+
+commit 8f17672f3740509753dc5ad903e79b5bca9c05c9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 20:05:11 2020 -0500
+
+    ajustes de nombres en vistas de entidades publicas y no publicadas
+
+commit acb5d6e61ff344e2fcd79c0fe7c57e9c6db3ab1d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 19:56:37 2020 -0500
+
+    número de operaciones por entidad en vista de entidades publicadas
+
+commit e81964f1bf617e94585cf155a51dccc3f02ae2df
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 19:42:33 2020 -0500
+
+    Ajustes de allowed host en entorno local
+
+commit 00206ecea48bb8fe584ea68f1d3de805f078ed9a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 15:03:27 2020 -0500
+
+    Ajustes de length para pregunta de principales usuarios a 2000 caracteres
+
+commit 0670bb5e744db184ad39c80ed1ff80c1f97ab50a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 14:50:40 2020 -0500
+
+    Configuración de correo Sen@dane.gov.co para envio de correos
+
+commit 023ebcb6a35c24c2ad895c9e46c6f959f3376f7e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 14:19:09 2020 -0500
+
+    reporte de módulo de evaluación de calidad de todo el directorio y por filtro con las observaciones del grupo de calidad
+
+commit fba51d61b69599a508487b5cc366c35f3bccc37d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 12:05:10 2020 -0500
+
+    ajustes de permisos sobre formulario de editar operaciones estadísticas
+
+commit 9c2c7d8bdee777d890c0804cec78b49c1ab1ed32
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 11:30:29 2020 -0500
+
+    ajustes de length en pregunta 4 del modulo c
+
+commit 8da54b1e0ba6cee6cd652175a770eab21ddc52f9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 24 10:21:19 2020 -0500
+
+    ajustes de length en la pregunta 4 del modulo C
+
+commit 1ed27b21a7e0d9227b069f4461d86eb8bdd49210
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 22 21:20:28 2020 -0500
+
+    Ajustes de settings_dev.py con las configuraciones correctas para despliegue
+
+commit b3b44534760141cae329de759fb0fb4cd8e831a1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 22 20:26:18 2020 -0500
+
+    ajuste de models de entities app
+
+commit 7ae30ad265105acf024e05142f234384c3dc802a
+Merge: 4596686 fe5ce9f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 22 17:29:08 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 45966864db911d43da330299711ffc5fad21535c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 22 17:28:45 2020 -0500
+
+    se crea modulo de consulta y se asignan permisos por rol y entidad a los usuarios
+
+commit fe5ce9f36081a8019fb2ccfa64610ac05f217352
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 22 15:21:07 2020 -0500
+
+    Cambio de iconos navbar OOEE
+
+commit 8a442bf766e46611e24a58bba654148cd7b3b431
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 22 14:27:52 2020 -0500
+
+    Adición de estilos modulo de evaluación de calidad
+
+commit 97b041aeb5c9049555f9f8ccd45727b2eedb3288
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 22 11:54:26 2020 -0500
+
+    Adición de Tooltips a botones de acciones y Adición del titilo buscar a botón
+
+commit 8ce221109ad24cd3a3a1d9ac9922f892861946db
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 22:49:22 2020 -0500
+
+    se quitan ajustes en init.py
+
+commit 44c899a13571453bcc15fb9e805961dcd5358e9d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 21:23:26 2020 -0500
+
+    ajustes deploy
+
+commit 5ea3ac3997c4a2bdc02ff210b45ab2b78d6e351b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 21:14:59 2020 -0500
+
+    ajuste wsgi.py
+
+commit a3810ec8e33f8510a81845f851ec16e14bbb5ac8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 19:49:44 2020 -0500
+
+    pymysql init
+
+commit 38193debb54746c14a04abc2db3cc9f9a221b9ee
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 19:38:01 2020 -0500
+
+    se quita pymsql
+
+commit e64dbf4e6a52e2dc33be020162da238119d61393
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 19:28:06 2020 -0500
+
+    se agrega pymysql en init.py principal
+
+commit 8d140c3958c4dd183986d6effd53979881a04c81
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu May 21 18:53:43 2020 -0500
+
+    se quitan tareas y paquete de celery y se empiezan a configurar los permisos por roles
+
+commit 953d3599f69712356289eb85682db13ac216a1bf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 20 17:51:58 2020 -0500
+
+    ajustes wsgi de entorno de pruebas
+
+commit e606da766f6cc2c089aaa14b451bddc82fed67fd
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 20 17:24:15 2020 -0500
+
+    ajustes settings_dev
+
+commit b589c0b489fe923ca7f0b73bddbac9d71ed85806
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 20 17:13:52 2020 -0500
+
+    host de settings_dev en configuración db
+
+commit 3563dd17b4881a9d8f9488ae75fb1dcfcf30ed71
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 20 16:52:01 2020 -0500
+
+    se agrega puerto en configuración de base de datos settings_dev.py
+
+commit 92cfe52a0b0051b6b7350d895d7dc1750a0bb7ff
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 19 11:03:15 2020 -0500
+
+    ajustes de wsgi.py
+
+commit 85a8e76cb97cd3bc30554feb19daef0f9196c927
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 19 09:57:17 2020 -0500
+
+    se configura contraseña de la base de datos de pruebas para el settings_dev.py
+
+commit 3c7e7f11fad42f8179dc05808bdcd212237c854c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 18 20:55:09 2020 -0500
+
+    ajustes varios
+
+commit cf98d55b9cffd84a151db5ae321870d45c383f69
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 15 19:55:54 2020 -0500
+
+    validaciones para select de metodologia en formulario de editar evaluación
+
+commit f81a153f5a26166295f649d52f893fc9b15406fb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 15 16:09:53 2020 -0500
+
+    Se quita el modulo de evaluación del formulario editar OOEE
+
+commit 5da916e7de8c30b77d7f64ccfaa7ded58f13273c
+Merge: 43da23d 8e7eee0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 15 15:34:42 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 43da23d44a208eaa9ee9e6ed65b2f8e28da8567d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 15 15:34:27 2020 -0500
+
+    Ajustes en el modelo para el modulo de evaluación, creación de json para seguimiento anual y resultados por matriz, se quita formulario de evaluación dela vista de editar operación y se crea una nueva vista para este módulo con formularios de crear y editar evaluación
+
+commit 8e7eee068b5a344b1d450f874d63fe80a09d140f
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 15 12:01:10 2020 -0500
+
+    Ajuste de  mensajes de error modulo OOEE formulario editar y crear
+
+commit 5222f98f4429089984bed91f9a0266d4bd6480e0
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 15 07:33:46 2020 -0500
+
+    Ajuste de plugin para imprimir detalle de ooee
+
+commit 267a1e959990eace4001703d33c89de4d4a41eb9
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 13 11:38:17 2020 -0500
+
+    se crean archivos settings_dev.py y wsgi.py con la configuración del servidor de pruebas
+
+commit 301e56c53f28dcc5c0d2edba59283be1a455fff8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 13 10:37:48 2020 -0500
+
+    Ajustes de posición para fases de entidades en reporte excel por filtros
+
+commit a1f44bef58811286970426ebe31dd8e7384ecc33
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 12 20:07:22 2020 -0500
+
+    Se actualiza requirements.txt para iniciar con pruebas de despliegue en servidor de pruebas
+
+commit 27bbd51f5e5471ccd8848a1bd5c40d81ae8affac
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 12 20:05:08 2020 -0500
+
+    se ajustan las posiciones para los datos de las hojas 2, 3 y 4 del reporte por filtros
+
+commit 6b9a8ad26c04204e28f42df9a6d7e76e66886fcc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 12 14:03:37 2020 -0500
+
+    número de operaciones estadísticas por entidad en la vista de todas las entidades
+
+commit 5b8b787bc0040824717d5201677c074d3a8ac851
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 11 19:20:22 2020 -0500
+
+    validaciones de numero de caracteres en campos de tipo texto para el formulario de editar OOEE
+
+commit de53986075b532fe9af293154b730b19ae057e7a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 11 17:04:23 2020 -0500
+
+    validaciones de cantidad de caracteres en forms.py para campos de texto formulario editar
+
+commit a27956722b267b23be6cec0b31047cfe505f9979
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 11 16:02:21 2020 -0500
+
+    validaciones para cantidad de caracteres para todo losc ampos tipo texto de formulario crear OOEE
+
+commit ed13e586e3f0f23e76355975321d040098d865c0
+Merge: e16f1ac 4663fba
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 8 21:38:47 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit e16f1ac4f86652f6facede95f24252f6a2bf9e0a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri May 8 21:37:58 2020 -0500
+
+    implemenatción y pruebas con celery y redis
+
+commit 4663fba27c81cbb4faddfb350de04f21147a1f93
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 8 18:12:54 2020 -0500
+
+    Implementación de diagramación y funcionamiento de impresión modulo detalle
+
+commit 5d3e65e6098e20801e7b2f3eac258c49bf657d0b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 6 11:42:41 2020 -0500
+
+    mensajes de error cuando los formularios de crear o editar tienen errores en las respuestas diligenciadas por el usuario
+
+commit 0ec64daf0262363a25d8ed94ebd92220bcad9d6f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 6 10:45:33 2020 -0500
+
+    validación para campos de tipo url en formulario de crear y de editar ooee
+
+commit 5a05d03671d41aeee40ed17d49b722de5c93ac5f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed May 6 09:49:54 2020 -0500
+
+    ajustes de select para validación de la oe y estado de la oe
+
+commit d9bda313c346fe8232afeeb0f4f14393d2849195
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 5 18:17:42 2020 -0500
+
+    se crean los nuevos campos de entidades responsables y agregan en los formularios de crear y de editar ooee
+
+commit 6dbc18d7f3cf98f3cbcb7d9d82e237d275181d3f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 5 16:50:07 2020 -0500
+
+    se crea modelo para sala especializada, y se genera el field en el formulario de editar OOEE
+
+commit 16a661c430bfa88b551dd4c798f9703ab1a343e6
+Merge: 792dc9f 897ac8c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 5 15:29:09 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 792dc9fcde03e1078bc872ab51e05f66439d38dc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 5 15:28:51 2020 -0500
+
+    Se ajustan los permisos para la vista de todas las entidades según el rol
+
+commit 897ac8ce777e2b080a49c6eab5854f7969de52d8
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue May 5 14:54:34 2020 -0500
+
+    Actualización de Json Resultado Evaluación
+
+commit 221fafd66dbb031fb8ed366500cc18f7f253f39c
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue May 5 14:53:04 2020 -0500
+
+    Actualización de Json Plan Mejoramiento
+
+commit 2106f517bab0c4751d8deccbe669325ab8affb98
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue May 5 14:51:35 2020 -0500
+
+    Actualización de Json Norma
+
+commit d1d7436085198ce86e631c7b119178fff0687167
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue May 5 14:48:50 2020 -0500
+
+    Actualizacion de Json Temas
+
+commit d6d6301c234aa8b5ddf0a87aa8bc799cf4ef2ab8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue May 5 14:45:34 2020 -0500
+
+    se agregan botones de la columna de acciones y se arreglan los estilos de la tabla cuando se realizan los filtros
+
+commit 255cebe3177ee779604e7ca5f99853c1e515d226
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue May 5 14:19:05 2020 -0500
+
+    Actualización de Json Tema Compartido
+
+commit d3915b1db15ed9653ad3cdd5923de9c6fe401406
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 4 18:35:35 2020 -0500
+
+    Modificación de json para tabla estado de evaluación
+
+commit 6df51e93920b9026a2b133a089978f452727dff8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 4 18:32:51 2020 -0500
+
+    se modifica el modulo de evaluaciones de calidad según observaciones de la reunión del 4 de mayo y se crean condicionales para visualización de filtro y columna de fases según el rol
+
+commit 4792e90d5d74badadb990a759abb9f56e432c8bb
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 4 14:54:10 2020 -0500
+
+    se agrega codigo de entidad en los reportes tipo xlsx
+
+commit 04e17af1b8191dfac6112db9c3265af453831f77
+Merge: c97e134 1e732eb
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon May 4 14:33:06 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit c97e134d3e7d04661aac96d5bbf452e6465b426a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon May 4 14:32:50 2020 -0500
+
+    Ajuste en formulario de editar y tabla de todas las entidades
+
+commit 1e732eb131c6f62d4bee2172d1f61b034ca95dca
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 4 14:11:43 2020 -0500
+
+    ajustes de length en pregunta de normas
+
+commit 96fa8d0bd832a3079e0de1dce81939e0e5b943d1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon May 4 10:28:36 2020 -0500
+
+    se crea otra función para generar reporte de OOEE por filtros
+
+commit ba5fabccbe59a26b1f2dc0df1d4ad2b35a106998
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 3 16:15:54 2020 -0500
+
+    se crea label text con funcionalidad de ocultar y mostrar cuando se selecciona la opción otro del select plan de mejoramiento
+
+commit 4ffc0d75d8c59676e6021e3cbb0ec45d902e5634
+Merge: e64ed91 d2f1781
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 3 15:30:40 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit e64ed9110c47034805a036e2fcc7d580260391ad
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun May 3 15:30:20 2020 -0500
+
+    posiciones para preguntas de pestaña 1 en reporte excel según filtros
+
+commit d2f17812ce64c01fe8d2678dd9768a3ef3a2d95b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 1 17:58:34 2020 -0500
+
+    Ajuste de estilos sección preguntas adicionales
+
+commit d5409a5aafa70673c0f84853c35721310c37ec84
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 1 16:57:41 2020 -0500
+
+    Ajuste de estilos sección preguntas adicionales
+
+commit d9a01367c9e1c820d2801e24c82220ba20ad7b87
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri May 1 12:52:32 2020 -0500
+
+    Ajuste de estilos sección comentarios
+
+commit 74e238249277d88905d50f80861e3cb746b48494
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Apr 30 18:11:27 2020 -0500
+
+    Adaptación de estilos vista crear ooee en vista editar ooee
+
+commit 593963dde051122746c1e0cb33e3524d488447cc
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Apr 30 16:24:43 2020 -0500
+
+    Ajustes de estilos filtros vista operaciones estadísticas
+
+commit e6b20e9f99aec63033096d5bf8f69710274c59df
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Apr 30 16:17:16 2020 -0500
+
+    unión de listas de los diferentes modelos para filtros y generar reporte
+
+commit ff2c3bea8015867d15808fc7fd7a94ce0f8afd30
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 28 19:00:08 2020 -0500
+
+    ajustes de opciones para tabla de resultados de evaluaciòn segùn funcionaria Angela Bernal
+
+commit 5bc1285c919d183b3026f8497e02dc3b1ce6f5de
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 28 18:29:31 2020 -0500
+
+    se  crea nueva pestaña llamada Eval Calidad para reporte de evaluaciones de calidad de las operaciones estadisticas
+
+commit 0c3a71cad1629d18536d18dfc9f952215c088f07
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 28 09:44:10 2020 -0500
+
+    generar codigo automatico para aplicación de entidades
+
+commit 76de4d1efd5e249f85d2f3a8575f7e8b1dcf0d4d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 27 18:09:19 2020 -0500
+
+    se crea pestaña con el nombre  de entidades Fases para generar reporte de que otras entidades y en cuales fases del proceso estadístico intervienen
+
+commit 3dfe39d08cd6ce38c559d40f0b9f40f26e377bb1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 24 20:52:09 2020 -0500
+
+    funcionalidad para que el sistema genere la contraseña cuando de creea el usuario y cambio de estilos y texto en plantilla de correo para crear usuario
+
+commit bf876f32c2b0878a5b02f24ea788b81d731634c8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 24 11:54:30 2020 -0500
+
+    validación de modulo de evaluaciones en formulario de ditar OOEE
+
+commit 43fbafbb01857fdd79162d7ea35eff3ed8ffc514
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 24 11:40:18 2020 -0500
+
+    se replican validaciones del formulario de editar OE en formulario de crear OE
+
+commit 517db602723f2971ec1f97c325e6201e7dbd9c7a
+Merge: 7c05ea4 e4067bc
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Apr 23 18:06:50 2020 -0500
+
+    solución de conflictos en forms.py
+
+commit 7c05ea461c153dd6f9d8e598861d2d651b7597aa
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Apr 23 18:02:48 2020 -0500
+
+    implemenatción de ajax para filtros y descarga de reporte de ooee según filtros
+
+commit e4067bcab4ad34b1e842da8a4753efdda9b560fe
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Apr 23 17:26:25 2020 -0500
+
+    Adecuación de preguntas para responsive
+
+commit 80d162c69deffd7e7810df1cbac2a678fe3ba1c0
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Apr 23 12:47:42 2020 -0500
+
+    Implementación del input en preguntas sin titulo
+
+commit d52d2451bd6af6e67454080e1be708807f0cfdaf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Apr 23 09:07:08 2020 -0500
+
+    se crea e implementa modelo, vistas para modulo de evaluación de la calidad
+
+commit 8345e1ec7ceb2aa20c65cecc8f59b7c5bfcdb7e8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 19:45:29 2020 -0500
+
+    funcionalidad de filtros para vista all_ooee
+
+commit 18fbd5ddc461a10e9ff642108a9a28cd714c0681
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 18:19:07 2020 -0500
+
+    switch para preguntas tipo si/no funcionando ok con validaciones
+
+commit b0226ac65d91a0aacbaeab707a95dc68b7359e40
+Merge: 013dfa6 f067c13
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 16:28:12 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 013dfa6f15d599839bcc6e31aa64fbe241878dad
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 16:27:45 2020 -0500
+
+    pruebas de switch tipo si/no en formulario de editar ooee
+
+commit f067c13049b774494cf276470015429150de322c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 21 16:21:24 2020 -0500
+
+    Cambio de imagenes modulo de consulta
+
+commit 4d6a3e6a68c89ebe88294c95ea15437b895fde52
+Merge: 35995fc fe0a118
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 16:04:58 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 35995fcf158d0d78359380d3ee1ddc0d2cd1a7ed
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 16:04:06 2020 -0500
+
+    se genera codigo automatico por el sistema para las operaciones estadísticas
+
+commit 9a9ff3fbd01267067f5f274fd26734d98dee2a27
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 21 14:12:51 2020 -0500
+
+    Ocultar modulos sin información y habilitar modulo de directorio de entidades en vista sin logeado
+
+commit b8c18a237bd817a788629dbabc2013e50bde6775
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 21 13:32:57 2020 -0500
+
+    Insertar numeración preguntas formulario OOEE
+
+commit cd754f0e40bbd2a2586b0d0ce00422bebfb702bf
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 13:04:05 2020 -0500
+
+    se crean los nuevos fields para los campos adicionales, estado de operacion y valadición de operación según temático
+
+commit 2fe1fbb0f006d75a3aa6a5d966598a599880a96e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 21 12:20:36 2020 -0500
+
+    Cambio de estado preguntas si y no
+
+commit 93d6a3300aba4509c2c19e22a4dee3ed38b4aab1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 21 11:50:13 2020 -0500
+
+    creacion de modelo e implementacion de funcionalidades para modulo de actualización, novedades y criticas
+
+commit fe0a118f30e7e420337d58677cc7e7b026c254a9
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 21 08:51:08 2020 -0500
+
+    Adición de estilos input cargar modulo H
+
+commit 7f75b5adadede1be1f7f79021d21d87ec663f3b6
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 21 08:43:08 2020 -0500
+
+    Ajuste de estilos con libreria B-toggle campos si y no
+
+commit b4b84923453c8ae33c1adad487a1d374babe377e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Apr 20 13:27:31 2020 -0500
+
+    Actualización title y nombre del aplicativo
+
+commit e1043772f6dec4758fc32ac8a134bb73c7e8a564
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 17 18:58:37 2020 -0500
+
+    validación para no guardar campos en blanco de las preguntas tipo formset en formulario de editar OOEE
+
+commit 56f363745599619322463c163179b0fde324ccb0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 17 18:40:10 2020 -0500
+
+    ajustes deestilos para pregunta 3 del modulo B y preguntas 14 y 15 del modulo c
+
+commit a35a187c131f88a74151edfc9bc2a9ad13297ad2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Apr 16 18:42:02 2020 -0500
+
+    validaciones modulo F según respuesta de usuarios ok prefunta 1 y 2
+
+commit 88c73c33de82eed9edb6829839fb2d6e1f999d3f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Apr 16 15:53:53 2020 -0500
+
+    Validaciones para preguntas del modulo C 3 a la 7 Según lo que el usuario responda
+
+commit bec82e2dac978fb330a286e7530d1782f9d0e45c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 15 16:17:12 2020 -0500
+
+    ajustes de models y widgets para preguntas tipo si/no
+
+commit 85bf8c9df2d374c786128d89ac496c37fd9c75e1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 15 12:18:14 2020 -0500
+
+    validaciones de modulos terminadas en formulario de editar ooee
+
+commit 1f84253c73f3c103229ae6ca17ffb0c31e60ecc4
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 14 19:28:27 2020 -0500
+
+    validaciones del modulo C completo
+
+commit b524c72e37c79f800fc5c605d8fcbeaaacce84b7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 14 12:50:45 2020 -0500
+
+    se realizan validaciones hasta la pregunta 3 del modulo C
+
+commit fbcc18bf276f76c958b15285c1d2a00bd9e0d7ff
+Merge: 73e8b26 d1fa3b1
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 13 19:45:59 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 73e8b2628ab2ac9054e6b47b7b417094b9711135
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 13 19:42:02 2020 -0500
+
+    validaciones de las preguntas 4 y 5 del modulo B
+
+commit d1fa3b1b54170c27cce8398bcd83288fbf9a8cff
+Merge: e221421 5c86245
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Apr 13 14:24:49 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit e221421848c5175d2afecf08bdf1d8b6c2744112
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Apr 13 14:24:30 2020 -0500
+
+    Validation options questions yes or no and styles of file label
+
+commit 5c86245c6afbfacbcada521d5b3615d7a2443ba2
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 13 10:04:39 2020 -0500
+
+    validaciones de campo de telefono y correo electronico con django para formulario de editar oe
+
+commit c4b5be86389bd67504893a0c647f24e209f489c8
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 13 09:23:44 2020 -0500
+
+    se replican los estilos del formulario de crear en el formulario de editar
+
+commit c53d51cf16e29a0d461565ed5e4e8db879931b94
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Apr 12 15:16:47 2020 -0500
+
+    Se crea modulo de comentarios para el formulario de editar oe
+
+commit d4e014636bbede5b1acb71df5ac401f3656cac32
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Apr 12 11:26:00 2020 -0500
+
+    formato de fechas
+
+commit 9df2c842dee71cad86f55e2b5339ddd62a751088
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Sun Apr 12 11:21:27 2020 -0500
+
+    descripción de fields del modelo para el almacenamiento de los datos en bd
+
+commit db94045ad696620a8c7e6e4852fca87b71533e7a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 8 18:52:56 2020 -0500
+
+    pruebas para alinear las respuestas de la pregunta 3 del modulo B en la hoja 2 del reporte xlsx de ooee
+
+commit fa99f2bea78ebc053c107a083092360a44d644c0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 8 17:51:36 2020 -0500
+
+    hojas 3 y 4 de lista de variables y lista de resultados mostrando la información correctamente en reporte xlsx
+
+commit 35585b7a3569f6b2c4bce8cb0bfe557428bf7c69
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 8 15:48:01 2020 -0500
+
+    Reporte de directorio de las OOEE hasta el módulo H
+
+commit 0db23ec327e672645602bc9b0faebb2a923d94e0
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 8 10:59:21 2020 -0500
+
+    modulo E del reporte del invetario de las operaciones estadisticas
+
+commit bd681b8f5de3920348d7b16bed293008eefaaa67
+Merge: 83fed0c 3f2b953
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 7 20:30:44 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 83fed0c9d93f6ed4ab73a0345d7af48609772df8
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Apr 7 20:30:27 2020 -0500
+
+    Pregunta 3
+
+commit 3f2b95353f8d5f76adc31afe897b86134ecd3e98
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 7 20:14:55 2020 -0500
+
+    reporte de directorio de operaciones estadisticas hasta el modulo D completo
+
+commit 563c0dc509e2c73ef326b56aaf8ad30f80a05f8a
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 7 18:35:43 2020 -0500
+
+    Reporte de directorio de ooee con el modulo c completo
+
+commit e8f37c8865a92f2d44bc1bf52e69f7242f2a344d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Apr 7 12:59:06 2020 -0500
+
+    se agrega campo tema compartido al reporte xlsx
+
+commit 88e9a197d85092109e7c8f9150f42c77e2bb5817
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Apr 6 17:42:08 2020 -0500
+
+    se renombran 2 campos de los modelos MC_ConceptosEstadanrizados y MC_Clasificaciones para ajustar preguntas 8 y 9 del modulo C en reporte xlsx
+
+commit b1153c2163d9a429721b5322eaad3772d3465498
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 3 12:03:36 2020 -0500
+
+    ajustes de javascript
+
+commit 15d8ab59f914b634d131d9ebae33f7903199cab2
+Merge: e3ac102 b164299
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 3 09:26:21 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit b1642990dde122714043d13d5c6e23610e46effe
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Apr 3 09:24:21 2020 -0500
+
+    Styles buttons question 3 module C
+
+commit e3ac102deaa60689e0f0ea94b49ac24a446988b6
+Merge: 1652ccb 7663a55
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 3 09:01:51 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 1652ccbb955a068fc94877f74900cfee5445a2b7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Apr 3 09:01:32 2020 -0500
+
+    pruebas con pregunta de entidades y las fases que intervienen para el reporte
+
+commit 7663a5555d70776cf1e5125c699d10cc3d8a26e7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Apr 3 08:58:23 2020 -0500
+
+    Ajustes de archivo popper.js
+
+commit 14f17cb8b9fc5bcf4231356705cea76ea1987455
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Apr 3 08:55:50 2020 -0500
+
+    Add styles of form ooee
+
+commit a5508ac3f26379d19757aec826d1642b0e0acc08
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Apr 3 07:37:03 2020 -0500
+
+    Add styles of detail OOEE
+
+commit 49b309947b8fe715367e20141eab69174741fdae
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Apr 1 21:33:21 2020 -0500
+
+    pruebas de reporte completo de operaciones estadistica con la pregunta de normas del modulo B
+
+commit 19e4c179a3fc72e0057ab1d50f1bb6885b7faf9b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 31 18:00:17 2020 -0500
+
+    ajustes de campo tema compartido por manytomany
+
+commit fb92892052d559b900607b2e4c7f135ac41a51f3
+Merge: d174307 166ef4c
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 31 17:06:35 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d17430773c03fe5eac4b91a0841140ca241c5c80
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 31 17:06:22 2020 -0500
+
+    ajustes de estilos para form crear y se crean nuevos campos de codigo_ooe y tema_compartido
+
+commit 166ef4c543e1991bc61d1c744235303e524b47e7
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Mar 31 17:04:41 2020 -0500
+
+    Creacion de Json para los temas compartidos de OOEE
+
+commit 0123ee7f7bff9d0a5d0bca3a5ea2948941ed180c
+Merge: 7a8f00b c74ad84
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 30 19:45:34 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 7a8f00ba423a924b3c08b4f0bff2dd6fd6a5fa66
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 30 19:43:37 2020 -0500
+
+    funcionalidad para editar y guardar pregunta 3 del modulo B
+
+commit fcbd5898471ab8e85c1be680a0da1b30c2fd03c5
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 30 18:51:32 2020 -0500
+
+    ajustes de javascript para guardar opciones de fases de la pregunta 3 del modulo b
+
+commit c74ad84a1b4dca4e5a52985315c22abe1db6c53e
+Merge: e6bcd9f 53a399e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Mar 30 08:49:32 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit e6bcd9ff20441ce494887d851a18d3474e14b292
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Mar 30 08:48:42 2020 -0500
+
+    Add styles varios
+
+commit 53a399ede9df9386dcae9e766c7e9c57c577aad4
+Merge: d03b796 07ed08b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 30 08:35:45 2020 -0500
+
+    resolución de conflictos en template created_ooee.html
+
+commit d03b796a8f4aa8f20a43c5261f7c682f5aa400d7
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Mon Mar 30 08:24:23 2020 -0500
+
+    ajuste de funcionalidad para la vista de editar ooee comparación de ID de las tablas
+
+commit 07ed08b2a51370d49ba92434b18ee3a666b5d5cf
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 27 10:54:51 2020 -0500
+
+    Ajustes de responsive formulario
+
+commit bcd2baa54a1f3c370f7f97b217c52a8dcce7f3ff
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Mar 26 19:33:56 2020 -0500
+
+    fields de tipo filedfile para pregunta 14 del modulo c y modulo h anexos en vista de editar ooee
+
+commit 310591f0541c8d73bc5e1e1c88f115e36bf01bed
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Mar 26 18:37:00 2020 -0500
+
+    se colocan los campos de anexos y lista de variables para descragar los archivos que se suben al formulario
+
+commit 3ecfe4d13116cba8a9947b5f22fb5df3bf5028f6
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Mar 26 18:17:52 2020 -0500
+
+    pregunta 14 del modulo C con cargar de archivo y modulo H anexos con carga de archivo para formulario crear ooee
+
+commit 845d3b6558ded68d2f7a3d812809da9ac65f2533
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Thu Mar 26 12:59:31 2020 -0500
+
+    preguntas 14 y 15 del modulo c en el formulario con estilos
+
+commit 7e388e68529c33cdd9a86f10f2951056c0a54f1e
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Mar 26 08:06:21 2020 -0500
+
+    Responsive navbar ooee module
+
+commit 3a0b4f06efe4929b5ca37b110828b42e465750a0
+Merge: 5297a65 84bd8cf
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Mar 26 06:41:12 2020 -0500
+
+    Mergue solutions ancardenasc
+
+commit 5297a658670af079752eae9284809cdf69aa1279
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Mar 26 06:34:14 2020 -0500
+
+    Ajustes de estilos form ooee y navbar modulos
+
+commit 84bd8cf9dcdb77820d059e425592a25359c07c1d
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Wed Mar 25 18:01:14 2020 -0500
+
+    preguntas 14 y 15 del modulo C se pueden editar y borrar correctamente en vista ooee_edit
+
+commit 017bb4f615443753cfc73aa84d5ed6893eae343e
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 24 17:36:05 2020 -0500
+
+    formulario de editar operacion estadistica guardando y editando correctamente quedan pendientes pregunta del modulo B fases y preguntas 14 y 15 del modulo c por editar
+
+commit 0732de9d4ecb2abbe7e2d096f1145bc902f08168
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 24 15:28:24 2020 -0500
+
+    Se crean formularios para la vista de editar operaciones estadísticas
+
+commit 47199030092e131357f1e0663e137d8aafe0049b
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Tue Mar 24 10:38:07 2020 -0500
+
+    Se crea funcionalidad para descargar reporte del inventario de las operaciones estadísticas
+
+commit 7e50169e8d74950f540b504384df6766232ddd1f
+Author: davillamilm <davillamilm@dane.gov.co>
+Date:   Fri Mar 20 21:27:40 2020 -0500
+
+    preguntas del modulo C 14 y 15 generando campos dinamicamente y guardando correctamente
+
+commit d492428029c2d4587f91b87b360b39e9fcc976be
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Mar 20 11:55:46 2020 -0500
+
+    pruebas para pregunta 14 del modulo C
+
+commit 3d88201803801eb691d8b38d351e0864afca7d84
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 19 17:46:41 2020 -0500
+
+    ajustes de label pregunta 15 modulo C
+
+commit 30ab6eaf03f3896c17bba5c3257212ccc6e982a9
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 19 17:43:09 2020 -0500
+
+    se crea pregunta 15 del modulo C formato de preguntar guardar varias opciones
+
+commit 58621605a0a9789def3669bd44475fe147398c81
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Mar 18 15:59:23 2020 -0500
+
+    cista de detalle de operacion Estadística hasta el modulo G
+
+commit 935bf44078b0379d913e8720f8792d5713dfe340
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 17 20:11:56 2020 -0500
+
+    vista de detalle de oe hasta el modulo C
+
+commit af7b1445bd0f8dd91bcf771e4c132ae6e6dbc3ec
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 17 15:26:09 2020 -0500
+
+    se crea la vista para detalle de operación estadística
+
+commit 27201c3a21ee830dac4df4d5afe682696948ee1e
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 17 12:17:43 2020 -0500
+
+    se relizan pruebas de formulario para el guardado completo de los campos de oe y guarda correctamente
+
+commit 67aef0dc702b1f8bb9824ce5c1f3ee4a14b7dc80
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 17 10:41:52 2020 -0500
+
+    se guarda formulario de operación estadística hasta modulo c pregunta fuentes de financiación
+
+commit f1bd76bd26f111eda2e58fa07b2006a57cdbe6e0
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 17 10:03:06 2020 -0500
+
+    se guarda formulario hasta pregunta del modulo c nomenclatura y clasificaciones y se cambia el widget para esta pregunta
+
+commit 79b3617961e36fa916666eb2c89dba5b2b1800cd
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Mar 16 16:49:57 2020 -0500
+
+    guardar oe hasta muestra no probabilistica
+
+commit f790ab80a342475a0301e66a675b6eec03cfa65c
+Merge: cb46dce f5de894
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Mar 16 13:22:23 2020 -0500
+
+    solución de conflictos en created_oe
+
+commit cb46dce0c093a5948f1639af048dae2afc222ef6
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Mar 16 13:13:38 2020 -0500
+
+    se guarda formulario de oe hasta undidad de observación
+
+commit e7c5cce1686daed7507a8cb6fd5039aa5a1ac92a
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Sun Mar 15 11:48:09 2020 -0500
+
+    pruebas para guardar  formulario con normas y requerimientos ok
+
+commit f5de894f26bbdb50d1b9fa277fe32436a083b3c8
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 13 16:43:50 2020 -0500
+
+    Created of nav ooee
+
+commit 898c94e22263c369ceb4d88856eb74e0d5e600f8
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Mar 13 10:09:58 2020 -0500
+
+    Ajustes de widget para preguntas tipo boolean
+
+commit 730dbfc6fdd3816fab8d2e36d32ec4bddb2915b3
+Merge: 7825a6c 763b332
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 12 17:18:31 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 7825a6c8d5f9911b2047fbb253de61a81cd21cb8
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 12 17:18:04 2020 -0500
+
+    se realizan pruebas para guardar formulario de oe completo
+
+commit 763b332eb06400f3a356f55dd94c25c4328dd8cb
+Merge: 4b96bf5 42d42fb
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Mar 12 17:04:33 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 4b96bf582f8c0b8d411ab54d581fa3026b73270f
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Mar 12 17:03:08 2020 -0500
+
+    Style adjustments, error pages and adaptation of graphic resources
+
+commit 42d42fb0d3f59276c898e81edc45a3563736a25a
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Mar 11 17:12:15 2020 -0500
+
+    pruebas de validaciones en preguntas 3 y 4 del  modulo B
+
+commit c9b9c3fb3355d3a19a80574472db478f2ea278c6
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Mar 11 10:20:22 2020 -0500
+
+    redireccionamiento de pagina principal para la vista de consulta
+
+commit 2d6cb22c277182507f9d06ce4a74ae669bd42d21
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 10 18:25:12 2020 -0500
+
+    configuración de idioma para widget datepicker
+
+commit 7ac2ac60555756e1354fc53a89b3ad377f011e4b
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 10 17:47:45 2020 -0500
+
+    se agregan librerias datepicker y moment.js para los campos de fecha y se crea formulario hasta observaciones
+
+commit 92ae6bbd595569fde7311d10d5e10f045888d05b
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Mar 10 16:11:46 2020 -0500
+
+    Redirect link close session
+
+commit 7a3637e25ba772f04b4e380b9b0798896027ff0c
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Mar 10 16:04:32 2020 -0500
+
+    Estilos de label error validate
+
+commit 7ee92b86b560dfec17bd80482100ead3a33f80ed
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 10 10:39:42 2020 -0500
+
+    ajuste de models.py para Modulo B  pregunta 3 entidades que intervienen en las fases del proceso
+
+commit c0c2d36251380fe521fc66551a885e238c93924c
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Mar 9 17:04:06 2020 -0500
+
+    modulo e formulario de creacion de oe
+
+commit 420c8c429ab669c60af989da58694b76f49a1f14
+Merge: 5265c80 90808b7
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Mar 9 14:28:28 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 5265c80e8292c89f5a318f83856409d2311d3f72
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Mar 9 14:28:09 2020 -0500
+
+    formulario de creación ooee modulo c pregunta 13
+
+commit 90808b790b16e11071ff6f84d7bea4a17a986396
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Mar 9 14:26:31 2020 -0500
+
+    Creacion de relaciones en el Jso, para la pregunta 11 del modulo C
+
+commit 6e77237e056204f3781b3cb7c7ec8d841dcb0dac
+Merge: bf26530 a16897a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 6 17:16:01 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit bf2653063a7b38c46ffb6149abac8defe62f1747
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 6 17:15:36 2020 -0500
+
+    Ajustes de clases active
+
+commit a16897ada5321d0538b1453383c68eb957d87613
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Mar 6 16:43:23 2020 -0500
+
+    modelos de relacion para el modulo c pregunta 11
+
+commit 70a528c44c5b7c2ff92e3b64a02baf84e3379568
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 6 15:49:17 2020 -0500
+
+    Quitar passsword  base de datos
+
+commit ce7b371bd3cf1538604c646278aef9c1a1320d6a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 6 15:46:41 2020 -0500
+
+    Ajustes merge ancardenasc
+
+commit 1115ed7133e69c3be34c9257ea5cd2de237d132c
+Merge: 7245c76 85746b1
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 6 15:45:56 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 7245c76647ab7de514fe9b760e10ce1e3acf59c4
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Mar 6 15:42:30 2020 -0500
+
+    Adición de img card
+
+commit 85746b178a9e6e5f10c491fe13d54cc6e4b9dcc3
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Mar 6 15:40:29 2020 -0500
+
+    formulario creación de oe modulo c pregunta 10
+
+commit 87c1bd7a211984b0c6e3a59018851c9f3d19b578
+Merge: c0164be 2a4f5dd
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 5 16:48:43 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit c0164be65ca14565703cc20192fb72d0b6646416
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 5 16:48:29 2020 -0500
+
+    formulario de creación de oe hasta el modulo c pregunta 9
+
+commit 2a4f5dd05040f7cef33f7434b182f8e1bd418180
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Mar 5 16:44:01 2020 -0500
+
+    Creacion de Json para clasificaciones y los modulos E y F del formulario de OOEE
+
+commit d386a340b77759e50db61565def517b267afba48
+Merge: 67cdf02 943073b
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 5 15:36:37 2020 -0500
+
+    solución de conflictos en archivo C_6_marco.json
+
+commit 67cdf020be342f6f5959286cda7360d1b4144394
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Mar 5 15:34:40 2020 -0500
+
+    construcción de formulario de creación de operación estadística hasta el modulo c pregunta 6
+
+commit 943073bbbfc476af9224d709a0bfc9e0ce7fdea5
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Mar 5 14:58:10 2020 -0500
+
+    Creacion de Json para el modulo C del formulario de OOEE
+
+commit f4dd292eeab16d1b756967272c00c8a9be8a5bbe
+Merge: f5e106a 2b735f1
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Mar 4 17:12:34 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit f5e106a41ea3d4970f04506f8611609bf17c4d16
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Mar 4 17:12:04 2020 -0500
+
+    creación de preguntas hasta el modulo b pregunta 6
+
+commit 2b735f181499430e75aa28768836e020be7cacda
+Merge: 7b709eb ac7e987
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Wed Mar 4 17:06:18 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 7b709ebdf439cb8f210bb741927bf5f745caaf05
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Wed Mar 4 17:06:01 2020 -0500
+
+    Creacion de json para modulo B y C del formulario OOEE
+
+commit 016a2b0b34849706e137165323d806d43b848869
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Mar 3 15:56:15 2020 -0500
+
+    Ajsute de libreria table en componente allOOEE
+
+commit cfe13eaa399bb2579192a739a8b578e9709bfd95
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Mar 3 15:12:26 2020 -0500
+
+    Actualización de componente Search en plantillas
+
+commit ac7e9872f0c6f267a7e49ae82f67a1b28a10bfdd
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 3 14:08:04 2020 -0500
+
+    Ajustes de validaciones para el formulario de registro de usuario
+
+commit 82a9280cc6789bb8d2c3a5d95d006e629271a5ba
+Merge: f7c7c29 000a0c4
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 3 11:50:00 2020 -0500
+
+    solución de conflictos layout.css.map
+
+commit f7c7c293271466552d252c61801c1c069c366db9
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Mar 3 11:48:17 2020 -0500
+
+    se crea las vistas para modulo de consulta de operaciones estadísticas segun los tres temas principales, se crea vista para tabla de operaciones estadíticas
+
+commit 000a0c4bff7ccdd5ff9ef6e7ff555282ddda3221
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Mar 3 11:46:04 2020 -0500
+
+    Estilos btn search
+
+commit b1255fadc65059003f20dacec080abe055d61f66
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Mar 2 17:29:53 2020 -0500
+
+    ajuste de estilos search
+
+commit 1258aa3f1d6a3934d01bfb38c656926174937ede
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Mar 2 12:09:51 2020 -0500
+
+    Add styles of component entities
+
+commit 136628ec49e34ac3c2caeb276ef8e984411c0913
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 28 17:01:30 2020 -0500
+
+    formulario creación de entidad hasta pregunta 4
+
+commit b2508914a1fd6fa184ef653aa21bccb84055ea1d
+Merge: 16d22d9 1fd8cbb
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 28 11:51:05 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 16d22d90c5ea27475f0eca86e08312f298ed9128
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 28 11:50:52 2020 -0500
+
+    creación de vista para todas las operaciones estadísticas
+
+commit 1fd8cbb64e6b555d20f7ab09700973d734d93b6b
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Fri Feb 28 11:45:19 2020 -0500
+
+    Modificación de temas.json y creacion de fases.json y norma.json
+
+commit 87df27b6c624f50b610cd35802340c8f8c5fab18
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 28 11:13:16 2020 -0500
+
+    Se comienza a armar el modelo de operaciones estadísticas
+
+commit 9300e69e3085c5dcea199fc54f15c161e292f861
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 28 09:59:55 2020 -0500
+
+    Formulario de editar entidad con validaciones y sin campos obligatorios
+
+commit cb904d91e157abfdec86724021d5de6163e7df56
+Merge: db34643 d26356e
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 27 19:08:50 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit db34643d6c0a9ba50e5f558f0e6ce150210d49ac
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 27 19:08:13 2020 -0500
+
+    Ajustes del modelo de entidades y del formulario de crear entidad quedo guardando correctamente y los campos ya no son obligatorios
+
+commit d26356ee58350bc90b27d9826644cfb867e3d608
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 27 17:24:04 2020 -0500
+
+    Close of styles of section user
+
+commit d8217dd25b66c640e26b0ce41fc3a869f2900e9e
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 27 10:11:39 2020 -0500
+
+    validaciones para  template register.html
+
+commit 8a53db46b2093c2a7a5cfd651025e565f45b67d7
+Merge: cef5393 5c39b50
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 26 17:06:11 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit cef53934f0827f280e23eb4af70d0dc8978597e7
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 26 17:05:53 2020 -0500
+
+    validaciones para formulario de crear entidad
+
+commit 5c39b50d30cea718cf00e8674c0d204dfeab7ce2
+Merge: 8ba9b01 d438cd2
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 25 17:23:29 2020 -0500
+
+    Mergue of design ANCARDENAS
+
+commit 8ba9b01169331b2c44cae161b3c67e96cf11bbb3
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 25 17:21:24 2020 -0500
+
+    Add styles of alert and config help tool
+
+commit d438cd2754b04dcc70316882e212f0b03ee7b71c
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 25 14:29:31 2020 -0500
+
+    ajustes de permisos para los modulos entidades y usuarios según el rol
+
+commit 9f570206cf251495a70dc7114c840e03809af7cb
+Merge: c0bebed 2577a5d
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 25 11:07:44 2020 -0500
+
+    Mergue ancardenasc
+
+commit 59be5aca3517e90d22640e0bf3d06b449aed269e
+Merge: b293fa4 9f57020
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 25 11:07:29 2020 -0500
+
+    merge davillamilm
+
+commit c0bebedbe8dc0c807cb147c1acd54ec668c06547
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 25 11:06:21 2020 -0500
+
+    Styles of form reate and edit user
+
+commit b293fa4319fa19736dac6fe6fd85b7aa80aa4979
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 25 11:04:21 2020 -0500
+
+    ajustes de buscador
+
+commit 2577a5d50ebd0c41ce9c71917445b9c2ab2ccb78
+Merge: 759f372 0d1dff8
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Feb 24 18:36:58 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 759f37226575c6da7b420b3f026ba40f86d2d2c9
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Feb 24 18:36:51 2020 -0500
+
+    Correción de textos para correo
+
+commit 0d1dff8a1329cdc7eb2446a85d7fee2f674ccda0
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 24 18:35:45 2020 -0500
+
+    ajustes de tabla en pantalla de escritorio
+
+commit 0a9f820aadf66a1f76daaba69e254f58a0562101
+Merge: 042974a acc82dc
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 24 18:31:27 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 042974ae71394b97bde650b5c8e8bac4875f3b7b
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 24 18:30:59 2020 -0500
+
+    pruebas de buscador en tablas
+
+commit acc82dca4cadc3395a4c1922d30546e450929cee
+Merge: 3a641f3 d5f03a9
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Feb 24 18:30:06 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d5f03a9bd6655349bd1d86a05ac4059a1f5e769a
+Merge: 862d8b2 417c7d7
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 24 18:30:56 2020 -0500
+
+    Mergue ancardenasc
+
+commit 862d8b2572dade229d4b9d1e91612fdbe1ca821a
+Author: ancardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 24 18:28:09 2020 -0500
+
+    Add styles form user
+
+commit 3a641f3a106650da6717e30fc4baaf875782de4e
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Mon Feb 24 18:27:55 2020 -0500
+
+    Modificación de textos para correos
+
+commit 417c7d7134f293c8bd351f736c6c03c636f76466
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 24 16:41:06 2020 -0500
+
+    se quita botón para eliminar entidades
+
+commit 64aeaf4da4e597454d391a9280185d905e328bb9
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 24 16:29:25 2020 -0500
+
+    se crean vistas para entidades publicadas y no publicadas
+
+commit 0d9d9dd203cba46f659851c746af2876556f1b7c
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 24 11:35:28 2020 -0500
+
+    template para editar entidad y login de inicio de sesion para vistas externas
+
+commit 54128897fcc9db4cc2de51bdb1f3a7919ccffce3
+Merge: f30ff42 889b439
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 21 17:26:24 2020 -0500
+
+    resolución de conflictos
+
+commit f30ff42cb0c93c2a75810ceb9a53b4b638f85b5f
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 21 17:24:54 2020 -0500
+
+    pruebas de guardar formulario para vista de crear y algunas validaciones de fields
+
+commit 889b4396bdb95d48be6e9037928069c3b263c5c5
+Merge: 30fdf7e 1ccfe95
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 20 17:38:34 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 30fdf7e82dddd9a41e0c3a700df98b5f07149eef
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 20 17:38:25 2020 -0500
+
+    Add styles of modal report
+
+commit 1ccfe9535252540ddac223a8f83a47ff4bd28477
+Merge: bc8067d cb56014
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Feb 20 15:50:43 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit bc8067dcce467ce54d062a51aa169568872d1b00
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Thu Feb 20 15:50:32 2020 -0500
+
+    Creacion de Json para area tematica y tema de OOEE
+
+commit dda2362b64b8121720a8037974f9ac3334beda53
+Merge: a6ab419 cb56014
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 20 15:49:56 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit a6ab419688ee5f0d8b33c6caaa817eb8ec0c8f5a
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 20 15:49:45 2020 -0500
+
+    Config btn print
+
+commit cb560140cb7f0d33d9a3f28c48d8045027035732
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 20 15:45:03 2020 -0500
+
+    se define el estado por default de la entidad
+
+commit 9368d43493c85e89ad6b4de6bffb7cdab37ea606
+Merge: dec664f 891d936
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 20 15:34:00 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit dec664fd86315bddb035220d93c4b54120fbaccc
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 20 15:33:48 2020 -0500
+
+    Add estilos modal
+
+commit 891d936c506d3517ef7164829231c2be89d721f1
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 20 15:30:54 2020 -0500
+
+    ajustes del modelo de entidades se agrega tabla de estado
+
+commit 17df1be96d160d4646ec2af00690a82f5c4f2ac5
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 20 15:08:11 2020 -0500
+
+    ajustes en el reporte de inventario de entidades
+
+commit b072cdce44a9830b042f17e5f433e01bacac051b
+Merge: 7c48c05 7577c4d
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 20 09:32:37 2020 -0500
+
+    conflicto en template all_entities
+
+commit 7c48c0517e3d6b74cfe5dd173ae7031a6edd6c9b
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 19 17:18:56 2020 -0500
+
+    ajustes de boton para editar entidad para el rol fuente
+
+commit 7577c4d81281bc5ea3b6ada48947a77e2fe078ad
+Merge: f3d1dad 1820df2
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Feb 19 15:25:00 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit f3d1dad01e4ea382deb2b61d1537207d2dca5116
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Feb 19 15:24:33 2020 -0500
+
+    Add estilos paginador
+
+commit 1820df2f95321c61fe3f7d09e0f917ebf4c1b556
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 19 11:19:32 2020 -0500
+
+    se agrega libreria intro js para el asistente de los formularios y se realizan pruebas de validación del formulario de crear entidades
+
+commit d0fa43f481815f6df6ea938b6c8891d77f024920
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 18 14:46:05 2020 -0500
+
+    Solo para diego
+
+commit 4bbecbbaea8c918aa6ed0ea5937cd438a75cccfd
+Merge: 2a9133b a582e46
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 18 14:43:27 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit a582e4612c274602bb509aaaab7d819e9d7e9ffb
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 18 14:41:28 2020 -0500
+
+    Actualizacion de fields numericos
+
+commit 2a9133be681570adf8416f6815abd66b10da90d2
+Merge: 711baf2 a0f29da
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 18 14:38:16 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit a0f29da1fc4ec401e897c51480ec26b1a4f6237e
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 18 14:36:28 2020 -0500
+
+    Actualizacion de fields de models entities
+
+commit 711baf21ddc3c099eb5a5121ed5e83dd947e664c
+Merge: d02efa6 ef1a8c6
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 18 14:25:21 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d02efa6243ff22a6ecd81d956f469aea433e5f9d
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 18 14:24:50 2020 -0500
+
+    Ajustes de estilos form entidad y table entidad
+
+commit ef1a8c65b8ee5546b427d59033c0aa8d1017c4b2
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 18 14:21:58 2020 -0500
+
+    Ajustes Models de entidades
+
+commit 317a89158fede572c558535336c492e902d0af2d
+Merge: d6da3c8 691a5ed
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 18 10:20:36 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit d6da3c8d49cfc73592ad4ec53b9761c50974e0a8
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 18 10:20:31 2020 -0500
+
+    Modelo de Datos Entidades
+
+commit 691a5ed2cb46946dee08c1f5ea59e27dd9fd534b
+Merge: a39a628 41fa55f
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 18 10:00:01 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit a39a6289c80751e793f254e128c80b855f743f4b
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 18 09:59:40 2020 -0500
+
+    se crea vista de inicio y se realizalas validaciones para que el rol fuente pueda editar la entidad a la que se encuentra asociado
+
+commit 41fa55f752bdfef5b26a77bd1ae8b586c5f08e59
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 17 17:59:13 2020 -0500
+
+    Ajustes formulario entidades
+
+commit 369db508154f7386b4c5830908d38df9036c78cd
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 17 11:54:27 2020 -0500
+
+    Ajustes de tabla entidades
+
+commit 1296e128a31aee8d10dc394673faf3874ad29e6d
+Merge: 10bb124 0d0b075
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 17 11:51:43 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 10bb12452f15173d40f55027019546262eaf89bc
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 17 11:51:20 2020 -0500
+
+    Ajustesd e popus
+
+commit 0d0b07546d373ba1926733c5641376339ce17c2e
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Feb 17 11:26:35 2020 -0500
+
+    pruebas de modelo de ooee
+
+commit ca06dbd1a320464c6a2bb706bac162695091dac9
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Feb 14 16:00:10 2020 -0500
+
+    Ajustes de table entidades
+
+commit 484fbc6cbad17f8b82e31dacd3b90177523f2271
+Merge: ab93029 ca06dbd
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 14 15:59:28 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit ab93029dec747c45e516c0dda3ee38c72540674a
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 14 15:53:03 2020 -0500
+
+    pruebas de modelo para operaciones estadisticas
+
+commit 2599cb51f2912055fa616fabc4f198837ce02d41
+Merge: 30b2e90 06a398c
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Feb 14 15:39:33 2020 -0500
+
+    ajustes mergue
+
+commit 30b2e902d4f015ccb49b59c2d1754d46ff5d7cef
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Fri Feb 14 15:38:04 2020 -0500
+
+    Estilos libreria datatable y tabla
+
+commit 06a398cd3940e50e092285fa86025dcfd774c45a
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 14 11:41:58 2020 -0500
+
+    Numero total de entidades en todas las vistas de la app entidades
+
+commit 2e3aa760942ce2e4e6b571860c9df08a6158b828
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 14 11:21:54 2020 -0500
+
+    variable para total de entidades en el menu
+
+commit 5bc9c0dac12073f8bdc937043cb5d45824f2751e
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 14 11:12:51 2020 -0500
+
+    permisos de visualización para los roles en modulo de Administracion de usuarios y de entidades
+
+commit 020df9b55924b38c89182308c3c07fffef23b713
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 13 17:21:10 2020 -0500
+
+    Ajustes estilos tabla usuarios
+
+commit eb77516097cc12582d6651307714f233bbd42b5f
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 13 17:12:03 2020 -0500
+
+    se crea vista para reporte de entidades en archivo excel
+
+commit 7477d77086dea848764d9a6fc70a72c06774d082
+Merge: c4d0750 0f6ccfd
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 13 16:20:12 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit c4d0750e6a2aeb934a1aaa2b6bda97c55c8e80e8
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 13 16:20:00 2020 -0500
+
+    enlaces de crear editar y eliminar para losiconos de tabla de entidad
+
+commit 0f6ccfd6beb25a793d633c5405cd079675de0cef
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 13 16:17:45 2020 -0500
+
+    Actualización del jquery
+
+commit 8af12f223a0577237db048c198d037f415ee21ee
+Merge: 0dd7b31 39c838c
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 13 15:58:05 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 0dd7b31ffa7498c127dcfa8e0000817d67f2ea1a
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Thu Feb 13 15:57:46 2020 -0500
+
+    Estilos de base 2 // menu
+
+commit 39c838cba3ba67fb4d5a4c4d9e67ecdb53a06f78
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 13 15:07:26 2020 -0500
+
+    vista para borrar entidad
+
+commit d581f409a64b3fd30eb4d8f465c7362bef20d031
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 13 11:42:43 2020 -0500
+
+    reporte de usuarios para exportar en excel
+
+commit d13aaa30fb38eb8fb66aaf9aad880e21d4938d90
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 12 15:00:25 2020 -0500
+
+    creación de modal para vista detalle de entidades, creación de formulario para editar y crear una entidad
+
+commit e3eca6eeaa2fa3d1a90ead697d7e61c980ab77ed
+Merge: cc3387c 458cf2a
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Feb 12 10:09:53 2020 -0500
+
+    Solucion de conflictos en base 2
+
+commit cc3387cda5a8cbb5faa95d860b3a6fdc1037b8c4
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Wed Feb 12 10:05:56 2020 -0500
+
+    Add styles base2
+
+commit 458cf2ab2661c38524dd7b929368acc2fe87fa84
+Merge: 7f0524f 3ff2b36
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Wed Feb 12 10:02:33 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 7f0524febb17abee0545887f29423b8b138be423
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Wed Feb 12 10:02:24 2020 -0500
+
+    modelo de entidades actualizados
+
+commit 3ff2b36f5d4da44f566964714a87199f540a2e26
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 12 09:56:55 2020 -0500
+
+    modulo de administrador funcionalidades terminadas
+
+commit 2b183e066baedac1f8def726aed1984397062ea2
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Mon Feb 10 17:20:31 2020 -0500
+
+    Styles component login
+
+commit d0673ff071cea335b6437d5b5250ee95b34e6061
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 7 17:26:05 2020 -0500
+
+    Modal para vista de detalles de la entidad
+
+commit 34f25a41564df3d5acb5aca9d67881bae92beccc
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Fri Feb 7 14:54:27 2020 -0500
+
+    se agrega libreria para paginación y buscador y se realiza la vista de todas las entidades
+
+commit 979ce18ddb3f74d511f6c4a1c176e17e19154a57
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 6 15:54:11 2020 -0500
+
+    selector de roles para vista de creación de usuarios y Editar usuarios
+
+commit e2c7cfb7523fceb2ed1fd40a008fba7e39e9d3a5
+Merge: 70c7552 b0931d3
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 6 11:19:24 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 70c75527e219e2178bd09122d2c5e5497aa6e31e
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Feb 6 11:18:53 2020 -0500
+
+    funcionalidad cambio de resetear contraseña
+
+commit b0931d3c584a7944c3f16b0177fee01fc47fa9e2
+Merge: 474259b cdefc50
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Wed Feb 5 16:59:29 2020 -0500
+
+    Resolucion de conflictos models.py de la app entidades
+
+commit 474259b266f33d90741e907fb7d543f926d1322e
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Wed Feb 5 16:57:07 2020 -0500
+
+    Actualizacion de fields del modelo entidades OOEE
+
+commit cdefc50f7a557901cb1275fc4608da82d7453fcc
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 5 14:55:56 2020 -0500
+
+    se actualiza modelo profile y se crea relación con el modelo entidad para el usuario
+
+commit 0b4669558a70cd61fb6f84b1bfa275c6f682da0b
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Wed Feb 5 10:43:28 2020 -0500
+
+    correo de bienvenida cuando se crea un usuario
+
+commit f3ed29f619db245837bb64803868f223d07a27fd
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 4 17:12:23 2020 -0500
+
+    botones para navegacion en modulo de administracion de usuarios
+
+commit acc4ef9c93dd3e2f5856e002f74ec70831ec25ca
+Merge: 04a1335 b231d04
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 4 17:05:08 2020 -0500
+
+    Merge branch 'master' of http://codeversion.dane.gov.co/DIRPEN/portal-herramienta-planificacion
+
+commit 04a13358e9c0e4e2bd59bfaceb770f0546153688
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 4 17:04:50 2020 -0500
+
+    formulario crear usuario
+
+commit b231d041f22725e8b23f8b3472ac3d9600b18d8b
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 4 16:03:15 2020 -0500
+
+    Actualizacion de tipo de datos modelo entidades
+
+commit 8700a5dbbc93dca14923d04744c5c1b98edb77c7
+Author: cjtorresb <cjtorresb@dane.gov.co>
+Date:   Tue Feb 4 15:58:14 2020 -0500
+
+    Creacion de modelo de entidades
+
+commit 84b6242be113e15eb4938cfb4f14760288c265da
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 4 15:54:12 2020 -0500
+
+    El diseñador sin conocimiento en programación le dio la leccion a los ingenieros
+
+commit 29f936048ceb0fea8300e40163547fb60bb68d03
+Author: ANCardenasc <ancardenasc@dane.gov.co>
+Date:   Tue Feb 4 15:44:51 2020 -0500
+
+    testing gitignore
+
+commit da2ac8c73e9a92510dbe1b8b42193ee7cb65f722
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Feb 4 11:56:14 2020 -0500
+
+    funciones y señal para crear usuario y perfil
+
+commit 3812e9e3a340718e8ae2cff4f05230a26de0d5dc
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Tue Jan 28 15:34:58 2020 -0500
+
+    funcionalidad para cambiar rol por el administrador del sistema
+
+commit 117ff866e33fb7a7aca68859c558aa78631d8b55
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Mon Jan 27 15:00:59 2020 -0500
+
+    vistas para todos los usuarios, para detalle de usuario y para editar usuario
+
+commit 2350ae600a8ee73c0c3dcf48917cf1f34ce16733
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Jan 23 16:03:30 2020 -0500
+
+    cierre de sesión
+
+commit 7fe242b4f8ea115c3d54320869536889402d3fcb
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Jan 23 11:23:17 2020 -0500
+
+    actualización gitignore
+
+commit d5a4652262d83db893d627eb53d698e2cd968278
+Author: davillamilm <davillamim@dane.gov.co>
+Date:   Thu Jan 23 11:16:28 2020 -0500
+
+    se crea aplicación login y se desarrolla funcionalidad de ingreso por ldap y se crean los modelos Role y Profile

@@ -1,0 +1,24 @@
+
+[
+    {
+        "model": "rraa.relacioneentidadesacceso",
+        "pk": 1, 
+        "fields": {
+            "opciones_pr": "Estadístico"
+        }
+    }, 
+    {
+        "model": "rraa.relacioneentidadesacceso", 
+        "pk": 2,
+        "fields": {
+            "opciones_pr": "No sabe"
+        }
+    }, 
+    {
+        "model": "rraa.relacioneentidadesacceso", 
+        "pk": 3, 
+        "fields": {
+            "opciones_pr": "Otro, ¿cuál?"
+        }
+    }
+]

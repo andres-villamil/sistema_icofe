@@ -1,0 +1,30 @@
+[
+    {
+        "model": "rraa.seguridadinform",
+        "pk": 1, 
+        "fields": {
+            "seg_inf": "Backups"
+        }
+    }, 
+    {
+        "model": "rraa.seguridadinform", 
+        "pk": 2,
+        "fields": {
+            "seg_inf": "Aislamiento del servidor"
+        }
+    }, 
+    {
+        "model": "rraa.seguridadinform",
+        "pk": 3, 
+        "fields": {
+            "seg_inf": "Utilización de perfiles"
+        }
+    },  
+    {
+        "model": "rraa.seguridadinform", 
+        "pk": 4,
+        "fields": {
+            "seg_inf": "Otra (s)"
+        }
+    }
+]

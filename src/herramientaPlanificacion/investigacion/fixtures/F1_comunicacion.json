@@ -1,0 +1,32 @@
+[
+    {
+        "model": "ooee.mediosdifusion",
+        "pk": 1, 
+        "fields": {
+           "m_dif": "Página web"
+        }
+    }, 
+    {
+        "model": "ooee.mediosdifusion", 
+        "pk": 2,
+        "fields": {
+           "m_dif": "Medio físico"
+        }
+    }, 
+    {
+        "model": "ooee.mediosdifusion", 
+        "pk": 3, 
+        "fields": {
+           "m_dif": "Medio electrónico"
+        }
+    },
+    {
+        "model": "ooee.mediosdifusion", 
+        "pk": 4, 
+        "fields": {
+           "m_dif": "Otro"
+        }
+    }
+]
+
+

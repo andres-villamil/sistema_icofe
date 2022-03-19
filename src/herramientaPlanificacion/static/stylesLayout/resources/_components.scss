@@ -1,0 +1,348 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+body {
+   overflow-x: hidden;
+   background: url("/media/backgrounds/background-login.png") no-repeat top;
+   font-family: $Open;
+   font-size: $p;
+}
+
+.activate {
+   background-color: $kuler_sistemaInventario-5-hex !important;
+   border-radius: 15px 0 0 15px !important;
+   color: $kuler-white !important;
+}
+
+#view-mobile {
+   margin-top: 30vh;
+
+   .icoComputer {
+      font-size: 10rem;
+      color: $kuler_sistemaInventario-5-hex;
+   }
+}
+
+header {
+   width: 100%;
+   height: 15vh;
+   background: rgba(86, 192, 183, 1);
+   background: -moz-linear-gradient(left,
+         rgba(86, 192, 183, 1) 0%,
+         rgba(1, 36, 88, 1) 100%);
+   background: -webkit-gradient(left top,
+         right top,
+         color-stop(0%, rgba(86, 192, 183, 1)),
+         color-stop(100%, rgba(1, 36, 88, 1)));
+   background: -webkit-linear-gradient(left,
+         rgba(86, 192, 183, 1) 0%,
+         rgba(1, 36, 88, 1) 100%);
+   background: -o-linear-gradient(left, rgba(86, 192, 183, 1) 0%, rgba(1, 36, 88, 1) 100%);
+   background: -ms-linear-gradient(left,
+         rgba(86, 192, 183, 1) 0%,
+         rgba(1, 36, 88, 1) 100%);
+   background: linear-gradient(to right,
+         rgba(86, 192, 183, 1) 0%,
+         rgba(1, 36, 88, 1) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#56c0b7', endColorstr='#012458', GradientType=1);
+   border-radius: 0 0 4px 4px;
+
+   padding-top: 4vh;
+
+   @include media(ds) {
+      padding-top: 0vh;
+   }
+
+   .title_App {
+      font-family: $Barlow;
+      font-size: $h3;
+      font-weight: bold;
+      color: $kuler-white;
+
+      @include media(ds) {
+         font-size: $h4;
+      }
+   }
+
+   .dataUser {
+      h2 {
+         font-family: $Barlow;
+         font-size: $h6;
+         font-weight: bold;
+         text-align: right;
+         color: $kuler-white;
+      }
+
+      h3 {
+         font-family: $Barlow;
+         font-size: $p;
+         text-align: right;
+         color: $kuler-white;
+      }
+   }
+
+   #popoverAvatar {
+      background-color: $Kuler-GrayScale-4-hex;
+      border-radius: 4px;
+      position: relative;
+      left: 74.4vw;
+      display: none;
+   }
+
+   #avatar {
+      &:focus {
+         outline: none;
+         box-shadow: none;
+         border: 2px solid transparent;
+      }
+   }
+}
+
+#navbarClose {
+   display: none;
+}
+
+#navbarOpen {
+   display: block;
+}
+
+nav {
+   height: 100vh;
+   background-color: $Kuler-GrayScale-4-hex;
+   border-radius: 0 0 50px 0;
+
+   .spacingNavItem {
+      margin-top: 3vh;
+
+      @include media(ds) {
+         margin-top: 1vh;
+      }
+   }
+
+   .linkContact {
+      margin: 1vh 2vw 0 0;
+
+      @include media(ds) {
+         margin: 1vh 1vw 0 0;
+      }
+   }
+
+   .titleNavItem {
+      font-family: $Barlow;
+      font-size: $p;
+      font-weight: bold;
+      color: $kuler_sistemaInventario-1-hex;
+   }
+   /* .list{
+      font-size: 0.9rem;
+   } */
+
+   .lineNavItem {
+      border: $kuler_sistemaInventario-1-hex !important;
+   }
+
+   .list-group {
+      .list-group-item {
+         background-color: transparent;
+         border: none;
+         color: $kuler_sistemaInventario-1-hex;
+
+         &:hover {
+            background-color: $kuler_sistemaInventario-5-hex !important;
+            border-radius: 15px 0 0 15px;
+            color: $kuler-white;
+         }
+      }
+
+      a {
+         font-family: $Open;
+         font-size: $m;
+
+         @include media(ds) {
+            font-size: $ms;
+         }
+      }
+
+      .active {
+         background-color: $kuler_sistemaInventario-5-hex !important;
+         border-radius: 15px 0 0 15px !important;
+         color: $kuler-white !important;
+      }
+   }
+
+   .btn_closeMenu {
+      background-color: $kuler_sistemaInventario-4-hex;
+      color: $kuler-white;
+      border-radius: 0 0 0 20px;
+
+      &:hover,
+      &:visited,
+      &:focus {
+         background-color: $kuler_sistemaInventario-5-hex;
+         color: $kuler-white;
+      }
+   }
+
+   #directorio {
+      background-color: $kuler_sistemaInventario-1-hex;
+
+      h3 {
+         font-family: $Barlow;
+         font-weight: bold;
+         font-size: $h3;
+         color: $kuler-white;
+      }
+
+      p {
+         font-size: $ps;
+         color: $kuler-white;
+      }
+
+      .ml {
+         margin-left: 2vw;
+
+         @include media(ds) {
+            margin-left: 1vw;
+         }
+      }
+
+      .material-icons {
+         font-size: 3.5rem;
+         color: $kuler-white;
+      }
+   }
+
+   .copyright {
+      font-size: 0.5rem;
+      font-style: italic;
+      text-align: center;
+   }
+}
+
+.btn_primary {
+   font-family: $Barlow;
+   font-size: $h6;
+   background-color: $kuler_sistemaInventario-5-hex;
+   color: $kuler-white !important;
+
+   &:hover,
+   &:focus {
+      background-color: $kuler_sistemaInventario-4-hex;
+      color: $kuler-white !important;
+   }
+}
+
+.btn_report {
+   background-color: $kuler_sistemaInventario-5-hex;
+
+   a {
+      text-decoration: none;
+      font-family: $Barlow;
+      font-size: $h6;
+      color: $kuler-white;
+   }
+
+   &:hover,
+   &:visited,
+   &:focus {
+      background-color: $kuler_sistemaInventario-4-hex;
+   }
+}
+
+.btn_link {
+   font-size: 1rem;
+   font-style: italic;
+   color: $kuler_black;
+
+   &:hover,
+   &:visited,
+   &:focus {
+      color: $kuler-black;
+      font-weight: bold;
+      text-decoration: none;
+   }
+}
+
+.btn_link2 {
+   font-size: 0.8rem;
+   font-style: italic;
+   color: $kuler_black;
+
+   &:hover,
+   &:visited,
+   &:focus {
+      color: $kuler-black;
+      font-weight: bold;
+      text-decoration: none;
+   }
+}
+
+.overflowContent {
+   height: 75vh;
+   overflow-y: scroll;
+}
+
+.btn_linkIcons {
+   font-size: 1rem;
+   color: $kuler_sistemaInventario-5-hex;
+
+   &:hover {
+      color: $kuler_sistemaInventario-4-hex;
+      text-decoration: none;
+   }
+}
+
+.textaditional {
+   font-family: $Barlow;
+   font-size: 0.8rem;
+   font-weight: 600;
+
+   @include media(ds) {
+      font-size: 0.7rem;
+   }
+}
+
+
+.btn-manuales {
+   display: flex;
+   justify-content: center;
+   padding: 0 1vw;
+}
+
+.titleManuales {
+   font-family: $Barlow;
+   font-weight: bold;
+   font-size: $ps;
+}
+
+.warpInfo {
+   .head {
+      color: $kuler_sistemaInventario-1-hex;
+      font-weight: bold;
+      font-size: $ps;
+      text-transform: uppercase;
+   } 
+   .indicador {
+      color: $kuler_sistemaInventario-1-hex;
+      font-weight: bold;
+      font-size: $p; 
+      text-align: justify;     
+   } 
+
+   .btn_link_detail {
+      text-align: left;
+      font-size: $p;
+      font-style: italic;
+      color: $kuler_sistemaInventario-4-hex;
+
+      &:hover,
+      &:visited,
+      &:focus {
+         color: $kuler_sistemaInventario-5-hex;
+         text-decoration: none;
+      }
+   }
+}
+
+
+

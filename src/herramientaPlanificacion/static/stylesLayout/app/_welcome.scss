@@ -1,0 +1,67 @@
+@import '../resources/setting';
+@import '../resources/responsive';
+
+
+#welcome{
+    display: none;
+
+    h4 {
+        font-family: $Barlow;
+        font-size: $h3;
+        font-weight: bold;
+        color: $Kuler-GrayScale-2-hex;
+    }
+    h2{
+        font-family: $Barlow;
+        font-weight: bold;
+        font-size: $h2;
+        color: $kuler_sistemaInventario-1-hex; 
+    }
+    .spacingTop{
+        margin-top: 5vh;
+    }
+    .background-card{
+        background-color: $Kuler-GrayScale-4-hex;
+        border-radius: 4px;
+        .bar-1{
+            background-color: $kuler_sistemaInventario-3-hex;
+            height: 1vh;
+            border-radius: 4px 4px 0 0;
+        }
+        .bar-2{
+            background-color: $kuler_sistemaInventario-1-hex;
+            h2{
+                font-size: $h2!important;
+                color: $kuler-white;
+            }
+            p{
+                font-size: $p;
+                color: $kuler-white;
+            } 
+        }
+        .list-group-item{
+            border: none!important;
+            background-color: transparent!important;
+        }
+        .colorTextGreenCard{
+            color:  $kuler_sistemaInventario-1-hex; 
+        }
+        .pointerChevron{
+            cursor: pointer;
+        }
+        
+
+    }
+}
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat rgb(249,249,249);
+  opacity: .8;
+  cursor: wait;
+}

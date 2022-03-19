@@ -1,0 +1,38 @@
+[
+    {
+        "model": "ooee.otrosproductos",
+        "pk": 1, 
+        "fields": {
+           "otro_prod": "Series históricas"
+        }
+    }, 
+    {
+        "model": "ooee.otrosproductos", 
+        "pk": 2,
+        "fields": {
+           "otro_prod": "Microdatos"
+        }
+    }, 
+    {
+        "model": "ooee.otrosproductos", 
+        "pk": 3, 
+        "fields": {
+           "otro_prod": "Documentos metodológicos"
+        }
+    },
+    {
+        "model": "ooee.otrosproductos", 
+        "pk": 4,
+        "fields": {
+           "otro_prod": "Calendario de difusión"            
+        }
+    }, 
+    {
+        "model": "ooee.otrosproductos", 
+        "pk": 5, 
+        "fields": {
+           "otro_prod": "Ninguna"
+        }
+    }
+    
+]

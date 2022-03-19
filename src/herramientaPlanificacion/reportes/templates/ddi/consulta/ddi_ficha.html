@@ -1,0 +1,499 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+   <div class="d-flex flex-row justify-content-center align-items-center">
+      <div class="alert alert-warning" role=" alert">
+         <div class="d-flex flex-row justify-content-center align-items-center mt-2">
+            <h6 class="mr-4">Para ver todas las variables descargue el</h6>
+            <a href="{% url 'demandas:ddi_publicados' %}" class="save btn btn_primary btn-sm hvr-shrink" onclick="showMessage()">
+               <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i>
+                  <span class="ml-2">Inventario de demandas de información</span>
+               </div>
+            </a>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<div id="detalleOOEE" class="container">{% csrf_token %}
+    <div class="d-flex flex-row justify-content-between">
+        <img id="Logo-PRES" class="img-fluid" src="{% static '/images/logos/logo_sen.svg' %}" alt="logo SEN"
+        style="display:none; width: 15%;">
+        <img id="Logo-DANE" class="img-fluid" src="{% static '/images/logos/logo_Dane.svg' %}" alt="logo DANE"
+           style="display:none; width: 15%;">      
+     </div>
+   <div id="warpHeadDetail">     
+
+        <h3 class="text-uppercase titleficha text-center mb-2">Ficha de caracterización Demandas de Información</h3>
+        
+        <div class="row warpInfo mt-3 mb-3 ml-5 d-flex justify-content-center">
+            <div class="col-lg-4">
+                           <div class="row no-gutters">
+                              <div class="col-lg-3 codest bkg-Green rounded">
+                                 <p class="m-0">CÓDIGO</p>
+                              </div>
+                              <div class="col-lg-5 body border rounded pt-1 px-1 printCent">
+                                 <p class="printCent">{{ ddi.codigo_ddi }}</p>
+                              </div>                  
+                           </div>
+            </div>
+             <div class="col-lg-4">
+                           <div class="row no-gutters">
+                              <div class="col-lg-3 codest bkg-Green rounded">
+                                 <p class="m-0">ESTADO</p>
+                              </div>
+                              <div class="col-lg-5 body border rounded pt-1 px-1">
+                                {% for z in ddi.compl_dem_a.all %}
+                                    {% if z.compl_dem_a == "Si" %}
+                                    <p class="printCent">Satisfecha</p>
+                                    {% elif z.compl_dem_a == "No" %}
+                                    <p class="printCent">No satisfecha</p>
+                                    {% endif %}
+                                {% endfor %}
+                              </div>                  
+                           </div>
+            </div>
+            </div>
+
+        <div class="warpInfo d-flex flex-column pt-1 mt-2 mb-3">
+        <div class="d-flex flex-row">
+            <div class="col-12 col-lg-12">
+               <div class="indicador">
+                  <p>{{ ddi.pm_b_1 }}</p>
+               </div>                    
+         </div>
+        </div>
+    </div>
+
+        <!--- estado de la  ACTUALIZACIÓN -->
+            {% if estadoNovddi != "" %}
+            <div class="warpInfo d-flex flex-column mt-2">
+                <div class="d-flex flex-row">
+                    <div class="col-12 col-lg-6">
+                        <div class="head">
+                        <p>Estado de la actualización:</p>
+                        </div>
+                        <div class="body border rounded pt-1 px-2">
+                        <p>{{ estadoNovDDI }}</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="head">
+                        <p>Fecha de la actualización:</p>
+                        </div>
+                        <div class="body border rounded pt-1 px-2">
+                        <p>{{ fechaEstado|date:'Y-m-d'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+                <!--  No muestra nada -->
+        {% endif %}
+        <!---end estado de la  ACTUALIZACIÓN -->
+       
+        
+         <div class="warpInfo d-flex flex-column mt-2">
+            <div class="d-flex flex-row">
+               <div class="col-12 col-lg-6">
+                  <div class="head">
+                     <p>Área temática: </p>
+                  </div>
+                  <div class="body border rounded pt-1 px-2">
+                     <p>{{ ddi.area_tem }}</p>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <div class="head">
+                     <p>Tema Principal:</p>
+                  </div>
+                  <div class="body border rounded pt-1 px-2">
+                     <p>{{ ddi.tema_prin }}</p>
+                  </div>
+               </div>              
+            </div>
+            <div class="mt-2">
+                <div class="col-12 col-lg-12">
+                    <div class="head">
+                       <p>Tema compartido:</p>
+                    </div>
+                    <div class="body border rounded pt-1 px-2">
+                        {% for temaCom in ddi.tema_comp.all  %}
+                   <p>{{ temaCom.tema_comp }} </p> 
+                {% endfor %} 
+                    </div>
+                 </div>
+
+            </div>
+
+
+         </div>    
+
+        <div class="warpInfo d-flex flex-column pt-1 mt-2 mb-3">
+            <div class="d-flex flex-row">
+               <div class="col-12 col-lg-12">
+                  <div class="head">
+                     <p>Comité estadístico sectorial al que pertenece la demanda de información estadística: </p>
+                  </div>
+                  <div class="body border rounded pt-1 px-2">
+                    {% for comite in ddi.comite_est.all  %}
+                    <p>{{ comite.comite_est }}</p>
+                {% endfor %}
+                  </div>
+               </div>        
+            </div>
+        </div>    
+        
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>1.  ¿Cuál es el indicador o requerimiento de información estadística?</b></p>
+        </div>
+
+        <div><p class="body border rounded pt-1 px-2">{{ ddi.pm_b_1 }}</p></div>
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>2.  Descripción general de la información que requiere</b></p>
+        </div>        
+
+        <div><p class="body border rounded pt-1 px-2">{{ ddi.pm_b_2 }}</p></div>
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>5.  La información solicitada responde a las siguientes normas</b></p>
+        </div>   
+           
+        <div class="row mb-3 body pt-1">
+            <div class="col-12 mt-3">
+                {% for norma in ddi.pm_b_5.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p>{{ norma.pm_b_5 }}</p> 
+                  </div>
+                    
+                    {% if norma.pm_b_5 == "Constitución Política" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ normasText_ft.const_pol_text }}</p>                   
+                    {% elif norma.pm_b_5 == "Ley" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ normasText_ft.ley_text }}</p>                    
+                    {% elif norma.pm_b_5 == "Decreto (Nacional, departamental, etc.)" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ normasText_ft.decreto_text }}</p>                      
+                    {% elif norma.pm_b_5 == "Otra (Resolución, ordenanza, acuerdo)" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ normasText_ft.otra_text }}</p>                      
+                    {% elif norma.pm_b_5 == "Ninguna" %}  
+                        <p></p>                
+
+                    {% endif%}
+                {% endfor %}  
+            </div>            
+        </div>
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>6. La información solicitada responde a los siguientes requerimientos</b></p>
+        </div>         
+               
+        <div class="row mb-3 body pt-1 ">
+            <div class="col-12 mt-3">
+                {% for req in ddi.pm_b_6.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ req.pm_b_6 }} </p>
+                  </div>
+                   
+                   {% if req.pm_b_6 == "Plan Nacional de Desarrollo (Capítulo y línea)" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.planalDes_text }}</p>
+                   
+                   {% elif req.pm_b_6 == "Cuentas económicas y macroeconómicas" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.cuentasecomacroec_text }}</p>
+                   
+                   {% elif req.pm_b_6 == "Plan Sectorial, Territorial o CONPES"  %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.plansecterrcom_text }}</p>
+                   
+                   {% elif req.pm_b_6 == "Objetivos de Desarrollo Sostenible (ODS) ¿Cuál es el número del Objetivo? ¿Cuál es el número del Indicador?" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.objdessost_text }}</p>
+                   
+                   {% elif req.pm_b_6 == "Organización para la Cooperación y el Desarrollo Económicos (OCDE)" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.orgcooper_text  }}</p>
+                   
+                   {% elif req.pm_b_6 == "Otros compromisos internacionales" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.otroscomprInt_text }}</p>
+                   
+                   {% elif req.pm_b_6 == "Otro(s)" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ infSolRespRequerimientoText_ft.otros_text }}</p>
+                   {% endif %}
+                {% endfor %}
+            </div>            
+        
+        </div>
+        
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>7.  ¿La información requerida está siendo producida en su totalidad? </b></p>
+        </div>    
+
+        <div class="d-flex justify-content-center ">
+            <div class="bkg-gray tbody border rounded font-weight-bold px-2"> {{ preg7 }}</div> 
+        </div>
+
+                      
+            <hr>
+        
+        {% if preg7 == "No" %}<!-- condicional  si selecciona No -->
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>8.  ¿Qué tipo de requerimiento es? </b></p>
+        </div>  
+        <div class="row mb-3 body pt-1">
+            <div class="col-12">
+                {% for y in ddi.pm_b_8.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ y.pm_b_8 }} </p>
+                  </div>
+                    
+                        {% if y.pm_b_8 == "Agregado estadístico o indicador" %}
+                            <p></p>
+                        {% elif y.pm_b_8 == "Ampliación cobertura geográfica" %}
+                            <p></p>
+                        {% elif y.pm_b_8 == "Ampliación cobertura temática" %}
+                            <p></p>
+                        {% elif y.pm_b_8 == "Ajustes en la difusión" %}
+                            <p></p>
+                        {% elif y.pm_b_8 == "Otro. ¿Cuál?" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ tipoRequerimientoText_ft.otro_cual_text }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
+        </div>
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>9. ¿Qué variables necesita para suplir el requerimiento?</b></p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between">
+            {% for results in listaVariablesText_ft   %}
+            <p class="border rounded px-2 w-25 ">{{results.lista_varia }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>12. Indique la desagregación requerida:</b></p>
+        </div>       
+        <div class="row mb-3 body pt-1">
+            <div class="col-12 mt-2">
+                {% for z in ddi.pm_b_12.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ z.pm_b_12 }} </p>
+                  </div>                  
+                        {% if z.pm_b_12 == "Sexo" %}
+                            <p></p>
+                        {% elif z.pm_b_12 == "Edades" %}
+                            <p></p>
+                        {% elif z.pm_b_12 == "Grupos étnicos" %}
+                            <p></p>
+                        {% elif z.pm_b_12 == "Discapacidad" %}
+                            <p></p>
+                        {% elif z.pm_b_12 == "Estrato" %}
+                            <p></p>
+                        {% elif z.pm_b_12 == "Otra ¿Cuál?" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5">{{ desagregacionReqText_ft.otra_cual_text_a }}</p>  
+                        {% elif z.pm_b_12 == "Ninguna" %}
+                            <p></p>
+                    {% endif %}
+                {% endfor %}
+            </div>           
+        </div>
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>13. Indique la desagregación geográfica requerida:</b></p>
+        </div>       
+        <div>
+            <div class="row mb-3 body pt-1">            
+                {% for dg in ddi.pm_b_13.all  %}               
+                    <div class="col-6 geozona">{{ dg.pm_b_13 }}</div>   
+                {% endfor %}    
+            </div>
+
+        </div>       
+        <div class="row">
+            <div class="col-6">
+                {% for dgg in ddi.pm_b_13_geo.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ dgg.pm_b_13_geo }} </p>
+                  </div>
+                    
+                        {% if dgg.pm_b_13_geo == "Nacional" %}
+                            <p></p>
+                        {% elif dgg.pm_b_13_geo == "Regional" %}
+                            <p></p>
+                        {% elif dgg.pm_b_13_geo == "Departamental" %}
+                            <p></p>
+                        {% elif dgg.pm_b_13_geo == "Áreas metropolitanas" %}
+                            <p></p>
+                        {% elif dgg.pm_b_13_geo == "Municipal" %}
+                            <p></p>
+                        {% elif dgg.pm_b_13_geo == "Otra, cuál?" %}
+                        <p class="bkg-clear pt-1 px-2 ml-5"> {{ desGeoReqGeograficaText_ft.otra_cual_text_b }}</p>                   
+                    
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="col-6">
+                {% for dgz in ddi.pm_b_13_zona.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ dgz.pm_b_13_zona }} </p>
+                  </div>
+                  
+                {% endfor %}
+            </div>
+        </div>  
+
+        <div class="bkg-Green rounded">
+            <p class="titleques"><b>14.  Periodicidad de difusión requerida</b></p>
+        </div>
+        
+        <div class="row mb-3 body pt-1">
+            <div class="col-12">
+                {% for difusion in ddi.pm_b_14.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ difusion.pm_b_14 }} </p>
+                  </div>
+                    
+                    {% if difusion.pm_b_14 == "Anual" %}
+                        <p></p>
+                    {% elif difusion.pm_b_14 == "Semestral" %}
+                        <p></p>
+                    {% elif difusion.pm_b_14 == "Trimestral" %}
+                        <p></p>
+                    {% elif difusion.pm_b_14 == "Mensual" %}
+                        <p></p>
+                    {% elif difusion.pm_b_14 == "Otra ¿Cuál?" %}
+                        <p class="blankSpace14 bkg-clear pt-1 px-2 ml-5"> {{ perioDifusionText_ft.otra_cual_text_c }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>          
+        </div>
+
+        {% else %} <!--condicional si selecciona si-->
+
+        <div class="row"> 
+            <div class="col-6">
+                <p class=" geozona">Entidad:</p> 
+                {% for en in ddi.entidad_pm_b7.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ en }} </p>
+                  </div>
+                    
+                {% endfor %}
+            </div>
+            <div class="col-6">
+                <p>Otras</p>
+                <p class="bkg-clear pt-1 px-2 ml-3"> {{ ddi.otro_entidad_pm_b7 }} </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row"> 
+            <div class="col-6">
+                <p class="geozona">Operaciones estadísticas:</p> 
+                {% for oe in ddi.ooee_pm_b7.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ oe }} </p>
+                  </div>
+                    
+                {% endfor %}
+            </div>
+            <div class="col-6">
+                <p>Otras</p>
+                <p class="bkg-clear pt-1 px-2 ml-3"> {{ ddi.otro_ooee_pm_b7 }} </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row"> 
+            <div class="col-6">
+                <p class="geozona">Registros Administrativos:</p> 
+                {% for ra in ddi.rraa_pm_b7.all  %}
+                <div class="d-flex">
+                    <i class="material-icons green">check</i> <p > {{ ra }} </p>
+                  </div>
+
+                {% endfor %}
+            </div>
+            <div class="col-6">
+                <p>Otros</p>
+                <p class="bkg-clear pt-1 px-2 ml-3" > {{ ddi.otro_rraa_pm_b7 }} </p>
+            </div>
+        </div>
+
+        {% endif %}  <!--condicional -->
+        
+
+    </div>
+</div>
+
+    <div class="container">
+        <hr>
+        <div class="d-flex flex-row justify-content-end py-3">
+            {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5  %}
+            <a href="{% url 'demandas:editar_ddi' ddi.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-2">
+                <div class="d-flex align-items-center"><i class="material-icons">edit</i>
+                    <span class="ml-2">Editar la demanda de información</span>
+                </div>
+            </a>
+            {% endif %}
+
+            <button id="print_btn" type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" onclick="fnc_print()">
+                <div class="d-flex align-items-center"><i class="material-icons">print</i>
+                    <span class="ml-2">Imprimir</span>
+                </div>
+            </button>
+
+            <button id="backLink" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                <div class="d-flex align-items-center justify-content-center">
+                    <i class="material-icons">keyboard_return</i>
+                        <span class="ml-2">Volver</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+<script>
+    var options = {
+       importCSS: true,
+    }
+
+    function fnc_print() {
+       $('#detalleOOEE').printThis(options);
+       $('#Logo-DANE').show();
+       $('#Logo-PRES').show();
+
+      
+       $('.printCent').addClass('centerPrint');
+
+        setTimeout(function () {
+            $('#Logo-DANE').fadeOut('fast');
+            $('#Logo-PRES').fadeOut('fast');
+
+        $('.printCent').removeClass('centerPrint');
+        }, 1000);
+
+      
+
+    }
+
+    $(document).ready(function(){
+       $('#backLink').click(function(){
+          parent.history.back();
+       return false;
+       });
+    });
+
+    // mensaje al descargar reporte
+    function showMessage(){
+        var top = $('#topMessage');
+            top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+            top.animate({top: "50"}).delay(7000).animate({top: "-150"})
+    // mensaje al descargar reporte
+    }
+
+    
+
+ </script>
+
+
+{% endblock %}

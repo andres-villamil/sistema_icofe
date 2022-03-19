@@ -1,0 +1,204 @@
+{% extends "base/base2.html" %} {% load static %} {% block content %}
+
+<!-- librerias para paginación de tablas -->
+<!-- css -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'libraries/dataTables/css/dataTables.bootstrap4.min.css' %}"
+/>
+<!-- end -->
+
+{% if user.is_authenticated and user.profile.role.id == 1 %} {% if users %}
+
+
+
+
+<div id="loader"></div>
+
+<div id="container">
+
+<div id="tableAll">
+  <table class="table table-borderless table-hover" id="users_table">
+    <thead class="kulerTableHead">
+      <tr>
+        <th>Avatar</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Entidad</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td id="gr">
+          <img
+            class="rounded mx-auto d-block img-fluid"
+            src="https://ui-avatars.com/api/?name={{ user.username }}&rounded=true&background=607D8B&bold=true&color=ffffff&size=32"
+            alt=""
+          />
+        </td>
+        <td><span class="textContentTable">{{ user.first_name }}</span></td>
+        <td><span class="textContentTable">{{ user.last_name }}</span></td>
+        <td><span class="textContentTable">{{ user.username }}</span></td>
+        <td><span class="textContentTable">{{ user.email }}</span></td>
+        <td><span class="textContentTable">{{ user.profile.entidad.nombre}}</span></td>
+        <td><span class="textContentTable">{{ user.profile.role.name}}</span></td>
+        <td>
+          <a
+            onclick="return open_modal('{% url 'login:user_detail' user.pk %}')"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Detalle"
+            ><i class="material-icons miKuller hvr-shrink">add_circle</i></a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div id="top"></div>
+
+{% else %}
+<div class="container">
+  <div class="d-flex flex-row justify-content-center align-items-center">
+    <div class="alert alert-danger" role="alert">
+      <h2 class="text-center text-uppercase">error 404</h2>
+      <h4 class="pt-3">No hay usuarios disponibles</h4>
+      <p class="text-center mt-3">En este momento no hay usuarios en la plataforma.</p>
+    </div>
+  </div>
+</div>
+{% endif %} {% else %}
+
+<div class="container">
+  <div class="d-flex flex-row justify-content-center align-items-center">
+    <div class="alert alert-warning" role="alert">
+      <h2 class="text-center text-uppercase">error 401</h2>
+      <h4 class="pt-3">
+        El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción
+      </h4>
+      <a class="alert-link" href="{% url 'login:loggedin' %}">
+        <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+</div>
+
+<!-- js -->
+<script
+  type="text/javascript"
+  charset="utf8"
+  src="{% static 'libraries/dataTables/js/jquery.dataTables.min.js' %}"
+></script>
+<script
+  type="text/javascript"
+  charset="utf8"
+  src="{% static 'libraries/dataTables/js/dataTables.bootstrap4.min.js' %}"
+></script>
+
+<!--- script for tables-plugin-->
+<script>
+  $(document).ready(function () {
+    $("#users_table").DataTable({
+      language: {
+        decimal: "",
+        emptyTable: "No hay información",
+        info: "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
+        infoEmpty: "Mostrando 0 to 0 of 0 Usuarios",
+        infoFiltered: "(Filtrado de _MAX_ total Usuarios)",
+        infoPostFix: "",
+        thousands: ",",
+
+        lengthMenu: "Mostrar _MENU_ ",
+        loadingRecords: "Cargando...",
+        processing: "Procesando...",
+        search:
+          "<button id='btn-Big' class='btn btn_primarySearch btn-small' onclick='searchClose()'><div class='d-flex flex-row justify-content-center'><i class = 'material-icons mt-1 pr-2' > search </i> Buscar </div></button>",
+        searchPlaceholder: "Buscar usuario",
+        zeroRecords: "Sin resultados encontrados",
+
+        paginate: {
+          first: " Inicio ",
+          last: " Fin ",
+          next: " >> ",
+          previous: " << ",
+        },
+      },
+      pagingType: "full_numbers",
+      iDisplayLength: 10,
+      lengthMenu: [
+        [10, 20, 30, 40, 50, -1],
+        [10, 20, 30, 40, 50, "Todos"],
+      ],
+
+      //pagination center
+      sDom:
+        '<"d-flex flex-row align-items-center justify-content-between view-filter"<"#btnAdd"><l><"buscador-small"><"buscador-big"f>>t<"d-flex flex-row align-items-center justify-content-between view-pagination"<"#btnReport"><i><p>>',
+      ordering: false,
+    });
+
+    //search code
+    $(".buscador-small").append(
+      '<button id="btn-Small" class="btn btn_primary btn-small hvr-shrink" onclick="searchOpen()"><div class=" d-flex flex-row justify-content-center"><i class = "material-icons mt-1 pr-2" > search </i> Buscar </div></button> '
+    );
+    $(".buscador-big").hide();
+    //end search code
+
+    var button =
+      '<a id="btnCreaUser" class="btn btn_primary hvr-shrink"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">create</i> <span class="ml-2">Crear usuario</span></div></a>';
+
+    $("#btnAdd").append(button);
+    $("#btnAdd").click(function () {
+      $("#btnCreaUser").attr("href", "{% url 'login:registrarse' %}");
+    });
+
+    
+
+    var btnReporte = '<a id="btnReportUser" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i> <span class="ml-2">Descargue el inventario</span></div></a>';
+    $("#btnReport").append(btnReporte);
+    $("#btnReport").click(function () {
+      // mensaje al descargar reporte
+      var top = $('#top');
+          top.html("<div>Estamos preparando su reporte por favor espere  ...</div>");
+          top.animate({top: "600"}).delay(3000).animate({top: "-150"})
+          $("#btnReportUser").attr("href", "{% url 'login:report_excel'%}");
+      // mensaje al descargar reporte
+    });
+
+    
+  });
+
+  //Modal detail users
+
+  function open_modal(url) {
+    $("#popupUser").load(url, function () {
+      $(this).modal("show");
+    });
+    return false;
+  }
+
+  function close_modal() {
+    $("#popupUser").modal("hide");
+    return false;
+  }
+
+  function preloader(){
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("container").style.display = "block";
+  }//preloader
+  window.onload = preloader;
+ 
+</script>
+
+{% endblock content %}

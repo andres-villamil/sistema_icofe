@@ -1,0 +1,51 @@
+[
+    {
+        "model": "ooee.unidadobservacion",
+        "pk": 1, 
+        "fields": {
+            "uni_observacion": "Empresa"
+        }
+    }, 
+    {
+        "model": "ooee.unidadobservacion", 
+        "pk": 2,
+        "fields": {
+            "uni_observacion": "Establecimiento"
+        }
+    }, 
+    {
+        "model": "ooee.unidadobservacion", 
+        "pk": 3, 
+        "fields": {
+            "uni_observacion": "Hogar"
+        }
+    },
+    {
+        "model": "ooee.unidadobservacion", 
+        "pk": 4,
+        "fields": {
+            "uni_observacion": "Persona"            
+        }
+    }, 
+    {
+        "model": "ooee.unidadobservacion", 
+        "pk": 5, 
+        "fields": {
+            "uni_observacion": "Unidad productora agropecuaria"
+        }
+    },
+    {
+        "model": "ooee.unidadobservacion", 
+        "pk": 6,
+        "fields": {
+            "uni_observacion": "Predio"
+        }
+    }, 
+    {
+        "model": "ooee.unidadobservacion", 
+        "pk": 7, 
+        "fields": {
+            "uni_observacion": "Otra (s)"
+        }
+    }
+]

@@ -1,0 +1,75 @@
+//variables//
+$onlyScreem: "only screem";
+$breakpoint-ms: 320px;
+$breakpoint-mm: 375px;
+$breakpoint-ml: 480px;
+$breakpoint-mxl: 767px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1366px;
+$breakpoint-ds: 1440px;
+$breakpoint-dm: 1605px;
+$breakpoint-dl: 1920px;
+$breakpoint-dxl: 2560px;
+
+// mixins//
+@mixin media ($media) {
+    @if $media==ms {
+        @media #{$onlyScreem and (max-width: $breakpoint-ms)} {
+            @content;
+        }
+    }
+
+    @else if $media==mm {
+        @media #{$onlyScreem and (min-width: $breakpoint-ms) and (max-width: $breakpoint-mm)} {
+            @content;
+        }
+    }
+
+    @else if $media==ml {
+        @media #{$onlyScreem and (min-width: $breakpoint-mm) and (max-width: $breakpoint-ml)} {
+            @content;
+        }
+    }
+
+    @else if $media==mxl {
+        @media #{$onlyScreem and (min-width: $breakpoint-ml) and (max-width: $breakpoint-mxl)} {
+            @content;
+        }
+    }
+
+    @else if $media==md {
+        @media #{$onlyScreem and (min-width: $breakpoint-mxl) and (max-width: $breakpoint-md)} {
+            @content;
+        }
+    }
+
+    @else if $media==lg {
+        @media #{$onlyScreem and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg)} {
+            @content;
+        }
+    }
+
+    @else if $media==ds {
+        @media #{$onlyScreem and (min-width: $breakpoint-lg) and (max-width: $breakpoint-ds)} {
+            @content;
+        }
+    }
+
+    @else if $media==dm {
+        @media #{$onlyScreem and (min-width: $breakpoint-ds) and (max-width: $breakpoint-dm)} {
+            @content;
+        }
+    }
+
+    @else if $media==dl {
+        @media #{$onlyScreem and (min-width: $breakpoint-dm) and (max-width: $breakpoint-dl)} {
+            @content;
+        }
+    }
+
+    @else if $media==dxl {
+        @media #{$onlyScreem and (min-width: $breakpoint-dl) and (max-width: $breakpoint-dxl)} {
+            @content;
+        }
+    }
+}

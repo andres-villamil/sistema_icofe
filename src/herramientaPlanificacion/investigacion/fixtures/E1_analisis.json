@@ -1,0 +1,30 @@
+[
+    {
+        "model": "ooee.analisisresultados",
+        "pk": 1, 
+        "fields": {
+           "a_resul": "Consistencia y validación de datos"
+        }
+    }, 
+    {
+        "model": "ooee.analisisresultados", 
+        "pk": 2,
+        "fields": {
+           "a_resul": "Análisis de tendencias y series de tiempo"
+        }
+    }, 
+    {
+        "model": "ooee.analisisresultados", 
+        "pk": 3, 
+        "fields": {
+           "a_resul": "Análisis de contexto de los resultados"
+        }
+    },
+    {
+        "model": "ooee.analisisresultados", 
+        "pk": 4, 
+        "fields": {
+           "a_resul": "Otro"
+        }
+    }
+]

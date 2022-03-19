@@ -1,0 +1,178 @@
+
+
+<!-- 
+<div class="warpInfo d-flex flex-column py-1 px-2">
+<div class="head"><p>Nombre de la entidad</p></div>
+<div class="body border rounded pt-1 px-2"><p>{{ ra.entidad_pri }}</p></div>
+</div>
+
+<div class="warpInfo d-flex flex-column py-1 px-2">
+<div class="head"><p>Tema compartido</p></div>
+<div class="body border rounded pt-1 px-2 mt-1"><p>  pendiente </p></div>
+</div> -->
+
+
+
+
+<div>
+{% for NormaRRAA in ra.norma_ra.all  %}
+    <p>{{ NormaRRAA.norma_ra }}</p>
+{% endfor %}
+
+
+{{  normaFieldText.cp_ra   }}
+{{  normaFieldText.ley_ra  }}
+{{  normaFieldText.decreto_ra }}
+{{  normaFieldText.otra_ra  }}
+</div>
+
+
+<div>
+{% for DocuMetodologRRAA in ra.doc_met_ra.all %}
+
+    <p>{{ DocuMetodologRRAA.doc_met_ra }}</p>
+
+{% endfor %}
+
+{{ docuMetodologFieldText.otra_doc_cual }}
+
+</div>
+
+
+
+<!-- formset *** -->
+<div>
+    
+    {% for VariableRecolectadaRRAA in variableRecolectadaFieldText    %}
+        <p class="border rounded py-1 px-2 w-25">  {{ VariableRecolectadaRRAA.variableRec }}</p>
+    {% endfor %}
+    
+
+</div>
+<!-- end  formset *** -->
+
+
+
+<div>
+
+    {% for ConcepEstandRRAA in ra.con_est_ra.all %}
+
+    <p>{{ ConcepEstandRRAA.con_est_ra }}</p>
+
+{% endfor %}
+
+        {{ concepEstandFieldText.org_in_cual }}
+        {{ concepEstandFieldText.ent_ordnac_cual }}
+        {{ concepEstandFieldText.leye_dec_cual }}
+        {{ concepEstandFieldText.otra_ce_cual }}
+</div>
+
+
+<div>
+
+    {% for RecolDatosRRAA in ra.recole_dato.all %}
+
+    <p>{{ RecolDatosRRAA.recole_dato }}</p>
+
+    {% endfor %}
+        
+    {{ recolDatosFieldText.sistema_inf_cual }}
+    {{ recolDatosFieldText.otro_c }}
+
+</div>
+
+
+<div>
+    
+    {% for FrecRecolDatoRRAA in ra.fre_rec_dato.all %}
+
+        <p>{{ FrecRecolDatoRRAA.fre_rec_dato }}</p>
+
+    {% endfor %}
+
+    {{ frecRecolDatoFieldText.otra_cual_fre }}
+
+
+</div>
+
+<div>
+
+    {% for HerraUtilProcesaRRAA in ra.herr_u_pro.all %}
+
+        <p>{{ HerraUtilProcesa.herr_u_pro }}</p>
+
+    {% endfor %}
+
+    {{ herraUtilProcesaFieldText.otra_herram }}
+
+</div>
+
+
+<div>
+
+    {% for SeguridadInformRRAA in ra.seg_inf.all %}
+
+        <p>{{ SeguridadInformRRAA.seg_inf }}</p>
+
+    {% endfor %}
+
+    {{ seguridadInformFieldText.otra_cual_s }}
+
+</div>
+
+
+<div>
+
+    {% for FrecAlmacebdRRAA in ra.frec_alm_bd.all %}
+
+        <p>{{ FrecAlmacebdRRAA.frec_alm_bd }}</p>
+
+    {% endfor %}
+
+    {{ frecAlmacebdFieldText.otra_alm_bd }}
+
+</div>
+
+<div>
+
+    {% for CoberturaGeograficaRRAA in ra.cob_geograf.all %}
+
+        <p>{{ FrecAlmacebdRRAA.cob_geograf }}</p>
+
+    {% endfor %}
+
+    {{ coberturaGeograficaFieldText.cual_regio }}
+    {{ coberturaGeograficaFieldText.cual_depa }}
+    {{ coberturaGeograficaFieldText.cual_are_metrop }}
+    {{ coberturaGeograficaFieldText.cual_munic }}
+    {{ coberturaGeograficaFieldText.cual_otro }}
+     
+
+</div>
+
+
+<!-- formset *** -->
+<div>
+    
+    {% for indicadorResultadoAgregRRAA in indicadorResultadoAgregadoFieldText   %}
+        <p class="border rounded py-1 px-2 w-25">  {{ indicadorResultadoAgregRRAA.ind_res_agre }}</p>
+    {% endfor %}
+    
+
+</div>
+<!-- end  formset *** -->
+
+
+
+<div>
+
+    {% for NoAccesoDatoRRAA in ra.no_hay_acceso.all %}
+
+        <p>{{ NoAccesoDato.no_hay_acceso }}</p>
+
+    {% endfor %}
+
+    {{ noAccesoDatoFieldText.otra_no_acceso }}
+
+</div>
+

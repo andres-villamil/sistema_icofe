@@ -1,0 +1,191 @@
+[
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 1, 
+        "fields": {
+            "tema_compart": "Nivel, Calidad y Condiciones de Vida"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 2,
+        "fields": {
+            "tema_compart": "Comercio"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 3, 
+        "fields": {
+            "tema_compart": "Tecnologías de la Información y las Comunicaciones"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 4,
+        "fields": {
+            "tema_compart": "Servicios Públicos Domiciliarios"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 5, 
+        "fields": {
+            "tema_compart": "Minero - Energético"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 6,
+        "fields": {
+            "tema_compart": "Cuentas Económicas"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 7, 
+        "fields": {
+            "tema_compart": "Construcción"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 8,
+        "fields": {
+            "tema_compart": "Agricultura, Ganadería y Pesca"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 9, 
+        "fields": {
+            "tema_compart": "Educación, Ciencia, Tecnología e Innovación"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 10,
+        "fields": {
+            "tema_compart": "Salud"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 11, 
+        "fields": {
+            "tema_compart": "Residuos y Protección Ambiental"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 12,
+        "fields": {
+            "tema_compart": "Gestión y Participación"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 13, 
+        "fields": {
+            "tema_compart": "Acción Ciudadana"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 14,
+        "fields": {
+            "tema_compart": "Servicios (Turismo, Hoteles, Restaurantes y Otros)"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 15, 
+        "fields": {
+            "tema_compart": "Industria"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 16,
+        "fields": {
+            "tema_compart": "Condiciones y Calidad Ambiental"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 17, 
+        "fields": {
+            "tema_compart": "Recursos Anbientales y Su Uso"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 18,
+        "fields": {
+            "tema_compart": "Índices de Precios y Costos"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 19, 
+        "fields": {
+            "tema_compart": "Demografía y Población"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 20,
+        "fields": {
+            "tema_compart": "Servicios"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 21, 
+        "fields": {
+            "tema_compart": "Transporte"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 22,
+        "fields": {
+            "tema_compart": "Finanzas Publicas y Estadísticas Fiscales Moneda"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 23, 
+        "fields": {
+            "tema_compart": "Banca y Finanzas"
+        }
+    },
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 24,
+        "fields": {
+            "tema_compart": "Cultura"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 25, 
+        "fields": {
+            "tema_compart": "Seguridad y Defensa"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa", 
+        "pk": 26,
+        "fields": {
+            "tema_compart": "Mercado Laboral"
+        }
+    }, 
+    {
+        "model": "rraa.temacompartidorraa",
+        "pk": 27, 
+        "fields": {
+            "tema_compart": "Seguridad Social"
+        }
+    }
+]

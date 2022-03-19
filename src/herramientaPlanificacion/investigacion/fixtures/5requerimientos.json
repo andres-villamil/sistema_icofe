@@ -1,0 +1,75 @@
+[
+    {
+        "model": "ooee.requerimientos",
+        "pk": 1, 
+        "fields": {
+            "requerimientos": "Objetivos de Desarrollo Sostenible (ODS)"
+           
+        }
+    }, 
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 2,
+        "fields": {
+            "requerimientos": "Organización para la Cooperación y el Desarrollo Económicos (OCDE)"
+           
+        }
+    }, 
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 3, 
+        "fields": {
+            "requerimientos": "Otros compromisos internacionales (CAN, CEPAL, etc)"
+        }
+    },
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 4, 
+        "fields": {
+            "requerimientos": "Plan Nacional de Desarrollo"
+
+        }
+    },
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 5, 
+        "fields": {
+            "requerimientos": "Cuentas económicas y macroeconómicas"
+
+        }
+    },
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 6, 
+        "fields": {
+            "requerimientos": "Plan sectorial, territorial o CONPES"
+
+        }
+    },
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 7, 
+        "fields": {
+            "requerimientos": "Otro (s) ¿cuál(es)?"
+
+        }
+    },
+    {
+        "model": "ooee.requerimientos", 
+        "pk": 8, 
+        "fields": {
+            "requerimientos": "Ninguno"
+
+        }
+    }
+]
+
+
+																	
+																
+																
+																
+																
+                                                                                       																	
+																
+ 																	

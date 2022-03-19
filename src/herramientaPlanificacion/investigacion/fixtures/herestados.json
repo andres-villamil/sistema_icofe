@@ -1,0 +1,44 @@
+[
+    {
+        "model": "ooee.ooeestate",
+        "pk": 1, 
+        "fields": {
+            "nombre_est": "Borrador"
+        }
+    }, 
+    {
+        "model": "ooee.ooeestate", 
+        "pk": 2,
+        "fields": {
+            "nombre_est": "Enviado"
+        }
+    }, 
+    {
+        "model": "ooee.ooeestate", 
+        "pk": 3, 
+        "fields": {
+            "nombre_est": "Devuelto"
+        }
+    },
+    {
+        "model": "ooee.ooeestate", 
+        "pk": 4, 
+        "fields": {
+            "nombre_est": "Validado"
+        }
+    },
+    {
+        "model": "ooee.ooeestate", 
+        "pk": 5, 
+        "fields": {
+            "nombre_est": "Publicado"
+        }
+    },
+    {
+        "model": "ooee.ooeestate", 
+        "pk": 6, 
+        "fields": {
+            "nombre_est": "Archivado"
+        }
+    }
+]

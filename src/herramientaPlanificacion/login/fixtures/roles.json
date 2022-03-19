@@ -1,0 +1,51 @@
+[
+    {
+        "model": "login.role",
+        "pk": 1, 
+        "fields": {
+            "name": "Administrador"
+        }
+    }, 
+    {
+        "model": "login.role", 
+        "pk": 2,
+        "fields": {
+            "name": "Invitado"
+        }
+    }, 
+    {
+        "model": "login.role", 
+        "pk": 3, 
+        "fields": {
+            "name": "Fuente"
+        }
+    },
+    {
+        "model": "login.role", 
+        "pk": 4, 
+        "fields": {
+            "name": "Tematico"
+        }
+    },
+    {
+        "model": "login.role", 
+        "pk": 5, 
+        "fields": {
+            "name": "Revisor"
+        }
+    },
+    {
+        "model": "login.role", 
+        "pk": 6, 
+        "fields": {
+            "name": "Evaluador de calidad"
+        }
+    },
+    {
+        "model": "login.role", 
+        "pk": 7, 
+        "fields": {
+            "name": "Prospectiva"
+        }
+    }
+]

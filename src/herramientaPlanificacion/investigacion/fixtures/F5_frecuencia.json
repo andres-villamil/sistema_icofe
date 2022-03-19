@@ -1,0 +1,44 @@
+[
+    {
+        "model": "ooee.frecuenciadifusion",
+        "pk": 1, 
+        "fields": {
+           "fre_dif": "Anual"
+        }
+    }, 
+    {
+        "model": "ooee.frecuenciadifusion", 
+        "pk": 2,
+        "fields": {
+           "fre_dif": "Semestral"
+        }
+    }, 
+    {
+        "model": "ooee.frecuenciadifusion", 
+        "pk": 3, 
+        "fields": {
+           "fre_dif": "Trimestral"
+        }
+    },
+    {
+        "model": "ooee.frecuenciadifusion", 
+        "pk": 4,
+        "fields": {
+           "fre_dif": "Mensual"            
+        }
+    }, 
+    {
+        "model": "ooee.frecuenciadifusion", 
+        "pk": 5, 
+        "fields": {
+           "fre_dif": "Otro (s)"
+        }
+    },
+    {
+        "model": "ooee.frecuenciadifusion", 
+        "pk": 6,
+        "fields": {
+           "fre_dif": "No está definido"            
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "model": "rraa.frecuenciaalmacenamientobd",
+        "pk": 1, 
+        "fields": {
+            "frec_alm_bd": "Anual"
+        }
+    }, 
+    {
+        "model": "rraa.frecuenciaalmacenamientobd", 
+        "pk": 2,
+        "fields": {
+            "frec_alm_bd": "Semestral"
+        }
+    }, 
+    {
+        "model": "rraa.frecuenciaalmacenamientobd", 
+        "pk": 3,
+        "fields": {
+            "frec_alm_bd": "Trimestral"
+        }
+    }, 
+    {
+        "model": "rraa.frecuenciaalmacenamientobd",
+        "pk": 4, 
+        "fields": {
+            "frec_alm_bd": "Mensual"
+        }
+    }, 
+    {
+        "model": "rraa.frecuenciaalmacenamientobd", 
+        "pk": 5,
+        "fields": {
+            "frec_alm_bd": "Diaria"
+        }
+    },    
+    {
+        "model": "rraa.frecuenciaalmacenamientobd", 
+        "pk": 6,
+        "fields": {
+            "frec_alm_bd": "Otra (s)"
+        }
+    }
+]

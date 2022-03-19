@@ -1,0 +1,44 @@
+[
+    {
+        "model": "rraa.recolecciondatorraa",
+        "pk": 1, 
+        "fields": {
+            "recole_dato": "Formulario físico"
+        }
+    }, 
+    {
+        "model": "rraa.recolecciondatorraa", 
+        "pk": 2,
+        "fields": {
+            "recole_dato": "Formulario electrónico"
+        }
+    }, 
+    {
+        "model": "rraa.recolecciondatorraa",
+        "pk": 3, 
+        "fields": {
+            "recole_dato": "Dispositivo Móvil de Captura [DMC]"
+        }
+    }, 
+    {
+        "model": "rraa.recolecciondatorraa", 
+        "pk": 4,
+        "fields": {
+            "recole_dato": "Sistema de información"
+        }
+    }, 
+    {
+        "model": "rraa.recolecciondatorraa",
+        "pk": 5, 
+        "fields": {
+            "recole_dato": "Imágenes satelitales"
+        }
+    }, 
+    {
+        "model": "rraa.recolecciondatorraa", 
+        "pk": 6,
+        "fields": {
+            "recole_dato": "Otro (s)"
+        }
+    }
+]

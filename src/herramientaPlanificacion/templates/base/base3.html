@@ -1,0 +1,108 @@
+{% load static %} {% load sass_tags %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sistemas de información SEN" />
+    <title>
+      Oferta y Demanda SEN | Sistema de identificación y caracterización de oferta y
+      demanda estadística del SEN
+    </title>
+
+    <link
+      href="{% static 'libraries/animate/animate.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/bootstrapSelect/css/bootstrap-select.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/bootstrapToggle/css/bootstrap-toggle.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/hover/hover.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'libraries/datepicker/tempusdominus.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="https://www.dane.gov.co/templates/beez_20/favicon.ico"
+    />
+    <link rel="shortcut icon" href="{%  static 'images/favicon.png' %}">
+
+    <!-- Styles Sass -->
+    <link
+      href="{% sass_src  'stylesLayout/layout.scss' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'stylesLayout/layout.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- material Icon -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/printThis.js' %}"></script>
+
+    <!--Introjs -->
+    <script
+      type="text/javascript"
+      src="{% static 'libraries/introjs/intro.js' %}"
+    ></script>
+    <link href="{% static 'libraries/introjs/assets/css/demo.css' %}" rel="stylesheet" />
+    <link href="{% static  'libraries/introjs/introjs.css'%}" rel="stylesheet" />
+
+    <!--library introjs -->
+    <script type="text/javascript">
+      document.getElementById("startButton").onclick = function () {
+        introJs()
+          .setOption("doneLabel", "Salir")
+          .start()
+          .oncomplete(function () {
+            window.location.href = "";
+          });
+      };
+    </script>
+  </head>
+
+  <body class="my-3">
+    {% block content %} {% endblock %}
+  </body>
+
+  <script src="{% static 'libraries/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'libraries/bootstrapSelect/js/bootstrap-select.min.js' %}"></script>
+  <script src="{% static 'libraries/bootstrapToggle/js/bootstrap-toggle.min.js' %}"></script>
+  <script src="{% static 'libraries/datepicker/moment.min.js' %}"></script>
+  <script src="{% static 'libraries/datepicker/es.js' %}"></script>
+  <script src="{% static 'libraries/datepicker/tempusdominus.min.js' %}"></script>
+  <script src="{% static 'js/ocultar.js' %}"></script>
+</html>

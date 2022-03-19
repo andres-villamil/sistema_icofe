@@ -1,0 +1,160 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+#login {
+  .cardLogin {
+    margin: 17vh auto;
+    width: 65vw;
+    height: auto;
+
+    @include media(ml) {
+      margin: 15vh auto;
+      width: 95vw;
+    }
+
+    @include media(md) {
+      margin: 15vh auto;
+      width: 95vw !important;
+    }
+
+    @include media(ds) {
+      margin: 8vh auto;
+      width: 70vw;
+    }
+    .bkg-login {
+      background-color: $Kuler-GrayScale-4-hex;
+      border-radius: 4px;
+    }
+
+    .backgroundTitle {
+      width: 100%;
+      height: 100%;
+      background: url("/media/backgrounds/triangle-login.png");
+
+      @include media(ml) {
+        background-color: $kuler_sistemaInventario-1-hex;
+        height: 20vh;
+      }
+
+      @include media(md) {
+        background-color: $kuler_sistemaInventario-1-hex;
+        height: 20vh !important;
+      }
+
+      @include media(ds) {
+        height: 100%;
+      }
+
+      background-size: cover;
+
+      h1 {
+        font-family: $Barlow;
+        font-size: $h3;
+        font-weight: bold;
+        text-align: right;
+        color: $kuler-white;
+
+        @include media(ml) {
+          font-size: $h4;
+          text-align: center;
+        }
+
+        @include media(md) {
+          font-size: $h4;
+          text-align: center;
+        }
+
+        @include media(ds) {
+          font-size: $h4;
+        }
+      }
+    }
+
+    #login_form {
+      h2 {
+        font-family: $Barlow;
+        font-size: $h2;
+        font-weight: bold;
+        color: $kuler_sistemaInventario-1-hex;
+      }
+
+      p {
+        font-size: $p;
+      }
+
+      .white {
+        color: $kuler-white;
+      }
+
+      .blue {
+        color: $kuler_sistemaInventario-4-hex;
+      }
+
+      .input-group-text {
+        background-color: $kuler_sistemaInventario-1-hex;
+      }
+
+      #username::-webkit-input-placeholder {
+        font-size: $p;
+        font-style: italic;
+      }
+
+      #password::-webkit-input-placeholder {
+        font-size: $p;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.emailtesting {
+  color: yellow;
+}
+
+.login-logout {
+  background-color: $kuler_sistemaInventario-5-hex;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 1vh 0;
+  margin: 0 auto;
+  .mi {
+    color: $kuler-white;
+    font-size: 3rem;
+  }
+  &:hover {
+    background-color: $kuler_sistemaInventario-4-hex;
+  }
+}
+.linklogout {
+  text-decoration: none;
+  color: $kuler-white !important;
+}
+.linklogoutSEN {
+  text-decoration: none;
+  color: $kuler_sistemaInventario-3-hex !important;
+}
+
+.btn_link_modulo {
+  background-color: $kuler_sistemaInventario-3-hex;
+  padding: 1vh 2vw;
+  border-radius: 4px;
+  font-size: $ps;
+  color: $kuler-white;
+
+  &:hover {
+    background-color: $kuler_sistemaInventario-2-hex;
+    color: $kuler-white;
+  }
+}
+
+.errorlogin {
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      font-size: $ps;
+      font-style: italic;
+    }
+  }
+}

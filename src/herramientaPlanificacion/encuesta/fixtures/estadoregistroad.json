@@ -1,0 +1,44 @@
+[
+    {
+        "model": "rraa.estadoregistroad",
+        "pk": 1, 
+        "fields": {
+            "estado_ra": "Borrador"
+        }
+    }, 
+    {
+        "model": "rraa.estadoregistroad", 
+        "pk": 2,
+        "fields": {
+            "estado_ra": "Enviado"
+        }
+    }, 
+    {
+        "model": "rraa.estadoregistroad", 
+        "pk": 3, 
+        "fields": {
+            "estado_ra": "Devuelto"
+        }
+    },
+    {
+        "model": "rraa.estadoregistroad", 
+        "pk": 4, 
+        "fields": {
+            "estado_ra": "Validado"
+        }
+    },
+    {
+        "model": "rraa.estadoregistroad", 
+        "pk": 5, 
+        "fields": {
+            "estado_ra": "Publicado"
+        }
+    },
+    {
+        "model": "rraa.estadoregistroad", 
+        "pk": 6, 
+        "fields": {
+            "estado_ra": "Archivado"
+        }
+    }
+]

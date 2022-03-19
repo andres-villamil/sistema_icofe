@@ -1,0 +1,183 @@
+{% extends "base/base2.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1  %}
+
+<div id="loader"></div>
+
+<div id="createForms" class="container-fluid">
+	<h2 class="inst text-center text-uppercase mb-5" data-step="1"
+		data-intro="Bienvenido. En este formulario puede crear un nuevo usuario, los campos obligatorios son los siguientes: Correo electrónico, Username, Password, Entidad y Rol">
+		modulo creación de usuario</h2>
+	<div class="row mb-3">
+		<div class="col-lg-4 offset-lg-8">
+			<div class="d-flex flex-row justify-content-end">
+				<div class="btn-group" role="group">
+					<a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+						class="btn btn_primary btn-sm hvr-shrink mx-1">
+						<div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+							<span class="ml-2">Instructivo</span></div>
+					</a>
+					<a href="{% url 'login:adminUsuarios' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+						<div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+							<span class="ml-2">Volver</span></div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr class="my-3">
+	<div class="row justify-content-center my-5">
+		<form class="w-75" method="POST">{% csrf_token %}
+			{% if registered %}
+			<div class="container">
+				<div class="d-flex flex-row justify-content-center align-items-center">
+					<div class="alert alert-success" role="alert">
+						<h3 class="text-center text-uppercase">usuario creado</h3>
+						<h4 class="pt-3">El usuario {{ username }} ha sido creado con éxito </h4>
+						<p class="text-center mt-3">Pronto llegara un correo de confirmación</p>
+					</div>
+				</div>
+			</div>
+			{% else %}
+			<!-- Data user -->
+			<div class="form-group">
+				<div class="inst form-group" data-step="2"
+					data-intro="Diligencie el nombre y apellido del usuario el cual tendrá acceso al aplicativo">
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Nombre y apellido</span>
+						</div>
+						{{user_form.first_name}}
+						{{user_form.last_name}}
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12 col-lg-4">
+						<div class="input-group input-group-sm mb-3 inst" data-step="3"
+							data-intro="Diligencie un correo valido user@dominio.com">
+							<div class="d-flex flex-column justify-content-start col-12 px-0">
+								<div class="d-flex flex-row input-group-sm ">
+									<div class="input-group-prepend">
+										<span class="input-group-text">@</span>
+									</div>
+									{{user_form.email}}
+								</div>
+								{% if  user_form.errors.email %}
+								<script>
+									function valid() {
+										$(".invalid").addClass("invalidRed");
+									}
+									valid();
+								</script>
+								<small id="formHelp" class="form-text text-muted">
+									<div class="d-flex flex-row align-items-start">
+										<i class="material-icons miReport">
+											error
+										</i>
+										{{  user_form.errors.email }}
+									</div>
+								</small>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4">
+						<div class="input-group input-group-sm mb-3 inst" data-step="4"
+							data-intro="Escriba un username relacionado al usuario o entidad">
+							<div class="d-flex flex-column justify-content-start col-12 px-0">
+								<div class="d-flex flex-row input-group-sm ">
+									<div class="input-group-prepend">
+										<span class="input-group-text">UserName</span>
+									</div>
+									{{user_form.username}}
+								</div>
+								{% if  user_form.errors.username %}
+								<script>
+									function valid() {
+										$(".invalid").addClass("invalidRed");
+									}
+									valid();
+								</script>
+								<small id="formHelp" class="form-text text-muted">
+									<div class="d-flex flex-row align-items-start">
+										<i class="material-icons miReport">
+											error
+										</i>
+										{{ user_form.errors.username }}
+									</div>
+								</small>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4">
+						<div class="input-group input-group-sm mb-3 inst" data-step="5"
+							data-intro="Seleccione el rol que tendrá le usuario, recuerde que por defecto el rol es invitado">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Role</span>
+							</div>
+							{{ profile_form.role }}
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12 col-lg-12">
+						<div class="input-group input-group-sm mb-3 inst" data-step="6"
+							data-intro="Seleccione una entidad desplegando las opciones, si la entidad no se encuentra por favor diríjase al modulo de crear entidad, en la sección directorio > Crear entidad. ">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Entidad</span>
+							</div>
+							{{ profile_form.entidad }}
+						</div>
+					</div>
+				</div>
+				<div class="d-flex flex-row justify-content-start">
+					<button type="submit" class="save btn btn_primary btn-sm hvr-shrink inst" data-step="8"
+						data-intro="De click en el botón para guardar">
+						<div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+							<span class="ml-2">Crear</span>
+						</div>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+{% endif %}
+
+
+{% else %}
+<div class="container">
+	<div class="d-flex flex-row justify-content-center align-items-center">
+		<div class="alert alert-warning" role="alert">
+			<h2 class="text-center text-uppercase">error 401</h2>
+			<h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+			<a class="alert-link" href="{% url 'login:loggedin' %}">
+				<p class="text-center mt-3">Por favor regrese a una vista valida</p>
+			</a>
+		</div>
+	</div>
+</div>
+
+{% endif %}
+
+<script>
+
+	// Mostrar Mensaje de carga
+	function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("createForms").style.display = "block";
+      }//preloader
+      window.onload = preloader;
+   // End Mensaje de carga
+
+</script>
+
+{% endblock %}

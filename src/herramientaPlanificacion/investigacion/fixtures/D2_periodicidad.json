@@ -1,0 +1,44 @@
+[
+    {
+        "model": "ooee.periodicidadoe",
+        "pk": 1, 
+        "fields": {
+           "periodicidad": "Anual"
+        }
+    }, 
+    {
+        "model": "ooee.periodicidadoe", 
+        "pk": 2,
+        "fields": {
+           "periodicidad": "Semestral"
+        }
+    }, 
+    {
+        "model": "ooee.periodicidadoe", 
+        "pk": 3, 
+        "fields": {
+           "periodicidad": "Trimestral"
+        }
+    },
+    {
+        "model": "ooee.periodicidadoe", 
+        "pk": 4,
+        "fields": {
+           "periodicidad": "Mensual"            
+        }
+    }, 
+    {
+        "model": "ooee.periodicidadoe", 
+        "pk": 5, 
+        "fields": {
+           "periodicidad": "Diaria"
+        }
+    },
+    {
+        "model": "ooee.periodicidadoe", 
+        "pk": 6,
+        "fields": {
+           "periodicidad": "Otra"            
+        }
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "model": "ooee.fasesproceso",
+        "pk": 1, 
+        "fields": {
+            "fase": "Detección y análisis de requerimientos"
+        }
+    }, 
+    {
+        "model": "ooee.fasesproceso", 
+        "pk": 2,
+        "fields": {
+            "fase": "Diseño y pruebas"
+        }
+    }, 
+    {
+        "model": "ooee.fasesproceso", 
+        "pk": 3, 
+        "fields": {
+            "fase": "Ejecución"
+        }
+    },
+    {
+        "model": "ooee.fasesproceso", 
+        "pk": 4,
+        "fields": {
+            "fase": "Análisis"
+        }
+    }, 
+    {
+        "model": "ooee.fasesproceso", 
+        "pk": 5, 
+        "fields": {
+            "fase": "Difusión"
+        }
+    }
+]

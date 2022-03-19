@@ -1,0 +1,23 @@
+[
+    {
+        "model": "rraa.areatematicarraa",
+        "pk": 1, 
+        "fields": {
+            "nombre": "Económica"
+        }
+    }, 
+    {
+        "model": "rraa.areatematicarraa", 
+        "pk": 2,
+        "fields": {
+            "nombre": "Sociodemográfica"
+        }
+    }, 
+    {
+        "model": "rraa.areatematicarraa", 
+        "pk": 3, 
+        "fields": {
+            "nombre": "Ambiental"
+        }
+    }
+]

@@ -1,0 +1,510 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5  %}
+
+<div id="loader"> </div>
+
+<div id="createForms" class="container-fluid">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede crear una nueva entidad. Todos los campos descritos a continuación deben ser diligenciados.">
+        modulo creación de entidad</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'entities:all_entities' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form action="" method="POST" class="w-100">{% csrf_token %}
+            <hr>
+            <!-- Data entidad -->
+            <div class="form-group">
+                <div class="form-group inst" data-step="2"
+                    data-intro="Diligencie el NOMBRE y NIT de la entidad, el código sera asignado automáticamente por el aplicativo">
+                    <div class="form-group backgroundTitle">
+                        <p class="text-center py-1">Datos de la entidad</p>
+                    </div>
+                    <div class="form-row no-gutters">
+                        <div class="col-1 input-group-sm">
+                            {{ create_form.codigo }}
+                            <!-- Validaciones error-->
+                            {% if create_form.errors.codigo %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_form.errors.codigo }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+
+                        </div>
+                        <div class="col-9 input-group-sm">
+                            {{ create_form.nombre }}
+                            <!-- Validaciones error-->
+                            {% if create_form.errors.nombre %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_form.errors.nombre }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                        <div class="col-2 input-group-sm">
+                            {{ create_form.nit }}
+                            <!-- Validaciones error-->
+                            {% if create_form.errors.nit %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_form.errors.nit }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-row">
+                    <div class="col-12 col-lg-5">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="3"
+                            data-intro="Actualmente se establecen tres tipos de entidad PUBLICA, PRIVADA y MIXTA, seleccione alguna de estas según sea su caso">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de entidad</span>
+                            </div>
+                            {{ create_form.tipo_entidad }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="4"
+                            data-intro="Escriba la DIRECCIÓN donde se ubica la oficina principal de la entidad, adicione es este campo especificaciones como: Oficina, torre, etc.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Dirección</span>
+                            </div>
+                            {{ create_form.direccion }}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-3">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="5"
+                            data-intro="Escriba el número TELEFÓNICO o LINEA NACIONAL, perteneciente a la entidad.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Teléfono</span>
+                            </div>
+                            {{ create_form.telefono }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.telefono %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.telefono }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+
+
+                    <div class="col-12 col-lg-9">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="6"
+                            data-intro="Escriba la dirección de la página web oficial de la entidad, recuerde diligenciar en el formato www.su_entidad.gov.co">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Página web</span>
+                            </div>
+                            {{ create_form.pagina_web }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.pagina_web %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.pagina_web }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div> 
+                    
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-6">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="7"
+                            data-intro="El estado se refiere a si la entidad se puede no publicar, elija según su decisión y recuerde que una vez publicada la entidad esta podrá ser vista y consultada por externos, aunque este estado podrá ser editado en cualquier momento.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Estado</span>
+                            </div>
+                            {{ create_form.estado }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="input-group input-group-sm mb-3 inst" >
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Orden Territorial</span>
+                            </div>
+                            {{ create_form.ord_ter }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Data director -->
+            <div class="form-group inst" data-step="8"
+                data-intro="Diligencie la información básica del DIRECTOR DE LA ENTIDAD, como lo es el NOMBRE COMPLETO, CARGO Y TELÉFONO DE CONTACTO , se recomienda anexar el número del extensión de la oficina">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Director de la entidad</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ create_form.nombre_dir }}
+                            {{ create_form.cargo_dir }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_form.correo_dir }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.correo_dir %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.correo_dir }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_form.telefono_dir }}
+                            {{ create_form.extension_dir }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.telefono_dir %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.telefono_dir }}
+                                {{ create_form.errors.extension_dir }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Data director oficina -->
+            <div class="form-group inst" data-step="9"
+                data-intro="Diligencie la información básica del encargado de la OFICINA DE INFORMACIÓN ESTADÍSTICA, OFICINA DE PLANEACIÓN O SIMILAR, como lo es el NOMBRE COMPLETO, CARGO Y TELÉFONO DE CONTACTO , se recomienda anexar el número del extensión de la oficina">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Oficina de información estadística, oficina de planeación o similar</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ create_form.nombre_pla }}
+                            {{ create_form.cargo_pla }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_form.correo_pla }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.correo_pla %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.correo_pla }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+
+
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_form.telefono_pla }}
+                            {{ create_form.extension_pla }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.telefono_pla %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.telefono_pla }}
+                                {{ create_form.errors.extension_pla }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Data contacto sen -->
+            <div class="form-group inst" data-step="10"
+                data-intro="Diligencie la información básica del DELEGADO PARA EL SEN, como lo es el NOMBRE COMPLETO, CARGO Y TELÉFONO DE CONTACTO , se recomienda anexar el número del extensión de la oficina">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Delegado para el SEN</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ create_form.nombre_cont }}
+                            {{ create_form.cargo_cont }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_form.correo_cont }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.correo_cont %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.correo_cont }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_form.telefono_cont }}
+                            {{ create_form.extension_cont }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_form.errors.telefono_cont %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_form.errors.telefono_cont }}
+                                {{ create_form.errors.extension_cont }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row justify-content-start">
+                <button type="submit" class="save btn btn_primary btn-sm hvr-shrink inst" data-step="11"
+                    data-intro="De click en el botón para guardar">
+                    <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+                        <span class="ml-2">Guardar</span>
+                    </div>
+                </button>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% else %}
+
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+<script>
+
+//######################### fields codigo para que no lo editen #################//
+    
+$('input[name=codigo]').attr('readonly', true); 
+
+//######################### end fields codigo para que no lo editen #################//
+
+// Mostrar Mensaje de carga
+        function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("createForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+
+
+</script>
+
+
+{% endblock %}

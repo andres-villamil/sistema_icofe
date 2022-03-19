@@ -1,0 +1,2363 @@
+@charset "UTF-8";
+/* App */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+body {
+  overflow-x: hidden;
+  background: url("/media/backgrounds/background-login.png") no-repeat top;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1rem; }
+
+.activate {
+  background-color: #34515E !important;
+  border-radius: 15px 0 0 15px !important;
+  color: #ffff !important; }
+
+#view-mobile {
+  margin-top: 30vh; }
+  #view-mobile .icoComputer {
+    font-size: 10rem;
+    color: #34515E; }
+
+header {
+  width: 100%;
+  height: 15vh;
+  background: #56c0b7;
+  background: -moz-linear-gradient(left, #56c0b7 0%, #012458 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #56c0b7), color-stop(100%, #012458));
+  background: -webkit-linear-gradient(left, #56c0b7 0%, #012458 100%);
+  background: -o-linear-gradient(left, #56c0b7 0%, #012458 100%);
+  background: -ms-linear-gradient(left, #56c0b7 0%, #012458 100%);
+  background: linear-gradient(to right, #56c0b7 0%, #012458 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#56c0b7', endColorstr='#012458', GradientType=1);
+  border-radius: 0 0 4px 4px;
+  padding-top: 4vh; }
+  @media (max-width: 1440px) {
+    header {
+      padding-top: 0vh; } }
+  header .title_App {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffff; }
+    @media (max-width: 1440px) {
+      header .title_App {
+        font-size: 1.5rem; } }
+  header .dataUser h2 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    font-weight: bold;
+    text-align: right;
+    color: #ffff; }
+  header .dataUser h3 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1rem;
+    text-align: right;
+    color: #ffff; }
+  header #popoverAvatar {
+    background-color: #EAEAEA;
+    border-radius: 4px;
+    position: relative;
+    left: 74.4vw;
+    display: none; }
+  header #avatar:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid transparent; }
+
+#navbarClose {
+  display: none; }
+
+#navbarOpen {
+  display: block; }
+
+nav {
+  height: 100vh;
+  background-color: #EAEAEA;
+  border-radius: 0 0 50px 0;
+  /* .list{
+      font-size: 0.9rem;
+   } */ }
+  nav .spacingNavItem {
+    margin-top: 3vh; }
+    @media (max-width: 1440px) {
+      nav .spacingNavItem {
+        margin-top: 1vh; } }
+  nav .linkContact {
+    margin: 1vh 2vw 0 0; }
+    @media (max-width: 1440px) {
+      nav .linkContact {
+        margin: 1vh 1vw 0 0; } }
+  nav .titleNavItem {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #005E66; }
+  nav .lineNavItem {
+    border: #005E66 !important; }
+  nav .list-group .list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #005E66; }
+    nav .list-group .list-group-item:hover {
+      background-color: #34515E !important;
+      border-radius: 15px 0 0 15px;
+      color: #ffff; }
+  nav .list-group a {
+    font-family: "OpenSans", sans-serif;
+    font-size: 0.83333rem; }
+    @media (max-width: 1440px) {
+      nav .list-group a {
+        font-size: 0.66667rem; } }
+  nav .list-group .active {
+    background-color: #34515E !important;
+    border-radius: 15px 0 0 15px !important;
+    color: #ffff !important; }
+  nav .btn_closeMenu {
+    background-color: #607D8B;
+    color: #ffff;
+    border-radius: 0 0 0 20px; }
+    nav .btn_closeMenu:hover, nav .btn_closeMenu:visited, nav .btn_closeMenu:focus {
+      background-color: #34515E;
+      color: #ffff; }
+  nav #directorio {
+    background-color: #005E66; }
+    nav #directorio h3 {
+      font-family: "BarlowRegular", sans-serif;
+      font-weight: bold;
+      font-size: 2rem;
+      color: #ffff; }
+    nav #directorio p {
+      font-size: 0.75rem;
+      color: #ffff; }
+    nav #directorio .ml {
+      margin-left: 2vw; }
+      @media (max-width: 1440px) {
+        nav #directorio .ml {
+          margin-left: 1vw; } }
+    nav #directorio .material-icons {
+      font-size: 3.5rem;
+      color: #ffff; }
+  nav .copyright {
+    font-size: 0.5rem;
+    font-style: italic;
+    text-align: center; }
+
+.btn_primary {
+  font-family: "BarlowRegular", sans-serif;
+  font-size: 1.16667rem;
+  background-color: #34515E;
+  color: #ffff !important; }
+  .btn_primary:hover, .btn_primary:focus {
+    background-color: #607D8B;
+    color: #ffff !important; }
+
+.btn_report {
+  background-color: #34515E; }
+  .btn_report a {
+    text-decoration: none;
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    color: #ffff; }
+  .btn_report:hover, .btn_report:visited, .btn_report:focus {
+    background-color: #607D8B; }
+
+.btn_link {
+  font-size: 1rem;
+  font-style: italic;
+  color: #222222; }
+  .btn_link:hover, .btn_link:visited, .btn_link:focus {
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none; }
+
+.btn_link2 {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #222222; }
+  .btn_link2:hover, .btn_link2:visited, .btn_link2:focus {
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none; }
+
+.overflowContent {
+  height: 75vh;
+  overflow-y: scroll; }
+
+.btn_linkIcons {
+  font-size: 1rem;
+  color: #34515E; }
+  .btn_linkIcons:hover {
+    color: #607D8B;
+    text-decoration: none; }
+
+.textaditional {
+  font-family: "BarlowRegular", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600; }
+  @media (max-width: 1440px) {
+    .textaditional {
+      font-size: 0.7rem; } }
+.btn-manuales {
+  display: flex;
+  justify-content: center;
+  padding: 0 1vw; }
+
+.titleManuales {
+  font-family: "BarlowRegular", sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem; }
+
+.warpInfo .head {
+  color: #005E66;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase; }
+
+.warpInfo .indicador {
+  color: #005E66;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: justify; }
+
+.warpInfo .btn_link_detail {
+  text-align: left;
+  font-size: 1rem;
+  font-style: italic;
+  color: #607D8B; }
+  .warpInfo .btn_link_detail:hover, .warpInfo .btn_link_detail:visited, .warpInfo .btn_link_detail:focus {
+    color: #34515E;
+    text-decoration: none; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#login .cardLogin {
+  margin: 17vh auto;
+  width: 65vw;
+  height: auto; }
+  @media (max-width: 480px) {
+    #login .cardLogin {
+      margin: 15vh auto;
+      width: 95vw; } }
+  @media (max-width: 1024px) {
+    #login .cardLogin {
+      margin: 15vh auto;
+      width: 95vw !important; } }
+  @media (max-width: 1440px) {
+    #login .cardLogin {
+      margin: 8vh auto;
+      width: 70vw; } }
+  #login .cardLogin .bkg-login {
+    background-color: #EAEAEA;
+    border-radius: 4px; }
+  #login .cardLogin .backgroundTitle {
+    width: 100%;
+    height: 100%;
+    background: url("/media/backgrounds/triangle-login.png");
+    background-size: cover; }
+    @media (max-width: 480px) {
+      #login .cardLogin .backgroundTitle {
+        background-color: #005E66;
+        height: 20vh; } }
+    @media (max-width: 1024px) {
+      #login .cardLogin .backgroundTitle {
+        background-color: #005E66;
+        height: 20vh !important; } }
+    @media (max-width: 1440px) {
+      #login .cardLogin .backgroundTitle {
+        height: 100%; } }
+    #login .cardLogin .backgroundTitle h1 {
+      font-family: "BarlowRegular", sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: right;
+      color: #ffff; }
+      @media (max-width: 480px) {
+        #login .cardLogin .backgroundTitle h1 {
+          font-size: 1.5rem;
+          text-align: center; } }
+      @media (max-width: 1024px) {
+        #login .cardLogin .backgroundTitle h1 {
+          font-size: 1.5rem;
+          text-align: center; } }
+      @media (max-width: 1440px) {
+        #login .cardLogin .backgroundTitle h1 {
+          font-size: 1.5rem; } }
+  #login .cardLogin #login_form h2 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #005E66; }
+  #login .cardLogin #login_form p {
+    font-size: 1rem; }
+  #login .cardLogin #login_form .white {
+    color: #ffff; }
+  #login .cardLogin #login_form .blue {
+    color: #607D8B; }
+  #login .cardLogin #login_form .input-group-text {
+    background-color: #005E66; }
+  #login .cardLogin #login_form #username::-webkit-input-placeholder {
+    font-size: 1rem;
+    font-style: italic; }
+  #login .cardLogin #login_form #password::-webkit-input-placeholder {
+    font-size: 1rem;
+    font-style: italic; }
+
+.emailtesting {
+  color: yellow; }
+
+.login-logout {
+  background-color: #34515E;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 1vh 0;
+  margin: 0 auto; }
+  .login-logout .mi {
+    color: #ffff;
+    font-size: 3rem; }
+  .login-logout:hover {
+    background-color: #607D8B; }
+
+.linklogout {
+  text-decoration: none;
+  color: #ffff !important; }
+
+.linklogoutSEN {
+  text-decoration: none;
+  color: #00343C !important; }
+
+.btn_link_modulo {
+  background-color: #00343C;
+  padding: 1vh 2vw;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #ffff; }
+  .btn_link_modulo:hover {
+    background-color: #428B94;
+    color: #ffff; }
+
+.errorlogin ul {
+  list-style: none;
+  padding: 0; }
+  .errorlogin ul li {
+    font-size: 0.75rem;
+    font-style: italic; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#welcome {
+  display: none; }
+  #welcome h4 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #656565; }
+  #welcome h2 {
+    font-family: "BarlowRegular", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #005E66; }
+  #welcome .spacingTop {
+    margin-top: 5vh; }
+  #welcome .background-card {
+    background-color: #EAEAEA;
+    border-radius: 4px; }
+    #welcome .background-card .bar-1 {
+      background-color: #00343C;
+      height: 1vh;
+      border-radius: 4px 4px 0 0; }
+    #welcome .background-card .bar-2 {
+      background-color: #005E66; }
+      #welcome .background-card .bar-2 h2 {
+        font-size: 3rem !important;
+        color: #ffff; }
+      #welcome .background-card .bar-2 p {
+        font-size: 1rem;
+        color: #ffff; }
+    #welcome .background-card .list-group-item {
+      border: none !important;
+      background-color: transparent !important; }
+    #welcome .background-card .colorTextGreenCard {
+      color: #005E66; }
+    #welcome .background-card .pointerChevron {
+      cursor: pointer; }
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat #f9f9f9;
+  opacity: .8;
+  cursor: wait; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#container {
+  display: none; }
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat #f9f9f9;
+  opacity: .8;
+  cursor: wait; }
+
+#top {
+  background-color: #005E66;
+  color: #fff;
+  padding: 40px;
+  top: -150px;
+  position: absolute;
+  /*El div será ubicado con relación a la pantalla*/
+  font-weight: bold;
+  border-radius: 15px;
+  margin-left: 250px;
+  font-size: 17px; }
+
+#tableAll .table {
+  border: solid 2px #005E66;
+  border-radius: 4px; }
+  #tableAll .table .kulerTableHead {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1rem;
+    background-color: #005E66;
+    color: #ffff; }
+    #tableAll .table .kulerTableHead .w-5 {
+      width: 5% !important; }
+    #tableAll .table .kulerTableHead .w-20 {
+      width: 20% !important; }
+    #tableAll .table .kulerTableHead .w-12 {
+      width: 12% !important; }
+  #tableAll .table .textContentTable {
+    font-family: "OpenSans", sans-serif;
+    font-size: 0.9rem; }
+  #tableAll .table tbody {
+    background-color: #F5F5F5; }
+    #tableAll .table tbody .miKuller {
+      cursor: pointer;
+      color: #607D8B !important; }
+      #tableAll .table tbody .miKuller:hover {
+        color: #34515E !important; }
+
+#tableAll .dataTables_length {
+  margin-top: 1vh; }
+  #tableAll .dataTables_length label {
+    background-color: #EAEAEA;
+    height: 6vh;
+    padding: 0.5vh 0.5vw;
+    border-radius: 4px;
+    font-family: "BarlowRegular", sans-serif; }
+    @media (max-width: 1920px) {
+      #tableAll .dataTables_length label {
+        height: 5vh; } }
+    @media (max-width: 2560px) {
+      #tableAll .dataTables_length label {
+        height: 5vh; } }
+    #tableAll .dataTables_length label select {
+      border-radius: 4px;
+      height: 5vh;
+      margin-left: 2vw;
+      border: none; }
+      @media (max-width: 1920px) {
+        #tableAll .dataTables_length label select {
+          height: 4vh; } }
+      @media (max-width: 2560px) {
+        #tableAll .dataTables_length label select {
+          height: 4vh; } }
+#tableAll .dataTables_info {
+  font-size: 0.75rem !important; }
+
+#tableAll .dataTables_paginate {
+  font-size: 0.75rem !important; }
+  #tableAll .dataTables_paginate .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #005E66;
+    border-color: #005E66; }
+  #tableAll .dataTables_paginate .page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #005E66;
+    background-color: #fff;
+    border: 1px solid #dee2e6; }
+  #tableAll .dataTables_paginate .current {
+    background-color: #005E66;
+    border-radius: 4px;
+    margin: 0 0.1vw 0;
+    padding: 0.5rem;
+    color: #ffff; }
+
+#allEntities h2,
+#publishEntities h2,
+#disableEntities h2 {
+  font-family: "BarlowRegular", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #005E66; }
+
+#allEntities .backgroundTitle,
+#publishEntities .backgroundTitle,
+#disableEntities .backgroundTitle {
+  background-color: #005E66;
+  border-radius: 4px; }
+  #allEntities .backgroundTitle p,
+  #publishEntities .backgroundTitle p,
+  #disableEntities .backgroundTitle p {
+    font-family: "BarlowRegular", sans-serif;
+    color: #ffff; }
+
+#allEntities .input-group-text,
+#publishEntities .input-group-text,
+#disableEntities .input-group-text {
+  background-color: #005E66;
+  font-family: "BarlowRegular", sans-serif;
+  font-weight: 1rem;
+  color: #ffff; }
+
+#allEntities .mi,
+#publishEntities .mi,
+#disableEntities .mi {
+  font-size: 1rem;
+  color: #ffff; }
+
+.dataTables_filter label {
+  margin-bottom: 0px !important; }
+  .dataTables_filter label .btn_primarySearch {
+    border-radius: 4px 5px 5px 4px !important;
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    background-color: #607D8B;
+    color: #ffff !important; }
+    .dataTables_filter label .btn_primarySearch:hover, .dataTables_filter label .btn_primarySearch:focus {
+      background-color: #34515E;
+      color: #ffff !important; }
+  .dataTables_filter label input {
+    margin-left: 0px !important;
+    padding-top: 0px !important;
+    height: 4vh;
+    border: solid 0.5px #005E66;
+    border-radius: 0px 4px 4px 0px !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
+    @media (max-width: 1440px) {
+      .dataTables_filter label input {
+        height: 6vh; } }
+#form-filter .input-group-text {
+  background-color: #005E66;
+  border: solid 1px #005E66;
+  font-family: "BarlowRegular", sans-serif;
+  font-weight: 1rem;
+  color: #ffff; }
+
+.bkgFiltros {
+  border: solid 2px #005E66;
+  border-radius: 4px; }
+
+.btn-warning {
+  background-color: #005E66 !important;
+  color: white;
+  border-color: #fff !important;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  border: 1px solid #dee2e6; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#createForms,
+#editForms {
+  display: none; }
+  #createForms h2,
+  #editForms h2 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #005E66; }
+  #createForms .backgroundTitle,
+  #editForms .backgroundTitle {
+    background-color: #005E66;
+    border-radius: 4px; }
+    #createForms .backgroundTitle p,
+    #editForms .backgroundTitle p {
+      font-family: "BarlowRegular", sans-serif;
+      color: #ffff; }
+    #createForms .backgroundTitle h5,
+    #editForms .backgroundTitle h5 {
+      font-family: "BarlowRegular", sans-serif;
+      color: #ffff;
+      text-align: center;
+      padding: 0.8vh 0vw; }
+  #createForms .vresp,
+  #editForms .vresp {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.33333rem;
+    font-weight: bold;
+    color: #005E66; }
+  #createForms .bgresp,
+  #editForms .bgresp {
+    background-color: whitesmoke;
+    margin-top: 3vh; }
+  #createForms .bgresp1,
+  #editForms .bgresp1 {
+    background-color: whitesmoke; }
+  #createForms .input-group-text,
+  #editForms .input-group-text {
+    background-color: #005E66;
+    border: solid 1px #005E66;
+    font-family: "BarlowRegular", sans-serif;
+    font-weight: 1rem;
+    color: #ffff; }
+  #createForms .mi,
+  #editForms .mi {
+    font-size: 1rem;
+    color: #ffff; }
+  #createForms #formHelp ul,
+  #editForms #formHelp ul {
+    padding-inline-start: 0px !important; }
+    #createForms #formHelp ul li,
+    #editForms #formHelp ul li {
+      list-style-type: none !important;
+      font-family: "OpenSans", sans-serif;
+      font-size: 0.75rem;
+      color: Red; }
+  #createForms #formHelp .miReport,
+  #editForms #formHelp .miReport {
+    margin-top: 0.3vh;
+    margin-right: 0.5vw;
+    font-size: 0.8rem !important;
+    color: red; }
+  #createForms .errorQuestion11,
+  #editForms .errorQuestion11 {
+    font-family: "OpenSans", sans-serif;
+    font-size: 0.75rem;
+    color: Red; }
+  #createForms .bkgInputQuestion1,
+  #editForms .bkgInputQuestion1 {
+    background-color: #005E66;
+    border-radius: 4px 4px 0 0; }
+    #createForms .bkgInputQuestion1 p,
+    #editForms .bkgInputQuestion1 p {
+      margin-bottom: 0px;
+      padding: 0.5vh 0vw;
+      font-family: "BarlowRegular", sans-serif;
+      font-size: 1rem;
+      color: #ffff;
+      text-align: center; }
+  #createForms .bkgQuestionsRadioButton p,
+  #editForms .bkgQuestionsRadioButton p {
+    padding-top: 1.5vh;
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    font-weight: bold; }
+  #createForms #check-fase,
+  #createForms #faseOpc,
+  #createForms #id_tipo_operacion,
+  #createForms #check-marco_estad,
+  #createForms #check-nome_clas,
+  #createForms #id_opc_desag,
+  #createForms #id_des_zona,
+  #createForms #check-conoce_otra,
+  #createForms #check-hp_siste_infor,
+  #createForms #id_ra_activo,
+  #editForms #check-fase,
+  #editForms #faseOpc,
+  #editForms #id_tipo_operacion,
+  #editForms #check-marco_estad,
+  #editForms #check-nome_clas,
+  #editForms #id_opc_desag,
+  #editForms #id_des_zona,
+  #editForms #check-conoce_otra,
+  #editForms #check-hp_siste_infor,
+  #editForms #id_ra_activo {
+    justify-content: space-between;
+    list-style: none !important;
+    padding-top: 0.5vh; }
+    #createForms #check-fase li,
+    #createForms #faseOpc li,
+    #createForms #id_tipo_operacion li,
+    #createForms #check-marco_estad li,
+    #createForms #check-nome_clas li,
+    #createForms #id_opc_desag li,
+    #createForms #id_des_zona li,
+    #createForms #check-conoce_otra li,
+    #createForms #check-hp_siste_infor li,
+    #createForms #id_ra_activo li,
+    #editForms #check-fase li,
+    #editForms #faseOpc li,
+    #editForms #id_tipo_operacion li,
+    #editForms #check-marco_estad li,
+    #editForms #check-nome_clas li,
+    #editForms #id_opc_desag li,
+    #editForms #id_des_zona li,
+    #editForms #check-conoce_otra li,
+    #editForms #check-hp_siste_infor li,
+    #editForms #id_ra_activo li {
+      position: relative;
+      display: block;
+      padding: 0 1vw; }
+      #createForms #check-fase li label,
+      #createForms #faseOpc li label,
+      #createForms #id_tipo_operacion li label,
+      #createForms #check-marco_estad li label,
+      #createForms #check-nome_clas li label,
+      #createForms #id_opc_desag li label,
+      #createForms #id_des_zona li label,
+      #createForms #check-conoce_otra li label,
+      #createForms #check-hp_siste_infor li label,
+      #createForms #id_ra_activo li label,
+      #editForms #check-fase li label,
+      #editForms #faseOpc li label,
+      #editForms #id_tipo_operacion li label,
+      #editForms #check-marco_estad li label,
+      #editForms #check-nome_clas li label,
+      #editForms #id_opc_desag li label,
+      #editForms #id_des_zona li label,
+      #editForms #check-conoce_otra li label,
+      #editForms #check-hp_siste_infor li label,
+      #editForms #id_ra_activo li label {
+        display: flex;
+        align-items: center; }
+        @media (max-width: 1440px) {
+          #createForms #check-fase li label,
+          #createForms #faseOpc li label,
+          #createForms #id_tipo_operacion li label,
+          #createForms #check-marco_estad li label,
+          #createForms #check-nome_clas li label,
+          #createForms #id_opc_desag li label,
+          #createForms #id_des_zona li label,
+          #createForms #check-conoce_otra li label,
+          #createForms #check-hp_siste_infor li label,
+          #createForms #id_ra_activo li label,
+          #editForms #check-fase li label,
+          #editForms #faseOpc li label,
+          #editForms #id_tipo_operacion li label,
+          #editForms #check-marco_estad li label,
+          #editForms #check-nome_clas li label,
+          #editForms #id_opc_desag li label,
+          #editForms #id_des_zona li label,
+          #editForms #check-conoce_otra li label,
+          #editForms #check-hp_siste_infor li label,
+          #editForms #id_ra_activo li label {
+            font-size: 0.8rem; } }
+        #createForms #check-fase li label input,
+        #createForms #faseOpc li label input,
+        #createForms #id_tipo_operacion li label input,
+        #createForms #check-marco_estad li label input,
+        #createForms #check-nome_clas li label input,
+        #createForms #id_opc_desag li label input,
+        #createForms #id_des_zona li label input,
+        #createForms #check-conoce_otra li label input,
+        #createForms #check-hp_siste_infor li label input,
+        #createForms #id_ra_activo li label input,
+        #editForms #check-fase li label input,
+        #editForms #faseOpc li label input,
+        #editForms #id_tipo_operacion li label input,
+        #editForms #check-marco_estad li label input,
+        #editForms #check-nome_clas li label input,
+        #editForms #id_opc_desag li label input,
+        #editForms #id_des_zona li label input,
+        #editForms #check-conoce_otra li label input,
+        #editForms #check-hp_siste_infor li label input,
+        #editForms #id_ra_activo li label input {
+          margin-right: 0.5vw; }
+  #createForms #id_norma,
+  #createForms #id_requerimientos,
+  #createForms #id_pri_usuarios,
+  #createForms #id_uni_observacion,
+  #createForms #id_obt_dato,
+  #createForms #id_tipo_probabilistico,
+  #createForms #id_tipo_no_probabilistico,
+  #createForms #id_tipo_marco,
+  #createForms #id_docs_des,
+  #createForms #id_lista_conc,
+  #createForms #id_nombre_cla,
+  #createForms #id_cob_geo,
+  #createForms #id_des_geo,
+  #createForms #id_des_grupo,
+  #createForms #id_fuentes,
+  #createForms #id_med_obt,
+  #createForms #id_periodicidad,
+  #createForms #id_h_proc,
+  #createForms #id_a_resul,
+  #createForms #id_m_dif,
+  #createForms #id_f_publi,
+  #createForms #id_fre_dif,
+  #createForms #id_pro_dif,
+  #createForms #id_otro_prod,
+  #createForms #id_tema_compartido,
+  #createForms #id_sala_esp,
+  #createForms .selectFase,
+  #createForms #id_norma_ra,
+  #createForms #id_doc_met_ra,
+  #createForms #id_con_est_ra,
+  #createForms #id_nomb_cla,
+  #createForms #id_recole_dato,
+  #createForms #id_fre_rec_dato,
+  #createForms #id_herr_u_pro,
+  #createForms #id_seg_inf,
+  #createForms #id_frec_alm_bd,
+  #createForms #id_cob_geograf,
+  #createForms #id_no_hay_acceso,
+  #createForms #id_tema_compart,
+  #editForms #id_norma,
+  #editForms #id_requerimientos,
+  #editForms #id_pri_usuarios,
+  #editForms #id_uni_observacion,
+  #editForms #id_obt_dato,
+  #editForms #id_tipo_probabilistico,
+  #editForms #id_tipo_no_probabilistico,
+  #editForms #id_tipo_marco,
+  #editForms #id_docs_des,
+  #editForms #id_lista_conc,
+  #editForms #id_nombre_cla,
+  #editForms #id_cob_geo,
+  #editForms #id_des_geo,
+  #editForms #id_des_grupo,
+  #editForms #id_fuentes,
+  #editForms #id_med_obt,
+  #editForms #id_periodicidad,
+  #editForms #id_h_proc,
+  #editForms #id_a_resul,
+  #editForms #id_m_dif,
+  #editForms #id_f_publi,
+  #editForms #id_fre_dif,
+  #editForms #id_pro_dif,
+  #editForms #id_otro_prod,
+  #editForms #id_tema_compartido,
+  #editForms #id_sala_esp,
+  #editForms .selectFase,
+  #editForms #id_norma_ra,
+  #editForms #id_doc_met_ra,
+  #editForms #id_con_est_ra,
+  #editForms #id_nomb_cla,
+  #editForms #id_recole_dato,
+  #editForms #id_fre_rec_dato,
+  #editForms #id_herr_u_pro,
+  #editForms #id_seg_inf,
+  #editForms #id_frec_alm_bd,
+  #editForms #id_cob_geograf,
+  #editForms #id_no_hay_acceso,
+  #editForms #id_tema_compart {
+    list-style: none !important;
+    padding-inline-start: 0vw !important; }
+    #createForms #id_norma li,
+    #createForms #id_requerimientos li,
+    #createForms #id_pri_usuarios li,
+    #createForms #id_uni_observacion li,
+    #createForms #id_obt_dato li,
+    #createForms #id_tipo_probabilistico li,
+    #createForms #id_tipo_no_probabilistico li,
+    #createForms #id_tipo_marco li,
+    #createForms #id_docs_des li,
+    #createForms #id_lista_conc li,
+    #createForms #id_nombre_cla li,
+    #createForms #id_cob_geo li,
+    #createForms #id_des_geo li,
+    #createForms #id_des_grupo li,
+    #createForms #id_fuentes li,
+    #createForms #id_med_obt li,
+    #createForms #id_periodicidad li,
+    #createForms #id_h_proc li,
+    #createForms #id_a_resul li,
+    #createForms #id_m_dif li,
+    #createForms #id_f_publi li,
+    #createForms #id_fre_dif li,
+    #createForms #id_pro_dif li,
+    #createForms #id_otro_prod li,
+    #createForms #id_tema_compartido li,
+    #createForms #id_sala_esp li,
+    #createForms .selectFase li,
+    #createForms #id_norma_ra li,
+    #createForms #id_doc_met_ra li,
+    #createForms #id_con_est_ra li,
+    #createForms #id_nomb_cla li,
+    #createForms #id_recole_dato li,
+    #createForms #id_fre_rec_dato li,
+    #createForms #id_herr_u_pro li,
+    #createForms #id_seg_inf li,
+    #createForms #id_frec_alm_bd li,
+    #createForms #id_cob_geograf li,
+    #createForms #id_no_hay_acceso li,
+    #createForms #id_tema_compart li,
+    #editForms #id_norma li,
+    #editForms #id_requerimientos li,
+    #editForms #id_pri_usuarios li,
+    #editForms #id_uni_observacion li,
+    #editForms #id_obt_dato li,
+    #editForms #id_tipo_probabilistico li,
+    #editForms #id_tipo_no_probabilistico li,
+    #editForms #id_tipo_marco li,
+    #editForms #id_docs_des li,
+    #editForms #id_lista_conc li,
+    #editForms #id_nombre_cla li,
+    #editForms #id_cob_geo li,
+    #editForms #id_des_geo li,
+    #editForms #id_des_grupo li,
+    #editForms #id_fuentes li,
+    #editForms #id_med_obt li,
+    #editForms #id_periodicidad li,
+    #editForms #id_h_proc li,
+    #editForms #id_a_resul li,
+    #editForms #id_m_dif li,
+    #editForms #id_f_publi li,
+    #editForms #id_fre_dif li,
+    #editForms #id_pro_dif li,
+    #editForms #id_otro_prod li,
+    #editForms #id_tema_compartido li,
+    #editForms #id_sala_esp li,
+    #editForms .selectFase li,
+    #editForms #id_norma_ra li,
+    #editForms #id_doc_met_ra li,
+    #editForms #id_con_est_ra li,
+    #editForms #id_nomb_cla li,
+    #editForms #id_recole_dato li,
+    #editForms #id_fre_rec_dato li,
+    #editForms #id_herr_u_pro li,
+    #editForms #id_seg_inf li,
+    #editForms #id_frec_alm_bd li,
+    #editForms #id_cob_geograf li,
+    #editForms #id_no_hay_acceso li,
+    #editForms #id_tema_compart li {
+      position: relative;
+      display: block;
+      padding: 0 1vw; }
+      #createForms #id_norma li label,
+      #createForms #id_requerimientos li label,
+      #createForms #id_pri_usuarios li label,
+      #createForms #id_uni_observacion li label,
+      #createForms #id_obt_dato li label,
+      #createForms #id_tipo_probabilistico li label,
+      #createForms #id_tipo_no_probabilistico li label,
+      #createForms #id_tipo_marco li label,
+      #createForms #id_docs_des li label,
+      #createForms #id_lista_conc li label,
+      #createForms #id_nombre_cla li label,
+      #createForms #id_cob_geo li label,
+      #createForms #id_des_geo li label,
+      #createForms #id_des_grupo li label,
+      #createForms #id_fuentes li label,
+      #createForms #id_med_obt li label,
+      #createForms #id_periodicidad li label,
+      #createForms #id_h_proc li label,
+      #createForms #id_a_resul li label,
+      #createForms #id_m_dif li label,
+      #createForms #id_f_publi li label,
+      #createForms #id_fre_dif li label,
+      #createForms #id_pro_dif li label,
+      #createForms #id_otro_prod li label,
+      #createForms #id_tema_compartido li label,
+      #createForms #id_sala_esp li label,
+      #createForms .selectFase li label,
+      #createForms #id_norma_ra li label,
+      #createForms #id_doc_met_ra li label,
+      #createForms #id_con_est_ra li label,
+      #createForms #id_nomb_cla li label,
+      #createForms #id_recole_dato li label,
+      #createForms #id_fre_rec_dato li label,
+      #createForms #id_herr_u_pro li label,
+      #createForms #id_seg_inf li label,
+      #createForms #id_frec_alm_bd li label,
+      #createForms #id_cob_geograf li label,
+      #createForms #id_no_hay_acceso li label,
+      #createForms #id_tema_compart li label,
+      #editForms #id_norma li label,
+      #editForms #id_requerimientos li label,
+      #editForms #id_pri_usuarios li label,
+      #editForms #id_uni_observacion li label,
+      #editForms #id_obt_dato li label,
+      #editForms #id_tipo_probabilistico li label,
+      #editForms #id_tipo_no_probabilistico li label,
+      #editForms #id_tipo_marco li label,
+      #editForms #id_docs_des li label,
+      #editForms #id_lista_conc li label,
+      #editForms #id_nombre_cla li label,
+      #editForms #id_cob_geo li label,
+      #editForms #id_des_geo li label,
+      #editForms #id_des_grupo li label,
+      #editForms #id_fuentes li label,
+      #editForms #id_med_obt li label,
+      #editForms #id_periodicidad li label,
+      #editForms #id_h_proc li label,
+      #editForms #id_a_resul li label,
+      #editForms #id_m_dif li label,
+      #editForms #id_f_publi li label,
+      #editForms #id_fre_dif li label,
+      #editForms #id_pro_dif li label,
+      #editForms #id_otro_prod li label,
+      #editForms #id_tema_compartido li label,
+      #editForms #id_sala_esp li label,
+      #editForms .selectFase li label,
+      #editForms #id_norma_ra li label,
+      #editForms #id_doc_met_ra li label,
+      #editForms #id_con_est_ra li label,
+      #editForms #id_nomb_cla li label,
+      #editForms #id_recole_dato li label,
+      #editForms #id_fre_rec_dato li label,
+      #editForms #id_herr_u_pro li label,
+      #editForms #id_seg_inf li label,
+      #editForms #id_frec_alm_bd li label,
+      #editForms #id_cob_geograf li label,
+      #editForms #id_no_hay_acceso li label,
+      #editForms #id_tema_compart li label {
+        display: flex;
+        align-items: center; }
+        @media (max-width: 1440px) {
+          #createForms #id_norma li label,
+          #createForms #id_requerimientos li label,
+          #createForms #id_pri_usuarios li label,
+          #createForms #id_uni_observacion li label,
+          #createForms #id_obt_dato li label,
+          #createForms #id_tipo_probabilistico li label,
+          #createForms #id_tipo_no_probabilistico li label,
+          #createForms #id_tipo_marco li label,
+          #createForms #id_docs_des li label,
+          #createForms #id_lista_conc li label,
+          #createForms #id_nombre_cla li label,
+          #createForms #id_cob_geo li label,
+          #createForms #id_des_geo li label,
+          #createForms #id_des_grupo li label,
+          #createForms #id_fuentes li label,
+          #createForms #id_med_obt li label,
+          #createForms #id_periodicidad li label,
+          #createForms #id_h_proc li label,
+          #createForms #id_a_resul li label,
+          #createForms #id_m_dif li label,
+          #createForms #id_f_publi li label,
+          #createForms #id_fre_dif li label,
+          #createForms #id_pro_dif li label,
+          #createForms #id_otro_prod li label,
+          #createForms #id_tema_compartido li label,
+          #createForms #id_sala_esp li label,
+          #createForms .selectFase li label,
+          #createForms #id_norma_ra li label,
+          #createForms #id_doc_met_ra li label,
+          #createForms #id_con_est_ra li label,
+          #createForms #id_nomb_cla li label,
+          #createForms #id_recole_dato li label,
+          #createForms #id_fre_rec_dato li label,
+          #createForms #id_herr_u_pro li label,
+          #createForms #id_seg_inf li label,
+          #createForms #id_frec_alm_bd li label,
+          #createForms #id_cob_geograf li label,
+          #createForms #id_no_hay_acceso li label,
+          #createForms #id_tema_compart li label,
+          #editForms #id_norma li label,
+          #editForms #id_requerimientos li label,
+          #editForms #id_pri_usuarios li label,
+          #editForms #id_uni_observacion li label,
+          #editForms #id_obt_dato li label,
+          #editForms #id_tipo_probabilistico li label,
+          #editForms #id_tipo_no_probabilistico li label,
+          #editForms #id_tipo_marco li label,
+          #editForms #id_docs_des li label,
+          #editForms #id_lista_conc li label,
+          #editForms #id_nombre_cla li label,
+          #editForms #id_cob_geo li label,
+          #editForms #id_des_geo li label,
+          #editForms #id_des_grupo li label,
+          #editForms #id_fuentes li label,
+          #editForms #id_med_obt li label,
+          #editForms #id_periodicidad li label,
+          #editForms #id_h_proc li label,
+          #editForms #id_a_resul li label,
+          #editForms #id_m_dif li label,
+          #editForms #id_f_publi li label,
+          #editForms #id_fre_dif li label,
+          #editForms #id_pro_dif li label,
+          #editForms #id_otro_prod li label,
+          #editForms #id_tema_compartido li label,
+          #editForms #id_sala_esp li label,
+          #editForms .selectFase li label,
+          #editForms #id_norma_ra li label,
+          #editForms #id_doc_met_ra li label,
+          #editForms #id_con_est_ra li label,
+          #editForms #id_nomb_cla li label,
+          #editForms #id_recole_dato li label,
+          #editForms #id_fre_rec_dato li label,
+          #editForms #id_herr_u_pro li label,
+          #editForms #id_seg_inf li label,
+          #editForms #id_frec_alm_bd li label,
+          #editForms #id_cob_geograf li label,
+          #editForms #id_no_hay_acceso li label,
+          #editForms #id_tema_compart li label {
+            font-size: 0.95rem; } }
+        #createForms #id_norma li label input,
+        #createForms #id_requerimientos li label input,
+        #createForms #id_pri_usuarios li label input,
+        #createForms #id_uni_observacion li label input,
+        #createForms #id_obt_dato li label input,
+        #createForms #id_tipo_probabilistico li label input,
+        #createForms #id_tipo_no_probabilistico li label input,
+        #createForms #id_tipo_marco li label input,
+        #createForms #id_docs_des li label input,
+        #createForms #id_lista_conc li label input,
+        #createForms #id_nombre_cla li label input,
+        #createForms #id_cob_geo li label input,
+        #createForms #id_des_geo li label input,
+        #createForms #id_des_grupo li label input,
+        #createForms #id_fuentes li label input,
+        #createForms #id_med_obt li label input,
+        #createForms #id_periodicidad li label input,
+        #createForms #id_h_proc li label input,
+        #createForms #id_a_resul li label input,
+        #createForms #id_m_dif li label input,
+        #createForms #id_f_publi li label input,
+        #createForms #id_fre_dif li label input,
+        #createForms #id_pro_dif li label input,
+        #createForms #id_otro_prod li label input,
+        #createForms #id_tema_compartido li label input,
+        #createForms #id_sala_esp li label input,
+        #createForms .selectFase li label input,
+        #createForms #id_norma_ra li label input,
+        #createForms #id_doc_met_ra li label input,
+        #createForms #id_con_est_ra li label input,
+        #createForms #id_nomb_cla li label input,
+        #createForms #id_recole_dato li label input,
+        #createForms #id_fre_rec_dato li label input,
+        #createForms #id_herr_u_pro li label input,
+        #createForms #id_seg_inf li label input,
+        #createForms #id_frec_alm_bd li label input,
+        #createForms #id_cob_geograf li label input,
+        #createForms #id_no_hay_acceso li label input,
+        #createForms #id_tema_compart li label input,
+        #editForms #id_norma li label input,
+        #editForms #id_requerimientos li label input,
+        #editForms #id_pri_usuarios li label input,
+        #editForms #id_uni_observacion li label input,
+        #editForms #id_obt_dato li label input,
+        #editForms #id_tipo_probabilistico li label input,
+        #editForms #id_tipo_no_probabilistico li label input,
+        #editForms #id_tipo_marco li label input,
+        #editForms #id_docs_des li label input,
+        #editForms #id_lista_conc li label input,
+        #editForms #id_nombre_cla li label input,
+        #editForms #id_cob_geo li label input,
+        #editForms #id_des_geo li label input,
+        #editForms #id_des_grupo li label input,
+        #editForms #id_fuentes li label input,
+        #editForms #id_med_obt li label input,
+        #editForms #id_periodicidad li label input,
+        #editForms #id_h_proc li label input,
+        #editForms #id_a_resul li label input,
+        #editForms #id_m_dif li label input,
+        #editForms #id_f_publi li label input,
+        #editForms #id_fre_dif li label input,
+        #editForms #id_pro_dif li label input,
+        #editForms #id_otro_prod li label input,
+        #editForms #id_tema_compartido li label input,
+        #editForms #id_sala_esp li label input,
+        #editForms .selectFase li label input,
+        #editForms #id_norma_ra li label input,
+        #editForms #id_doc_met_ra li label input,
+        #editForms #id_con_est_ra li label input,
+        #editForms #id_nomb_cla li label input,
+        #editForms #id_recole_dato li label input,
+        #editForms #id_fre_rec_dato li label input,
+        #editForms #id_herr_u_pro li label input,
+        #editForms #id_seg_inf li label input,
+        #editForms #id_frec_alm_bd li label input,
+        #editForms #id_cob_geograf li label input,
+        #editForms #id_no_hay_acceso li label input,
+        #editForms #id_tema_compart li label input {
+          margin-right: 0.5vw; }
+  #createForms #id_obt_dato li,
+  #editForms #id_obt_dato li {
+    padding: 20vh 1vw !important; }
+  #createForms #sP4Mc_1,
+  #editForms #sP4Mc_1 {
+    margin-top: 11vh; }
+  #createForms #sP4Mc_2,
+  #editForms #sP4Mc_2 {
+    margin-top: 23vh; }
+  #createForms .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn),
+  #editForms .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100% !important; }
+  #createForms #id_cob_geo li,
+  #createForms #id_otro_prod li,
+  #editForms #id_cob_geo li,
+  #editForms #id_otro_prod li {
+    margin-top: 1vh !important; }
+  #createForms #id_des_zona,
+  #editForms #id_des_zona {
+    justify-content: space-around !important; }
+  #createForms .heigthTextArea,
+  #editForms .heigthTextArea {
+    height: 10vh !important; }
+  #createForms #accordiontemaCompartido button,
+  #createForms #accordionSalaEspecializada button,
+  #editForms #accordiontemaCompartido button,
+  #editForms #accordionSalaEspecializada button {
+    height: calc(1.5em + 0.5rem + 2px) !important;
+    font-size: 0.875rem !important;
+    color: #485057 !important;
+    padding: 0.25rem 0.5rem !important;
+    border: 1px solid #ced4da !important; }
+  #createForms .custom-file-label::after,
+  #editForms .custom-file-label::after {
+    content: "Elegir" !important; }
+  #createForms .bullet,
+  #editForms .bullet {
+    background-color: #EAEAEA;
+    border-radius: 4px;
+    padding: 0.2vh 0.5vw; }
+  #createForms .labelTitle,
+  #editForms .labelTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #428b94; }
+  @media (max-width: 1440px) {
+    #createForms .spacing11,
+    #editForms .spacing11 {
+      margin-top: 1vh; } }
+  #createForms .bkgevaluación,
+  #editForms .bkgevaluación {
+    border: solid 1px #005E66;
+    border-radius: 4px; }
+
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.5) !important; }
+
+.introjs-helperNumberLayer {
+  background: #607D8B !important;
+  border: solid 1px #34515E !important;
+  font-family: "BarlowRegular", sans-serif !important; }
+
+.invalidRed {
+  border: solid 1px red !important; }
+
+.mb-1medio {
+  margin-bottom: 0.8vh; }
+  @media (max-width: 1440px) {
+    .mb-1medio {
+      margin-bottom: 0.8vh; } }
+.mb-2medio {
+  margin-bottom: 2.6vh; }
+  @media (max-width: 1440px) {
+    .mb-2medio {
+      margin-bottom: 3vh; } }
+.mb-3medio {
+  margin-bottom: 1.2vh; }
+  @media (max-width: 1440px) {
+    .mb-3medio {
+      margin-bottom: 1.5vh; } }
+.blankSpace {
+  margin-top: 20vh; }
+  @media (max-width: 1440px) {
+    .blankSpace {
+      margin-top: 30vh; } }
+.blankSpace2 {
+  margin-top: 10vh; }
+  @media (max-width: 1440px) {
+    .blankSpace2 {
+      margin-top: 13vh; } }
+.blankSpace3 {
+  margin-top: 20vh; }
+  @media (max-width: 1440px) {
+    .blankSpace3 {
+      margin-top: 26vh; } }
+.blankSpace4,
+.blankSpace5 {
+  margin-top: 3vh; }
+
+.blankSpace6 {
+  margin-top: 2rem; }
+  @media (max-width: 1440px) {
+    .blankSpace6 {
+      margin-top: 5vh; } }
+.blankSpace7 {
+  margin-top: 10vh; }
+  @media (max-width: 1440px) {
+    .blankSpace7 {
+      margin-top: 18vh; } }
+.blankSpace8 {
+  margin-top: 13vh; }
+  @media (max-width: 1440px) {
+    .blankSpace8 {
+      margin-top: 17vh; } }
+.blankSpace9 {
+  margin-top: 15vh; }
+  @media (max-width: 1440px) {
+    .blankSpace9 {
+      margin-top: 21vh; } }
+.blankSpace10 {
+  margin-top: 22vh; }
+  @media (max-width: 1440px) {
+    .blankSpace10 {
+      margin-top: 31vh; } }
+.misize {
+  font-size: 1rem !important; }
+
+#id_org_in_cual {
+  margin-top: 13vh; }
+
+#id_otra_ce_cual {
+  margin-top: 2vh; }
+
+#id_sistema_inf_cual {
+  margin-top: 11vh; }
+
+#id_otro_c {
+  margin-top: 2vh; }
+
+#id_otra_cual_fre {
+  margin-top: 23vh; }
+  @media (max-width: 1440px) {
+    #id_otra_cual_fre {
+      margin-top: 31vh; } }
+#id_otra_herram {
+  margin-top: 22vh; }
+  @media (max-width: 1605px) {
+    #id_otra_herram {
+      margin-top: 24vh; } }
+  @media (max-width: 1920px) {
+    #id_otra_herram {
+      margin-top: 31vh; } }
+#id_otra_cual_s {
+  margin-top: 9vh; }
+  @media (max-width: 1605px) {
+    #id_otra_cual_s {
+      margin-top: 11vh; } }
+#id_otra_alm_bd {
+  margin-top: 22vh; }
+
+#id_cual_regio {
+  margin-top: 7vh; }
+  @media (max-width: 1605px) {
+    #id_cual_regio {
+      margin-top: 8vh; } }
+#id_cob_geograf li {
+  margin-top: 1.5vh !important; }
+
+#id_otra_no_acceso {
+  margin-top: 14vh; }
+
+.wrapComments2 {
+  height: 53vh;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  @media (max-width: 1605px) {
+    .wrapComments2 {
+      height: 64vh; } }
+.bootstrap-select .dropdown-menu {
+  transform: none !important;
+  margin-top: 4vh !important;
+  min-width: 0px !important;
+  width: 60.5vw !important; }
+  @media (max-width: 1605px) {
+    .bootstrap-select .dropdown-menu {
+      margin-top: 4.6vh !important;
+      width: 60.2vw !important; } }
+  .bootstrap-select .dropdown-menu .inner {
+    margin-top: 0 !important; }
+    .bootstrap-select .dropdown-menu .inner .dropdown-item {
+      font-size: 0.75rem; }
+
+.bootstrap-select .inner {
+  overflow-x: hidden !important; }
+  .bootstrap-select .inner li {
+    width: 97%; }
+
+#id_variable_file,
+#id_anexos,
+#id_variableRecol_file {
+  width: 70vw !important; }
+
+input[type="file" i] {
+  border: solid 1px #4f4f4f !important;
+  border-radius: 4px !important; }
+
+#id_otra_doc_cual {
+  margin-top: 9vh; }
+  @media (max-width: 1440px) {
+    #id_otra_doc_cual {
+      margin-top: 13vh; } }
+#id_user_dane,
+#id_indicador_ods {
+  width: 90%; }
+
+.dateEval {
+  font-size: 0.6rem; }
+
+#createForms #id_norma_ra li {
+  padding-top: 1rem; }
+
+#id_cp_ra,
+#id_ley_ra,
+#id_decreto_ra,
+#id_otra_ra {
+  margin-top: 0.8rem; }
+
+@media (max-width: 1440px) {
+  #id_norma li {
+    margin-top: 1.2vh; }
+  #id_requerimientos li {
+    margin-top: 1.4vh; }
+  #id_pri_usuarios li {
+    margin-top: 0.4vh; }
+  #id_uni_observacion li {
+    margin-top: 1.5vh; }
+  #id_lista_conc li {
+    margin-top: 2vh; }
+  #id_org_in_cuales {
+    margin-top: 6vh; }
+  #id_otra_cual_conp {
+    margin-top: 5vh; }
+  .blankSpace9 {
+    margin-top: 12vh; }
+  #id_con_est_ra li {
+    margin-top: 1vh; }
+  #id_org_in_cual {
+    margin-top: 20vh; }
+  #id_recole_dato li {
+    margin-top: 1vh; }
+  #id_otro_c {
+    margin-top: 4vh; }
+  #id_otra_cual_s {
+    margin-top: 14vh; }
+  #id_otra_no_acceso {
+    margin-top: 18vh; }
+  #id_des_geo li {
+    margin-bottom: 2.8vh !important; }
+  #id_con_est_ra li {
+    margin-top: 2vh; }
+  #id_ent_ordnac_cual,
+  #id_leye_dec_cual {
+    margin-top: 0.5vh; }
+  #id_otra_ce_cual {
+    margin-top: 5vh; }
+  #id_cob_geograf li {
+    margin-top: 3vh !important; }
+  #id_recole_dato li {
+    margin-top: 1.5vh !important; }
+  #id_sistema_inf_cual {
+    margin-top: 14vh; }
+  #geografica::before {
+    content: "11.1.  " !important;
+    font-weight: bold;
+    margin-right: 0.5rem; }
+  #zona::before {
+    content: "11.2.  " !important;
+    font-weight: bold;
+    margin-right: 0.5rem; }
+  #grupos::before {
+    content: "11.3.  " !important;
+    font-weight: bold;
+    margin-right: 0.5rem; }
+  /* nuevo estilos pregunta 5 */
+  #id_ri_ocde {
+    margin-top: 0.5rem !important; }
+  #id_ri_ci {
+    margin-top: 1.2rem !important; }
+  #id_ri_pnd,
+  #id_ri_cem,
+  #id_ri_pstc,
+  #id_ri_otro {
+    margin-top: 0.1rem !important; }
+  #id_pres_rep,
+  #id_misnit,
+  #id_org_cont,
+  #id_o_ent_o_nac,
+  #id_ent_o_terr,
+  #id_gremios,
+  #id_ent_privadas,
+  #id_dep_misma_entidad,
+  #id_academia {
+    margin-top: 1.5rem !important; }
+  #id_des_tot_dep,
+  #id_des_cual_dep,
+  #id_des_tot_are_metr,
+  #id_des_cual_are_metr,
+  #id_des_tot_mun,
+  #id_des_cual_mun,
+  #id_des_tot_otro,
+  #id_des_cual_otro {
+    margin-top: 0.5rem !important; }
+  #id_tot_regional {
+    margin-top: 8.5rem !important; }
+  #id_cual_regional,
+  #id_cual_dep,
+  #id_cual_are_metr,
+  #id_cual_mun {
+    margin-top: 0.2rem !important; }
+  #id_tot_dep,
+  #id_tot_are_metr,
+  #id_tot_mun,
+  #id_tot_otro {
+    margin-top: 2rem !important; }
+  #id_otro_docs {
+    margin-top: 9rem !important; }
+  #id_des_grupo_otro {
+    margin-top: 11rem !important; }
+  #id_per_otro {
+    margin-top: 9rem !important; }
+  #id_difundir_otro {
+    margin-top: 9rem !important; }
+  #spacingQuestion11_1 {
+    margin-top: 5rem !important; } }
+
+/* nuevo estilos pregunta 5 */
+#id_ri_ocde,
+#id_ri_ci,
+#id_ri_pnd,
+#id_ri_cem,
+#id_ri_pstc,
+#id_ri_otro {
+  margin-top: 0.1rem; }
+
+#id_pres_rep,
+#id_misnit,
+#id_org_cont,
+#id_o_ent_o_nac,
+#id_ent_o_terr,
+#id_gremios,
+#id_ent_privadas,
+#id_dep_misma_entidad,
+#id_academia {
+  margin-top: 1.6rem; }
+
+#id_des_tot_dep,
+#id_des_cual_dep,
+#id_des_tot_are_metr,
+#id_des_cual_are_metr,
+#id_des_tot_mun,
+#id_des_cual_mun,
+#id_des_tot_otro,
+#id_des_cual_otro {
+  margin-top: 1rem; }
+
+#id_tot_regional {
+  margin-top: 8.5rem; }
+
+#id_cual_regional,
+#id_cual_dep,
+#id_cual_are_metr,
+#id_cual_munm,
+#id_cual_otro {
+  margin-top: 0.2rem; }
+
+#id_tot_dep,
+#id_tot_are_metr,
+#id_tot_mun,
+#id_tot_otro {
+  margin-top: 0.5rem; }
+
+#id_per_otro {
+  margin-top: 10rem; }
+
+#id_otro_docs {
+  margin-top: 10rem; }
+
+#id_des_grupo_otro {
+  margin-top: 12rem; }
+
+#id_difundir_otro {
+  margin-top: 10rem; }
+
+#spacingQuestion11_1 {
+  margin-top: 5.5rem; }
+
+/* Demandas*/
+.question {
+  padding-top: 1.5vh;
+  font-family: "OpenSans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600; }
+
+#id_pm_b_4_0,
+#id_pm_b_4_1,
+#id_pm_b_4_2,
+#id_pm_b_4_3,
+#id_pm_b_4_4,
+#id_pm_b_4_5,
+#id_pm_b_4_6,
+#id_pm_b_4_7,
+#id_pm_b_4_8,
+#id_pm_b_4_9,
+#id_pm_b_4_10,
+#id_pm_b_4_11 {
+  margin-bottom: 1.1rem; }
+
+#id_pm_b_5 li {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  list-style: none;
+  padding-bottom: 0.3rem; }
+
+#id_ministerios_text {
+  margin-top: 6vh; }
+
+#id_academia_text,
+#id_entidadesordenterr_text,
+#id_oentidadesordenal_text,
+#id_gremios_text,
+#id_entiprivadas_text,
+#id_dependenentidad_text,
+#id_oentidadesordenal_text,
+#id_orgcontrol_text {
+  margin-top: 1.1vh; }
+
+#id_rraa_pmb11,
+#id_ooee_pmb11 {
+  margin-top: 1.2vh; }
+
+#id_otra_cual_11_1_d {
+  margin-top: 16vh; }
+
+#id_otro_cual_text {
+  margin-top: 7vh; }
+
+#id_otros_c_text {
+  margin-top: 16vh; }
+
+#id_otra_cual_text_a {
+  margin-top: 21vh; }
+
+#id_otra_cual_text_b {
+  margin-top: 20vh; }
+
+#id_otra_cual_text_c {
+  margin-top: 16vh; }
+
+#id_compl_dem_a li,
+#id_comple_dem_b li,
+#id_validacion_ddi li,
+#id_pm_b_14 li,
+#id_pm_b_13 li,
+#id_pm_b_13_geo li,
+#id_pm_b_13_zona li,
+#id_pm_b_12 li,
+#id_pm_b_8 li,
+#id_total_si_no_pmb7 li,
+#id_pm_b_4 li,
+#id_pm_b_3 li,
+#id_quien_identddi li,
+#id_comite_est li {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  list-style: none; }
+
+#id_opc_apr_ra li,
+#id_opc_apr_oe li,
+#id_pm_b_11_1 li {
+  font-size: 0.8rem;
+  list-style: none;
+  padding-bottom: 0.7rem; }
+
+#id_genera_nuev li {
+  font-size: 0.8rem;
+  list-style: none;
+  padding-bottom: 0.5rem; }
+
+#id_pm_b_6 li {
+  font-size: 0.85rem;
+  padding-left: 0.5rem;
+  list-style: none;
+  padding-bottom: 0.5rem; }
+
+#id_pm_b_6_0,
+#id_pm_b_6_1,
+#id_pm_b_6_2,
+#id_pm_b_6_3,
+#id_pm_b_6_4,
+#id_pm_b_6_5,
+#id_pm_b_6_6 {
+  margin-top: 2vh; }
+
+#id_cuentasecomacroec_text,
+#id_plansecterrcom_text,
+#id_objdessost_text {
+  margin-top: 3vh; }
+
+#id_orgcooper_text,
+#id_otroscomprInt_text,
+#id_otros_text {
+  margin-top: 4.5vh; }
+
+#id_inc_varia_cual {
+  margin-top: 8vh; }
+
+/*  ¿Quién identificó la demanda de información? */
+#id_quien_identddi_0,
+#id_quien_identddi_1,
+#id_quien_identddi_2,
+#id_quien_identddi_3 {
+  margin-top: 1vh; }
+
+#id_quien_identddi_4 {
+  margin-top: 18vh; }
+
+#entidadOpcion_resp .bootstrap-select .dropdown-menu {
+  max-width: 95% !important; }
+
+#entidadOpcion {
+  margin-top: 16vh; }
+
+/*  end ¿Quién identificó la demanda de información? */
+/* pregunta 11 ddi */
+/* opciones ooee */
+#id_opc_apr_oe_0,
+#id_opc_apr_oe_1,
+#id_opc_apr_oe_2,
+#id_opc_apr_oe_3,
+#id_opc_apr_oe_4,
+#id_opc_apr_oe_4 {
+  margin-top: 1vh; }
+
+#id_cam_preg_cual,
+#id_am_des_tem_cual,
+#id_am_des_geo_cual,
+#id_dif_resul_cual {
+  margin-top: 2vh; }
+
+#id_opc_aprov_cual {
+  margin-top: 4vh; }
+
+/* opciones ooee */
+/* opciones rraa */
+#id_opc_apr_ra_0,
+#id_opc_apr_ra_1,
+#id_opc_apr_ra_2 {
+  margin-top: 2vh; }
+
+#id_inc_varia_cual,
+#id_camb_pregu_cual {
+  margin-top: 2vh; }
+
+#id_otros_aprov_ra {
+  margin-top: 3vh; }
+
+/* opciones rraa */
+/* opciones generacion */
+#id_genera_nuev_0,
+#id_genera_nuev_1,
+#id_genera_nuev_2 {
+  margin-top: 2vh; }
+
+#id_nueva_oe,
+#id_indi_cual {
+  margin-top: 2vh; }
+
+#id_gen_nueva {
+  margin-top: 3vh; }
+
+p.tranformp {
+  max-width: 450px;
+  max-height: 400px;
+  white-space: nowrap;
+  overflow: auto; }
+
+/* opciones generacion */
+/* end pregunta 11 */
+.labelTitle2 {
+  font-size: 0.75rem;
+  color: #607d8b; }
+
+.labelTitle3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #005e66;
+  padding-left: 1rem; }
+
+#id_otro_cual {
+  margin-top: 12vh; }
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat #f9f9f9;
+  opacity: .8;
+  cursor: wait; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#detalleEntities .backgroundHeaderModal {
+  background-color: #005E66;
+  border-radius: 0 4px 0 0; }
+
+#detalleEntities .backgroundCode {
+  background-color: #005E66;
+  border-radius: 4px 0 0 0; }
+  #detalleEntities .backgroundCode .tabCode {
+    background-color: #EAEAEA;
+    border-radius: 4px 30px 0 0;
+    padding-bottom: 0.1vh; }
+    #detalleEntities .backgroundCode .tabCode h2 {
+      font-family: "BarlowRegular", sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      color: #005E66; }
+
+#detalleEntities h3 {
+  font-family: "BarlowRegular", sans-serif;
+  font-size: 2rem;
+  color: #ffff;
+  text-align: center; }
+
+#detalleEntities .backgroundGray {
+  background-color: #EAEAEA;
+  border-radius: 0 5px 5px 0; }
+
+#detalleEntities .list-group-item {
+  background-color: transparent;
+  border: none; }
+  #detalleEntities .list-group-item .titleDetailItem {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    font-weight: bold;
+    color: #005E66; }
+  #detalleEntities .list-group-item .contentTitleDetailItem {
+    font-family: "OpenSans", sans-serif;
+    font-size: 0.75rem; }
+
+#detalleEntities .spacingData .header {
+  background-color: #428B94; }
+  #detalleEntities .spacingData .header h3 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.33333rem;
+    color: #ffff;
+    text-align: center; }
+
+#detalleEntities .spacingData .bkgTitleDta {
+  background-color: #428B94;
+  border-radius: 4px 0 0 4px;
+  font-family: "BarlowRegular", sans-serif;
+  color: #ffff; }
+  #detalleEntities .spacingData .bkgTitleDta .mi {
+    font-size: 1rem;
+    padding-top: 0.5vh; }
+
+#detalleEntities .spacingData .bkgContentData {
+  border: solid 1px #428B94;
+  border-radius: 0 4px 4px 0;
+  padding-top: 0.5vh;
+  font-size: 0.75rem; }
+
+#detalleEntities .spacingData .italic {
+  font-style: italic !important; }
+
+#modalDetailUser .bkgFondo {
+  background-color: #EAEAEA; }
+
+#modalDetailUser .bkg_1 {
+  background-color: #005E66;
+  border-radius: 0 10px 10px 0; }
+  #modalDetailUser .bkg_1 #dataUser h3 {
+    font-family: "BarlowRegular", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ffff; }
+  #modalDetailUser .bkg_1 #dataUser h5 {
+    font-family: "BarlowRegular", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #ffff; }
+
+#modalDetailUser #dataExternalUser p {
+  font-family: "OpenSans", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: underline; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#queryModule {
+  display: none; }
+  #queryModule .spacingTop {
+    margin-top: 1vh; }
+  #queryModule .background-card {
+    background-color: #EAEAEA;
+    border-radius: 4px;
+    /* bar-1 */
+    /* bar_2 */
+    /* barImg */ }
+    #queryModule .background-card h4 {
+      font-family: "BarlowRegular", sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffff;
+      text-align: center; }
+    #queryModule .background-card .bar1-economica {
+      height: 1vh;
+      border-radius: 4px 4px 0 0;
+      background-color: #3e2723; }
+    #queryModule .background-card .bar1-sociedad {
+      height: 1vh;
+      border-radius: 4px 4px 0 0;
+      background-color: #006064; }
+    #queryModule .background-card .bar1-ambiental {
+      height: 1vh;
+      border-radius: 4px 4px 0 0;
+      background-color: #33691e; }
+    #queryModule .background-card .bar2-economica {
+      background-color: #5d4037; }
+      #queryModule .background-card .bar2-economica h2 {
+        font-size: 3rem !important;
+        color: #ffff; }
+      #queryModule .background-card .bar2-economica p {
+        font-size: 1rem;
+        color: #ffff; }
+    #queryModule .background-card .bar2-sociedad {
+      background-color: #00838f; }
+      #queryModule .background-card .bar2-sociedad h2 {
+        font-size: 3rem !important;
+        color: #ffff; }
+      #queryModule .background-card .bar2-sociedad p {
+        font-size: 1rem;
+        color: #ffff; }
+    #queryModule .background-card .bar2-ambiental {
+      background-color: #558b2f; }
+      #queryModule .background-card .bar2-ambiental h2 {
+        font-size: 3rem !important;
+        color: #ffff; }
+      #queryModule .background-card .bar2-ambiental p {
+        font-size: 1rem;
+        color: #ffff; }
+    #queryModule .background-card .bar-imgEconomica {
+      width: 100%;
+      height: 15vh;
+      background-image: url("/media/cardConsulta/economica.jpg");
+      background-position: center;
+      background-size: cover; }
+    #queryModule .background-card .bar-imgSociedad {
+      width: 100%;
+      height: 15vh;
+      background-image: url("/media/cardConsulta/sociodemografica.jpg");
+      background-position: center;
+      background-size: cover; }
+    #queryModule .background-card .bar-imgAmbiental {
+      width: 100%;
+      height: 15vh;
+      background-image: url("/media/cardConsulta/ambiental.jpg");
+      background-position: center;
+      background-size: cover; }
+    #queryModule .background-card .container-status {
+      padding: 1vh 0vw; }
+      #queryModule .background-card .container-status .colorTextGreenCard {
+        font-weight: bold; }
+        #queryModule .background-card .container-status .colorTextGreenCard h2 {
+          font-family: "BarlowRegular", sans-serif;
+          font-weight: bold;
+          font-size: 3rem; }
+        #queryModule .background-card .container-status .colorTextGreenCard p {
+          color: #005E66; }
+      #queryModule .background-card .container-status .pointerChevron {
+        cursor: pointer; }
+  #queryModule .colorGreenTitle {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 2rem;
+    color: #005E66; }
+  #queryModule .colorGreenTitle2 {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 2rem;
+    color: #005E66; }
+
+#totales .background-card {
+  padding: 0.5rem;
+  background-color: #00343C;
+  color: #ffff; }
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat #f9f9f9;
+  opacity: .8;
+  cursor: wait; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+@media (max-width: 1440px) {
+  #navOOEE ul {
+    top: 28vh; } }
+
+#navOOEE .list-group {
+  background-color: #428B94;
+  border-radius: 0 10px 10px 0; }
+
+#navOOEE .list-group-item {
+  background-color: transparent;
+  border: none;
+  padding: 0; }
+  #navOOEE .list-group-item a {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    color: #ffff;
+    display: flex;
+    align-items: center; }
+
+#navOOEE .red {
+  color: red; }
+
+#navOOEE .green {
+  color: green; }
+
+#navOOEE .white {
+  color: #ffff; }
+
+@media (max-width: 1440px) {
+  #navOOEEedit ul {
+    top: 20vh; } }
+
+#navOOEEedit .list-group {
+  background-color: #428B94;
+  border-radius: 0 10px 10px 0; }
+
+#navOOEEedit .list-group-item {
+  background-color: transparent;
+  border: none;
+  padding: 0; }
+  #navOOEEedit .list-group-item a {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.16667rem;
+    color: #ffff;
+    display: flex;
+    align-items: center; }
+
+#navOOEEedit .red {
+  color: red; }
+
+#navOOEEedit .green {
+  color: green; }
+
+#navOOEEedit .white {
+  color: #ffff; }
+
+#moduleEvaluacion .dateEval {
+  font-size: 0.6rem !important; }
+
+#moduleEvaluacion .card {
+  border: none !important; }
+
+.bkg_estado p {
+  font-family: "BarlowRegular", sans-serif;
+  font-size: 1.16667rem; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#detalleOOEE,
+#detalleRRAA {
+  /* Gobals */ }
+  #detalleOOEE .bkg-Green,
+  #detalleRRAA .bkg-Green {
+    background-color: #005E66;
+    color: #ffff; }
+  #detalleOOEE .bkg-gray,
+  #detalleRRAA .bkg-gray {
+    background-color: #EAEAEA; }
+  #detalleOOEE .bkg-grayDark,
+  #detalleRRAA .bkg-grayDark {
+    background-color: #ABABAB; }
+  #detalleOOEE .bkg-clear,
+  #detalleRRAA .bkg-clear {
+    background-color: #F5F5F5;
+    padding-left: 1rem; }
+  #detalleOOEE hr,
+  #detalleRRAA hr {
+    border-top: 1px dotted rgba(34, 34, 34, 0.1); }
+  #detalleOOEE .m_medio,
+  #detalleRRAA .m_medio {
+    margin: 0.5vh 0.1vw; }
+  #detalleOOEE .blankSpace,
+  #detalleRRAA .blankSpace {
+    margin-top: 25vh; }
+  #detalleOOEE .green,
+  #detalleRRAA .green {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #005E66;
+    padding-right: 0.5rem;
+    vertical-align: middle; }
+  #detalleOOEE #warpHeadDetail .titleDetail,
+  #detalleRRAA #warpHeadDetail .titleDetail {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 1.33333rem; }
+  #detalleOOEE #warpHeadDetail .titleficha,
+  #detalleRRAA #warpHeadDetail .titleficha {
+    font-family: "BarlowRegular", sans-serif;
+    font-size: 2rem;
+    color: #005E66;
+    font-weight: 600; }
+  #detalleOOEE #warpHeadDetail .TitleOOEE,
+  #detalleRRAA #warpHeadDetail .TitleOOEE {
+    font-family: "OpenSans", sans-serif;
+    font-size: 1.33333rem; }
+  #detalleOOEE #warpHeadDetail .titleques,
+  #detalleRRAA #warpHeadDetail .titleques {
+    font-family: "BarlowRegular", sans-serif;
+    font-weight: 300;
+    font-size: 1.33333rem;
+    padding: 0.5rem;
+    text-align: center; }
+  #detalleOOEE #warpHeadDetail .codest,
+  #detalleRRAA #warpHeadDetail .codest {
+    font-family: "BarlowRegular", sans-serif;
+    font-weight: 200;
+    font-size: 1.16667rem;
+    padding: 0.2rem;
+    text-align: center; }
+  #detalleOOEE #warpHeadDetail .geozona,
+  #detalleRRAA #warpHeadDetail .geozona {
+    color: #005E66;
+    font-weight: bold;
+    font-size: 1rem; }
+  #detalleOOEE .warpInfo .head,
+  #detalleRRAA .warpInfo .head {
+    color: #005E66;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase; }
+  #detalleOOEE .warpInfo .btn_link_detail,
+  #detalleRRAA .warpInfo .btn_link_detail {
+    text-align: left;
+    font-size: 1rem;
+    font-style: italic;
+    color: #607D8B; }
+    #detalleOOEE .warpInfo .btn_link_detail:hover, #detalleOOEE .warpInfo .btn_link_detail:visited, #detalleOOEE .warpInfo .btn_link_detail:focus,
+    #detalleRRAA .warpInfo .btn_link_detail:hover,
+    #detalleRRAA .warpInfo .btn_link_detail:visited,
+    #detalleRRAA .warpInfo .btn_link_detail:focus {
+      color: #34515E;
+      text-decoration: none; }
+  #detalleOOEE .titleSectionDetail,
+  #detalleRRAA .titleSectionDetail {
+    color: #005E66;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase; }
+  #detalleOOEE .titleSectionDetailNegative,
+  #detalleRRAA .titleSectionDetailNegative {
+    background-color: #34515E;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase; }
+  #detalleOOEE .mtdetailRRAA,
+  #detalleRRAA .mtdetailRRAA {
+    margin-top: 4vh; }
+    @media (max-width: 1605px) {
+      #detalleOOEE .mtdetailRRAA,
+      #detalleRRAA .mtdetailRRAA {
+        margin-top: 5vh; } }
+  #detalleOOEE #topMessage,
+  #detalleRRAA #topMessage {
+    background-color: #005E66;
+    color: #fff;
+    padding: 40px;
+    top: -1722px;
+    position: absolute;
+    /*El div será ubicado con relación a la pantalla*/
+    font-weight: bold;
+    border-radius: 15px;
+    margin-left: 250px;
+    font-size: 17px; }
+  #detalleOOEE P.centerPrint,
+  #detalleRRAA P.centerPrint {
+    text-align: center; }
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+@font-face {
+  font-family: BarlowRegular;
+  src: url("../font/Barlow/BarlowCondensed-Regular.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal; }
+
+#moduleComments .mi-green,
+#moduleNovedad .mi-green,
+#moduleCriticas .mi-green,
+#moduleEvaluacion .mi-green,
+#moduleFortalecimiento .mi-green {
+  color: #005E66; }
+
+#moduleComments .wrapComments,
+#moduleNovedad .wrapComments,
+#moduleCriticas .wrapComments,
+#moduleEvaluacion .wrapComments,
+#moduleFortalecimiento .wrapComments {
+  height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+#moduleComments .border,
+#moduleNovedad .border,
+#moduleCriticas .border,
+#moduleEvaluacion .border,
+#moduleFortalecimiento .border {
+  border: 1px solid #EAEAEA !important; }
+
+#moduleComments .input-group-text,
+#moduleNovedad .input-group-text,
+#moduleCriticas .input-group-text,
+#moduleEvaluacion .input-group-text,
+#moduleFortalecimiento .input-group-text {
+  background-color: #EAEAEA !important;
+  border: 1px solid #EAEAEA !important;
+  color: #222222; }
+
+#moduleComments .bkgInputQuestion1,
+#moduleNovedad .bkgInputQuestion1,
+#moduleCriticas .bkgInputQuestion1,
+#moduleEvaluacion .bkgInputQuestion1,
+#moduleFortalecimiento .bkgInputQuestion1 {
+  background-color: #EAEAEA !important; }
+  #moduleComments .bkgInputQuestion1 p,
+  #moduleNovedad .bkgInputQuestion1 p,
+  #moduleCriticas .bkgInputQuestion1 p,
+  #moduleEvaluacion .bkgInputQuestion1 p,
+  #moduleFortalecimiento .bkgInputQuestion1 p {
+    color: #222222 !important; }
+
+/*# sourceMappingURL=layout.css.map */

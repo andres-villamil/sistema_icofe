@@ -1,0 +1,163 @@
+[
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 1, 
+        "fields": {
+            "nombre_cla": "Sistema Armonizado de Designación y Codificación de Mercancías"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 2,
+        "fields": {
+            "nombre_cla": "Clasificaciones por Grandes Categorías Económicas"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 3, 
+        "fields": {
+            "nombre_cla": "Clasificación del Consumo Individual por Finalidades"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 4,
+        "fields": {
+            "nombre_cla": "Clasificación Ampliada de la Balanza de Pagos de Servicios"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 5, 
+        "fields": {
+            "nombre_cla": "Clasificación del Comercio Exterior según Uso o Destino Económico"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 6,
+        "fields": {
+            "nombre_cla": "Clasificación Uniforme para el Comercio Internacional"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 7, 
+        "fields": {
+            "nombre_cla": "Clasificación Central de Productos"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 8,
+        "fields": {
+            "nombre_cla": "Clasificación de las Funciones del Gobierno"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 9, 
+        "fields": {
+            "nombre_cla": "Clasificación Internacional Normalizada de la Educación"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 10,
+        "fields": {
+            "nombre_cla": "Clasificación Internacional del Funcionamiento, la Discapacidad y la Salud"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 11, 
+        "fields": {
+            "nombre_cla": "Clasificación de las Finalidades de las Instituciones sin Fines de Lucro que sirven a los hogares"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 12,
+        "fields": {
+            "nombre_cla": "Clasificación Internacional de los Delitos con Fines Estadísticos"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 13, 
+        "fields": {
+            "nombre_cla": "Clasificación Internacional de Actividades para Estadísticas de Uso del Tiempo"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 14,
+        "fields": {
+            "nombre_cla": "Clasificación Internacional de Situación en el Empleo"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 15, 
+        "fields": {
+            "nombre_cla": "Clasificación Internacional de Enfermedades"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 16,
+        "fields": {
+            "nombre_cla": "Clasificación Internacional de Intervenciones de Salud"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 17, 
+        "fields": {
+            "nombre_cla": "Clasificación de Actividades de Protección Ambiental"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 18,
+        "fields": {
+            "nombre_cla": "División Político Administrativa de Colombia"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 19, 
+        "fields": {
+            "nombre_cla": "Nomenclatura de las Unidades Territoriales Estadísticas de la Comunidad Andina"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 20,
+        "fields": {
+            "nombre_cla": "Clasificación Industrial Internacional Uniforme de todas las actividades económicas Adaptada para Colombia"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 21, 
+        "fields": {
+            "nombre_cla": "Clasificación Internacional Uniforme de Ocupaciones Adaptada para Colombia"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones", 
+        "pk": 22,
+        "fields": {
+            "nombre_cla": "Clasificación Central de Productos Adapta para Colombia"
+        }
+    }, 
+    {
+        "model": "ooee.clasificaciones",
+        "pk": 23, 
+        "fields": {
+            "nombre_cla": "Clasificación Internacional Normalizada de la Educación Adapta para Colombia"
+        }
+    }
+]

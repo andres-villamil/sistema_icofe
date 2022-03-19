@@ -1,0 +1,24 @@
+[
+    {
+        "model": "ooee.fechapublicacion",
+        "pk": 1, 
+        "fields": {
+           "f_publi": "fecha Publicación"
+        }
+    }, 
+    {
+        "model": "ooee.fechapublicacion", 
+        "pk": 2,
+        "fields": {
+           "f_publi": "No sabe"
+        }
+    }, 
+    {
+        "model": "ooee.fechapublicacion", 
+        "pk": 3, 
+        "fields": {
+           "f_publi": "No hay"
+        }
+    }
+]
+

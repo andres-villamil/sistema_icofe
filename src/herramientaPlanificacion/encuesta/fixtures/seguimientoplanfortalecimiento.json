@@ -1,0 +1,23 @@
+[
+    {
+        "model": "rraa.seguimientoplanfortalecimiento",
+        "pk": 1, 
+        "fields": {
+            "seguimiento_plan": "Sin implementar"
+        }
+    }, 
+    {
+        "model": "rraa.seguimientoplanfortalecimiento", 
+        "pk": 2,
+        "fields": {
+            "seguimiento_plan": "En Proceso de implementación"
+        }
+    }, 
+    {
+        "model": "rraa.seguimientoplanfortalecimiento", 
+        "pk": 3, 
+        "fields": {
+            "seguimiento_plan": "Implementado"
+        }
+    }
+]

@@ -1,0 +1,657 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+<!-- librerias para paginación de tablas -->
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="{% static 'libraries/dataTables/css/dataTables.bootstrap4.min.css' %}">
+<!-- end -->
+<div id="loader"></div>
+
+<div id="container">
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-end">
+          <a
+          id="startButton"
+          href="javascript:void(0);"
+          onclick="javascript:introJs().start();"
+          class="btn btn_primary btn-sm hvr-shrink mx-1"
+          >
+          <div class="d-flex align-items-center hvr-shrink">
+              <i class="material-icons">help</i> <span class="ml-2">Instructivo</span>
+          </div>
+          </a>
+    </div>
+</div>
+<div id="allEntities" class="container-fluid">
+    <h2 class="text-center text-uppercase mb-3">Inventario de demandas de información</h2>
+    <p class="text-center">Colombia cuenta con <b>{{ count_total_ddi }}</b> demandas de información generadas por <b>
+        {{ count_entities }}</b> entidades de carácter público, privado y mixto.</p>
+</div>
+
+{% if demandasInf %}
+
+<!-- filtros fields -->
+
+<div class="container bkgFiltros mb-5 shadow-sm"  data-step="1"
+      data-intro="De acuerdo a la información de su interés, seleccione uno o varios filtros del buscador. Si su búsqueda está relacionada a un concepto específico seleccione la opción ‘Buscar’ y digítelo.">
+    <p class="w-100 mt-3"> <b>Seleccione la opción de su interés en cada uno de los filtros</b></p>
+    <hr>
+    <form id="form-filter" action="{% url 'demandas:ddi_filtros_reporte' %}" method="get" class="p-3">
+        <div class="form-row">
+            <div class="col-12 col-lg-8">
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">La información solicitada responde a los siguientes requerimientos</span>
+                    </div>
+                    {{ filter.form.pm_b_6  }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Área temática</span>
+                    </div>
+                        {{ filter.form.area_tem }}
+                </div>
+            </div>
+        </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-12">
+                    <div class="input-group mb-3 input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Tema</span>
+                        </div>
+                        {{ filter.form.tema_prin }}
+                    </div>
+                </div>
+            </div>
+        <hr>
+        <div class="form-row">
+            <div class="btn-group" role="group" aria-label="filtros button">
+                <button id="report_filter" class="btn btn_primary btn-sm hvr-shrink mx-1" type="submit" name="report"
+                    value="report">
+                    <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">cloud_download</i>
+                        <span class="ml-2">Descargue el inventario</span>
+                    </div>
+
+                </button>
+                <a id="deleteFilter" href="{% url 'demandas:consulta_ddi' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                    <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">reply</i>
+                        <span class="ml-2">Borrar filtros</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="py-3">
+    <p class="text-center">
+        Si desea realizar una búsqueda de acuerdo con un concepto o palabra específica, seleccione ‘buscar’.
+    </p>
+</div>
+
+<!-- end filtros fields -->
+<div id="message"></div>
+
+<div id="totalConsulta"></div>
+
+<div id="tableAll">
+  
+    <table class="table table-borderless table-hover table-sm" id="table_ddi">
+        <thead class="kulerTableHead" data-step="2"
+      data-intro="Visualice las demandas de información en la siguiente tabla, Si desea realizar una búsqueda de acuerdo a un concepto o palabra específica, seleccione ‘buscar’. Si lo requiere, al final del panel de búsqueda también encuentra la opción de ‘descargar el inventario’ completo.">
+            <tr data-step="3"
+      data-intro="Si lo desea, puede ver e imprimir la ficha de caracterización de cada demanda de información haciendo clic en el icono (+).">
+                <th scope="col">Indicador o requerimiento de información estadística</th>
+                <th scope="col">La información solicitada responde a los siguientes requerimientos</th>
+                <th scope="col">Área temática</th>
+                <th scope="col">Tema</th>
+                <th scope="col">Estado</th>
+                {%  if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+                <th scope="col">Fase en el sistema</th>
+                {% endif %}
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ddinf in demandasInf %}
+            <tr>
+                <td><span class="textContentTable">{{ ddinf.pm_b_1  }}</span></td>
+
+                <td>
+                    <span class="textContentTable">
+                        {% for question_6 in ddinf.pm_b_6.all  %}
+                            <p>{{ question_6 }}</p>
+                        {% endfor %}
+                    </span>
+                </td>
+
+                <td><span class="textContentTable"> {{ ddinf.area_tem }}</span></td>
+
+                <td><span class="textContentTable">{{ ddinf.tema_prin}}</span></td>
+                
+                <td><span class="textContentTable text-capitalize">
+                    {% for x in ddinf.compl_dem_a.all  %}
+                        {% if x.compl_dem_a == "Si" %}
+                            Satisfecha
+                        {% elif x.compl_dem_a == "No" %}
+                            No satisfecha
+                        {% endif %}
+                        <p>{{ compl_dem_a }}</p>
+                    {% endfor %}
+                    </span></td>
+                
+                {%  if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+                <td><span class="textContentTable"> {{ ddinf.nombre_est }}</span></td>
+                {% endif %}
+
+                <td class="d-flex flex-row ">
+                    {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5 or user.profile.role.id == 6 %}
+                    <a href="{% url 'demandas:ficha_ddi' ddinf.pk %}"  title="Ver ficha de caracterización">
+                        <i class="material-icons miKuller hvr-shrink">add_circle</i>
+                    </a>
+                    <a href="{% url 'demandas:editar_ddi' ddinf.pk %}" title="Editar">
+                        <i class="material-icons miKuller hvr-shrink">unarchive</i>
+                    </a>
+                </td>
+                    {% else %}
+                    <a href="{% url 'demandas:ficha_ddi' ddinf.pk %}" title="Ver ficha de caracterización">
+                        <p style="font-family:OpenSans, sans-serif; font-size: 0.9rem;">Ver ficha</p>
+                    </a>
+                </td>
+                    {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+   
+    <!--- paginacion  -->
+    <div class="row">
+        <div class="col-12 col-md-3">
+
+        </div>
+        <div class="col-12 col-md-3 mt-2">
+            <div id="infoPaginate"><p style="font-size:12px"> Total de demandas de información: {{ results }} </p></div>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-end">
+            <div id="paginateDja" class="dataTables_paginate paging_full_numbers" >
+                <ul class="pagination">
+                {% if demandasInf.has_previous %}
+                <li class="paginate_button page-item">
+                    <a href="?page={{page_start }}" class="page-link">
+                        <span class="hidden-sm-down">Inicio</span> </a></li>
+                
+                <li class="paginate_button page-item">
+                    <a class="page-link" href="?page={{demandasInf.previous_page_number}}">
+                            <span class="hidden-sm-down">Anterior</span> </a></li>
+                {% endif %}
+
+                {% for pg in page_range %}
+                    {% if demandasInf.number == pg %}
+                    <li class="paginate_button page-item">
+                        <a href="?page={{pg}}" class="btn btn-warning">{{pg}}</a>
+                    </li>
+
+                    {% else %}
+                    <li class="paginate_button page-item">
+                        <a href="?page={{pg}}" class="page-link">{{pg}}</a>
+                    </li>
+                    {% endif %}
+                
+                {% endfor %}
+
+                {% if demandasInf.has_next %}
+                <li class="paginate_button page-item">
+                    <a class="page-link" href="?page={{demandasInf.next_page_number}}">
+                        <span class="hidden-sm-down">Siguiente</span>
+                    </a>
+                </li>
+                <li class="paginate_button page-item">
+                    <a href="?page={{page_end }}" class="page-link"> 
+                        <span class="hidden-sm-down">Final</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                    <span class="clear_both"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+   <!--- end paginacion  -->
+</div>
+
+<div id="btnDeleteSearch"></div>
+
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-info" role=" alert">
+            <h2 class="text-center text-uppercase">Atención</h2>
+            <h4 class="pt-3">No hay demandas de información disponibles en este momento</h4>
+            <div class="d-flex flex-row justify-content-center mt-4">
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+
+</div>
+
+<div id="top"></div>
+
+<!-- js -->
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/jquery.dataTables.min.js' %}">
+</script>
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/dataTables.bootstrap4.min.js' %}">
+</script>
+
+
+<!-- Script by tables -->
+<script>
+
+    $(document).ready(function () {
+    
+       var table =  $('#table_ddi').DataTable({
+            "paging": false,
+            "info": false,
+            language: {
+                "decimal": ",",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Demandas de Información",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Demandas de Información",
+                "infoFiltered": "(Filtrado de _MAX_ total Demandas de Información)",
+                "infoPostFix": "",
+                "thousands": ".",
+                "lengthMenu": "Mostrar _MENU_ ",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "<button id='btn-Big' class='btn btn_primarySearch btn-small' onclick='searchClose()'' ><div class='d-flex flex-row justify-content-center'><i class = 'material-icons mt-1 pr-2' > search </i> Buscar </div></button>",
+                "searchPlaceholder": "Demanda de información",
+                "zeroRecords": "Procesando ...",
+                "paginate": {
+                    "first": " Inicio ",
+                   "last": " Fin ",
+                    "next": " >> ",
+                    "previous": " << "
+                },
+            },
+            "pagingType": "full_numbers",
+            //"iDisplayLength": 10,
+            "lengthMenu": [
+                [10, 20, 30, 40, 50, -1],
+                [10, 20, 30, 40, 50, "Todos"]
+            ],
+
+            //pagination center
+            "sDom": '<"d-flex flex-row align-items-center justify-content-between view-filter"<"#btnAdd"><"buscador-small"><"buscador-big"f>>t<"d-flex flex-row align-items-center justify-content-between view-pagination"<"#btnReport"><i><"#paginateDja">>',
+            "ordering": false
+        });
+
+
+        //search code
+        $('.buscador-small').append(
+             '<button id="btn-Small" class="btn btn_primary btn-small hvr-shrink" onclick="searchOpen()"><div class=" d-flex flex-row justify-content-center"><i class = "material-icons mt-1 pr-2" > search </i> Buscar </div></button> '
+        )
+        $('.buscador-big').hide()
+        //end search code
+
+        var roleFuente = "3";
+        var roleInvitado = "2";
+        var roleAdministrador = "1";
+        var authenticated = "{{user.is_authenticated}}"
+        var role = "{{user.profile.role.id}}"
+        var entidad = "{{user.profile.entidad.pk}}"
+        //console.log("entidad", entidad, "role", role, "roleAdminsitrador", roleAdministrador, "auth", authenticated)
+
+        if (authenticated === 'False' || roleInvitado === role) {
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+        }
+
+       /*  if (roleFuente === role) {
+            var button =
+                '<a id="btnCreateEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">unarchive</i> <span class="ml-2">Editar OOEE</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+
+        } */ else {
+            var button =
+                '<a id="btnCreateDDI" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">create</i> <span class="ml-2">Crear Demanda de Información</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').click(function () {
+                $("#btnCreateDDI").attr("href", "{% url 'demandas:crear_ddi' %}");
+            })
+        }
+
+        var btnReporte =
+            '<a id="btnOOEE" class="btn btn_primary hvr-shrink btn-sm downloadReport"  value="reporfull"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i> <span class="ml-2">Descargue el inventario</span></div></a>';
+        $('#btnReport').append(btnReporte);
+        $('#btnReport').click(function () {
+            // mensaje al descargar reporte
+            var top = $('#top');
+                top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                top.animate({top: "900"}).delay(7000).animate({top: "-150"})
+            // mensaje al descargar reporte
+            $("#btnOOEE").attr("href","{% url 'demandas:ddi_publicados' %}");
+        })
+
+        $('#btnReport').css({"margin-bottom": "-34px" });
+        $('#btnReport').css({"margin-top": "14px" });
+        $('#btnReport').css({"z-index": "1000" });
+
+        // Botones de filtros ocultos al cargar pagina   
+        $('#report_filter').hide()
+        $('#deleteFilter').hide()
+        $('input[type="search"]').attr('id', 'nombre_ddinf')
+
+
+    });
+
+    // filtros de entidad area tematica y tema
+    $(document).ready(function () {
+        $('select').on('change', function () { 
+            var requerimiento = $('select[name=pm_b_6]').val();
+            var tema = $('select[name=tema_prin]').val();
+            var area_tematica = $('select[name=area_tem]').val()
+            var fase = $('select[name=nombre_est]').val()
+            $('#report_filter').show().find('span').text('reporte detallado');
+            $('#report_filter').click(function () {
+                // mensaje al descargar reporte
+                var top = $('#top');
+                    top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                    top.animate({top: "300"}).delay(3000).animate({top: "-150"})
+                // mensaje al descargar reporte
+            })
+            $('#deleteFilter').show()
+            $.ajax({
+                data: {
+                    'requerimiento': requerimiento,
+                    'area_tematica': area_tematica,
+                    'tema': tema,
+                    'fase': fase
+                },
+                url: '/demandas/search_ajax_ddi/',
+                type: 'get',
+                success: function (data) {
+                    if (data.length > 0) {
+                        
+                        var roleFuente = "3";
+                        var roleInvitado = "2";
+                        var roleAdministrador = "1";
+                        var roleTematico = "4";
+                        var roleRevisor = "5";
+                        var roleCalidad = "6";
+                        var authenticated = "{{user.is_authenticated}}"
+                        var role = "{{user.profile.role.id}}"
+                        if(authenticated === 'True' && role === roleAdministrador  || role == roleRevisor || role === roleFuente || role == roleTematico || role === roleCalidad ){
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_ddi">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Indicador o requerimiento de información estadística</th>' +
+                                                        '<th scope="col">La información solicitada responde a los siguientes requerimientos</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Fase en el sistema</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+                        }else{
+                            
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_ddi">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Indicador o requerimiento de información estadística</th>' +
+                                                        '<th scope="col">La información solicitada responde a los siguientes requerimientos</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+
+                        }
+
+                        for (var i = 0; i < data.length; i++) {
+                            var reque;
+                                if(data[i].fields.compl_dem_a == "Si"){
+                                    var reque = "Satisfecha";    
+                                }else{
+                                    var reque = "No satisfecha";
+                                }
+                            if (authenticated === 'True' && role === roleAdministrador   || role == roleRevisor  || role === roleFuente || role == roleTematico || role === roleCalidad){
+                               
+                                html+= '<tr>'+
+                                        '<td><span class="textContentTable">' + data[i].fields.pm_b_1 + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.pm_b_6.toString().split('Sectorial,').join("Sectorial").replace(/,/g, '</br></br>') + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.area_tem + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.tema_prin + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ reque +'</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.nombre_est + '</span></td>'+
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="ficha/'+data[i].pk+'/" title="Ver ficha de caracterización">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">add_circle</i>'+
+                                                '</a>'+
+                                            '<a href="ddi/'+data[i].pk+'/editar/" title="Editar">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">unarchive</i>'+
+                                                '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }else{
+                                    
+                                    html+='<tr>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.pm_b_1 + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.pm_b_6.toString().split('Sectorial,').join("Sectorial").replace(/,/g, '</br></br>') + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.area_tem + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.tema_prin + '</span></td>' +
+                                            '<td><span class="textContentTable text-capitalize">'+ reque +'</span></td>' +
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="ficha/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<p style="font-family:OpenSans, sans-serif; font-size: 0.9rem;">Ver ficha</p>'+
+                                                '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }
+                        }
+                            $('#tableAll').html(html);
+                            $('#tableAll').show();
+                            $("#message").html('<div id="message"></div>')
+                            $("#totalConsulta").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>filter_list</i>"+  data.length + " Resultados.</p></div>"); 
+                            $("#totalConsulta").show();
+                            
+                    }else{
+                        
+                        $('#tableAll').hide();
+                        $('#report_filter').hide();
+                        $("#totalConsulta").hide();
+                        $("#message").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>search_off</i>No hay resultados.</p></div>");
+                    }
+                }
+            });
+        });
+    });
+    // end filtros de entidad area tematica y tema
+
+    //filtros por nombre
+
+    $(document).ready(function () {
+
+        function delay(callback, ms) {
+            var timer = 0;
+            return function() {
+                var context = this, args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                callback.apply(context, args);
+                }, ms || 0);
+            };
+        };
+
+        $('#nombre_ddinf').keyup(delay(function (e) {
+            var nombre_ddi = this.value;
+        $.ajax({
+                data: {
+                    'nombre_ddi': nombre_ddi,         
+                },
+                url: '/demandas/filter_by_ddi/',
+                type: 'get',
+                success: function (data) {
+                    if (data.length > 0) {
+                        var roleFuente = "3";
+                        var roleInvitado = "2";
+                        var roleAdministrador = "1";
+                        var roleTematico = "4";
+                        var roleRevisor = "5";
+                        var roleCalidad = "6";
+                        var authenticated = "{{user.is_authenticated}}"
+                        var role = "{{user.profile.role.id}}"
+                        if(authenticated === 'True' && role === roleAdministrador  || role == roleRevisor ){
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_ddi">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Indicador o requerimiento de información estadística</th>' +
+                                                        '<th scope="col">La información solicitada responde a los siguientes requerimientos</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Fase en el sistema</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+                        }else{
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_ddi">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Indicador o requerimiento de información estadística</th>' +
+                                                        '<th scope="col">La información solicitada responde a los siguientes requerimientos</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+
+                        }
+
+                        for (var i = 0; i < data.length; i++) {
+                            var reque;
+                                if(data[i].fields.compl_dem_a == "Si"){
+                                    var reque = "Satisfecha";    
+                                }else{
+                                    var reque = "No satisfecha";
+                                }
+                            if (authenticated === 'True' && role === roleAdministrador   || role == roleRevisor || role === roleFuente || role == roleTematico || role === roleCalidad){
+                                html+= '<tr>'+
+                                        '<td><span class="textContentTable">' + data[i].fields.pm_b_1 + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ data[i].fields.pm_b_6.toString().split('Sectorial,').join("Sectorial").replace(/,/g, '</br></br>') +'</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.area_tem + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.tema_prin + '</span></td>' +
+                                            '<td><span class="textContentTable text-capitalize">'+ reque +'</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_est + '</span></td>'+
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../demandas/ficha/'+data[i].pk+'/" title="Ver ficha de caracterización">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">add_circle</i>'+
+                                                '</a>'+
+                                            '<a href="/../demandas/ddi/'+data[i].pk+'/editar/" title="Editar">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">unarchive</i>'+
+                                                '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }else{
+                                    html+='<tr>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.pm_b_1 + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[i].fields.pm_b_6.toString().split('Sectorial,').join("Sectorial").replace(/,/g, '</br></br>') +'</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_tem + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema_prin + '</span></td>' +
+                                            '<td><span class="textContentTable text-capitalize">'+ reque +'</span></td>' +
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../demandas/ficha/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<p style="font-family:OpenSans, sans-serif; font-size: 0.9rem;">Ver ficha</p>'+
+                                                '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }
+                        }
+                            $('#tableAll').html(html);
+                            $('#tableAll').show();
+                            $("#message").html('<div id="message"></div>')
+                            $("#totalConsulta").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>filter_list</i>"+  data.length + " Resultados.</p></div>"); 
+                            $("#totalConsulta").show();
+                            $("#btnDeleteSearch").html('<div><a href="/demandas/consulta_ddi/" class="btn btn_primary btn-sm hvr-shrink mx-1">'+
+                                                            '<div class="d-flex align-items-center hvr-shrink">'+
+                                                            '<i class="material-icons">reply</i>'+
+                                                                '<span class="ml-2">Borrar búsqueda</span>'+
+                                                            '</div>'+
+                                                        '</a></div>')
+                            $("#btnDeleteSearch").show();
+                           
+                    }
+                    else{
+                            $('#tableAll').hide();
+                            $("#message").html('<div id="message"></div>')
+                            $("#totalConsulta").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>filter_list</i>"+  data.length + " Resultados.</p></div>"); 
+                            $("#totalConsulta").show();
+                            $("#btnDeleteSearch").html('<div><a href="/demandas/consulta_ddi/" class="btn btn_primary btn-sm hvr-shrink mx-1">'+
+                                                            '<div class="d-flex align-items-center hvr-shrink">'+
+                                                            '<i class="material-icons">reply</i>'+
+                                                                '<span class="ml-2">Borrar búsqueda</span>'+
+                                                            '</div>'+
+                                                        '</a></div>')
+                            $("#btnDeleteSearch").show();
+                    }
+                    
+                    //$('#tableAll').html(html);
+                }
+        });
+    }, 3000));
+    });
+    // end filtro por nombre
+
+    function openModal(url) {
+        $('#popupOOEE').load(url, function () {
+            $(this).modal('show');
+        });
+        return false;
+    }
+
+    function closeModal() {
+        $('#popupOOEE').modal('hide');
+        return false;
+    }
+
+
+        function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("container").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+
+
+        var header = document.getElementById("paginateDja");
+        var btns = header.getElementsByClassName("page-link");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            });
+        }
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,69 @@
+[
+    {
+        "fields": {
+            "opc_desag": "Grupos"
+        },
+        "model":"ooee.desagregacioninformacion",
+        "pk": 3  
+    },
+
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Sexo"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Edad"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Grupo étnico"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Discapacidad"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Estrato"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Otro, ¿cuál?"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "opc_desag": 3,  
+            "des_grupo": "Ninguno"
+        },
+        "model": "ooee.desagregaciongrupos",
+        "pk": 7
+    }
+    ]
+
+
+

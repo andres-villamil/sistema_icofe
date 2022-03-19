@@ -1,0 +1,37 @@
+[
+    {
+        "model": "rraa.noaccesodatos",
+        "pk": 1, 
+        "fields": {
+            "no_hay_acceso": "Políticas de la entidad"
+        }
+    }, 
+    {
+        "model": "rraa.noaccesodatos", 
+        "pk": 2,
+        "fields": {
+            "no_hay_acceso": "Disposición normativa"
+        }
+    }, 
+    {
+        "model": "rraa.noaccesodatos", 
+        "pk": 3,
+        "fields": {
+            "no_hay_acceso": "Acuerdos con el informante"
+        }
+    }, 
+    {
+        "model": "rraa.noaccesodatos",
+        "pk": 4, 
+        "fields": {
+            "no_hay_acceso": "Carácter confidencial"
+        }
+    }, 
+    {
+        "model": "rraa.noaccesodatos", 
+        "pk": 5,
+        "fields": {
+            "no_hay_acceso": "Otra (s)"
+        }
+    }
+]

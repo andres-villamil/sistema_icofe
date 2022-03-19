@@ -1,0 +1,30 @@
+[
+    {
+        "model": "ooee.fuentefinanciacion",
+        "pk": 1, 
+        "fields": {
+           "fuentes": "Recursos propios"
+        }
+    }, 
+    {
+        "model": "ooee.fuentefinanciacion", 
+        "pk": 2,
+        "fields": {
+           "fuentes": "Aportes de otra entidad"
+        }
+    }, 
+    {
+        "model": "ooee.fuentefinanciacion", 
+        "pk": 3, 
+        "fields": {
+           "fuentes": "Cooperación  internacional"
+        }
+    },
+    {
+        "model": "ooee.fuentefinanciacion", 
+        "pk": 4, 
+        "fields": {
+           "fuentes": "Otro (s)"
+        }
+    }
+]

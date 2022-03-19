@@ -1,0 +1,30 @@
+[
+    {
+        "model": "ooee.tipomarco",
+        "pk": 1, 
+        "fields": {
+            "tipo_marco": "Marco de lista"
+        }
+    }, 
+    {
+        "model": "ooee.tipomarco", 
+        "pk": 2,
+        "fields": {
+            "tipo_marco": "Marco de área"
+        }
+    }, 
+    {
+        "model": "ooee.tipomarco", 
+        "pk": 3, 
+        "fields": {
+            "tipo_marco": "Marco geoestadístico"
+        }
+    },
+    {
+        "model": "ooee.tipomarco", 
+        "pk": 4, 
+        "fields": {
+            "tipo_marco": "Otro(s)"
+        }
+    }
+]

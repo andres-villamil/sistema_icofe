@@ -1,0 +1,137 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+#detalleOOEE,
+#detalleRRAA {
+  /* Gobals */
+  .bkg-Green {
+    background-color: $kuler_sistemaInventario-1-hex;
+    color: $kuler-white;
+  }
+  .bkg-gray {
+    background-color: $Kuler-GrayScale-4-hex;
+  }
+  .bkg-grayDark {
+    background-color: $Kuler-GrayScale-3-hex;
+  }
+  .bkg-clear {
+    background-color: $Kuler-GrayScale-5-hex;
+    padding-left: 1rem;
+  }
+  hr {
+    border-top: 1px dotted rgba($color: $Kuler-GrayScale-1-rgba, $alpha: 0.1);
+  }
+  .m_medio {
+    margin: 0.5vh 0.1vw;
+  }
+
+  .blankSpace {
+    margin-top: 25vh;   
+   
+  }
+  .green {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $kuler_sistemaInventario-1-hex;
+    padding-right: 0.5rem;
+    vertical-align: middle;
+ }
+
+  #warpHeadDetail {
+    .titleDetail {
+      font-family: $Barlow;
+      font-size: $h5;
+    }
+    .titleficha {
+      font-family: $Barlow;
+      font-size: $h3;
+      color: $kuler_sistemaInventario-1-hex;
+      font-weight: 600;
+    }
+    .TitleOOEE {
+      font-family: $Open;
+      font-size: $h5;
+    }
+    .titleques {
+      font-family: $Barlow;
+      font-weight: 300;
+      font-size: $h5;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    .codest {
+      font-family: $Barlow;
+      font-weight: 200;
+      font-size: $h6;
+      padding: 0.2rem;
+      text-align: center;
+    }
+    .geozona {
+      color: $kuler_sistemaInventario-1-hex;
+      font-weight: bold;
+      font-size: $p;
+   }
+
+  }
+  .warpInfo {
+    .head {
+      color: $kuler_sistemaInventario-1-hex;
+      font-weight: bold;
+      font-size: $ps;
+      text-transform: uppercase;
+    }
+    .btn_link_detail {
+      text-align: left;
+      font-size: $p;
+      font-style: italic;
+      color: $kuler_sistemaInventario-4-hex;
+
+      &:hover,
+      &:visited,
+      &:focus {
+        color: $kuler_sistemaInventario-5-hex;
+        text-decoration: none;
+      }
+    }
+  }
+  .titleSectionDetail {
+    color: $kuler_sistemaInventario-1-hex;
+    font-weight: bold;
+    font-size: $ps;
+    text-transform: uppercase;
+  }
+  .titleSectionDetailNegative {
+    background-color: $kuler_sistemaInventario-5-hex;
+    color: $kuler-white;
+    font-weight: bold;
+    font-size: $p;
+    text-transform: uppercase;
+  }
+  .mtdetailRRAA {
+    margin-top: 4vh;
+    @include media(dm) {
+      
+      margin-top: 5vh;
+    }
+  }
+  #topMessage {
+    background-color: $kuler_sistemaInventario-1-hex;
+    color: #fff;
+    padding: 40px;
+    top: -1722px;
+    position: absolute; /*El div será ubicado con relación a la pantalla*/
+    font-weight: bold;
+    border-radius: 15px;
+    margin-left: 250px;
+    font-size: 17px;
+  }
+  
+  
+  P.centerPrint {
+    text-align: center
+  }
+
+}
+
+
+

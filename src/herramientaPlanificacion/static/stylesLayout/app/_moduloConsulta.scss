@@ -1,0 +1,167 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+#queryModule {
+  display: none;
+
+  .spacingTop {
+    margin-top: 1vh;
+  }
+
+  $bar1-Economica: #3e2723;
+  $bar2-Economica: #5d4037;
+
+  $bar1-Sociodemografico: #006064;
+  $bar2-Sociodemografico: #00838f;
+
+  $bar1-Ambiental: #33691e;
+  $bar2-Ambiental: #558b2f;
+
+  @mixin bkgBar1($grupo) {
+    height: 1vh;
+    border-radius: 4px 4px 0 0;
+
+    @if $grupo==economica {
+      background-color: $bar1-Economica;
+    } @else if $grupo==sociodemografica {
+      background-color: $bar1-Sociodemografico;
+    } @else if $grupo==ambiental {
+      background-color: $bar1-Ambiental;
+    }
+  }
+
+  @mixin bkgBar2($grupo) {
+    h2 {
+      font-size: $h2 !important;
+      color: $kuler-white;
+    }
+
+    p {
+      font-size: $p;
+      color: $kuler-white;
+    }
+
+    @if $grupo==economica {
+      background-color: $bar2-Economica;
+    } @else if $grupo==sociodemografica {
+      background-color: $bar2-Sociodemografico;
+    } @else if $grupo==ambiental {
+      background-color: $bar2-Ambiental;
+    }
+  }
+
+  .background-card {
+    background-color: $Kuler-GrayScale-4-hex;
+    border-radius: 4px;
+
+    h4 {
+      font-family: $Barlow;
+      font-size: $h4;
+      font-weight: bold;
+      color: $kuler-white;
+      text-align: center;
+    }
+
+    /* bar-1 */
+    .bar1-economica {
+      @include bkgBar1(economica);
+    }
+
+    .bar1-sociedad {
+      @include bkgBar1(sociodemografica);
+    }
+
+    .bar1-ambiental {
+      @include bkgBar1(ambiental);
+    }
+
+    /* bar_2 */
+    .bar2-economica {
+      @include bkgBar2(economica);
+    }
+
+    .bar2-sociedad {
+      @include bkgBar2(sociodemografica);
+    }
+
+    .bar2-ambiental {
+      @include bkgBar2(ambiental);
+    }
+
+    /* barImg */
+
+    @mixin imgBar($urlImg) {
+      width: 100%;
+      height: 15vh;
+      background-image: url($urlImg);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .bar-imgEconomica {
+      @include imgBar("/media/cardConsulta/economica.jpg");
+    }
+
+    .bar-imgSociedad {
+      @include imgBar("/media/cardConsulta/sociodemografica.jpg");
+    }
+
+    .bar-imgAmbiental {
+      @include imgBar("/media/cardConsulta/ambiental.jpg");
+    }
+
+    .container-status {
+      padding: 1vh 0vw;
+
+      .colorTextGreenCard {
+        font-weight: bold;
+
+        h2 {
+          font-family: $Barlow;
+          font-weight: bold;
+          font-size: $h2;
+        }
+
+        p {
+          color: $kuler_sistemaInventario-1-hex;
+        }
+      }
+
+      .pointerChevron {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .colorGreenTitle {
+    font-family: $Barlow;
+    font-size: $h3;
+    color: $kuler_sistemaInventario-1-hex;
+  }
+  .colorGreenTitle2 {
+    font-family: $Barlow;
+    font-size: $h3;
+    color: $kuler_sistemaInventario-1-hex;
+  }
+}
+
+#totales {
+  .background-card {
+    padding: 0.5rem;
+    background-color: $kuler_sistemaInventario-3-hex;
+    color: $kuler-white;
+  }
+}
+
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat rgb(249,249,249);
+  opacity: .8;
+  cursor: wait;
+}

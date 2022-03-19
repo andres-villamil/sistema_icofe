@@ -1,0 +1,23 @@
+[
+    {
+        "model": "entities.tipoentidad",
+        "pk": 1, 
+        "fields": {
+            "nombre": "Publica"
+        }
+    }, 
+    {
+        "model": "entities.tipoentidad", 
+        "pk": 2,
+        "fields": {
+            "nombre": "Privada"
+        }
+    }, 
+    {
+        "model": "entities.tipoentidad", 
+        "pk": 3, 
+        "fields": {
+            "nombre": "Mixta"
+        }
+    }
+]

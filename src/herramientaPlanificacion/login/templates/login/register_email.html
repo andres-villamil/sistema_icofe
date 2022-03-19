@@ -1,0 +1,14 @@
+{% load static %}
+
+
+{% autoescape off %}
+
+Hola {{ user.username }},
+Se ha creado una cuenta de usuario para la entidad de la herramienta de inventarios de OE, para activar su cuenta solo debe hacer clic en el siguiente enlace: 
+
+
+http://localhost:3002/login{% url 'activate' uidb64=uid token=token %}
+
+
+
+{% endautoescape %}

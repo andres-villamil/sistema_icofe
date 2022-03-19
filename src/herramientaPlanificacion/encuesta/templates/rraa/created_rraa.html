@@ -1,0 +1,3006 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- css -->
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'libraries/formeter/css/formeter.css' %}"> -->
+<!-- end -->
+
+
+{% if user.is_authenticated and user.profile.role.id == 3 or user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5  %}
+
+<div id="loader"> </div>
+
+<div id="createForms">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="¡Bienvenido! En este formulario puede crear la información de un nuevo registro administrativo. Todos los campos descritos a continuación deben ser diligenciados.">
+        módulo creación de nuevo Registro Administrativo</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'rraa:all_rraa' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form action="" method="POST" class="w-100" enctype="multipart/form-data">{% csrf_token %}
+
+
+        {% if registered %}
+			<div class="container">
+				<div class="d-flex flex-row justify-content-center align-items-center">
+					<div class="alert alert-success" role="alert">
+						<h3 class="text-center">El Registro Administrativo</h3>
+						<h4 class="text-center pt-3">ha sido creado con éxito.</h4>
+					</div>
+				</div>
+			</div>
+        {% else %}
+
+        <div class="d-flex flex-row">
+            <div id="navOOEE" class="col-1">
+                <ul class="list-group position-fixed" data-step="2"
+        data-intro="Utilice la navegación lateral para seleccionar el módulo a diligenciar o navegue a través del documento haciendo scroll">
+                    <li class="list-group-item text-uppercase" data-step="3"
+                         data-intro="En este módulo debe identificar la (s) entidad (es) responsable (s) que intervienen en el registro administrativo, así como la información de los contactos oficiales, como son el director de la entidad y el temático o responsable técnico.">
+                        <a href="#moduleA" class="btn hvr-shrink" data-toggle="tooltip" data-placement="top" title="Módulo A">
+                            a
+                            <span class="material-icons ml-2 pt-1">
+                                keyboard_arrow_right
+                            </span>                         
+                        </a>
+                    </li>
+                    <li class="list-group-item text-uppercase" data-step="4"
+        data-intro="En este módulo debe crear el nombre y el objetivo del registro administrativo. Indique bajo qué normas y razones se basa para la creación de la misma, además de subir soportes, variables, frecuencia y medios de obtención de la información.">
+                        <a href="#moduleB" class="btn hvr-shrink" data-toggle="tooltip" data-placement="top" title="Módulo B">
+                            b
+                             <span class="material-icons ml-2 pt-1">
+                                keyboard_arrow_right
+                            </span>  
+                        </a>
+                    </li>
+                    <li class="list-group-item text-uppercase" data-step="5"
+        data-intro="En este módulo debe agregar las observaciones que tenga frente a la edición o creación del registro.">
+                        <a href="#moduleC" class="btn hvr-shrink">
+                            c
+                             <span class="material-icons ml-2 pt-1" data-toggle="tooltip" data-placement="top" title="Módulo C">
+                                keyboard_arrow_right
+                            </span>  
+                        </a>
+                    </li>
+                      <li class="list-group-item text-uppercase border-top" data-step="6"
+                        data-intro="Guarde la información registrada en el formulario dando clic aquí, también podrá encontrar esta opción al final de formulario. Recuerde que puede guardar la información y continuar en cualquier momento.">
+                        <button type="submit" class="btn hvr-shrink white" data-toggle="tooltip" data-placement="top" title="Guardar">
+                            <i class="material-icons ml-2 pt-1">
+                                save
+                            </i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        <div class="col-11">
+               <!-- Mensaje de error si el formulario tiene errores-->
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div id="messageErrorquestions" class="container w-75">
+                            <div class="alert alert-danger" role="alert">
+                                <p class="d-flex flex-row align-items-center justify-content-center mt-3">
+                                    <span class="material-icons mr-3">warning</span>
+                                    {{ message }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                <!--End  Mensaje de error si el formulario tiene errores-->
+                 <!-- estado de la operación -->
+            <div id="estado" class="container bkg_estado p-1 rounded" data-step="7"
+                        data-intro="Seleccione el estado del registro administrativo, recuerde que este es necesario para llevar un control dentro del aplicativo.">
+                <div class="d-flex flex-row align-items-center justify-content-center no-gutters my-4">
+                    <div class="col-12 col-lg-5">
+                        <p class="m-0 pl-1">Estado del proceso del registro administrativo es:</p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        {{create_ra_form.sist_estado }}
+                        <!--mensaje de error-->
+                            {% if create_ra_form.sist_estado.errors %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                    {{ create_ra_form.sist_estado.errors }}
+                                </div>
+                            </small>
+                            {% endif %}
+                        <!--mensaje de error-->
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <div id="campBorrador" style="display: none;" data-toggle="tooltip" data-placement="top" title=Borrador><img class="img-fluid w-25 ml-5 animate__animated animate__pulse animate__infinite" src="../../../media/estado/borrador.svg" alt="Estado Borrador"></div>
+                        <div id="campEnviado" style="display: none;" data-toggle="tooltip" data-placement="top" title="Enviado"><img class="img-fluid w-25 ml-5 animate__animated animate__pulse animate__infinite" src="../../../media/estado/enviado.svg" alt="Estado Enviado"></div>
+                        <div id="campDevuelto" style="display: none;" data-toggle="tooltip" data-placement="top" title="Devuelto"><img class="img-fluid w-25 ml-5 animate__animated animate__pulse animate__infinite" src="../../../media/estado/devuelto.svg" alt="Estado Devuelto"></div>
+                        <div id="campValidado" style="display: none;" data-toggle="tooltip" data-placement="top" title="Validado"><img class="img-fluid w-25 ml-5 animate__animated animate__pulse animate__infinite" src="../../../media/estado/validado.svg" alt="Estado Validado"></div>
+                        <div id="campPublicado" style="display: none;" data-toggle="tooltip" data-placement="top" title="Publicado"><img class="img-fluid w-25 ml-5 animate__animated animate__pulse animate__infinite" src="../../../media/estado/publicado.svg" alt="Estado Publicado"></div>
+                         <div id="campArchivado" style="display: none;" data-toggle="tooltip" data-placement="top" title="Archivado"><img class="img-fluid w-25 ml-5 animate__animated animate__pulse animate__infinite" src="../../../media/estado/archivado.svg" alt="Estado Publicado"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- End estado de la operación -->
+            <!----------------------------------------------
+            ------------------------------------------------
+            --INICIO MODULOS--------------------------------
+            ------------------------------------------------
+            -->
+            <!-- Modulo A -->
+            <div id="moduleA" class="mt-4">
+                <h2 class="text-uppercase">Módulo A</h2>
+                <div class="colorBkgTest">
+                    <div class="backgroundTitle">
+                        <h5>Identificación</h5>
+                    </div>
+                    <div class="form-row mb-1">              
+                        <div class="col-lg-12 px-1">
+                            <label class="labelTitle">Nombre de la entidad</label>
+                            {{create_ra_form.entidad_pri }}
+                            <!--mensaje de error-->
+                                {% if create_ra_form.entidad_pri.errors %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                        {{ create_ra_form.entidad_pri.errors }}
+                                    </div>
+                                </small>
+                                {% endif %}
+                            <!--mensaje de error-->
+                        </div>
+                    </div>
+
+                    <div class="mt-2 border rounded p-2">
+                        <label class="labelTitle"><b>Si en el registro administrativo existe otra entidad responsable, indique ¿cual(es)?</b></label>
+                        <div class=" form-row mb-1 ">
+                            <div class="col-lg-12 px-1">
+                            <label class="labelTitle">Nombre de la entidad</label>
+                            {{ create_ra_form.otras_entidades }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-1">
+                        <div class="col-lg-4 px-1">
+                            <label class="labelTitle">Área temática</label>
+                            {{create_ra_form.area_temat}}
+                            <!--mensaje de error-->
+                            {% if create_ra_form.area_temat.errors %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                        {{ create_ra_form.area_temat.errors }}
+                                    </div>
+                                </small>
+                            {% endif %}
+                            <!--mensaje de error-->
+                        </div>
+                        <div class="col-lg-8 px-1">
+                            <label class="labelTitle">Tema</label>
+                            {{create_ra_form.tema}}
+                            <!--mensaje de error-->
+                            {% if create_ra_form.tema.errors %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                        {{ create_ra_form.tema.errors }}
+                                    </div>
+                                </small>
+                            {% endif %}
+                            <!--mensaje de error-->
+                        </div>
+                    </div>
+                    <div class="form-row mb-1">
+                        <div class="col px-1">
+                            <div class="bkgInputQuestion1 mb-1">
+                                <p>Dependencia responsable</p>
+                            </div>
+                            <div class="form-row mb-1">
+                                <div class="col-lg-6 px-1">
+                                    <label class="labelTitle">Nombre de la dependencia</label>
+                                    {{create_ra_form.nom_dep}}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.nom_dep %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.nom_dep }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                <div class="col-lg-6 px-1">
+                                    <label class="labelTitle">Nombre del director</label>
+                                    {{create_ra_form.nom_dir}}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.nom_dir %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.nom_dir }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-4 px-1">
+                                    <label class="labelTitle">Cargo</label>
+                                    {{create_ra_form.car_dir}}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.car_dir %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.car_dir }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                <div class="col-lg-4 px-1">
+                                    <label class="labelTitle">Correo </label>
+                                    {{create_ra_form.cor_dir}}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.cor_dir %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.cor_dir }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                <div class="col-lg-4 px-1">
+                                    <label class="labelTitle">Teléfono</label>
+                                    {{create_ra_form.telef_dir}}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.telef_dir %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.telef_dir }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col px-1">
+                            <div class="bkgInputQuestion1 mb-1">
+                                <p>Temático o responsable técnico</p>
+                            </div>
+                            <div class="form-row mb-1">
+                                <div class="col-lg-6 px-1">
+                                    <label class="labelTitle">Nombre del responsable </label>
+                                    {{create_ra_form.nom_resp }}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.nom_resp %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.nom_resp }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                <div class="col-lg-6 px-1">
+                                    <label class="labelTitle">Cargo</label>
+                                    {{create_ra_form.carg_resp }}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.carg_resp %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.carg_resp }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-6 px-1">
+                                    <label class="labelTitle">Correo</label>
+                                    {{create_ra_form.cor_resp }}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.cor_resp %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.cor_resp }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                <div class="col-lg-6 px-1">
+                                    <label class="labelTitle">Teléfono</label>
+                                    {{create_ra_form.telef_resp }}
+                                    <!-- Validaciones error-->
+                                    {% if create_ra_form.errors.telef_resp %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{ create_ra_form.errors.telef_resp }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="my-3">
+                        <div class="accordion" id="accordiontemaCompartido">
+                            <div class="p-0" id="headingOne">
+                                <div class="input-group mb-3">
+                                    <p class="form-control form-control-sm"> Seleccione si el registro administrativo
+                                        tiene temas
+                                        compartidos</p>
+                                    <div class="input-group-append">
+                                        <button class="btn btn_primary" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            <span class="material-icons mi">
+                                                keyboard_arrow_down
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordiontemaCompartido">
+                                <div class="card-body">
+                                    {{create_ra_form.tema_compart }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>                
+            </div>                
+
+                    <!-- Modulo B -->
+            <div id="moduleB" class="mt-4">
+                <h2 class="text-uppercase">Módulo b</h2>
+                <div class="colorBkgTest">
+                    <div class="backgroundTitle">
+                        <h5>Caracterización de registros administrativos</h5>
+                    </div>
+                    <!--pregunta 1 y 2 -->
+                    <div class="mb-1 d-flex flex-row ">
+                        <span class="bullet mx-1">1</span>
+                        <div class="d-flex flex-column mr-3" style="width: 25%;">
+                            <label class="labelTitle">Código del registro administrativo</label>
+                             {{ create_ra_form.codigo_rraa }}
+                        </div>
+                        <div class="d-flex flex-column" style="width: 75%;">
+                            <label class="labelTitle">Nombre del registro administrativo</label>
+                            {{create_ra_form.nombre_ra }}
+                            <!-- Validaciones error-->
+                            {% if create_ra_form.errors.nombre_ra %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_ra_form.errors.nombre_ra }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                    <div class="mb-1 d-flex flex-row ">
+                        <span class="bullet mx-1">2</span>
+                        <div class="d-flex flex-column w-100">
+                            <label class="labelTitle">Objetivo del registro administrativo:</label>
+                            {{create_ra_form.objetivo_ra }}
+                            <!-- Validaciones error-->
+                            {% if create_ra_form.errors.objetivo_ra %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_ra_form.errors.objetivo_ra }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                    <!-- End pregunta 1 y 2 -->
+                    <hr class="my-2">
+                    <!--pregunta 3 -->
+                    <div class="bkgQuestionsRadioButton mb-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <span class="bullet mx-1">3</span>
+                            <p class="pl-2">Bajo cuál(es) de las siguientes normas, se soporta la creación del registro administrativo</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-7 col-xl-5">
+                            {{create_ra_form.norma_ra }}  
+                        </div>
+                        <div class="col-5 col-xl-7">
+                            <div class="d-flex flex-column">
+                            {{norma_ra_form.cp_ra}}
+                                    <!-- Validaciones error-->
+                                {% if norma_ra_form.errors.cp_ra %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                        <i class="material-icons miReport">
+                                            error
+                                        </i>
+                                        {{ norma_ra_form.errors.cp_ra }}
+                                    </div>
+                                </small>
+                                {% endif %}
+                                <!--  end error -->
+                            {{norma_ra_form.ley_ra}}    
+                                    <!-- Validaciones error-->
+                                {% if norma_ra_form.errors.ley_ra %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                        <i class="material-icons miReport">
+                                            error
+                                        </i>
+                                        {{ norma_ra_form.errors.ley_ra }}
+                                    </div>
+                                </small>
+                                {% endif %}
+                                <!--  end error -->
+                            {{norma_ra_form.decreto_ra}}     
+                                <!-- Validaciones error-->
+                                {% if norma_ra_form.errors.decreto_ra %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                        <i class="material-icons miReport">
+                                            error
+                                        </i>
+                                        {{ norma_ra_form.errors.decreto_ra }}
+                                    </div>
+                                </small>
+                                {% endif %}
+                                <!--  end error -->
+                                {{norma_ra_form.otra_ra}}
+                            <!-- Validaciones error-->
+                            {% if norma_ra_form.errors.otra_ra %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ norma_ra_form.errors.otra_ra }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                            </div>
+                        </div>
+
+                        <div id="HelpTextNinguna" class="alert alert-primary" role="alert">
+                            <div class="d-flex flex-row justify-content-center">
+                                 <span class="mr-2">Ha seleccionado <b>Ninguna</b> continúe con la pregunta 4. </span>    
+                            </div>
+                        </div>
+
+                        <div id="HelpTextOther" class="alert alert-primary" role="alert">
+                            <div class="d-flex flex-row justify-content-center">
+                                 <span class="mr-2">Continúe con la pregunta 5.  </span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- End pregunta 3 -->
+                    <hr class="my-2">
+                    <!-- pregunta 4 -->
+                    <div id="MBQ4" class="mb-1 d-flex flex-row">
+                        <span class="bullet mx-1">4</span>
+                        <div class="d-flex flex-column w-100">
+                            <label class="labelTitle">Describa la razón por la cuál se creó el registro administrativo:</label>
+                            {{ create_ra_form.pq_secreo}}
+                            <!-- Validaciones error-->
+                            {% if create_ra_form.errors.pq_secreo %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_ra_form.errors.pq_secreo }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                    <!-- end pregunta 4 -->
+                    <hr class="my-2">
+                    <!-- pregunta 5 -->
+                    
+                    <div class="bkgQuestionsRadioButton mb-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <span class="bullet mx-1">5</span>
+                            <p class="pl-2">Indique desde y hasta cuando se ha recolectado el registro administrativo:</p>
+                        </div>
+                    </div>
+                    <div class="form-row mb-1">
+                        <div class="col px-1">
+                            <div class="bkgInputQuestion1 mb-1">
+                                <p>Fecha de inicio de recolección de información</p>
+                            </div>
+                            <div class="input-group input-group-sm date" id="inicio_recolec"
+                                data-target-input="nearest">
+                                {{ create_ra_form.fecha_ini_rec  }}
+                                <div class="input-group-append" data-target="#inicio_recolec"
+                                    data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i
+                                            class="material-icons misize">calendar_today</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--mensaje de error-->
+                            {% if create_ra_form.fecha_ini_rec.errors %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                        {{ create_ra_form.fecha_ini_rec.errors }}
+                                    </div>
+                                </small>
+                            {% endif %}
+                            <!--mensaje de error-->
+                        </div>
+                        <div class="col px-1">
+                            <div class="bkgInputQuestion1 mb-1">
+                                <p>Fecha de última recolección de información</p>
+                            </div>
+                            <div class="input-group input-group-sm date" id="ultima_recolec"
+                                data-target-input="nearest">
+                                {{ create_ra_form.fecha_ult_rec }}
+                                <div class="input-group-append" data-target="#ultima_recolec"
+                                    data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i
+                                            class="material-icons misize">calendar_today</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--mensaje de error-->
+                            {% if create_ra_form.fecha_ult_rec.errors %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                        {{ create_ra_form.fecha_ult_rec.errors }}
+                                    </div>
+                                </small>
+                            {% endif %}
+                            <!--mensaje de error-->
+                        </div>
+                    </div>
+                    
+                    <!-- end pregunta 5 -->
+                    <hr class="my-2">
+                    <!-- pregunta 6 -->
+
+                    <div class="bkgQuestionsRadioButton mb-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <span class="bullet mx-1">6</span>
+                            <p class="pl-2">¿El registro administrativo cuenta con alguno de los siguientes documentos metodológicos o funcionales?</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-7 col-xl-5">
+                            {{create_ra_form.doc_met_ra }}   
+                        </div>
+                        <div class="col-5 col-xl-7">
+                            <div class="d-flex flex-column">
+                            {{ documentoMetodolog_ra_form.otra_doc_cual }}
+                                    <!-- Validaciones error-->
+                                {% if documentoMetodolog_ra_form.errors.otra_doc_cual %}
+                                <small id="formHelp" class="form-text text-muted">
+                                    <div class="d-flex flex-row align-items-start">
+                                        <i class="material-icons miReport">
+                                            error
+                                        </i>
+                                        {{ documentoMetodolog_ra_form.errors.otra_doc_cual }}
+                                    </div>
+                                </small>
+                                {% endif %}
+                                <!--  end error -->
+                            </div>
+                        </div>
+                    </div>
+                
+                <!-- end pregunta 6 -->
+                <hr class="my-2">
+                <!-- pregunta 7   *** formset-->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">7</span>
+                        <p class="pl-2">Indique cuáles son las variables 
+                            recolectadas con el registro administrativo:
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordionQ7MB">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseQ7MB" aria-expanded="true" aria-controls="collapseOne">
+                                <div class="d-flex flex-row align-items-center justify-content-center">
+                                    Adicionar variables
+                                    <span class="material-icons">
+                                        keyboard_arrow_down
+                                    </span>
+                                </div>
+                            </button>
+                        </h2>
+                        </div>
+
+                        <div id="collapseQ7MB" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionQ7MB">
+                            <div class="card-body">
+                                <div id="variablerecolectada">
+                                    {{ formvariableRecolset.management_form }}
+                                    {% for formvariableRecol in formvariableRecolset %}
+                                    <div class="variablerecolectada row form-row spacer">
+                                        <div class="col-9">
+                                            <div class="input-group">
+                                                {{ formvariableRecol.variableRec }}
+
+                                                <!-- Validaciones error-->
+                                                {% if formvariableRecol.errors.variableRec %}
+                                                <small id="formHelp" class="form-text text-muted">
+                                                    <div class="d-flex flex-row align-items-start">
+                                                        <i class="material-icons miReport">
+                                                            error
+                                                        </i>
+                                                        {{ formvariableRecol.errors.variableRec }}
+                                                    </div>
+                                                </small>
+                                                {% endif %}
+                                                <!--  end error -->
+
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="input-group-append">
+                                                <button id="variablerecolectadabtn"
+                                                    class="variablerecolectada btn btn-success btn-sm btn-block hvr-shrink add-form-row">
+                                                    <i class="material-icons">add_circle</i>
+                                                    <span class="ml-2">Agregar Otra</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                    <!--cargar archivo -->
+                <div class="form-row">
+                    <div id="dialogFile" class="alert alert-primary"  role="alert">
+                        <div class="d-flex flex-row justify-content-center">
+                             <span class="mr-2">Si el espacio es insuficiente, por favor descargue el siguiente formato y
+                                anexelo con la relación de variables</span>  
+                            <a download="Listado_de_variables.xlsx" href="../../../media/rraas/formato/formatoVariables.xlsx">
+                                <span class="material-icons">
+                                    cloud_download
+                                    </span></a>​​​​​​​​​​​​​​​​​​​​​​​​​​​    
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            {{ create_ra_form.variableRecol_file }}
+                            <!-- Validaciones error-->
+                            {% if  create_ra_form.errors.variableRecol_file %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_ra_form.errors.variableRecol_file }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+                    <!-- end cargar archivo -->
+
+                <!-- end pregunta 7 -->
+                <hr class="my-2">
+                <!-- pregunta 8 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">8</span>
+                        <p class="pl-2">Indique si el registro administrativo utiliza conceptos estandarizados provenientes de:</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.con_est_ra }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                        {{ concepEstan_ra_form.org_in_cual }}
+                                <!-- Validaciones error-->
+                            {% if concepEstan_ra_form.errors.org_in_cual %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ concepEstan_ra_form.errors.org_in_cual }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        
+                        {{ concepEstan_ra_form.ent_ordnac_cual }}   
+                            <!-- Validaciones error-->
+                        {% if concepEstan_ra_form.errors.ent_ordnac_cual %}
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ concepEstan_ra_form.errors.ent_ordnac_cual }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+
+                        {{ concepEstan_ra_form.leye_dec_cual }}   
+                            <!-- Validaciones error-->
+                        {% if concepEstan_ra_form.errors.leye_dec_cual %}
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ concepEstan_ra_form.errors.leye_dec_cual }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+
+                        {{ concepEstan_ra_form.otra_ce_cual }}   
+                            <!-- Validaciones error-->
+                        {% if concepEstan_ra_form.errors.otra_ce_cual %}
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ concepEstan_ra_form.errors.otra_ce_cual }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end pregunta 8 -->
+                <hr class="my-2">
+                <!-- pregunta 9 -->
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="form-row">
+                        <div class="col-lg-10">
+                            <div class="d-flex flex-row align-items-center">
+                                <span class="bullet mx-1">9</span>
+                                <p class="pl-2">¿El registro administrativo utiliza nomenclaturas y/o clasificaciones?</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            {{ create_ra_form.clas_s_n }}
+                        </div>
+                    </div>
+                </div>
+                 <div id="dialogSINO_q9mb" class="alert alert-primary" role="alert">
+                    <div class="d-flex flex-row justify-content-center">
+                        <span class="mr-2">Si la respuesta de la pregunta es <b>"SI"</b> de clic en el switch para habilitar las opciones y viceversa. </span>
+                        <img class="img-fluid" style="width: 2vw;" src="../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                    </div>
+                </div>
+
+                <div id="Nomenclatura_Si">
+                    <p>¿Cuáles?</p>
+                    {{ create_ra_form.nomb_cla }}
+
+                    {{ clasificacion_ra_form.otra_cual_clas }}
+                    <!-- Validaciones error-->
+                        {% if clasificacion_ra_form.errors.otra_cual_clas %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                     <i class="material-icons miReport">
+                                     error
+                                    </i>
+                                    {{ clasificacion_ra_form.errors.otra_cual_clas }}
+                                </div>
+                            </small>
+                        {% endif %}
+                    <!--  end error -->
+                </div>
+
+                <div id="Nomenclatura_No">
+
+                    {{ clasificacion_ra_form.no_pq }}
+
+                    <!-- Validaciones error-->
+                        {% if clasificacion_ra_form.errors.no_pq %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                     <i class="material-icons miReport">
+                                     error
+                                    </i>
+                                    {{ clasificacion_ra_form.errors.no_pq }}
+                                </div>
+                            </small>
+                        {% endif %}
+                    <!--  end error -->
+                </div>
+
+                <!-- end pregunta 9 -->
+                <hr class="my-2">
+                <!-- pregunta 10 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">10</span>
+                        <p class="pl-2">¿Cuál es el medio de obtención o recolección de los datos?</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.recole_dato }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                            
+                        {{ recolecDatos_ra_form.sistema_inf_cual }}
+                                <!-- Validaciones error-->
+                            {% if recolecDatos_ra_form.errors.sistema_inf_cual %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ recolecDatos_ra_form.errors.sistema_inf_cual }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+
+                            {{ recolecDatos_ra_form.otro_c }}
+                            <!-- Validaciones error-->
+                        {% if recolecDatos_ra_form.errors.otro_c %}
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ recolecDatos_ra_form.errors.otro_c }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end pregunta 10 -->
+                <hr class="my-2">
+                <!-- pregunta 11 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">11</span>
+                        <p class="pl-2">¿Con qué frecuencia se recolectan los datos?</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.fre_rec_dato }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                            
+                        {{ frecuencRecole_ra_form.otra_cual_fre }}
+                                <!-- Validaciones error-->
+                            {% if frecuencRecole_ra_form.errors.otra_cual_fre %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ frecuencRecole_ra_form.errors.otra_cual_fre }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end pregunta 11 -->
+                <hr class="my-2">
+                <!-- pregunta 12 -->
+
+                 <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">12</span>
+                        <p class="pl-2">Indique cuáles de las siguientes herramientas son utilizadas 
+                            en el procesamiento de los datos:</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.herr_u_pro }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                            
+                        {{ heramiUtiPr_ra_form.otra_herram }}
+                                <!-- Validaciones error-->
+                            {% if heramiUtiPr_ra_form.errors.otra_herram %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ heramiUtiPr_ra_form.errors.otra_herram }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end pregunta 12 -->
+                <hr class="my-2">
+                <!-- pregunta 13 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">13</span>
+                        <p class="pl-2">¿Con cuáles herramientas cuenta para garantizar 
+                            la seguridad de la información del registro administrativo?:</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.seg_inf }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                            
+                        {{ seguInfor_ra_form.otra_cual_s }}
+                                <!-- Validaciones error-->
+                            {% if seguInfor_ra_form.errors.otra_cual_s %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ seguInfor_ra_form.errors.otra_cual_s }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end pregunta 13 -->
+                <hr class="my-2">
+                <!-- pregunta 14 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="form-row">
+                        <div class="col-lg-10">
+                            <div class="d-flex flex-row align-items-center">
+                                <span class="bullet mx-1">14</span>
+                                <p class="pl-2">¿La información recolectada es acopiada
+                                    o almacenada en una base de datos?</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            {{ create_ra_form.almacen_bd_s_n }}
+                        </div>
+                    </div>
+                </div>
+                 <div id="dialogSINO_q14mb" class="alert alert-primary" role="alert">
+                    <div class="d-flex flex-row justify-content-center">
+                        <span class="mr-2">Si la respuesta de la pregunta es <b>"SI"</b> de clic en el switch para habilitar las opciones y viceversa. </span>
+                        <img class="img-fluid" style="width: 2vw;" src="../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                    </div>
+                </div>
+                 <div id="Q14MB">
+                    <p>¿Con qué frecuencia?</p>
+                    <div class="row">                      
+                        <div class="col-7 col-xl-5">
+                            {{ create_ra_form.frec_alm_bd }}
+                        </div>
+                        <div class="col-5 col-xl-7">
+                            {{ frecuencAlma_ra_form.otra_alm_bd }}
+                                <!-- Validaciones error-->
+                            {% if frecuencAlma_ra_form.errors.otra_alm_bd %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ frecuencAlma_ra_form.errors.otra_alm_bd }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>                                                   
+                </div>
+
+                <!-- end pregunta 14 -->
+                <hr class="my-2">
+                <!-- Pregunta 15 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">15</span>
+                        <p class="pl-2">¿Cuál es la cobertura geográfica del registro administrativo?</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.cob_geograf }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                        {{ cobertGeogra_ra_form.cual_regio }}
+                                <!-- Validaciones error-->
+                            {% if cobertGeogra_ra_form.errors.cual_regio %}     
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ cobertGeogra_ra_form.errors.cual_regio }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                            
+                            {{ cobertGeogra_ra_form.cual_depa }}
+                                <!-- Validaciones error-->
+                            {% if cobertGeogra_ra_form.errors.cual_depa %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ cobertGeogra_ra_form.errors.cual_depa }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+
+                            {{ cobertGeogra_ra_form.cual_are_metrop }}
+                                <!-- Validaciones error-->
+                            {% if cobertGeogra_ra_form.errors.cual_are_metrop %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ cobertGeogra_ra_form.errors.cual_are_metrop }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+
+                            {{ cobertGeogra_ra_form.cual_munic }}   
+                                <!-- Validaciones error-->
+                            {% if cobertGeogra_ra_form.errors.cual_munic %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ cobertGeogra_ra_form.errors.cual_munic }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+
+                            {{ cobertGeogra_ra_form.cual_otro }}
+                                <!-- Validaciones error-->
+                            {% if cobertGeogra_ra_form.errors.cual_otro %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ cobertGeogra_ra_form.errors.cual_otro }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                       
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end Pregunta 15 -->
+                <hr class="my-2">
+                <!-- Pregunta 16 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">16</span>
+                            <p class="pl-2">¿La entidad hace uso de los datos del registro administrativo 
+                                    para generar información estadística 
+                                    (Agregados, indicadores, Resultados estadísticos, etc)?
+                            </p>    
+                    </div>
+                </div>
+                <div class="my-3">
+                    <p>Seleccione:</p>
+                    <div class="w-25">   
+                        {{create_ra_form.uso_de_datos }} 
+                    </div>
+                </div>  
+                    <div class="accordion" id="accordionQ16MB">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseQ16MB" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                        Adicionar resultado
+                                        <span class="material-icons">
+                                            keyboard_arrow_down
+                                        </span>
+                                    </div>
+                                </button>
+                            </h2>
+                            </div>
+                            <div id="collapseQ16MB" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionQ16MB">
+                                <div class="card-body">
+                                    <!-- ***formset-->
+                                    <div id="indicadorresultadoagregado">
+                                        {{ formIndicadorReAgreset.management_form }}
+                                        {% for formIndicadorResultadosAg in formIndicadorReAgreset %}
+                                        <div class="indicadorresultadoagregado row form-row spacer">
+                                            <div class="col-9">
+                                                <div class="input-group">
+                                                    {{ formIndicadorResultadosAg.ind_res_agre }}
+
+                                                    <!-- Validaciones error-->
+                                                    {% if formIndicadorResultadosAg.errors.ind_res_agre %}
+                                                    <small id="formHelp" class="form-text text-muted">
+                                                        <div class="d-flex flex-row align-items-start">
+                                                            <i class="material-icons miReport">
+                                                                error
+                                                            </i>
+                                                            {{ formIndicadorResultadosAg.errors.ind_res_agre }}
+                                                        </div>
+                                                    </small>
+                                                    {% endif %}
+                                                    <!--  end error -->
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-append">
+                                                    <button id="indicadorresultadoagregadobtn"
+                                                        class="indicadorresultadoagregado btn btn-success btn-sm btn-block hvr-shrink add-form-row">
+                                                        <i class="material-icons">add_circle</i>
+                                                        <span class="ml-2">Agregar Otra</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- end Pregunta 16 -->
+                <hr class="my-2">
+                <!-- pregunta 17 -->
+                <div class="bkgQuestionsRadioButton mb-1">
+                    <div class="form-row">
+                        <div class="col-lg-10">
+                            <div class="d-flex flex-row align-items-center">
+                                <span class="bullet mx-1">17</span>
+                                <p class="pl-2">¿Usuarios externos a la entidad, tienen 
+                                    acceso a los datos del registro administrativo?</p>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            {{ create_ra_form.user_exte_acceso }}
+                        </div>
+                    </div>
+                </div>
+                 <div id="dialogSI" class="alert alert-primary" style="display:none" role="alert">
+                    <div class="d-flex flex-row justify-content-center">
+                         <span class="mr-2">Su respuesta es <b>"Si"</b> continúe con la  pregunta 18 </span>
+                        <img class="img-fluid" style="width: 2vw;" src="../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                    </div>
+                </div>
+                <div id="dialogNO" class="alert alert-primary" role="alert">
+                    <div class="d-flex flex-row justify-content-center">
+                         <span class="mr-2">Su respuesta es  <b>"No"</b> continúe con la pregunta 19 </span>
+                        <img class="img-fluid" style="width: 2vw;" src="../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                    </div>
+                </div>
+
+                <!-- end pregunta 17 -->
+            
+                <!-- pregunta 18 -->
+        <div id="q18">
+                <hr class="my-2">
+            <div class="bkgQuestionsRadioButton mb-1">
+                <div class="form-row">
+                    <div class="col-lg-10">
+                        <div class="d-flex flex-row align-items-center">
+                            <span class="bullet mx-1">18</span>
+                            <p class="pl-2">Relacione las 
+                                entidades que tienen acceso a 
+                                los datos del registro administrativo:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="entidadacceso">
+                <div class="accordion" id="accordionQ18MB">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseQ18MB" aria-expanded="true" aria-controls="collapseOne">
+                                <div class="d-flex flex-row align-items-center justify-content-center">
+                                    Adicionar entidades
+                                    <span class="material-icons">
+                                        keyboard_arrow_down
+                                    </span>
+                                </div>
+                            </button>
+                        </h2>
+                        </div>
+                        <div id="collapseQ18MB" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionQ18MB">
+                            <div class="card-body">
+                                    {{  formEntidadAcceset.management_form }}
+                                    {% for formEntiAcc in formEntidadAcceset %}
+                                    <div class="entidadacceso row form-row spacer">
+                                            <div class="input-group">
+                                                <div class="col-4 mb-2">
+                                                    <label class="labelTitle">Entidad: </label>
+                                                    {{ formEntiAcc.nomb_entidad_acc }}
+
+                                                    <!-- Validaciones error-->
+                                                {% if formEntiAcc.errors.nomb_entidad_acc %}
+                                                <small id="formHelp" class="form-text text-muted">
+                                                    <div class="d-flex flex-row align-items-start">
+                                                        <i class="material-icons miReport">
+                                                            error
+                                                        </i>
+                                                        {{ formEntiAcc.errors.nomb_entidad_acc }}
+                                                    </div>
+                                                </small>
+                                                {% endif %}
+                                                <!--  end error -->
+                                                </div>
+                                                <div class="col-5 mb-2">
+                                                    <label class="labelTitle">¿Con qué fin?</label>
+                                                        {{ formEntiAcc.opcion_pr }} 
+                                                </div>
+                                                <div class="col-3 mb-2">
+                                                    <label class="labelTitle"></label>
+                                                    {{ formEntiAcc.otro_cual }}
+
+                                                    <!-- Validaciones error-->
+                                                        {% if formEntiAcc.errors.otro_cual %}
+                                                        <small id="formHelp" class="form-text text-muted">
+                                                            <div class="d-flex flex-row align-items-start">
+                                                                <i class="material-icons miReport">
+                                                                    error
+                                                                </i>
+                                                                {{ formEntiAcc.errors.otro_cual }}
+                                                            </div>
+                                                        </small>
+                                                        {% endif %}
+                                                    <!-- end error -->
+
+                                                </div>    
+                                            </div>
+                                        <br><br>
+                                        <div class="col-3 px-3">
+                                            <div class="input-group-append">
+                                                <button id="entidadaccesobtn"
+                                                    class="entidadacceso btn btn-success btn-sm btn-block hvr-shrink add-form-row">
+                                                    <i class="material-icons">add_circle</i>
+                                                    <span class="ml-2">Agregar Otra</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- end pregunta 18 -->
+                <hr class="my-2">
+
+                <!-- pregunta 19 -->
+
+                <div class="bkgQuestionsRadioButton mb-1">
+
+                    <div id="helpText19_SI_17" class="alert alert-primary" role="alert">
+                        <div class="d-flex flex-row justify-content-center">
+                             <span class="mr-2">Continúe con el módulo C  observaciones.</span>    
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="bullet mx-1">19</span>
+                        <p class="pl-2">¿Cuál es la razón principal por la cual no se
+                             permite el acceso a los datos del registro administrativo?</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-7 col-xl-5">
+                        {{create_ra_form.no_hay_acceso }}   
+                    </div>
+                    <div class="col-5 col-xl-7">
+                        <div class="d-flex flex-column">
+                            
+                        {{ noAccesoDato_ra_form.otra_no_acceso }}
+                                <!-- Validaciones error-->
+                            {% if noAccesoDato_ra_form.errors.otra_no_acceso %}
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ noAccesoDato_ra_form.errors.otra_no_acceso }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end pregunta 19 -->
+                </div>
+            </div>
+            <hr class="my-2">
+
+            <!-- modulo c -->
+            <div id="moduleC" class="mt-4">
+                <h2 class="text-uppercase">Módulo C</h2>
+                <div class="colorBkgTest">
+                    <div class="backgroundTitle">
+                        <h5>Observaciones</h5>
+                    </div>
+                    {{ create_ra_form.observacion }}
+                    <!-- Validaciones error-->
+                    {% if create_ra_form.errors.observacion %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ create_ra_form.errors.observacion }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                </div>
+            </div>
+
+             <!-- Novedades  -->
+
+             <div class="col-12 col-lg-4" style="display:none;">
+                <div class="card-body">
+                    {% if new_novedad_rraa %}
+                    <div class="alert alert-success" role="alert">
+                        Your novedad is awaiting moderation
+                    </div>
+                    {% else %}
+                    <h2 class="text-uppercase">Deja una novedad</h2>
+                    <div class="input-group mb-3 input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Novedad:</span>
+                        </div>
+                        {{ novedad_rraa_form.novedad }}
+                        
+                    </div>
+                    <div class="input-group mb-3 input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Estado de la actualización:</span>
+                        </div>
+                        {{ novedad_rraa_form.est_actualiz }}
+                    </div>
+                    <div>
+                        {{ novedad_rraa_form.descrip_novedad }}
+
+                    <!-- Validaciones error-->
+                    {% if novedad_rraa_form.errors.descrip_novedad %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ novedad_rraa_form.errors.descrip_novedad }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        
+
+            <!-- end Novedades -->
+                    
+            <div id="save" class="mt-3">
+                <button type="submit" class="save btn btn_primary btn-block btn-sm hvr-shrink">
+                    <div class="d-flex align-items-center justify-content-center"><i class="material-icons">save</i>
+                        <span class="ml-2">Guardar</span>
+                    </div>
+                </button>
+            </div>
+        
+        </div>
+    </form >
+    {% endif %}
+
+    {% else %}
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div class="alert alert-warning" role="alert">
+                <h2 class="text-center text-uppercase">error 401</h2>
+                <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+                <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endif %}
+
+
+<!-- js -->
+<!-- <script type="text/javascript" charset="utf8" src="{% static 'libraries/formeter/js/formeter.js' %}">
+</script>
+ -->
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        var role = "{{user.profile.role.id}}"
+        if (role == "3") {
+            $("#id_sist_estado option[value='3']").hide();
+            $("#id_sist_estado option[value='4']").hide();
+            $("#id_sist_estado option[value='5']").hide();
+            $("#id_sist_estado option[value='6']").hide();
+        }
+        else if (role == "4") {
+            $("#id_sist_estado option[value='5']").hide();
+            $("#id_sist_estado option[value='6']").hide();
+        }
+
+        //selector de estado cambie muestre mensaje
+        $('#id_sist_estado').on('change', function() {
+            alert("Ha cambiado el estado del Registro Adminsitrativo haga click en el botón guardar para actualizar los cambios en el formulario.");
+        });
+        //end selector estado cambie muestre mensaje
+
+        
+
+        //inicializar  selector de entidad
+        if(role == 1 || role == 4 || role == 5){
+        
+            $("#id_entidad_pri option[value='{{ entidad_responsable }}']").prop('selected', true);
+        }else if (role == 3){
+            var entidad = "{{ entidad_responsable }}"
+            $("#id_entidad_pri option[value='{{ entidad_responsable }}']").prop('selected', true);
+        }
+        //end inicializar  selector de entidad
+
+        // deshabilitar select de entidad principal para rol fuente
+        if (role == 3){
+            $('#id_entidad_pri option:not(:selected)').attr('disabled',true);
+        }
+    });
+
+           /* Manejo de estilos para estados */
+                function fondo(x){
+                    console.log(x.value);
+                    var estado = x.value;
+                    var bkgestado = document.getElementById("estado");
+                    var icostate1 = $("#campBorrador");
+                    var icostate2 = $("#campEnviado");
+                    var icostate3 = $("#campDevuelto");
+                    var icostate4 = $("#campValidado");
+                    var icostate5 = $("#campPublicado");
+                    var icostate6 = $("#campArchivado"); 
+
+                    if (estado == 1){
+                        bkgestado.style.backgroundColor = "#ef9a9a";
+                        bkgestado.style.color = "#b71c1c";
+                        bkgestado.style.borderColor = "#b71c1c";
+                        icostate1.show();
+                        icostate2.hide();
+                        icostate3.hide();
+                        icostate4.hide();
+                        icostate5.hide();
+                        icostate6.hide();
+
+                        } else
+                            if (estado == 2){
+                                bkgestado.style.backgroundColor = "#90caf9";
+                                bkgestado.style.color = "#0d47a1";
+                                bkgestado.style.borderColor = "#0d47a1";
+                                    icostate1.hide();
+                                    icostate2.show();
+                                    icostate3.hide();
+                                    icostate4.hide();
+                                    icostate5.hide();
+                                    icostate6.hide();
+                            } else
+                                if (estado == 3){
+                                    bkgestado.style.backgroundColor = "#ffab91";
+                                    bkgestado.style.color = "#bf360c";
+                                    bkgestado.style.borderColor = "#bf360c";
+                                        icostate1.hide();
+                                        icostate2.hide();
+                                        icostate3.show();
+                                        icostate4.hide();
+                                        icostate5.hide();
+                                        icostate6.hide();
+                                } else
+                                    if (estado == 4){
+                                        bkgestado.style.backgroundColor = "#b39ddb";
+                                        bkgestado.style.color = "#311b92";
+                                        bkgestado.style.borderColor = "#311b92";
+                                            icostate1.hide();
+                                            icostate2.hide();
+                                            icostate3.hide();
+                                            icostate4.show();
+                                            icostate5.hide();
+                                            icostate6.hide();
+                                    } else
+                                        if (estado == 5){
+                                            bkgestado.style.backgroundColor = "#a5d6a7";
+                                            bkgestado.style.color = "#1b5e20";
+                                            bkgestado.style.borderColor = "#1b5e20";
+                                                icostate1.hide();
+                                                icostate2.hide();
+                                                icostate3.hide();
+                                                icostate4.hide();
+                                                icostate5.show();
+                                                icostate6.hide();
+                                        }else
+                                        if (estado == 6){
+                                            bkgestado.style.backgroundColor = "#757575";
+                                            bkgestado.style.color = "#424242";
+                                            bkgestado.style.borderColor = "#424242";
+                                                icostate1.hide();
+                                                icostate2.hide();
+                                                icostate3.hide();
+                                                icostate4.hide();
+                                                icostate5.hide();
+                                                icostate6.show();
+                                        }else{
+                                        bkgestado.style.backgroundColor = "#EAEAEA";
+                                        bkgestado.style.color = "#212121";
+                                        bkgestado.style.borderColor = "#212121";
+                                            icostate1.hide();
+                                            icostate2.hide();
+                                            icostate3.hide();
+                                            icostate4.hide();
+                                            icostate5.hide();
+                                            icostate6.hide();
+                                    }
+                }
+                /* End manejo de estilos para estados */
+
+        
+        
+        $(function () {
+            $('#inicio_recolec').datetimepicker({
+                format: 'YYYY-MM-DD',
+            });
+            $("#ultima_recolec").datetimepicker({
+                format: 'YYYY-MM-DD',
+            });
+        });
+
+        
+
+
+    
+        /// PREGUNTA 7 formsets
+
+        function cloneMoreVariablesRecol(selector, prefix) {
+            var newElement = $(selector).clone(true);
+            var total = $('#id_variablerecolectada-TOTAL_FORMS').val();
+            newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function () {
+                var name = $(this).attr('name')
+                if (name) {
+                    name = name.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    var id = 'id_' + name;
+                    $(this).attr({
+                        'name': name,
+                        'id': id
+                    }).val('').removeAttr('checked');
+                }
+            });
+            newElement.find('label').each(function () {
+                var forValue = $(this).attr('for');
+                console.log("labellllll variablerecolectada", forValue)
+                if (forValue) {
+                    forValue = forValue.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    $(this).attr({
+                        'for': forValue
+                    });
+                }
+            });
+            total++;
+            $('#id_variablerecolectada-TOTAL_FORMS').val(total);
+            //$(selector).before(newElement);
+            $(selector).after(newElement);
+            var conditionRow = $('.variablerecolectada.form-row:not(:last)');
+            conditionRow.find('.variablerecolectada.btn.add-form-row')
+                .removeClass('btn-success').addClass('btn-danger')
+                .removeClass('add-form-row').addClass('remove-form-row')
+                .html('<i class="material-icons">remove_circle</i><span class="ml-2"> Quitar </span>');
+            return false;
+        }
+
+
+        function deleteFormVariablesRecol(prefix, btn) {
+            var total = parseInt($('#id_variablerecolectada-TOTAL_FORMS').val());
+            if (total > 1) {
+                btn.closest('.form-row').remove();
+                var forms = $('.variablerecolectada.form-row');
+                $('#id_variablerecolectada-TOTAL_FORMS').val(forms.length);
+                for (var i = 0, formCount = forms.length; i < formCount; i++) {
+                    $(forms.get(i)).find(':input').each(function () {
+                        updateElementIndex(this, prefix, i);
+                    });
+                }
+            }
+            return false;
+
+        }
+
+        $('#variablerecolectada').on('click', '.variablerecolectada.add-form-row', function (e) {
+            e.preventDefault();
+            cloneMoreVariablesRecol('.variablerecolectada.form-row:last', 'form');
+            console.log("variablerecolectada")
+            return false;
+        });
+        $('#variablerecolectada').on('click', '.variablerecolectada.remove-form-row', function (e) {
+            e.preventDefault();
+            deleteFormVariablesRecol('form', $(this));
+            console.log("_____variablerecolectada_________", $(this))
+            return false;
+        });
+
+
+        //Pregunta 16 formsets
+
+        function cloneMoreIndicadorResultadoAgr(selector, prefix) {
+            var newElement = $(selector).clone(true);
+            var total = $('#id_indicadorresultadoagregado-TOTAL_FORMS').val();
+            newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function () {
+                var name = $(this).attr('name')
+                if (name) {
+                    name = name.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    var id = 'id_' + name;
+                    $(this).attr({
+                        'name': name,
+                        'id': id
+                    }).val('').removeAttr('checked');
+                }
+            });
+            newElement.find('label').each(function () {
+                var forValue = $(this).attr('for');
+                console.log("labellllll indicadorresultadoagregado", forValue)
+                if (forValue) {
+                    forValue = forValue.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    $(this).attr({
+                        'for': forValue
+                    });
+                }
+            });
+            total++;
+            $('#id_indicadorresultadoagregado-TOTAL_FORMS').val(total);
+            //$(selector).before(newElement);
+            $(selector).after(newElement);
+            var conditionRow = $('.indicadorresultadoagregado.form-row:not(:last)');
+            conditionRow.find('.indicadorresultadoagregado.btn.add-form-row')
+                .removeClass('btn-success').addClass('btn-danger')
+                .removeClass('add-form-row').addClass('remove-form-row')
+                .html('<i class="material-icons">remove_circle</i><span class="ml-2"> Quitar </span>');
+            return false;
+        }
+
+
+        function deleteFormIndicadorResultadoAgr(prefix, btn) {
+            var total = parseInt($('#id_indicadorresultadoagregado-TOTAL_FORMS').val());
+            if (total > 1) {
+                btn.closest('.form-row').remove();
+                var forms = $('.indicadorresultadoagregado.form-row');
+                $('#id_indicadorresultadoagregado-TOTAL_FORMS').val(forms.length);
+                for (var i = 0, formCount = forms.length; i < formCount; i++) {
+                    $(forms.get(i)).find(':input').each(function () {
+                        updateElementIndex(this, prefix, i);
+                    });
+                }
+            }
+            return false;
+
+        }
+
+        $('#indicadorresultadoagregado').on('click', '.indicadorresultadoagregado.add-form-row', function (e) {
+            e.preventDefault();
+            cloneMoreIndicadorResultadoAgr('.indicadorresultadoagregado.form-row:last', 'form');
+            console.log("indicadorresultadoagregado")
+            return false;
+        });
+        $('#indicadorresultadoagregado').on('click', '.indicadorresultadoagregado.remove-form-row', function (e) {
+            e.preventDefault();
+            deleteFormIndicadorResultadoAgr('form', $(this));
+            console.log("_____resul_________", $(this))
+            return false;
+        });
+
+
+        /// Modulo B pregunta 18 formset  /////////
+
+        function cloneEntidadAcceso(selector, prefix) {
+            var newElement = $(selector).clone(true);
+            var total = $('#id_entidadacceso-TOTAL_FORMS').val();
+            newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function () {
+                var name = $(this).attr('name')
+                var idValue = $(this).attr('id')
+                if (name) {
+                    name = name.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    idValue = idValue.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    var id = 'id_' + name;
+                    $(this).attr({
+                        'name': name,
+                        'id': idValue
+                    }).val("");
+                }
+            });
+            newElement.find('input:checkbox').each(function () {
+                var idValue = $(this).attr('id');
+                var valuParams = idValue.replace('id_entidadacceso-' + (total) + '-opcion_pr_', "")
+                if (idValue) {
+                    idValue = idValue.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    $(this).attr({
+                        'id': idValue
+                    }).each(function(i,item){  
+                        this.checked = item.defaultChecked; 
+                    }).val(parseInt(valuParams)+1); 
+
+                }
+            });
+            newElement.find('label').each(function () {
+                var forValue = $(this).attr('for');
+                if (forValue) {
+                    forValue = forValue.replace('-' + (total - 1) + '-', '-' + total + '-');
+                    $(this).attr({
+                        'for': forValue
+                    });
+                }
+            });
+            total++;
+            $('#id_entidadacceso-TOTAL_FORMS').val(total);
+            //$(selector).before(newElement);
+            $(selector).after(newElement);
+            var conditionRow = $('.entidadacceso.form-row:not(:last)');
+            conditionRow.find('.entidadacceso.btn.add-form-row')
+                .removeClass('btn-success').addClass('btn-danger')
+                .removeClass('add-form-row').addClass('remove-form-row')
+                .html('<i class="material-icons">remove_circle</i><span class="ml-2"> Quitar </span>');
+            return false;
+        }
+
+        function deleteFormEntidadAcceso(prefix, btn) {
+
+            var total = parseInt($('#id_entidadacceso-TOTAL_FORMS').val());
+            if (total > 1) {
+                btn.closest('.form-row').remove();
+                var forms = $('.entidadacceso.form-row');
+                $('#id_entidadacceso-TOTAL_FORMS').val(forms.length);
+                for (var i = 0, formCount = forms.length; i < formCount; i++) {
+                    $(forms.get(i)).find(':input').each(function () {
+                        updateElementIndex(this, prefix, i);
+                    });
+                }
+            }
+            return false;
+        }
+        $('#entidadacceso').on('click', '.entidadacceso.add-form-row', function (e) {
+            e.preventDefault();
+            cloneEntidadAcceso('.entidadacceso.form-row:last', 'form');
+            return false;
+        });
+        $('#entidadacceso').on('click', '.entidadacceso.remove-form-row', function (e) {
+            e.preventDefault();
+            deleteFormEntidadAcceso('form', $(this));
+            return false;
+        });
+
+
+$(document).ready(function(){
+ /* Manejo de estilos para estados iniciales */
+                function fondostart(){
+                    var dr = $("#id_sist_estado").val();
+                      console.log (dr);
+                    var bkgestado = document.getElementById("estado");
+                    var icostate1 = $("#campBorrador");
+                    var icostate2 = $("#campEnviado");
+                    var icostate3 = $("#campDevuelto");
+                    var icostate4 = $("#campValidado");
+                    var icostate5 = $("#campPublicado");
+                    var icostate6 = $("#campArchivado");
+
+                    if (dr == 1){
+                        bkgestado.style.backgroundColor = "#ef9a9a";
+                        bkgestado.style.color = "#b71c1c";
+                        bkgestado.style.borderColor = "#b71c1c";
+                        icostate1.show();
+                        icostate2.hide();
+                        icostate3.hide();
+                        icostate4.hide();
+                        icostate5.hide();
+                        icostate6.hide();
+
+                        } else
+                            if (dr == 2){
+                                bkgestado.style.backgroundColor = "#90caf9";
+                                bkgestado.style.color = "#0d47a1";
+                                bkgestado.style.borderColor = "#0d47a1";
+                                    icostate1.hide();
+                                    icostate2.show();
+                                    icostate3.hide();
+                                    icostate4.hide();
+                                    icostate5.hide();
+                                    icostate6.hide();
+                            } else
+                                if (dr == 3){
+                                    bkgestado.style.backgroundColor = "#ffab91";
+                                    bkgestado.style.color = "#bf360c";
+                                    bkgestado.style.borderColor = "#bf360c";
+                                        icostate1.hide();
+                                        icostate2.hide();
+                                        icostate3.show();
+                                        icostate4.hide();
+                                        icostate5.hide();
+                                        icostate6.hide();
+                                } else
+                                    if (dr == 4){
+                                        bkgestado.style.backgroundColor = "#b39ddb";
+                                        bkgestado.style.color = "#311b92";
+                                        bkgestado.style.borderColor = "#311b92";
+                                            icostate1.hide();
+                                            icostate2.hide();
+                                            icostate3.hide();
+                                            icostate4.show();
+                                            icostate5.hide();
+                                            icostate6.hide();
+                                    } else
+                                        if (dr == 5){
+                                            bkgestado.style.backgroundColor = "#a5d6a7";
+                                            bkgestado.style.color = "#1b5e20";
+                                            bkgestado.style.borderColor = "#1b5e20";
+                                                icostate1.hide();
+                                                icostate2.hide();
+                                                icostate3.hide();
+                                                icostate4.hide();
+                                                icostate5.show();
+                                                icostate6.hide();
+                                        }else
+                                        if (dr == 6){
+                                            bkgestado.style.backgroundColor = "#757575";
+                                            bkgestado.style.color = "#424242";
+                                            bkgestado.style.borderColor = "#424242";
+                                                icostate1.hide();
+                                                icostate2.hide();
+                                                icostate3.hide();
+                                                icostate4.hide();
+                                                icostate5.hide();
+                                                icostate6.show();
+                                        }else{
+                                        bkgestado.style.backgroundColor = "#EAEAEA";
+                                        bkgestado.style.color = "#212121";
+                                        bkgestado.style.borderColor = "#212121";
+                                            icostate1.hide();
+                                            icostate2.hide();
+                                            icostate3.hide();
+                                            icostate4.hide();
+                                            icostate5.hide();
+                                            icostate6.hide();
+                                    }
+                }
+
+                fondostart();
+                /* End manejo de estilos para estados iniciales */
+    //######################### fields codigo_ra para que no lo editen #################//
+
+            $('input[name=codigo_rraa]').attr('readonly', true);
+
+    //######################### end fields codigo_ra para que no lo editen #################//
+
+        //*****inject multiple options by select list other entities
+
+            $("#id_otras_entidades").attr('multiple','multiple');
+
+        //incio validaciones form
+    //################### Modulo B pregunta 3 ############################################
+        
+        //---- cuando se carga la pagina ---//
+        var checkNorma = $('input:checkbox[name=norma_ra]:checked').val()
+        
+            if (checkNorma == "1") {
+                $('#id_norma_ra_4').attr("disabled", true) // Opción ninguna
+                $("#MBQ4").attr("disabled", true)
+                $('#id_pq_secreo').attr("disabled", true) // pregunta 4
+                $('#HelpTextNinguna').hide()
+                $('#HelpTextOther').show()
+            } 
+            else if (checkNorma == "2") {
+                $('#id_norma_ra_4').attr("disabled", true) // Opción ninguna
+                $("#MBQ4").attr("disabled", true)
+                $('#id_pq_secreo').attr("disabled", true) // pregunta 4
+                $('#HelpTextNinguna').hide()
+                $('#HelpTextOther').show()
+            }
+            else if (checkNorma == "3") {
+                $('#id_norma_ra_4').attr("disabled", true) // Opción ninguna
+                $("#MBQ4").attr("disabled", true)
+                $('#id_pq_secreo').attr("disabled", true) // pregunta 4
+                $('#HelpTextNinguna').hide()
+                $('#HelpTextOther').show() 
+            }
+            else if (checkNorma == "4") {
+                $('#id_norma_ra_4').attr("disabled", true) // Opción ninguna
+                $("#MBQ4").attr("disabled", true)
+                $('#id_pq_secreo').attr("disabled", true) // pregunta 4
+                $('#HelpTextNinguna').hide()
+                $('#HelpTextOther').show() 
+            } 
+            else if (checkNorma == "5") {
+                $('#id_norma_ra_0').attr("disabled", true) // Opción constitución
+                $('#id_cp_ra').attr("disabled", true)
+
+                $('#id_norma_ra_1').attr("disabled", true) // Opción ley 
+                $('#id_ley_ra').attr("disabled", true)
+
+                $('#id_norma_ra_2').attr("disabled", true) // Opción decreto
+                $('#id_decreto_ra').attr("disabled", true)
+
+                $('#id_norma_ra_3').attr("disabled", true) // Opción otra
+                $('#id_otra_ra').attr("disabled", true)
+
+                $('#HelpTextNinguna').show()
+                $('#HelpTextOther').hide()
+
+            }else if (checkNorma == undefined) {
+                $('#HelpTextNinguna').hide()
+                $('#HelpTextOther').hide()
+            }
+            //---- end  cuando se carga la pagina ---//
+
+            // Comprobar los checkbox seleccionados
+
+            $('input:checkbox[name=norma_ra]').on('change', function (optionSel) {
+                var normasSelected = new Array();
+                $("input:checkbox[name=norma_ra]:checked").each(function () {
+                    normasSelected.push($(this).val());
+                    var checkedNorma = $(this).val()
+                });
+                
+
+                if (normasSelected.includes("5") == true) {
+                    $('#id_norma_ra_0').attr("disabled", true) // Opción constitución
+                    $('#id_cp_ra').attr("disabled", true)
+
+                    $('#id_norma_ra_1').attr("disabled", true) // Opción ley 
+                    $('#id_ley_ra').attr("disabled", true)
+
+                    $('#id_norma_ra_2').attr("disabled", true) // Opción decreto
+                    $('#id_decreto_ra').attr("disabled", true)
+
+                    $('#id_norma_ra_3').attr("disabled", true) // Opción otra
+                    $('#id_otra_ra').attr("disabled", true)
+
+                    $("#MBQ4").attr("disabled", false)
+                    $('#id_pq_secreo').attr("disabled", false) // pregunta 4 
+
+                    $('#HelpTextNinguna').show()
+                    $('#HelpTextOther').hide()
+
+                } else if (normasSelected.length === 0) {
+                    $('#id_norma_ra_0').attr("disabled", false) // Opción constitución
+                    $('#id_cp_ra').attr("disabled", false)
+
+                    $('#id_norma_ra_1').attr("disabled", false) // Opción ley 
+                    $('#id_ley_ra').attr("disabled", false)
+
+                    $('#id_norma_ra_2').attr("disabled", false) // Opción decreto
+                    $('#id_decreto_ra').attr("disabled", false)
+
+                    $('#id_norma_ra_3').attr("disabled", false) // Opción otra
+                    $('#id_otra_ra').attr("disabled", false)
+
+                    $('#id_norma_ra_4').attr("disabled", false) //Opción Ninguna
+
+                    $("#MBQ4").attr("disabled", false)
+                    $('#id_pq_secreo').attr("disabled", false) // pregunta 4
+
+                    $('#HelpTextNinguna').hide()
+                    $('#HelpTextOther').hide()
+
+                } else {
+                    $('#id_norma_ra_4').attr("disabled", true) //Opción Ninguna
+                    $("#MBQ4").attr("disabled", true)
+                    $('#id_pq_secreo').attr("disabled", true) // pregunta 4
+                    $('#HelpTextNinguna').hide()
+                    $('#HelpTextOther').show()
+
+                }
+            })
+
+    //################## End modulo B pregunta 3 ########################################
+
+    //################### Modulo B pregunta 8 ###########################################
+            
+             //---- cuando se carga la pagina ---//
+        var checkConceptEst = $('input:checkbox[name=con_est_ra]:checked').val()
+            if (checkConceptEst == "1") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            } 
+            else if (checkConceptEst == "2") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "3") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "4") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "5") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "6") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "7") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "8") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "9") {
+                $('#id_con_est_ra_9').attr("disabled", true) // Opción No utiliza conceptos estandarizados 
+            }
+            else if (checkConceptEst == "10") {
+
+                $('#id_con_est_ra_0').attr("disabled", true)
+                $('#id_con_est_ra_1').attr("disabled", true)
+                $('#id_con_est_ra_2').attr("disabled", true)
+                $('#id_con_est_ra_3').attr("disabled", true)
+                
+                $('#id_con_est_ra_4').attr("disabled", true)
+                $('#id_org_in_cual').attr("disabled", true)  
+
+                $('#id_con_est_ra_5').attr("disabled", true)
+                $('#id_ent_ordnac_cual').attr("disabled", true)
+
+                $('#id_con_est_ra_6').attr("disabled", true)
+                $('#id_leye_dec_cual').attr("disabled", true)
+
+
+                $('#id_con_est_ra_7').attr("disabled", true)
+
+                $('#id_con_est_ra_8').attr("disabled", true)
+                $('#id_otra_ce_cual').attr("disabled", true)                 
+            }
+            
+            //---- end cuando se carga la pagina ---//
+
+            // Comprobar los checkbox seleccionados
+
+            $('input:checkbox[name=con_est_ra]').on('change', function (optionSel) {
+                var conceptEstSelected = new Array();
+                $("input:checkbox[name=con_est_ra]:checked").each(function () {
+                    conceptEstSelected.push($(this).val());
+                    var checkedconceptEst = $(this).val()
+                });
+               
+
+                if (conceptEstSelected.includes("10") == true) {
+
+                    $('#id_con_est_ra_0').attr("disabled", true)
+                    $('#id_con_est_ra_1').attr("disabled", true) 
+                    $('#id_con_est_ra_2').attr("disabled", true) 
+                    $('#id_con_est_ra_3').attr("disabled", true)
+
+                    $('#id_con_est_ra_4').attr("disabled", true)
+                    $('#id_org_in_cual').attr("disabled", true) 
+
+                    $('#id_con_est_ra_5').attr("disabled", true)
+                    $('#id_ent_ordnac_cual').attr("disabled", true)
+
+                    $('#id_con_est_ra_6').attr("disabled", true)
+                    $('#id_leye_dec_cual').attr("disabled", true)
+
+                    $('#id_con_est_ra_7').attr("disabled", true) 
+                    $('#id_con_est_ra_8').attr("disabled", true)
+                    $('#id_otra_ce_cual').attr("disabled", true)
+                    
+                }else if (conceptEstSelected.length === 0) {
+
+                    $('#id_con_est_ra_0').attr("disabled", false)
+                    $('#id_con_est_ra_1').attr("disabled", false)
+                    $('#id_con_est_ra_2').attr("disabled", false)
+                    $('#id_con_est_ra_3').attr("disabled", false)
+                    
+                    $('#id_con_est_ra_4').attr("disabled", false)
+                    $('#id_org_in_cual').attr("disabled", false)  
+
+                    $('#id_con_est_ra_5').attr("disabled", false)
+                    $('#id_ent_ordnac_cual').attr("disabled", false)
+
+                    $('#id_con_est_ra_6').attr("disabled", false)
+                    $('#id_leye_dec_cual').attr("disabled", false)
+
+                    $('#id_con_est_ra_7').attr("disabled", false)
+
+                    $('#id_con_est_ra_8').attr("disabled", false)
+                    $('#id_otra_ce_cual').attr("disabled", false)
+
+                    $('#id_con_est_ra_9').attr("disabled", false)
+
+                } else {
+                    $('#id_con_est_ra_9').attr("disabled", true) //Opción Ninguna 
+                }
+            });
+
+    
+    //################### end Modulo B pregunta 8 ###########################################
+            
+            
+    //------------------#### Modulo B Pregunta 9  ####-------------------------------------//
+
+            //---- cuando se carga la pagina ---//
+        var checkClasificaciones = $('input:checkbox[name=clas_s_n]:checked').val()
+
+                if (checkClasificaciones === undefined) {
+                    
+                    $("#dialogSINO_q9mb").show()
+                    $('#Nomenclatura_Si').hide()
+                    $('#Nomenclatura_No').show()
+                    $("#id_otra_cual_clas").attr("disabled", true)
+                    $("#id_no_pq").attr("disabled", false)
+                    $('input:checkbox[name=nomb_cla]').attr("disabled", true)
+                    
+                } else {
+                    $('#Nomenclatura_No').hide()
+                    $('#Nomenclatura_Si').show()
+                    $("#id_otra_cual_clas").attr("disabled", false)
+                    $("#id_no_pq").attr("disabled", true)
+                    $('input:checkbox[name=nomb_cla]').attr("disabled", false)
+                   
+                }
+                //---- end cuando se carga la pagina ---//
+
+
+                $('input:checkbox[name=clas_s_n]').on('change', function () {
+                    var clasificacionSelected = new Array();
+                    $("input:checkbox[name=clas_s_n]:checked").each(function () {
+                        clasificacionSelected.push($(this).val());
+                    })
+                   
+                    if (clasificacionSelected[0] === "on") {
+                        $('#Nomenclatura_Si').show()
+                        $('#Nomenclatura_No').hide()
+                        $("#id_otra_cual_clas").attr("disabled", false)
+                        $("#id_no_pq").attr("disabled", true)
+                        $('input:checkbox[name=nomb_cla]').attr("disabled",false) //habilitar todas las opciones de clasificaciones
+                        $("#dialogSINO_q9mc").hide()
+                        
+                    } else {
+                        $('#Nomenclatura_No').show()
+                        $('#Nomenclatura_Si').hide()
+                        $("#id_otra_cual_clas").attr("disabled", true)
+                        $("#id_no_pq").attr("disabled", false)
+                        $('input:checkbox[name=nomb_cla]').attr("disabled", true) //deshabilitar todas las opciones de clasificaciones 
+                        $("#dialogSINO_q9mc").show()
+                        
+                    }
+                });
+
+        //------------------#### end Modulo B Pregunta 9  ####-------------------------------------//               
+        
+        //------------------#### Modulo B Pregunta 14  ####-------------------------------------//
+
+                //---- cuando se carga la pagina ---//
+            var checkAlmacen_bd = $('input:checkbox[name=almacen_bd_s_n]:checked').val()
+               
+                if (checkAlmacen_bd === undefined) {
+                    $("#dialogSINO_q14mb").show()
+                    $('#Q14MB').hide();
+                    $('input:checkbox[name=frec_alm_bd]').attr("disabled", true)
+                    //$('#id_otra_alm_bd').attr("disabled", true)
+                   
+                } else {
+                    $("#dialogSINO_q14mb").show()
+                    $('#Q14MB').show();
+                    $('input:checkbox[name=frec_alm_bd]').attr("disabled", false)
+                    //$('#id_otra_alm_bd').attr("disabled", false)
+                
+                }
+                //---- end cuando se carga la pagina ---//
+
+                $('input:checkbox[name=almacen_bd_s_n]').on('change', function () {
+                    var almacen_bdSelected = new Array();
+                    $("input:checkbox[name=almacen_bd_s_n]:checked").each(function () {
+                        almacen_bdSelected.push($(this).val());
+                    })
+            
+                    if (almacen_bdSelected[0] === "on") {
+                        
+                        $("#dialogSINO_q14mb").show()
+                        $('#Q14MB').show();
+                        $('input:checkbox[name=frec_alm_bd]').attr("disabled", false)
+                        //$('#id_otra_alm_bd').attr("disabled", false)
+
+
+                    } else {
+                       
+                        $("#dialogSINO_q14mb").show()
+                        $('#Q14MB').hide();
+                        $('input:checkbox[name=frec_alm_bd]').attr("disabled", true)
+                        //$('#id_otra_alm_bd').attr("disabled", true)
+
+                    }
+                });
+
+
+        //------------------#### end Modulo B Pregunta 14  ####-------------------------------------//
+
+        //------------------####  Modulo B Pregunta 16  ####-------------------------------------//
+
+            //---- cuando se carga la pagina ---//
+        
+        var selectOptionQ16 = $('select[name=uso_de_datos]').val()
+            //alert(selectOptionQ16)
+            if(selectOptionQ16 === "1"){
+                $("#indicadorresultadoagregado").show();
+            }
+            else if(selectOptionQ16 === "2"){
+                $("#indicadorresultadoagregado").hide();
+            }
+            else if(selectOptionQ16 === "3"){
+                $("#indicadorresultadoagregado").hide();
+            }
+            else if(selectOptionQ16 === undefined){
+                $("#indicadorresultadoagregado").hide();
+            }  
+       
+
+            
+            //---- end cuando se carga la pagina ---//
+
+            $("select[name=uso_de_datos]").change(function(){
+
+                optionVal = $('select[name=uso_de_datos]').val()
+                //alert(optionVal)
+                
+                if(optionVal === "1"){
+
+                    $("#indicadorresultadoagregado").show();
+                }
+                else if(optionVal === "2"){
+                    
+                    $("#indicadorresultadoagregado").hide();
+                }
+                else if(optionVal === "3"){
+
+                    $("#indicadorresultadoagregado").hide();
+                }
+                else if(optionVal === ""){
+
+                    $("#indicadorresultadoagregado").hide();
+                }   
+            });
+
+        //------------------#### End  Modulo B Pregunta 16  ####-------------------------------------//
+
+
+        //------------------#### Modulo B Pregunta 17  ####-------------------------------------//
+
+                    //---- cuando se carga la pagina ---//
+            var checkAcceso = $('input:checkbox[name=user_exte_acceso]:checked').val()
+               
+                if (checkAcceso === undefined) {
+
+                    $("#dialogSI").hide();
+                    $("#dialogNO").hide();
+
+                     //Pregunta 18
+
+                     $("#entidadacceso").attr('style', 'display:none;');
+
+                    //pregunta 19
+                    $('input:checkbox[name=no_hay_acceso]').attr("disabled", false)
+                    $("#id_otra_no_acceso").attr("disabled", false)
+                    $("#helpText19_SI_17").hide();
+                  
+                }else {
+                   
+                    $("#dialogSI").show();
+                    $("#dialogNO").hide();
+
+                    //Pregunta 18
+
+                    $("#entidadacceso").attr('style', 'display:visible;');
+
+                    //pregunta 19
+
+                    $('input:checkbox[name=no_hay_acceso]').attr("disabled", true)
+                    $("#id_otra_no_acceso").attr("disabled", true)
+                    $("#helpText19_SI_17").show();
+                }
+               //---- end cuando se carga la pagina ---//
+            
+            
+               $('input:checkbox[name=user_exte_acceso]').on('change', function () {
+                    var accesoSelected = new Array();
+                    $("input:checkbox[name=user_exte_acceso]:checked").each(function () {
+                        accesoSelected.push($(this).val());
+                    })
+            
+                    if (accesoSelected[0] === "on") {
+                        
+                        $("#dialogSI").show();
+                        $("#dialogNO").hide();
+
+                        //Pregunta 18
+
+                        $("#entidadacceso").attr('style', 'display:visible;');
+
+                        //pregunta 19
+
+                        $('input:checkbox[name=no_hay_acceso]').attr("disabled", true)
+                        $("#id_otra_no_acceso").attr('disabled', true)
+                        $("#helpText19_SI_17").show();
+
+                    } else {
+                       
+                        $("#dialogSI").hide();
+                        $("#dialogNO").show();
+
+                        //Pregunta 18
+
+                        $("#entidadacceso").attr('style', 'display:none;');
+
+                        //pregunta 19
+
+                        $('input:checkbox[name=no_hay_acceso]').attr("disabled", false)
+                        $("#id_otra_no_acceso").attr("disabled", false)
+                        $("#helpText19_SI_17").hide();
+
+                    }
+                });
+
+        //------------------#### end Modulo B Pregunta 17  ####-------------------------------------//
+        
+                // ******************validaciones para preguntas que contienen opción otro **************
+
+        //################### Modulo B pregunta 6 ###########################################
+
+        $("#id_otra_doc_cual").attr('disabled', true);
+        $("#id_otra_doc_cual").attr('required', false);
+
+        $('input:checkbox[name=doc_met_ra]:checked').each(function() {
+            var question_6 =  $(this).val();
+            //console.log("question_6", question_6)
+
+            if (question_6 == "1") {
+                $("#id_otra_doc_cual").attr('disabled', true);
+                $("#id_otra_doc_cual").attr('required', false); 
+            } 
+            else if (question_6 == "2") {
+                $("#id_otra_doc_cual").attr('disabled', true);
+                $("#id_otra_doc_cual").attr('required', false); 
+            }
+            else if (question_6 == "3") {
+                $("#id_otra_doc_cual").attr('disabled', true);
+                $("#id_otra_doc_cual").attr('required', false); 
+            }
+            else if (question_6 == "4") {
+                $("#id_otra_doc_cual").attr('disabled', false);
+                $("#id_otra_doc_cual").attr('required', true); 
+            }
+        });
+
+        $('input:checkbox[name=doc_met_ra]').on('change', function (optionSel) {
+            var arrayOptions = new Array();
+                $("input:checkbox[name=doc_met_ra]:checked").each(function () {
+                    arrayOptions.push($(this).val());
+                    var checkedOption = $(this).val()
+                });
+               
+                if (arrayOptions.includes("4") == true) {
+                    $("#id_otra_doc_cual").attr('required', true);
+                    $("#id_otra_doc_cual").attr('disabled', false);
+                }
+                else if (arrayOptions.includes("1") == true) {
+                    $("#id_otra_doc_cual").attr('disabled', true);
+                    $("#id_otra_doc_cual").attr('required', false);
+                }
+                else if (arrayOptions.includes("2") == true) {
+                    $("#id_otra_doc_cual").attr('disabled', true);
+                    $("#id_otra_doc_cual").attr('required', false);
+                }
+                else if (arrayOptions.includes("3") == true) {
+                    $("#id_otra_doc_cual").attr('disabled', true);
+                    $("#id_otra_doc_cual").attr('required', false);
+                }
+                else if (arrayOptions.length === 0) {
+                    $("#id_otra_doc_cual").attr('disabled', true);
+                    $("#id_otra_doc_cual").attr('required', false);
+                }
+        });
+       
+    //################### end Modulo B pregunta 6 ###########################################
+
+    //################### Modulo B pregunta 10 ###########################################
+
+    $("#id_otro_c").attr('disabled', true);
+    $("#id_otro_c").attr('required', false); 
+
+    $('input:checkbox[name=recole_dato]:checked').each(function() {
+        var question_10 =  $(this).val();
+
+            if (question_10 == "1") {
+                $("#id_otro_c").attr('disabled', true);
+                $("#id_otro_c").attr('required', false);    
+            } 
+            else if (question_10 == "2") {
+                $("#id_otro_c").attr('disabled', true);
+                $("#id_otro_c").attr('required', false); 
+            }
+            else if (question_10 == "3") {
+                $("#id_otro_c").attr('disabled', true);
+                $("#id_otro_c").attr('required', false);
+            }
+            else if (question_10 == "4") {
+                $("#id_otro_c").attr('disabled', true);
+                $("#id_otro_c").attr('required', false);
+            }
+            else if (question_10 == "5") {
+                $("#id_otro_c").attr('disabled', true);
+                $("#id_otro_c").attr('required', false);
+            }
+            else if (question_10 == "6") {
+                $("#id_otro_c").attr('disabled', false);
+                $("#id_otro_c").attr('required', true);
+            }
+    });
+
+        $('input:checkbox[name=recole_dato]').on('change', function (optionSel) {
+            var arrayOptions10 = new Array();
+                $("input:checkbox[name=recole_dato]:checked").each(function () {
+                    arrayOptions10.push($(this).val());
+                    var checkedOption10 = $(this).val()
+                });
+               
+                if (arrayOptions10.includes("6") == true) {
+                    $("#id_otro_c").attr('disabled', false);
+                    $("#id_otro_c").attr('required', true);
+                }
+                else if (arrayOptions10.includes("1") == true) {
+                    $("#id_otro_c").attr('disabled', true);
+                    $("#id_otro_c").attr('required', false);
+                }
+                else if (arrayOptions10.includes("2") == true) {
+                    $("#id_otro_c").attr('disabled', true);
+                    $("#id_otro_c").attr('required', false);
+                }
+                else if (arrayOptions10.includes("3") == true) {
+                    $("#id_otro_c").attr('disabled', true);
+                    $("#id_otro_c").attr('required', false);
+                }
+                else if (arrayOptions10.includes("4") == true) {
+                    $("#id_otro_c").attr('disabled', true);
+                    $("#id_otro_c").attr('required', false);
+                }
+                else if (arrayOptions10.includes("5") == true) {
+                    $("#id_otro_c").attr('disabled', true);
+                    $("#id_otro_c").attr('required', false);
+                }
+                else if (arrayOptions10.length === 0) {
+                    $("#id_otro_c").attr('disabled', true);
+                    $("#id_otro_c").attr('required', false);
+                }
+        });
+
+
+    //################### End Modulo B pregunta 10 ###########################################
+
+
+    //################### Modulo B pregunta 11 ###########################################
+
+        $("#id_otra_cual_fre").attr('disabled', true);
+        $("#id_otra_cual_fre").attr('required', false);
+
+    $('input:checkbox[name=fre_rec_dato]:checked').each(function() {
+        var question_11 =  $(this).val();
+        //console.log("question_11", question_11)
+
+            if (question_11 == "1") {
+                $("#id_otra_cual_fre").attr('disabled', true);
+                $("#id_otra_cual_fre").attr('required', false); 
+                
+            } 
+            else if (question_11 == "2") {
+                $("#id_otra_cual_fre").attr('disabled', true);
+                $("#id_otra_cual_fre").attr('required', false); 
+            }
+            else if (question_11 == "3") {
+                $("#id_otra_cual_fre").attr('disabled', false);
+                $("#id_otra_cual_fre").attr('required', true);
+            }
+            else if (question_11 == "4") {
+                $("#id_otra_cual_fre").attr('disabled', false);
+                $("#id_otra_cual_fre").attr('required', true); 
+            }
+            else if (question_11 == "5") {
+                $("#id_otra_cual_fre").attr('disabled', true);
+                $("#id_otra_cual_fre").attr('required', false); 
+            }
+            else if (question_11 == "6") {
+                $("#id_otra_cual_fre").attr('disabled', true);
+                $("#id_otra_cual_fre").attr('required', false); 
+            }
+            else if (question_11 == "7") {
+                $("#id_otra_cual_fre").attr('disabled', true);
+                $("#id_otra_cual_fre").attr('required', false); 
+            }
+            else if (question_11 == "8") {
+                $("#id_otra_cual_fre").attr('disabled', false);
+                $("#id_otra_cual_fre").attr('required', true); 
+            }
+            
+    });
+
+        $('input:checkbox[name=fre_rec_dato]').on('change', function (optionSel) {
+            var arrayOptions11 = new Array();
+                $("input:checkbox[name=fre_rec_dato]:checked").each(function () {
+                    arrayOptions11.push($(this).val());
+                    var checkedOption11 = $(this).val()
+                });
+               
+                if (arrayOptions11.includes("8") == true) {
+                    $("#id_otra_cual_fre").attr('required', true);
+                    $("#id_otra_cual_fre").attr('disabled', false);
+                }
+                else if (arrayOptions11.includes("1") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.includes("2") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.includes("3") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.includes("4") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.includes("5") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.includes("6") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.includes("7") == true) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+                else if (arrayOptions11.length === 0) {
+                    $("#id_otra_cual_fre").attr('disabled', true);
+                    $("#id_otra_cual_fre").attr('required', false);
+                }
+        });
+        
+    //################### end Modulo B pregunta 11 ###########################################
+
+    //###################  Modulo B pregunta 12 ###########################################
+    $("#id_otra_herram").attr('disabled', true);
+    $("#id_otra_herram").attr('required', false); 
+
+    $('input:checkbox[name=herr_u_pro]:checked').each(function() {
+        var question_12 =  $(this).val();
+
+            if (question_12 == "1") {
+                $("#id_otra_herram").attr('disabled', true);
+                $("#id_otra_herram").attr('required', false); 
+            } 
+            else if (question_12 == "2") {
+                $("#id_otra_herram").attr('disabled', true);
+                $("#id_otra_herram").attr('required', false); 
+            }
+            else if (question_12 == "3") {
+                $("#id_otra_herram").attr('disabled', false);
+                $("#id_otra_herram").attr('required', true);
+            }
+            else if (question_12 == "4") {
+                $("#id_otra_herram").attr('disabled', false);
+                $("#id_otra_herram").attr('required', true); 
+            }
+            else if (question_12 == "5") {
+                $("#id_otra_herram").attr('disabled', true);
+                $("#id_otra_herram").attr('required', false); 
+            }
+            else if (question_12 == "6") {
+                $("#id_otra_herram").attr('disabled', true);
+                $("#id_otra_herram").attr('required', false); 
+            }
+            else if (question_12 == "7") {
+                $("#id_otra_herram").attr('disabled', true);
+                $("#id_otra_herram").attr('required', false); 
+            }
+            else if (question_12 == "8") {
+                $("#id_otra_herram").attr('disabled', false);
+                $("#id_otra_herram").attr('required', true); 
+            }       
+    });
+
+        $('input:checkbox[name=herr_u_pro]').on('change', function (optionSel) {
+            var arrayOptions12 = new Array();
+                $("input:checkbox[name=herr_u_pro]:checked").each(function () {
+                    arrayOptions12.push($(this).val());
+                    var checkedOption12 = $(this).val()
+                });
+               
+                if (arrayOptions12.includes("8") == true) {
+                    $("#id_otra_herram").attr('required', true);
+                    $("#id_otra_herram").attr('disabled', false);
+                }
+                else if (arrayOptions12.includes("1") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.includes("2") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.includes("3") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.includes("4") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.includes("5") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.includes("6") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.includes("7") == true) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+                else if (arrayOptions12.length === 0) {
+                    $("#id_otra_herram").attr('disabled', true);
+                    $("#id_otra_herram").attr('required', false);
+                }
+        });
+
+    //################### end Modulo B pregunta 12 ###########################################
+
+
+    //################### Modulo B pregunta 13 ###########################################
+
+    $("#id_otra_cual_s").attr('disabled', true);
+    $("#id_otra_cual_s").attr('required', false); 
+
+    $('input:checkbox[name=seg_inf]:checked').each(function() {
+        var question_13 =  $(this).val();
+        //console.log("question_13", question_13)
+
+            if (question_13 == "1") {
+                $("#id_otra_cual_s").attr('disabled', true);
+                $("#id_otra_cual_s").attr('required', false); 
+            } 
+            else if (question_13 == "2") {
+                $("#id_otra_cual_s").attr('disabled', true);
+                $("#id_otra_cual_s").attr('required', false); 
+            }
+            else if (question_13 == "3") {
+                $("#id_otra_cual_s").attr('disabled', true);
+                $("#id_otra_cual_s").attr('required', false);
+            }
+            else if (question_13 == "4") {
+                $("#id_otra_cual_s").attr('disabled', false);
+                $("#id_otra_cual_s").attr('required', true); 
+            }
+    });
+
+        $('input:checkbox[name=seg_inf]').on('change', function (optionSel) {
+            var arrayOptions13 = new Array();
+                $("input:checkbox[name=seg_inf]:checked").each(function () {
+                    arrayOptions13.push($(this).val());
+                    var checkedOption13= $(this).val()
+                });
+               
+                if (arrayOptions13.includes("4") == true) {
+                    $("#id_otra_cual_s").attr('required', true);
+                    $("#id_otra_cual_s").attr('disabled', false);
+                }
+                else if (arrayOptions13.includes("1") == true) {
+                    $("#id_otra_cual_s").attr('disabled', true);
+                    $("#id_otra_cual_s").attr('required', false);
+                }
+                else if (arrayOptions13.includes("2") == true) {
+                    $("#id_otra_cual_s").attr('disabled', true);
+                    $("#id_otra_cual_s").attr('required', false);
+                }
+                else if (arrayOptions13.includes("3") == true) {
+                    $("#id_otra_cual_s").attr('disabled', true);
+                    $("#id_otra_cual_s").attr('required', false);
+                }
+               
+                else if (arrayOptions13.length === 0) {
+                    $("#id_otra_cual_s").attr('disabled', true);
+                    $("#id_otra_cual_s").attr('required', false);
+                }
+        });
+
+    //################### end Modulo B pregunta 13 ###########################################
+
+    //################### Modulo B pregunta 14 ###########################################
+        
+        $("#id_otra_alm_bd").attr('disabled', true);
+        $("#id_otra_alm_bd").attr('required', false); 
+
+        $('input:checkbox[name=frec_alm_bd]:checked').each(function() {
+            var question_14 =  $(this).val();
+
+                if (question_14 == "1") {
+                    $("#id_otra_alm_bd").attr('disabled', true);
+                    $("#id_otra_alm_bd").attr('required', false);    
+                } 
+                else if (question_14 == "2") {
+                    $("#id_otra_alm_bd").attr('disabled', true);
+                    $("#id_otra_alm_bd").attr('required', false); 
+                }
+                else if (question_14 == "3") {
+                    $("#id_otra_alm_bd").attr('disabled', true);
+                    $("#id_otra_alm_bd").attr('required', false);
+                }
+                else if (question_14 == "4") {
+                    $("#id_otra_alm_bd").attr('disabled', true);
+                    $("#id_otra_alm_bd").attr('required', false);
+                }
+                else if (question_14 == "5") {
+                    $("#id_otra_alm_bd").attr('disabled', true);
+                    $("#id_otra_alm_bd").attr('required', false);
+                }
+                else if (question_14 == "6") {
+                    $("#id_otra_alm_bd").attr('disabled', false);
+                    $("#id_otra_alm_bd").attr('required', true);
+                }
+        });
+
+    $('input:checkbox[name=frec_alm_bd]').on('change', function (optionSel) {
+        var arrayOptions14 = new Array();
+            $("input:checkbox[name=frec_alm_bd]:checked").each(function () {
+                arrayOptions14.push($(this).val());
+                var checkedOption14 = $(this).val()
+            });
+           
+            if (arrayOptions14.includes("6") == true) {
+                $("#id_otra_alm_bd").attr('disabled', false);
+                $("#id_otra_alm_bd").attr('required', true);
+            }
+            else if (arrayOptions14.includes("1") == true) {
+                $("#id_otra_alm_bd").attr('disabled', true);
+                $("#id_otra_alm_bd").attr('required', false);
+            }
+            else if (arrayOptions14.includes("2") == true) {
+                $("#id_otra_alm_bd").attr('disabled', true);
+                $("#id_otra_alm_bd").attr('required', false);
+            }
+            else if (arrayOptions14.includes("3") == true) {
+                $("#id_otra_alm_bd").attr('disabled', true);
+                $("#id_otra_alm_bd").attr('required', false);
+            }
+            else if (arrayOptions14.includes("4") == true) {
+                $("#id_otra_alm_bd").attr('disabled', true);
+                $("#id_otra_alm_bd").attr('required', false);
+            }
+            else if (arrayOptions14.includes("5") == true) {
+                $("#id_otra_alm_bd").attr('disabled', true);
+                $("#id_otra_alm_bd").attr('required', false);
+            }
+            else if (arrayOptions14.length === 0) {
+                $("#id_otra_alm_bd").attr('disabled', true);
+                $("#id_otra_alm_bd").attr('required', false);
+            }
+    });
+
+    //################### end Modulo B pregunta 14  ###########################################
+
+     //################### Modulo B pregunta 19 ###########################################
+    
+    $("#id_otra_no_acceso").attr('disabled', true);
+    $("#id_otra_no_acceso").attr('required', false); 
+
+     $('input:checkbox[name=no_hay_acceso]:checked').each(function() {
+        var question_19 =  $(this).val();
+        //console.log("question_19", question_19)
+
+            if (question_19 == "1") {
+                $("#id_otra_no_acceso").attr('disabled', true);
+                $("#id_otra_no_acceso").attr('required', false); 
+            } 
+            else if (question_19 == "2") {
+                $("#id_otra_no_acceso").attr('disabled', true);
+                $("#id_otra_no_acceso").attr('required', false); 
+            }
+            else if (question_19 == "3") {
+                $("#id_otra_no_acceso").attr('disabled', true);
+                $("#id_otra_no_acceso").attr('required', false);
+            }
+            else if (question_19 == "4") {
+                $("#id_otra_no_acceso").attr('disabled', true);
+                $("#id_otra_no_acceso").attr('required', false);
+            }
+            else if (question_19 == "5") {
+                $("#id_otra_no_acceso").attr('disabled', false);
+                $("#id_otra_no_acceso").attr('required', true); 
+            }
+     });
+
+        $('input:checkbox[name=no_hay_acceso]').on('change', function (optionSel) {
+            var arrayOptions19 = new Array();
+                $("input:checkbox[name=no_hay_acceso]:checked").each(function () {
+                    arrayOptions19.push($(this).val());
+                    var checkedOption19= $(this).val()
+                });
+               
+                if (arrayOptions19.includes("5") == true) {
+                    $("#id_otra_no_acceso").attr('required', true);
+                    $("#id_otra_no_acceso").attr('disabled', false);
+                }
+                else if (arrayOptions19.includes("1") == true) {
+                    $("#id_otra_no_acceso").attr('disabled', true);
+                    $("#id_otra_no_acceso").attr('required', false);
+                }
+                else if (arrayOptions19.includes("2") == true) {
+                    $("#id_otra_no_acceso").attr('disabled', true);
+                    $("#id_otra_no_acceso").attr('required', false);
+                }
+                else if (arrayOptions19.includes("3") == true) {
+                    $("#id_otra_no_acceso").attr('disabled', true);
+                    $("#id_otra_no_acceso").attr('required', false);
+                }
+
+                else if (arrayOptions19.includes("4") == true) {
+                    $("#id_otra_no_acceso").attr('disabled', true);
+                    $("#id_otra_no_acceso").attr('required', false);
+                }
+               
+                else if (arrayOptions19.length === 0) {
+                    $("#id_otra_no_acceso").attr('disabled', true);
+                    $("#id_otra_no_acceso").attr('required', false);
+                }
+        });
+
+        //################### end Modulo B pregunta 19 ###########################################
+
+});
+
+    // Mostrar Mensaje de carga
+    function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("createForms").style.display = "block";
+      }//preloader
+      window.onload = preloader;
+   // End Mensaje de carga
+    
+    </script>
+
+
+    {% endblock %}

@@ -1,0 +1,140 @@
+@import '../resources/setting';
+@import '../resources/responsive';
+
+
+#detalleEntities {
+        
+
+        .backgroundHeaderModal {
+            background-color: $kuler_sistemaInventario-1-hex;
+            border-radius: 0 4px 0 0;
+        }
+
+        .backgroundCode {
+            background-color: $kuler_sistemaInventario-1-hex;
+            border-radius: 4px 0 0 0;
+
+            .tabCode {
+                background-color: $Kuler-GrayScale-4-hex;
+                border-radius: 4px 30px 0 0;
+                padding-bottom: 0.1vh;
+
+                h2 {
+                    font-family: $Barlow;
+                    font-size: $h3;
+                    font-weight: bold;
+                    text-align: center;
+                    color: $kuler_sistemaInventario-1-hex;
+                }
+            }
+
+        }
+        h3 {
+            font-family: $Barlow;
+            font-size: $h3;
+            color: $kuler-white;
+            text-align: center;
+
+        }
+
+        .backgroundGray {
+            background-color: $Kuler-GrayScale-4-hex;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            border: none;
+
+            .titleDetailItem {
+                font-family: $Barlow;
+                font-size: $h6;
+                font-weight: bold;
+                color: $kuler_sistemaInventario-1-hex;
+            }
+
+            .contentTitleDetailItem {
+                font-family: $Open;
+                font-size: $ps;
+            }
+        }
+
+        .spacingData {
+            .header {
+                background-color: $kuler_sistemaInventario-2-hex;
+
+                h3 {
+                    font-family: $Barlow;
+                    font-size: $h5;
+                    color: $kuler-white;
+                    text-align: center;
+                }
+
+            }
+
+            .bkgTitleDta {
+                background-color: $kuler_sistemaInventario-2-hex;
+                border-radius: 4px 0 0 4px;
+                font-family: $Barlow;
+                color: $kuler-white;
+
+                .mi {
+                    font-size: $p;
+                    padding-top: 0.5vh;
+                }
+
+            }
+
+            .bkgContentData {
+                border: solid 1px $kuler_sistemaInventario-2-hex;
+                border-radius: 0 4px 4px 0;
+                padding-top: 0.5vh;
+                font-size: $ps;
+            }
+
+            .italic {
+                font-style: italic !important;
+            }
+        }
+
+
+
+}
+
+#modalDetailUser {
+    .bkgFondo {
+        background-color: $Kuler-GrayScale-4-hex
+    }
+
+    .bkg_1 {
+        background-color: $kuler_sistemaInventario-1-hex;
+        border-radius: 0 10px 10px 0;
+
+        #dataUser {
+            h3 {
+                font-family: $Barlow;
+                font-weight: bold;
+                font-size: $h2;
+                color: $kuler-white;
+            }
+
+            h5 {
+                font-family: $Barlow;
+                font-weight: bold;
+                font-size: $h3;
+                color: $kuler-white;
+            }
+        }
+
+    }
+
+    #dataExternalUser {     
+        p {
+            font-family: $Open;
+            font-size: $p;
+            font-weight: bold;
+            text-decoration: underline;
+
+        }
+    }
+}

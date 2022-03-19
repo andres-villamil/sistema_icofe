@@ -1,0 +1,124 @@
+{% load static %} {% load sass_tags %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sistemas de información SEN" />
+    <title>
+      Oferta y Demanda SEN | Sistema de identificación y caracterización de oferta y
+      demanda estadística del SEN
+    </title>
+
+    <link
+      href="{% static 'libraries/animate/animate.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'libraries/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'libraries/bootstrapSelect/css/bootstrap-select.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'libraries/bootstrapToggle/css/bootstrap-toggle.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'libraries/hover/hover.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+
+    <link
+
+      rel="shortcut icon"
+      
+      href="https://www.dane.gov.co/templates/beez_20/favicon.ico"
+    />
+    <link rel="shortcut icon" href="{%  static 'images/favicon.png' %}">
+    
+    <!-- Styles Sass -->
+    <link
+      href="{% sass_src  'stylesLayout/layout.scss' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'stylesLayout/layout.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+
+    <!-- material Icon -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/printThis.js' %}"></script>
+  </head>
+
+  <body>
+    <section id="login">
+      <div class="cardLogin">
+        <div class="row">
+          <div class="col-3"><img class="img-fluid" src="/media/logos/Logo-DANE.png" alt="Logo DANE"></div>
+          <div class="col-3 offset-6 d-flex justify-content-end"><img class="img-fluid" src="/media/logos/Logo-SEN.png" alt="Logo SEN"></div>
+        </div>
+        <div class="bkg-login">
+          <div class="row no-gutters">
+            <div class="col-12 order-2 col-lg-5 order-lg-1">
+              {% block content %} {% endblock %}
+            </div>
+            <div class="col-12 order-1 col-lg-7 order-lg-2">
+              <div class="backgroundTitle text-uppercase">
+                <h1 class="pt-5 px-5">
+                  Sistema de identificación y caracterización de oferta y demanda
+                  estadística del SEN
+                </h1>
+                <div class="text-lg-right text-center pr-lg-5 mt-4">
+                  <a
+                    class="btn btn_link_modulo hvr-shrink"
+                    href="{% url 'ooee:consulta_ooee' %}"
+                    >Ir a módulo de consulta</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 offset-9 d-flex justify-content-end">
+            <img class="img-fluid" src="/media/logos/Logo-Presidencia.png" alt="Logo presidencia">
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </body>
+
+  <script src="{% static 'libraries/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'libraries/bootstrapSelect/js/bootstrap-select.min.js' %}"></script>
+  <script src="{% static 'libraries/bootstrapToggle/js/bootstrap-toggle.min.js' %}"></script>
+  <script src="{% static 'js/ocultar.js' %}"></script>
+</html>

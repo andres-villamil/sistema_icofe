@@ -1,0 +1,58 @@
+[
+    {
+        "model": "ooee.mediodatos",
+        "pk": 1, 
+        "fields": {
+            "med_obt": "Formulario físico"
+        }
+    }, 
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 2,
+        "fields": {
+            "med_obt": "Formulario electrónico"
+        }
+    }, 
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 3, 
+        "fields": {
+            "med_obt": "Dispositivo Móvil de Captura [DMC]"
+        }
+    },
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 4,
+        "fields": {
+            "med_obt": "Sistema de Información"            
+        }
+    }, 
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 5, 
+        "fields": {
+            "med_obt": "Percepción remota (imágenes satelitales, fotos, sensores, etc)"
+        }
+    },
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 6,
+        "fields": {
+            "med_obt": "Base de datos de registro administrativo"            
+        }
+    }, 
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 7, 
+        "fields": {
+            "med_obt": "Resultados estadísticos de otra operación estadística"
+        }
+    },
+    {
+        "model": "ooee.mediodatos", 
+        "pk": 8, 
+        "fields": {
+            "med_obt": "Otro (s)"
+        }
+    }
+]

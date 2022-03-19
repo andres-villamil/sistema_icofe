@@ -1,0 +1,397 @@
+@font-face {
+  font-family: 'Oswald_extra_light';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: local("oswald-latin-200"), local("oswald"), url("../fonts/oswald-latin-200.woff2") format("woff2"), url("../fonts/oswald-latin-200.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Oswald_light';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("oswald-latin-300"), local("oswald"), url("../fonts/oswald-latin-300.woff2") format("woff2"), url("../fonts/oswald-latin-300.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Oswald_regular';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("oswald-latin-400"), local("oswald"), url("../fonts/oswald-latin-400.woff2") format("woff2"), url("../fonts/oswald-latin-400.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Oswald_medium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("oswald-latin-500"), local("oswald"), url("../fonts/oswald-latin-500.woff2") format("woff2"), url("../fonts/oswald-latin-500.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Oswald_semibold';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local("oswald-latin-600"), local("oswald"), url("../fonts/oswald-latin-600.woff2") format("woff2"), url("../fonts/oswald-latin-600.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Oswald_bold';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("oswald-latin-700"), local("oswald"), url("../fonts/oswald-latin-700.woff2") format("woff2"), url("../fonts/oswald-latin-700.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'OpenSans_extra_light';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: local("open-sans-latin-200"), local("open sans"), url("../fonts/open-sans-latin-200.woff2") format("woff2"), url("../fonts/open-sans-latin-200.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'OpenSans_light';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("open-sans-latin-300"), local("open sans"), url("../fonts/open-sans-latin-300.woff2") format("woff2"), url("../fonts/open-sans-latin-300.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'OpenSans_regular';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("open-sans-latin-400"), local("open sans"), url("../fonts/open-sans-latin-400.woff2") format("woff2"), url("../fonts/open-sans-latin-400.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'OpenSans_medium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("open-sans-latin-500"), local("open sans"), url("../fonts/open-sans-latin-500.woff2") format("woff2"), url("../fonts/open-sans-latin-500.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'OpenSans_semibold';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local("open-sans-latin-600"), local("open sans"), url("../fonts/open-sans-latin-600.woff2") format("woff2"), url("../fonts/open-sans-latin-600.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'OpenSans_bold';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("open-sans-latin-700"), local("open sans"), url("../fonts/open-sans-latin-700.woff2") format("woff2"), url("../fonts/open-sans-latin-700.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_thin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: local("roboto-latin-100"), local("roboto"), url("../fonts/roboto-latin-100.woff2") format("woff2"), url("../fonts/roboto-latin-100.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_thin_italic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: local("roboto-latin-100italic"), local("roboto italic"), url("../fonts/roboto-latin-100italic.woff2") format("woff2"), url("../fonts/roboto-latin-100italic.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_light';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("roboto-latin-300"), local("roboto"), url("../fonts/roboto-latin-300.woff2") format("woff2"), url("../fonts/roboto-latin-300.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_light_italic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("roboto-latin-300italic"), local("roboto italic"), url("../fonts/roboto-latin-300italic.woff2") format("woff2"), url("../fonts/roboto-latin-300italic.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_regular';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("roboto-latin-400"), local("roboto"), url("../fonts/roboto-latin-400.woff2") format("woff2"), url("../fonts/roboto-latin-400.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_regular_italic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("roboto-latin-400italic"), local("roboto italic"), url("../fonts/roboto-latin-400italic.woff2") format("woff2"), url("../fonts/roboto-latin-400italic.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_medium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("roboto-latin-500"), local("roboto"), url("../fonts/roboto-latin-500.woff2") format("woff2"), url("../fonts/roboto-latin-500.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_medium_italic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("roboto-latin-500italic"), local("roboto italic"), url("../fonts/roboto-latin-500italic.woff2") format("woff2"), url("../fonts/roboto-latin-500italic.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_bold';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("roboto-latin-700"), local("roboto"), url("../fonts/roboto-latin-700.woff2") format("woff2"), url("../fonts/roboto-latin-700.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_bold_italic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("roboto-latin-700italic"), local("roboto italic"), url("../fonts/roboto-latin-700italic.woff2") format("woff2"), url("../fonts/roboto-latin-700italic.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_black';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local("roboto-latin-900"), local("roboto"), url("../fonts/roboto-latin-900.woff2") format("woff2"), url("../fonts/roboto-latin-900.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'roboto_black_italic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local("roboto-latin-900italic"), local("roboto italic"), url("../fonts/roboto-latin-900italic.woff2") format("woff2"), url("../fonts/roboto-latin-900italic.woff") format("woff")
+}
+
+body {
+  font-family: "OpenSans_regular";
+  overflow-x: hidden;
+  background: url('/media/backgrounds/background-login.png') no-repeat top;
+
+}
+
+@media (max-width: 320px) {
+  .container_root {
+    margin-top: 10vh
+  }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+  .container_root {
+    margin-top: 20vh
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .container_root {
+    margin-top: 20vh
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .container_root {
+    margin-top: 20vh
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container_root {
+    margin-top: 20vh
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container_root {
+    margin-top: 10vh
+  }
+}
+
+@media (min-width: 1441px) {
+  .container_root {
+    margin-top: 20vh
+  }
+}
+
+.error_403 h1 {
+  font-family: "Oswald_bold";
+  font-size: 10em !important;
+  color: #B5144E
+}
+
+.error_403 .btn_primary {
+  background-color: #B5144E !important;
+  color: #fff !important
+}
+
+.error_403 .btn_primary:hover {
+  background-color: #8c143d !important
+}
+
+.error_404 h1 {
+  font-family: "Oswald_bold";
+  font-size: 10em !important;
+  color: #CA6520
+}
+
+.error_404 .btn_primary {
+  background-color: #CA6520 !important;
+  color: #fff !important
+}
+
+.error_404 .btn_primary:hover {
+  background-color: #e56510 !important
+}
+
+.error_500 h1 {
+  font-family: "Oswald_bold";
+  font-size: 10em !important;
+  color: #CA6520
+}
+
+.error_500 .btn_primary {
+  background-color: #CA6520 !important;
+  color: #fff !important
+}
+
+.error_500 .btn_primary:hover {
+  background-color: #e56510 !important
+}
+
+.error_504 h1 {
+  font-family: "Oswald_bold";
+  font-size: 10em !important;
+  color: #0076A6
+}
+
+.error_504 .btn_primary {
+  background-color: #0076A6 !important;
+  color: #fff !important
+}
+
+.error_504 .btn_primary:hover {
+  background-color: #306998 !important
+}
+
+.mantenimiento h1 {
+  font-family: "Oswald_bold";
+  font-size: 4em !important;
+  color: #B5144E
+}
+
+.mantenimiento .btn_primary {
+  background-color: #B5144E !important;
+  color: #fff !important
+}
+
+.mantenimiento .btn_primary:hover {
+  background-color: #8c143d !important
+}
+
+h3 {
+  font-family: "Oswald_bold";
+  font-size: 2.5em !important;
+  color: rgba(0, 0, 0, 0.87)
+}
+
+p {
+  font-size: 1em !important;
+  color: rgba(0, 0, 0, 0.87)
+}
+
+.line_dane img {
+  width: 35%;
+  height: 0.5vh
+}
+
+#logos_redes {
+  height: 3vh
+}
+
+#logo_instagram {
+  width: 24px;
+  height: 24px;
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: 0px 0px;
+  float: left
+}
+
+#logo_instagram:hover {
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: 0px -24px
+}
+
+#logo_twitter {
+  width: 24px;
+  height: 24px;
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: -24px 0px;
+  float: left
+}
+
+#logo_twitter:hover {
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: -24px -24px
+}
+
+#logo_facebook {
+  width: 24px;
+  height: 24px;
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: -48px 0px;
+  float: left
+}
+
+#logo_facebook:hover {
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: -48px -24px
+}
+
+#logo_youtube {
+  width: 24px;
+  height: 24px;
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: -72px 0px;
+  float: left
+}
+
+#logo_youtube:hover {
+  background: transparent url("/media/errorpages/logos_redes_dane_19.png");
+  background-position: -72px -24px
+}
+
+.btn_enlace {
+  color: #0076A6 !important
+}
+
+.btn_enlace:hover {
+  text-decoration: underline !important
+}
+
+/*# sourceMappingURL=maps/template.min.css.map */

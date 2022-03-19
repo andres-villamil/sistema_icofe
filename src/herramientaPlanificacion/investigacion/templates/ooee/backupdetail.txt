@@ -1,0 +1,750 @@
+  <div class="d-flex flex-row align-items-center no-gutters shadow-sm">
+    <div class="col-lg-1 backgroundCode">
+      <div class="tabCode flex-fill ">
+        <h2 class="mx-3 py-1"></h2>
+        <p>{{oe.entidad }}</p>
+        <p>{{ oe.area_tematica }}</p>
+        <p>{{ oe.tema }}</p>
+
+        <!--  #Dependencia Responsable -->
+        <p>{{ oe.nombre_dep }}</p>
+        <p>{{ oe.nombre_dir }}</p>
+        <p>{{ oe.cargo_dir }}</p>
+        <p>{{ oe.correo_dir }}</p>
+        <p> Telefono director: {{ oe.tel_dir }}</p>
+
+        <!-- #Temático o Responsable Técnico -->
+        <p>{{ oe.nombre_resp }}</p>
+        <p>{{ oe.cargo_resp }}</p>
+        <p>{{ oe.correo_resp }}</p>
+        <p>Telefono responsable:{{ oe.tel_resp }}</p>
+
+        <!--  # B. Detección y analisis de requerimientos -->
+
+
+        <p>{{ oe.objetivo_oe }}</p>
+        <p>{{ oe.nombre_est }}</p>
+        <p>{{ oe.fase }}</p>
+
+        {% for entidadfase in entidadFaseFieldText %}
+        <p>aqui ______</p>
+        <p> {{ entidadfase.nombre_entifas }}</p>
+
+        {% for FasesProceso in entidadfase.fases.all %}
+        <p>{{ FasesProceso.fase }}</p>
+        {% endfor %}
+
+        {% endfor %}
+
+
+
+        <!--Modulo B pregunta 4-->
+        {% for Norma in oe.norma.all  %}
+        <p>{{ Norma.norma }}</p>
+        {% endfor %}
+
+        <p>{{ normaFieldText.cp_d }}</p>
+        <p>{{ normaFieldText.ley_d }}</p>
+        <p>{{ normaFieldText.decreto_d }}</p>
+        <p>{{ normaFieldText.otra_d }}</p>
+        <p>{{ normaFieldText.ninguna_d }}</p>
+
+        <!--end Modulo B pregunta 4-->
+
+
+
+        <!--Modulo B pregunta 5 -->
+
+        {% for Requerimientos in oe.requerimientos.all  %}
+        <p>{{ Requerimientos.requerimientos }}</p>
+        {% endfor %}
+
+        {{  requerimientoFieldText.ri_ods }}
+        {{  requerimientoFieldText.ri_ocde }}
+        {{  requerimientoFieldText.ri_ci }}
+        {{  requerimientoFieldText.ri_pnd }}
+        {{  requerimientoFieldText.ri_cem }}
+        {{  requerimientoFieldText.ri_pstc }}
+        {{  requerimientoFieldText.ri_otro }}
+
+        <!--end Modulo B pregunta 5-->
+
+        <!--Modulo B pregunta 6 -->
+        {% for PrinUsuarios in oe.pri_usuarios.all  %}
+        <p>{{ PrinUsuarios.pri_usuarios }}</p>
+        {% endfor %}
+
+        {{ priusuariosFieldText.org_int }}
+        {{ priusuariosFieldText.pres_rep }}
+        {{ priusuariosFieldText.misnit }}
+        {{ priusuariosFieldText.org_cont }}
+        {{ priusuariosFieldText.o_ent_o_nac }}
+        {{ priusuariosFieldText.ent_o_terr }}
+        {{ priusuariosFieldText.gremios }}
+        {{ priusuariosFieldText.ent_privadas }}
+        {{ priusuariosFieldText.dep_misma_entidad }}
+        {{ priusuariosFieldText.academia }}
+        <!--end Modulo B pregunta 5-->
+
+
+        <!-- _________________# modulo C Diseño ______________ -->
+
+        <!--Modulo C pregunta 1 -->
+
+        <p>{{ oe.pob_obje }}</p>
+
+        <!-- End Modulo C pregunta 1 -->
+
+        <!--Modulo C pregunta 2 -->
+
+        {% for UnidadObservacion in oe.uni_observacion.all  %}
+        <p>{{ UnidadObservacion.uni_observacion }}</p>
+        {% endfor %}
+
+        {{ uni_observacionFieldText.mc_otra }}
+
+        <!-- End Modulo C pregunta 2 -->
+
+        <!--Modulo C pregunta 3 -->
+        {% for TipoOperacion in oe.tipo_operacion.all  %}
+        <p>{{ TipoOperacion.tipo_operacion }}</p>
+        {% endfor %}
+
+        <!-- End Modulo C pregunta 3 -->
+
+        <!--Modulo C pregunta 4 -->
+        {% for  ObtencionDato in oe.obt_dato.all  %}
+        <p>{{  ObtencionDato.obt_dato }}</p>
+        {% endfor %}
+
+        {{ obtencionDatoFieldText.mc_ra_cual }}
+        {{ obtencionDatoFieldText.mc_ra_otro }}
+        {{ obtencionDatoFieldText.mc_ra_entidad }}
+        {{ obtencionDatoFieldText.mc_oe_cual }}
+        {{ obtencionDatoFieldText.mc_oe_otro }}
+        {{ obtencionDatoFieldText.mc_oe_entidad }}
+
+        <!-- End Modulo C pregunta 4 -->
+
+        <!--Modulo C pregunta 5  Muestreo Probabilistico -->
+
+        {% for MuestreoProbabilistico  in oe.tipo_probabilistico.all  %}
+        <p>{{  MuestreoProbabilistico.tipo_probabilistico }}</p>
+        {% endfor %}
+
+        {{ probabiFieldText.prob_otro }}
+
+        <!--Modulo C pregunta 5  Muestreo  No Probabilistico -->
+        {% for MuestreoNoProbabilistico  in oe.tipo_no_probabilistico.all  %}
+        <p>{{ MuestreoNoProbabilistico.tipo_no_probabilistico }}</p>
+        {% endfor %}
+
+        {{ no_probabiFieldText.no_prob_otro }}
+        <!-- End Modulo C pregunta 5 -->
+
+        <!-- Modulo C pregunta 6 -->
+
+        {% for TipoMarco in oe.marco_estad.all  %}
+        <p>{{ TipoMarco.marco_estad }}</p>
+        {% endfor %}
+
+        {{ tipoMarcoFieldText.otro_tipo_marco }}
+
+        <!-- End Modulo C pregunta 6 -->
+
+        <!-- Modulo C pregunta 7 -->
+
+        {% for DocsDesarrollo in oe.docs_des.all  %}
+        <p>{{ DocsDesarrollo.docs_des }}</p>
+        {% endfor %}
+
+        {{ docsDesFieldText.otro_docs }}
+
+
+        <!-- End Modulo C pregunta 7 -->
+
+        <!-- Modulo C pregunta 8 -->
+
+        {% for ConceptosEstandarizados in oe.lista_conc.all  %}
+        <p>{{ ConceptosEstandarizados.lista_conc }}</p>
+        {% endfor %}
+
+        {{ listaConcFieldText.org_in_cuales }}
+        {{ listaConcFieldText.ent_ordnac_cuales }}
+        {{ listaConcFieldText.leye_dec_cuales }}
+        {{ listaConcFieldText.otra_cual }}
+        {{ listaConcFieldText.ningu_pq }}
+
+
+        <!-- End Modulo C pregunta 8 -->
+
+        <!-- Modulo C pregunta 9 -->
+
+        {% for Clasificaciones in oe.nombre_cla.all  %}
+        <p>{{ Clasificaciones.nombre_cla }}</p>
+        {% endfor %}
+
+        {{ nombreClaFieldText.otra_cual }}
+        {{ nombreClaFieldText.no_pq }}
+
+        <!-- End Modulo C pregunta 9 -->
+
+        <!-- Modulo C pregunta 10 -->
+
+        {% for CoberturaGeografica in oe.cob_geo.all  %}
+        <p>{{ CoberturaGeografica.cob_geo }}</p>
+        {% endfor %}
+
+        {{ cobGeoFieldText.tot_regional }}
+        {{ cobGeoFieldText.cual_regional }}
+        {{ cobGeoFieldText.tot_dep }}
+        {{ cobGeoFieldText.cual_dep }}
+        {{ cobGeoFieldText.tot_are_metr }}
+        {{ cobGeoFieldText.cual_are_metr }}
+        {{ cobGeoFieldText.tot_mun }}
+        {{ cobGeoFieldText.cual_mun }}
+        {{ cobGeoFieldText.tot_otro }}
+        {{ cobGeoFieldText.cual_otro }}
+
+        <!-- End Modulo C pregunta 10 -->
+
+        <!-- Modulo C pregunta 11 -->
+        <!-- OPCIONES -->
+        {% for DesagregacionInformacion in oe.opc_desag.all  %}
+        <p>{{  DesagregacionInformacion.opc_desag }}</p>
+        {% endfor %}
+
+        <!-- DESAGREGACIÓN GEOGRAFICA -->
+        {% for DesagregacionGeografica in oe.des_geo.all  %}
+        <p>{{ DesagregacionGeografica.des_geo }}</p>
+        {% endfor %}
+
+        <p>{{ opcDesagFieldText.des_tot_regional }} {{ opcDesagFieldText.des_cual_regional }}</p>
+        <p>{{ opcDesagFieldText.des_tot_dep }} {{ opcDesagFieldText.des_cual_dep }} </p>
+        <p>{{ opcDesagFieldText.des_tot_are_metr }} {{ opcDesagFieldText.des_cual_are_metr }}</p>
+        <p>{{ opcDesagFieldText.des_tot_mun }} {{ opcDesagFieldText.des_cual_mun }}</p>
+        <p>{{ opcDesagFieldText.des_tot_otro }} {{ opcDesagFieldText.des_cual_otro }}</p>
+
+
+        <!-- DESAGREGACIÓN ZONA -->
+
+        {% for DesagregacionZona in oe.des_zona.all  %}
+        <p>{{ DesagregacionZona.des_zona }}</p>
+        {% endfor %}
+
+        <!-- DESAGREGACIÓN GRUPO -->
+
+        {% for DesagregacionGrupo in oe.des_grupo.all  %}
+        <p>{{ DesagregacionGrupo.des_grupo }}</p>
+        {% endfor %}
+
+        {{ opcDesagFieldText.des_grupo_otro }}
+
+        <!-- End Modulo C pregunta 11 -->
+
+        <!-- Modulo C pregunta 12 -->
+
+        <p>{{ oe.ca_anual }}</p>
+        <p>{{ oe.cb_anual }}</p>
+
+        <!-- End Modulo C pregunta 12 -->
+
+        <!-- Modulo C pregunta 13 -->
+
+        {% for FuenteFinanciacion in oe.fuentes.all  %}
+        <p>{{ FuenteFinanciacion.fuentes }}</p>
+        {% endfor %}
+
+        {{ fuentesFieldText.r_otros}}
+
+        <!-- End Modulo C pregunta 13 -->
+
+
+        <!--  Modulo C pregunta 14 -->
+        <a href="/media/{{oe.variable_file}}" target="_blank">ver lista de variables
+          <span class="material-icons">
+            cloud_download
+          </span></a>
+
+        {% for list in listasVarFieldText  %}
+        <p>listas {{list.lista_var}}</p>
+        {% endfor %}
+
+        <!-- End Modulo C pregunta 14 -->
+
+
+
+        <!-- Modulo C pregunta 15 -->
+
+        {% for results in resultEstaFieldText   %}
+        <p> resultados: {{results.resultEstad}}</p>
+        {% endfor %}
+
+        <!-- End Modulo C pregunta 15 -->
+
+        <!-- ______________# Modulo D Ejecución ________________________ -->
+
+        <!-- Modulo D pregunta 1 -->
+
+        {% for  MedioDatos in oe.med_obt.all  %}
+        <p>{{  MedioDatos.med_obt }}</p>
+        {% endfor %}
+
+        {{ medObtFieldText.sis_info }}
+        {{ medObtFieldText.md_otro }}
+
+        <!-- End Modulo D pregunta 1 -->
+
+        <!-- Modulo D pregunta 2 -->
+
+        {% for PeriodicidadOe in oe.periodicidad.all  %}
+        <p>{{  PeriodicidadOe.periodicidad }}</p>
+        {% endfor %}
+
+        {{ periodicidadFieldText.per_otro }}
+
+        <!-- End Modulo D pregunta 2 -->
+
+        <!-- Modulo D pregunta 3 -->
+
+        {% for HerramProcesamiento in oe.h_proc.all  %}
+        <p>{{  HerramProcesamiento.h_proc }}</p>
+        {% endfor %}
+
+        {{ herraProcFieldText.herr_otro }}
+
+        <!-- End Modulo D pregunta 3 -->
+
+        <!-- Modulo D pregunta 4 -->
+
+        <p>{{ oe.descrip_proces }}</p>
+
+        <!-- End Modulo D pregunta 4 -->
+
+
+        <!--  __________________# Modulo E Análisis _______________________-->
+
+
+        <!-- Modulo E pregunta 1 -->
+        {% for AnalisisResultados in oe.a_resu.all  %}
+        <p>{{  AnalisisResultados.a_resu }}</p>
+        {% endfor %}
+
+        {{ anaResuFieldText.ana_otro }}
+
+        <!--End  Modulo E pregunta 1 -->
+
+
+        <!-- ________________# Modulo F Difusión _______________--->
+
+        <!-- Modulo F pregunta 1 -->
+
+        {% for MediosDifusion in oe.m_dif.all  %}
+        <p>{{ MediosDifusion.m_dif }}</p>
+        {% endfor %}
+
+        {{ medioDifFieldText.dif_otro }}
+
+        <!--End  Modulo F pregunta 1 -->
+
+        <!-- Modulo F pregunta 2 -->
+        <p>{{ oe.res_est_url }}</p>
+        <!-- End Modulo F pregunta 2 -->
+
+        <!-- Modulo F pregunta 3 -->
+
+        <p>{{ oe.dispo_desde }}</p>
+        <p>{{ oe.dispo_hasta }}</p>
+
+        <!-- End Modulo F pregunta 3 -->
+
+        <!-- Modulo F pregunta 4 -->
+
+        {% for FechaPublicacion in oe.f_publi.all  %}
+        <p>{{ FechaPublicacion.f_publi }}</p>
+        {% endfor %}
+
+        {{ fechapubliFieldText.fecha }}
+        {{ fechapubliFieldText.no_hay }}
+
+        <!-- End Modulo F pregunta 4 -->
+
+        <!-- Modulo F pregunta 5 -->
+
+        {% for FrecuenciaDifusion in oe.fre_dif.all  %}
+        <p>{{ FrecuenciaDifusion.fre_dif }}</p>
+        {% endfor %}
+
+        {{ frecueDifFieldText.no_definido }}
+
+        <!-- End Modulo F pregunta 5 -->
+
+        <!-- Modulo F pregunta 6 -->
+
+        {% for ProductosDifundir in oe.pro_dif.all  %}
+        <p>{{ ProductosDifundir.pro_dif }}</p>
+        {% endfor %}
+
+        {{ producDifFieldText.difundir_otro }}
+        <!-- End Modulo F pregunta 6 -->
+
+        <!-- Modulo F pregunta 7 -->
+
+        {% for OtrosProductos in oe.otro_prod.all  %}
+        <p>{{  OtrosProductos.otro_prod }}</p>
+        {% endfor %}
+
+        {{ otroProdFieldText.ser_hist_desde }}
+        {{ otroProdFieldText.ser_hist_hasta }}
+        {{ otroProdFieldText.microdatos_desde }}
+        {{ otroProdFieldText.microdatos_hasta }}
+        {{ otroProdFieldText.op_url }}
+
+        <!-- End Modulo F pregunta 7 -->
+
+        <!-- Modulo F pregunta 8 -->
+
+        <p>{{ oe.conoce_otra }}</p>
+        {{ resulSimilaresFieldText.rs_entidad }}
+        {{ resulSimilaresFieldText.rs_oe }}
+
+        <!-- End Modulo F pregunta 8-->
+
+        <!-- Modulo F pregunta 9 -->
+        <p>{{ oe.hp_siste_infor }}</p>
+
+        {{ hpSisteInforFieldText.si_cual }}
+
+        <!-- End Modulo F pregunta 9-->
+
+        <!-- ________________# Modulo G OBSERVACIONES _______________--->
+
+        <p>{{ oe.observaciones }}</p>
+
+        <!-- ________________# Modulo H Anexos _______________--->
+
+
+        <a href="/media/{{oe.anexos}}" target="_blank"> ver Anexo
+          <span class="material-icons">
+            cloud_download
+          </span></a>
+
+
+
+        <button id="print_btn" type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" onclick="fnc_print()">
+          <div class="d-flex align-items-center"><i class="material-icons">print</i>
+            <span class="ml-2">Imprimir</span>
+          </div>
+        </button>
+
+        <script>
+          function fnc_print() {
+            $('#detalleOOEE').printThis({
+              importCSS: true,
+              loadCSS: "/static/stylesLayout/layout.css",
+            });
+          }
+        </script>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div id="detalleOOEE">
+  <div>{% csrf_token %}
+    <div class="container bkgTitle">
+      <div class="row">
+        <div class="col-12 col-md-1 bkgSolid d-flex align-items-center justify-content-center br-1">
+          <div class="d-flex flex-column">
+            <div>Código</div>
+            <!-- Codigo oe -->
+            <p class="text-center">{{oe.codigo_oe }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-10">
+          <!-- Nombre de la operación -->
+          <p class="text-center">{{ oe.nombre_oe }}</p>
+        </div>
+        <div class="col-12 col-md-1 bkgSolid d-flex align-items-center justify-content-center br-2">
+          <div class="d-flex flex-column">
+            <div>Activa</div>     
+            <!-- Activa -->
+            <p class="text-center">Si</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container ctnerDetail">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-8">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Entidad</div>
+            <!-- entidad -->
+            <p>{{oe.entidad }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Área temática</div>
+            <!-- Area tematica -->
+            <p>{{ oe.area_tematica }}</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Tema</div>
+            <!-- Tema -->
+            <p>{{ oe.tema }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Tema compartido</div>
+            <!-- Temas asociados -->
+            <p>{{ oe.tema_compartido }}</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Entidad responsable</div>
+            <!-- Entidad responsable -->
+            <p>{{ oe.nombre_dep }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Dependencia Responsable</div>
+            <!-- Dependencia responsable -->
+            <p>{{ oe.nombre_resp }}</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-3">
+          <div class="d-flex flex-column">
+            <div class="headerQuestion">
+              Metodología estadística
+            </div>
+            <!-- Metodologai estadistica -->
+            
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-column">
+            <div class="headerQuestion">
+              Objetivo
+            </div>
+            <!-- Obetivo -->
+      
+          </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="d-flex flex-column">
+            <div class="headerQuestion">
+              Unidad de observación
+            </div>
+            <!-- Unidad de observación -->
+    
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-center">
+        <div class="col-12">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Página web donde están disponibles los resultados</div>
+            <!-- pagina web resultados -->
+
+            <a href="{{ oe.res_est_url }}" class="btn btn_link_detail hvr-shrink">{{ oe.res_est_url }}</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="d-flex flex-column align-items-stretch">
+            <div class="headerQuestion">
+              Principales resultados
+            </div>
+            <div class="d-flex flex-row">
+              <!-- principales resultados -->
+              {% for results in resultEstaFieldText   %}
+              <p> resultados: {{results.resultEstad}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex flex-column">
+                <div class="headerQuestion">
+                  Cobertura geográfica
+                </div>
+                <!-- Cobertura geografica -->
+                {% for CoberturaGeografica in oe.cob_geo.all  %}
+                <p>{{ CoberturaGeografica.cob_geo }}</p>
+                {% endfor %}
+
+                <!--      {{ cobGeoFieldText.tot_regional }}
+                          {{ cobGeoFieldText.cual_regional }}
+                          {{ cobGeoFieldText.tot_dep }}
+                          {{ cobGeoFieldText.cual_dep }}
+                          {{ cobGeoFieldText.tot_are_metr }}
+                          {{ cobGeoFieldText.cual_are_metr }}
+                          {{ cobGeoFieldText.tot_mun }}
+                          {{ cobGeoFieldText.cual_mun }}
+                          {{ cobGeoFieldText.tot_otro }}
+                          {{ cobGeoFieldText.cual_otro }} -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="d-flex flex-column">
+                <div class="headerQuestion">
+                  Desagregación geografica
+                </div>
+                <!-- DESAGREGACIÓN GEOGRAFICA -->
+                {% for DesagregacionGeografica in oe.des_geo.all  %}
+                <p>{{ DesagregacionGeografica.des_geo }}</p>
+                {% endfor %}
+                <p>{{ opcDesagFieldText.des_tot_regional }} {{ opcDesagFieldText.des_cual_regional }}</p>
+                <p>{{ opcDesagFieldText.des_tot_dep }} {{ opcDesagFieldText.des_cual_dep }} </p>
+                <p>{{ opcDesagFieldText.des_tot_are_metr }} {{ opcDesagFieldText.des_cual_are_metr }}</p>
+                <p>{{ opcDesagFieldText.des_tot_mun }} {{ opcDesagFieldText.des_cual_mun }}</p>
+                <p>{{ opcDesagFieldText.des_tot_otro }} {{ opcDesagFieldText.des_cual_otro }}</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="d-flex flex-column">
+                <div class="headerQuestion">
+                  Desagregación por zona
+                </div>
+                <!-- DESAGREGACIÓN ZONA -->
+
+                {% for DesagregacionZona in oe.des_zona.all  %}
+                <p>{{ DesagregacionZona.des_zona }}</p>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="d-flex flex-column">
+                <div class="headerQuestion">
+                  Desagregación por Grupo
+                </div>
+                <!-- DESAGREGACIÓN GRUPO -->
+
+                {% for DesagregacionGrupo in oe.des_grupo.all  %}
+                <p>{{ DesagregacionGrupo.des_grupo }}</p>
+                {% endfor %}
+
+                {{ opcDesagFieldText.des_grupo_otro }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex flex-column">
+                <div class="headerQuestion">
+                  Periodicidad de difusión
+                </div>
+                <!-- Periodicidad -->
+                {% for FrecuenciaDifusion in oe.fre_dif.all  %}
+                <p>{{ FrecuenciaDifusion.fre_dif }}</p>
+                {% endfor %}
+
+                {{ frecueDifFieldText.no_definido }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="header shadow-sm">
+        <h3 class="py-2 text-uppercase">Asociaciones de la operación estadística</h3>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Norma</div>
+            <!-- norma -->
+            {% for Norma in oe.norma.all  %}
+            <p>{{ Norma.norma }}</p>
+            {% endfor %}
+
+            <p>{{ normaFieldText.cp_d }}</p>
+            <p>{{ normaFieldText.ley_d }}</p>
+            <p>{{ normaFieldText.decreto_d }}</p>
+            <p>{{ normaFieldText.otra_d }}</p>
+            <p>{{ normaFieldText.ninguna_d }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex flex-row">
+            <div class="labelBkg mr-3">Requerimiento</div>
+            <!-- Requerimiento -->
+            {% for Requerimientos in oe.requerimientos.all  %}
+            <p>{{ Requerimientos.requerimientos }}</p>
+            {% endfor %}
+
+            <!--    {{  requerimientoFieldText.ri_ods }}
+          {{  requerimientoFieldText.ri_ocde }}
+          {{  requerimientoFieldText.ri_ci }}
+          {{  requerimientoFieldText.ri_pnd }}
+          {{  requerimientoFieldText.ri_cem }}
+          {{  requerimientoFieldText.ri_pstc }}
+          {{  requerimientoFieldText.ri_otro }} -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="d-flex flex-row justify-content-end py-3">
+        {%   if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5  %}
+        <a href="{% url 'ooee:ooee_edit' oe.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-2">
+          <div class="d-flex align-items-center"><i class="material-icons">edit</i>
+            <span class="ml-2">Editar la operación estadística</span>
+          </div>
+        </a>
+        {% endif %}
+
+        <button id="print_btn" type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" onclick="fnc_print()">
+          <div class="d-flex align-items-center"><i class="material-icons">print</i>
+            <span class="ml-2">Imprimir</span>
+          </div>
+        </button>
+
+        <!--   <script>
+          function fnc_print() {
+            $('#modalStyles').printThis({
+              importCSS: true,
+              loadCSS: "static/stylesLayout/layout.css",
+            });
+          }
+        </script> -->
+
+        <a href="{% url 'ooee:all_ooee' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+          <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+            <span class="ml-2">Volver</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

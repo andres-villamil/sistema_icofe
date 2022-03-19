@@ -1,0 +1,34 @@
+[
+    {
+        "fields": {
+            "opc_desag": "Zona"
+        },
+        "model":"ooee.desagregacioninformacion",
+        "pk": 2  
+    },
+
+    {
+        "fields": {
+            "opc_desag": 2,  
+            "des_zona": "Total"
+        },
+        "model": "ooee.desagregacionzona",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "opc_desag": 2,  
+            "des_zona": "Urbano"
+        },
+        "model": "ooee.desagregacionzona",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "opc_desag": 2,  
+            "des_zona": "Rural"
+        },
+        "model": "ooee.desagregacionzona",
+        "pk": 3
+    }
+]

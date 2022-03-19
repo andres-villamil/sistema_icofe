@@ -1,0 +1,37 @@
+[
+    {
+        "model": "ooee.salaespecializada",
+        "pk": 1, 
+        "fields": {
+            "sala": "Economía"
+        }
+    }, 
+    {
+        "model": "ooee.salaespecializada", 
+        "pk": 2,
+        "fields": {
+            "sala": "Geografía, Medio Ambiente y Ordenamiento Territorial"
+        }
+    }, 
+    {
+        "model": "ooee.salaespecializada", 
+        "pk": 3, 
+        "fields": {
+            "sala": "Gobierno, Seguridad y Justicia"
+        }
+    },
+    {
+        "model": "ooee.salaespecializada", 
+        "pk": 4, 
+        "fields": {
+            "sala": "Modernización Tecnológica de la Producción Estadística"
+        }
+    },
+    {
+        "model": "ooee.salaespecializada", 
+        "pk": 5, 
+        "fields": {
+            "sala": "Salud, Bienestar Social y Demografía"
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "model": "rraa.documentometodologrraa",
+        "pk": 1, 
+        "fields": {
+            "doc_met_ra": "Ficha técnica"
+        }
+    }, 
+    {
+        "model": "rraa.documentometodologrraa", 
+        "pk": 2,
+        "fields": {
+            "doc_met_ra": "Manual de diligenciamiento"
+        }
+    }, 
+    {
+        "model": "rraa.documentometodologrraa", 
+        "pk": 3, 
+        "fields": {
+            "doc_met_ra": "Diccionario de datos"
+        }
+    }, 
+    {
+        "model": "rraa.documentometodologrraa",
+        "pk": 4, 
+        "fields": {
+            "doc_met_ra": "Otro (s)"
+        }
+    }
+]

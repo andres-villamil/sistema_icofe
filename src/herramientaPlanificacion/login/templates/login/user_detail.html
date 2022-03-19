@@ -1,0 +1,58 @@
+{% block content %}
+
+<div class="modal-dialog modal-dialog-centered modal-lg rounded" role="document">
+  <div id="modalDetailUser" class="modal-content">
+    <div class="d-flex flex-row align-items-center no-gutters bkgFondo">
+      <div class="col-12 col-lg-6 bkg_1">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div id="gravater" class="my-3">
+            <img class="rounded mx-auto d-block img-fluid"
+              src="https://ui-avatars.com/api/?name={{ user.username }}&rounded=true&background=ffffff&bold=true&color=607D8B&size=120"
+              alt="" />
+          </div>
+          <div id="dataUser" class="mx-5">
+            <h3 class="text-center my-3">{{ user.username }}</h3>
+            <h5 class="text-center my-3">{{ user.profile.role.name }}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="d-flex flex-column justify-content-center my-3 mx-4">
+          <div id="dataExternalUser">
+            <p class="text-center"> Nombre y apellido</p>
+          </div>
+          <div class="d-flex flex-row justify-content-around my-3">
+            <p class="text-center text-uppercase">{{ user.first_name }}</p>
+            <p class="text-center text-uppercase">{{ user.last_name }}</p>
+          </div>
+        </div>
+        <div class="my-3">
+          <p class="text-center">Usuario creado el: <i>{{ user.date_joined }}</i></p>
+        </div>
+        <div class="my-3">
+          <p class="text-center">Última sesión: <i>{{ user.date_joined }}</i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <a href="{% url 'login:user_edit' pk=user.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-2">
+        <div class="d-flex align-items-center"><i class="material-icons">edit</i>
+          <span class="ml-2">Editar usuario</span>
+        </div>
+      </a>
+    
+      <button type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" data-dismiss="modal">
+        <div class="d-flex align-items-center"><i class="material-icons">close</i>
+          <span class="ml-2">Cerrar</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

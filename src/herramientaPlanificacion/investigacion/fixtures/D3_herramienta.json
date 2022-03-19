@@ -1,0 +1,58 @@
+[
+    {
+        "model": "ooee.herramprocesamiento",
+        "pk": 1, 
+        "fields": {
+           "h_proc": "Excel"
+        }
+    }, 
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 2,
+        "fields": {
+           "h_proc": "Access"
+        }
+    }, 
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 3, 
+        "fields": {
+           "h_proc": "R"
+        }
+    },
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 4,
+        "fields": {
+           "h_proc": "SAS"            
+        }
+    }, 
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 5, 
+        "fields": {
+           "h_proc": "SPSS"
+        }
+    },
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 6,
+        "fields": {
+           "h_proc": "Oracle"            
+        }
+    }, 
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 7, 
+        "fields": {
+           "h_proc": "Stata"
+        }
+    },
+    {
+        "model": "ooee.herramprocesamiento", 
+        "pk": 8, 
+        "fields": {
+           "h_proc": "Otra (s)"
+        }
+    }
+]

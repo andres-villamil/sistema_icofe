@@ -1,0 +1,51 @@
+[
+    {
+        "model": "ooee.conceptosestandarizados",
+        "pk": 1, 
+        "fields": {
+            "lista_conc": "DANE"
+        }
+    }, 
+    {
+        "model": "ooee.conceptosestandarizados", 
+        "pk": 2,
+        "fields": {
+            "lista_conc": "Organismos internacionales"
+        }
+    }, 
+    {
+        "model": "ooee.conceptosestandarizados", 
+        "pk": 3, 
+        "fields": {
+            "lista_conc": "Otra entidad de orden nacional"
+        }
+    },
+    {
+        "model": "ooee.conceptosestandarizados", 
+        "pk": 4,
+        "fields": {
+            "lista_conc": "Leyes, decretos, etc."            
+        }
+    }, 
+    {
+        "model": "ooee.conceptosestandarizados", 
+        "pk": 5, 
+        "fields": {
+            "lista_conc": "Creación propia"
+        }
+    },
+    {
+        "model": "ooee.conceptosestandarizados", 
+        "pk": 6,
+        "fields": {
+            "lista_conc": "Otra (s)"            
+        }
+    }, 
+    {
+        "model": "ooee.conceptosestandarizados", 
+        "pk": 7, 
+        "fields": {
+            "lista_conc": "Ninguno"
+        }
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "model": "ooee.estadocritica",
+        "pk": 1, 
+        "fields": {
+            "estado_critica": "Aprobada" 
+        }
+    }, 
+    {
+        "model": "ooee.estadocritica", 
+        "pk": 2,
+        "fields": {
+            "estado_critica": "En proceso PLE"
+        }
+    }, 
+    {
+        "model": "ooee.estadocritica", 
+        "pk": 3, 
+        "fields": {
+            "estado_critica": "En revisión por la entidad" 
+        }
+    }
+]

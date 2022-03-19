@@ -1,0 +1,42 @@
+[
+    {
+        "model": "ooee.estadoevaluacion",
+        "pk": 1, 
+        "fields": {
+            "eval_calidad": "PECE"
+          
+        }
+    }, 
+    {
+        "model": "ooee.estadoevaluacion", 
+        "pk": 2,
+        "fields": {
+            "eval_calidad": "EN PROCESO DE EVALUACIÓN"
+         
+        }
+    }, 
+    {
+        "model": "ooee.estadoevaluacion", 
+        "pk": 3,
+        "fields": {
+            "eval_calidad": "EVALUADA"
+                    
+        }
+    },
+    {
+        "model": "ooee.estadoevaluacion", 
+        "pk": 4,
+        "fields": {
+            "eval_calidad": "APLAZADA"
+                    
+        }
+    },
+    {
+        "model": "ooee.estadoevaluacion", 
+        "pk": 5,
+        "fields": {
+            "eval_calidad": "SIN EVALUAR"
+                    
+        }
+    }
+]

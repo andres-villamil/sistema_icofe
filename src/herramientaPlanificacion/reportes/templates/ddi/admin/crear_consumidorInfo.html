@@ -1,0 +1,375 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 4 or user.profile.role.id == 5  %}
+
+<div id="loader"> </div>
+
+<div id="createForms" class="container-fluid">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede crear una nueva entidad consumidora de información. Todos los campos descritos a continuación deben ser diligenciados.">
+        modulo creación consumidor de información</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'demandas:todos_consumidorInfo' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form action="" method="POST" class="w-100">{% csrf_token %}
+            <hr>
+            {% if registered %}
+            <div class="container">
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <div class="alert alert-success" role="alert">
+                        <h3 class="text-center">La entidad consumidora de información</h3>
+                        <h4 class="text-center pt-3">ha sido creada con éxito.</h4>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+
+            {% if messages %}
+                    {% for message in messages %}
+                <div id="messageErrorquestions" class="container w-75">
+                    <div class="alert alert-danger" role="alert">
+                        <p class="d-flex flex-row align-items-center justify-content-center mt-3">
+                            <span class="material-icons mr-3">warning</span>
+                                {{ message }}
+                        </p>
+                    </div>
+                </div>
+                    {% endfor %}
+            {% endif %}
+             <!--End  Mensaje de error si el formulario tiene errores-->
+            <!-- Data entidad -->
+            <div class="form-group">
+                <div class="form-group inst" data-step="2"
+                    data-intro="Diligencie el NOMBRE y NIT de la entidad.">
+                    <div class="form-group backgroundTitle">
+                        <p class="text-center py-1">Datos de la entidad</p>
+                    </div>
+                    <div class="form-row no-gutters">
+                        <div class="col-9 input-group-sm">
+                            {{ create_cons_form.nombre_ec }}
+                            <!-- Validaciones error-->
+                            {% if create_cons_form.errors.nombre_ec %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_cons_form.errors.nombre_ec }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                        <div class="col-3 input-group-sm">
+                            {{ create_cons_form.nit_ec }}
+                            <!-- Validaciones error-->
+                            {% if create_cons_form.errors.nit_ec %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_cons_form.errors.nit_ec }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-row">
+                    <div class="col-12 col-lg-5">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="3"
+                            data-intro="Actualmente se establecen tres tipos de entidad PUBLICA, PRIVADA y MIXTA, seleccione alguna de estas según sea su caso">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de entidad</span>
+                            </div>
+                            {{ create_cons_form.tipo_entidad_ec }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="4"
+                            data-intro="Escriba la DIRECCIÓN donde se ubica la oficina principal de la entidad, adicione es este campo especificaciones como: Oficina, torre, etc.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Dirección</span>
+                            </div>
+                            {{ create_cons_form.direccion_ec }}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-3">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="5"
+                            data-intro="Escriba el número TELEFÓNICO o LINEA NACIONAL, perteneciente a la entidad.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Teléfono</span>
+                            </div>
+                            {{ create_cons_form.telefono_ec }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_cons_form.errors.telefono_ec %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_cons_form.errors.telefono_ec }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+
+
+                    <div class="col-12 col-lg-9">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="6"
+                            data-intro="Escriba la dirección de la página web oficial de la entidad, recuerde diligenciar en el formato www.su_entidad.gov.co">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Página web</span>
+                            </div>
+                            {{ create_cons_form.pagina_web_ec }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_cons_form.errors.pagina_web_ec %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_cons_form.errors.pagina_web_ec }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div> 
+                    
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-12">
+                        <div class="input-group input-group-sm mb-3 inst" data-step="7"
+                            data-intro="El estado se refiere a si la entidad se puede no publicar, elija según su decisión y recuerde que una vez publicada la entidad esta podrá ser vista y consultada por externos, aunque este estado podrá ser editado en cualquier momento.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Estado</span>
+                            </div>
+                            {{ create_cons_form.estado }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Data director -->
+            <div class="form-group inst" data-step="8"
+                data-intro="Diligencie la información básica del RESPONSABLE DE LA SOLICITUD, como lo es el NOMBRE COMPLETO, CARGO Y TELÉFONO DE CONTACTO , se recomienda anexar el número del extensión de la oficina">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Responsable de la solicitud</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ create_cons_form.nombre_resp }}
+                            <!-- Validaciones error-->
+                            {% if create_cons_form.errors.nombre_resp %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_cons_form.errors.nombre_resp }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+
+
+                            {{ create_cons_form.cargo_resp }}
+                            <!-- Validaciones error-->
+                            {% if create_cons_form.errors.cargo_resp %}
+                            <script>
+                                function valid() {
+                                    $(".invalid").addClass("invalidRed");
+                                }
+                                valid();
+                            </script>
+                            <small id="formHelp" class="form-text text-muted">
+                                <div class="d-flex flex-row align-items-start">
+                                    <i class="material-icons miReport">
+                                        error
+                                    </i>
+                                    {{ create_cons_form.errors.cargo_resp }}
+                                </div>
+                            </small>
+                            {% endif %}
+                            <!--  end error -->
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_cons_form.correo_resp }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_cons_form.errors.correo_resp %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_cons_form.errors.correo_resp }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ create_cons_form.telefono_resp }}
+                            {{ create_cons_form.extension_resp }}
+                        </div>
+                        <!-- Validaciones error-->
+                        {% if create_cons_form.errors.telefono_resp %}
+                        <script>
+                            function valid() {
+                                $(".invalid").addClass("invalidRed");
+                            }
+                            valid();
+                        </script>
+                        <small id="formHelp" class="form-text text-muted">
+                            <div class="d-flex flex-row align-items-start">
+                                <i class="material-icons miReport">
+                                    error
+                                </i>
+                                {{ create_cons_form.errors.telefono_resp }}
+                                {{ create_cons_form.errors.extension_resp }}
+                            </div>
+                        </small>
+                        {% endif %}
+                        <!--  end error -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+           
+            <div class="d-flex flex-row justify-content-start">
+                <button type="submit" class="save btn btn_primary btn-sm hvr-shrink inst" data-step="9"
+                    data-intro="De click en el botón para guardar">
+                    <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+                        <span class="ml-2">Guardar</span>
+                    </div>
+                </button>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+    {% endif %}
+{% else %}
+
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+<script>
+
+
+
+// Mostrar Mensaje de carga
+        function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("createForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+
+
+</script>
+
+
+{% endblock %}

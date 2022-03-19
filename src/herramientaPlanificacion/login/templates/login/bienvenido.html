@@ -1,0 +1,528 @@
+{% extends "base/base2.html" %} {% load static %} {% block content %}
+
+<div id="loader"></div>
+
+<div id="welcome">
+  <div class="row">
+    <div class="col-12 col-lg-2">
+        <a
+          id="startButton"
+          href="javascript:void(0);"
+          onclick="javascript:introJs().start();"
+          class="btn btn_primary btn-sm hvr-shrink mx-1"
+        >
+          <div class="d-flex align-items-center hvr-shrink">
+            <i class="material-icons">help</i> <span class="ml-2">Instructivo</span>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div data-step="1"
+        data-intro="Verifique la entidad a la cuál usted pertenece.">
+    <h4 class="text-center">MI ENTIDAD ES:</h4>
+    <h4 class="text-center text-uppercase my-4">{{ user.profile.entidad.nombre }}</h4>
+  </div>
+
+  {% if  user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 3 or user.profile.role.id == 4 or user.profile.role.id == 5 or  user.profile.role.id == 6 or user.profile.role.id == 7  %}
+  <div class="container-fluid" data-step="2"
+        data-intro="Visualice en las cartas la información de su entidad distribuida entre operaciones estadísticas, registros administrativos y demandas de información además podrá visualizar los estados de los datos dentro del aplicativo">
+    <div class="row no-gutters">
+      <div class="col-12 col-lg-3 px-2">
+        <div class="background-card shadow-sm spacingTop">
+          <div class="bar-1"></div>
+          <div class="bar-2">
+            <div class="d-flex flex-row align-item-center justify-content-center py-3">
+              <h2>{{ count_oe }}</h2>
+              <p class="ml-3">Operaciones<br />Estadísticas</p>
+            </div>
+          </div>
+          
+          <div class="container-status pt-2">
+            <ul class="list-group list-group-flush py-1">
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">notifications</i>
+                      <a href="{% url 'ooee:nuevas_ooee' %}"><p class="ml-3">Nuevas</p></a>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p> {{ count_oe_nueva }}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">save</i>
+                      <p class="ml-3">Borradores</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_borrador}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">send</i>
+                      <p class="ml-3">Enviados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_enviado}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">report</i>
+                      <p class="ml-3">Devueltos</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_devuelto}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">flag</i>
+                      <p class="ml-3">Validados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_validado}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">check_circle</i>
+                      <p class="ml-3">Publicados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_publicado}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">assignment_late</i>
+                      <p class="ml-3">Archivados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_archivado}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br>
+        <!-- botón de reporte completo  ooee-->
+        {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5 %}
+        <div class="d-flex flex-row align-item-center justify-content-center"  id="reporte_oe">
+            <a  id="report_oe" href="{% url 'ooee:report_ooee' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+              <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">cloud_download</i>
+                  <span class="ml-2">Descargue el inventario</span>
+              </div>
+            </a>
+        </div>
+
+        <div class="d-flex flex-row align-item-center justify-content-center mt-3"  id="reporte_oe_novelty">
+          <a  id="report_oe" href="{% url 'ooee:report_last_novelty_oe' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+            <div class="d-flex align-items-center hvr-shrink">
+                <i class="material-icons">cloud_download</i>
+                <span class="ml-2">Descargue novedades</span>
+            </div>
+          </a>
+        </div>
+
+        {% endif %}
+        <!-- botón de reporte completo  ooee-->
+            
+      </div>
+      
+      <!--- RRAA -->
+
+      <div class="col-12 col-lg-3 px-2">
+        <div class="background-card shadow-sm spacingTop">
+          <div class="bar-1"></div>
+          <div class="bar-2">
+            <div class="d-flex flex-row align-item-center justify-content-center py-3">
+              <h2>{{ count_ra }}</h2>
+              <p class="ml-3">Registros<br />Administrativos</p>
+            </div>
+          </div>
+          <div class="container-status pt-2">
+            <ul class="list-group list-group-flush py-1">
+              
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">notifications</i>
+                      <a href="{% url 'rraa:nuevos_rraa' %}"><p class="ml-3">Nuevas</p></a>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                     
+                        
+                        <p>{{ count_ra_nueva }}</p> 
+                       
+                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">save</i>
+                      <p class="ml-3">Borradores</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_borrador_ra}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">send</i>
+                      <p class="ml-3">Enviados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_enviado_ra}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">report</i>
+                      <p class="ml-3">Devueltos</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_devuelto_ra}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">flag</i>
+                      <p class="ml-3">Validados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_validado_ra}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">check_circle</i>
+                      <p class="ml-3">Publicados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_publicado_ra}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item pt-1">
+                <div class="row align-item-center">
+                  <div class="col-7">
+                    <div class="d-flex flex-row colorTextGreenCard">
+                      <i class="material-icons">assignment_late</i>
+                      <p class="ml-3">Archivados</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="d-flex flex-row">
+                      <p>{{count_archivado_ra}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br>
+        <!-- botón de reporte completo  rraa-->
+        {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5 %}
+        <div class="d-flex flex-row align-item-center justify-content-center"  id="reporte_ra">
+            <a id="report_ra" href="{% url 'rraa:report_rraa_comp' %}" class="btn btn_primary btn-sm hvr-shrink mx-1" >
+              <div class="d-flex align-items-center hvr-shrink">
+                  <i class="material-icons">cloud_download</i>
+                  <span class="ml-2">Descargue el inventario</span>
+              </div>
+            </a>
+        </div>
+
+        <div class="d-flex flex-row align-item-center justify-content-center mt-3"  id="reporte_ra_novelty">
+          <a  id="report_oe" href="{% url 'rraa:report_last_novelty' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+            <div class="d-flex align-items-center hvr-shrink">
+                <i class="material-icons">cloud_download</i>
+                <span class="ml-2">Descargue novedades</span>
+            </div>
+          </a>
+        </div>
+
+
+      {% endif %}
+       <!-- botón de reporte completo rraa-->
+      </div>
+
+      <!-- end RRAA -->
+
+            <!--- Demandas de información -->
+
+            <div class="col-12 col-lg-3 px-2">
+              <div class="background-card shadow-sm spacingTop">
+                <div class="bar-1"></div>
+                <div class="bar-2">
+                  <div class="d-flex flex-row align-item-center justify-content-center py-3">
+                    <h2>{{ count_ddi }}</h2>
+                    <p class="ml-3">Demandas<br />de información</p>
+                  </div>
+                </div>
+                <div class="container-status pt-2">
+                  <ul class="list-group list-group-flush py-1">
+                    
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">notifications</i>
+                            <a href=""><p class="ml-3">Nuevas</p></a>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                              <p>{{ count_ddi_nueva }}</p> 
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">save</i>
+                            <p class="ml-3">Borradores</p>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                            <p>{{count_borrador_ddi}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">send</i>
+                            <p class="ml-3">Enviados</p>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                            <p>{{count_enviado_ddi}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">report</i>
+                            <p class="ml-3">Devueltos</p>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                            <p>{{ count_devuelto_ddi }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">flag</i>
+                            <p class="ml-3">Validados</p>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                            <p>{{ count_validado_ddi }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">check_circle</i>
+                            <p class="ml-3">Publicados</p>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                            <p>{{ count_publicado_ddi }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item pt-1">
+                      <div class="row align-item-center">
+                        <div class="col-7">
+                          <div class="d-flex flex-row colorTextGreenCard">
+                            <i class="material-icons">assignment_late</i>
+                            <p class="ml-3">Archivados</p>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="d-flex flex-row">
+                            <p>{{ count_archivado_ddi }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <br>
+              <!-- botón de reporte completo  ddi-->
+              {% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5 %}
+              <div class="d-flex flex-row align-item-center justify-content-center"  id="reporte_ddi">
+                  <a id="report_ddi" href="{% url 'demandas:inventario_ddi' %}" class="btn btn_primary btn-sm hvr-shrink mx-1" >
+                    <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">cloud_download</i>
+                        <span class="ml-2">Descargue el inventario</span>
+                    </div>
+                  </a>
+              </div>
+
+              <div class="d-flex flex-row align-item-center justify-content-center mt-3"  id="reporte_ddi_novelty">
+                <a  id="report_oe" href="{% url 'demandas:report_last_novelty_ddi' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                  <div class="d-flex align-items-center hvr-shrink">
+                      <i class="material-icons">cloud_download</i>
+                      <span class="ml-2">Descargue novedades</span>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+             <!-- botón de reporte completo ddi-->
+            </div>
+
+
+      <!-- end ddi -->
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div id="top"></div>
+
+{% endif %}
+
+<script>
+
+    function preloader(){
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("welcome").style.display = "block";
+    }//preloader
+    window.onload = preloader;
+
+    $('#report_ra').click(function () {
+            // mensaje al descargar reporte
+            var top = $('#top');
+                top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                top.animate({top: "350"}).delay(7000).animate({top: "-150"})
+            // mensaje al descargar reporte
+          
+    })
+
+    $('#report_oe').click(function () {
+            // mensaje al descargar reporte
+            var top = $('#top');
+                top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                top.animate({top: "350"}).delay(7000).animate({top: "-150"})
+            // mensaje al descargar reporte
+          
+    })
+
+    $('#report_ddi').click(function () {
+            // mensaje al descargar reporte
+            var top = $('#top');
+                top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                top.animate({top: "350"}).delay(7000).animate({top: "-150"})
+            // mensaje al descargar reporte
+          
+    })
+
+</script>
+
+
+{% endblock %}

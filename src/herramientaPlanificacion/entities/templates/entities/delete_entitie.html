@@ -1,0 +1,37 @@
+
+{%  if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5 %}
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="card-block"><hr>
+                <div class="main"> 
+                <!-- Create a Form -->
+                <form method="POST"> 
+                    <!-- Security token by Django -->
+                    {% csrf_token %} 
+                    <h1>Esta seguro que desea Eliminar la entidad: </h1>
+                    <p>{{obj.nombre}}</p>     
+                </form> 
+                </div> 
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" value="Eliminar" /> 
+            <a href="{% url 'entities:all_entities' %}">Cancelar</a>  
+        </div>
+    </div>
+</div>
+    
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}

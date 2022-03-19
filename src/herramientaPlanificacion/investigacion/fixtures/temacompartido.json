@@ -1,0 +1,191 @@
+[
+    {
+        "model": "ooee.temacompartido",
+        "pk": 1, 
+        "fields": {
+            "tema_compartido": "Nivel, Calidad y Condiciones de Vida"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 2,
+        "fields": {
+            "tema_compartido": "Comercio"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 3, 
+        "fields": {
+            "tema_compartido": "Tecnologías de la Información y las Comunicaciones"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 4,
+        "fields": {
+            "tema_compartido": "Servicios Públicos Domiciliarios"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 5, 
+        "fields": {
+            "tema_compartido": "Minero - Energético"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 6,
+        "fields": {
+            "tema_compartido": "Cuentas EconómicasS"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 7, 
+        "fields": {
+            "tema_compartido": "Construcción"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 8,
+        "fields": {
+            "tema_compartido": "Agricultura, Ganadería y Pesca"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 9, 
+        "fields": {
+            "tema_compartido": "Educación, Ciencia, Tecnología e Innovación"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 10,
+        "fields": {
+            "tema_compartido": "Salud"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 11, 
+        "fields": {
+            "tema_compartido": "Residuos y Protección Ambiental"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 12,
+        "fields": {
+            "tema_compartido": "Gestión y Participación"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 13, 
+        "fields": {
+            "tema_compartido": "Acción Ciudadana"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 14,
+        "fields": {
+            "tema_compartido": "Servicios (Turismo, Hoteles, Restaurantes y Otros)"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 15, 
+        "fields": {
+            "tema_compartido": "Industria"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 16,
+        "fields": {
+            "tema_compartido": "Condiciones y Calidad Ambiental"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 17, 
+        "fields": {
+            "tema_compartido": "Recursos Anbientales y Su Uso"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 18,
+        "fields": {
+            "tema_compartido": "Índices de Precios y Costos"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 19, 
+        "fields": {
+            "tema_compartido": "Demografía y Población"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 20,
+        "fields": {
+            "tema_compartido": "Servicios"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 21, 
+        "fields": {
+            "tema_compartido": "Transporte"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 22,
+        "fields": {
+            "tema_compartido": "Finanzas Publicas y Estadísticas Fiscales Moneda"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 23, 
+        "fields": {
+            "tema_compartido": "Banca y Finanzas"
+        }
+    },
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 24,
+        "fields": {
+            "tema_compartido": "Cultura"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 25, 
+        "fields": {
+            "tema_compartido": "Seguridad y Defensa"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido", 
+        "pk": 26,
+        "fields": {
+            "tema_compartido": "Mercado Laboral"
+        }
+    }, 
+    {
+        "model": "ooee.temacompartido",
+        "pk": 27, 
+        "fields": {
+            "tema_compartido": "Seguridad Social"
+        }
+    }
+]

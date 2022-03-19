@@ -1,0 +1,212 @@
+[
+    {
+        "model": "rraa.temarraa",
+        "pk": 1, 
+        "fields": {
+            "nombre": "Agricultura, Gandería y Pesca"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 2,
+        "fields": {
+            "nombre": "Salud"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 3, 
+        "fields": {
+            "nombre": "Comercio"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 4,
+        "fields": {
+            "nombre": "Moneda, Banca y Finanzas"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 5, 
+        "fields": {
+            "nombre": "Condiciones y Calidad Ambiental"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 6,
+        "fields": {
+            "nombre": "Cuentas Económicas"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 7, 
+        "fields": {
+            "nombre": "Nivel, Calidad y Condiciones de Vida"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 8,
+        "fields": {
+            "nombre": "Índices de Precios y Costos"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 9, 
+        "fields": {
+            "nombre": "Justicia"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 10,
+        "fields": {
+            "nombre": "Transporte"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 11, 
+        "fields": {
+            "nombre": "Educación, Ciencia, Tecnología e Innovación"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 12,
+        "fields": {
+            "nombre": "Actividad Política y Asociativa"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 13, 
+        "fields": {
+            "nombre": "Cultura"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 14,
+        "fields": {
+            "nombre": "Asentamientos Humanos y Salud Ambiental"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 15, 
+        "fields": {
+            "nombre": "Eventos Extremos y Desastres"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 16,
+        "fields": {
+            "nombre": "Protección Ambiental, Gestión y Participación/Acción Ciudadana"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 17, 
+        "fields": {
+            "nombre": "Recursos Ambientales y Su Uso"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 18,
+        "fields": {
+            "nombre": "Residuos"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 19, 
+        "fields": {
+            "nombre": "Construcción"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 20,
+        "fields": {
+            "nombre": "Finanzas Públicas y Estadísticas Fiscales"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 21, 
+        "fields": {
+            "nombre": "Minero Energético"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 22,
+        "fields": {
+            "nombre": "Industria"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 23, 
+        "fields": {
+            "nombre": "Servicios (Turismo, Hoteles, Restaurantes y Otros)"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 24,
+        "fields": {
+            "nombre": "Tecnologías de la Información y las comunicaciones"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 25, 
+        "fields": {
+            "nombre": "Administración Pública"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 26,
+        "fields": {
+            "nombre": "Demografía y Población"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 27, 
+        "fields": {
+            "nombre": "Deporte y Recreación"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 28,
+        "fields": {
+            "nombre": "Mercado Laboral y Seguridad Social"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa",
+        "pk": 29, 
+        "fields": {
+            "nombre": "Seguridad y Defensa"
+        }
+    }, 
+    {
+        "model": "rraa.temarraa", 
+        "pk": 30,
+        "fields": {
+            "nombre": "Servicios Públicos Domiciliarios"
+        }
+    }
+]

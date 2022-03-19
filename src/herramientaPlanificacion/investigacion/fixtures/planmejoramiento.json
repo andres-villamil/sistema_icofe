@@ -1,0 +1,18 @@
+[
+    {
+        "model": "ooee.plandemejoramiento",
+        "pk": 1, 
+        "fields": {
+            "plan_mejora": "Suscrito"
+          
+        }
+    }, 
+    {
+        "model": "ooee.plandemejoramiento", 
+        "pk": 2,
+        "fields": {
+            "plan_mejora": "Sin suscribir"
+         
+        }
+    }
+]

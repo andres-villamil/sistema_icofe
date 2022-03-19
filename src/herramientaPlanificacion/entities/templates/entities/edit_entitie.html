@@ -1,0 +1,430 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+
+
+{% if user.profile.role.id == 3 and user.profile.entidad.pk == entitie.pk  or user.is_authenticated and user.profile.role.id == 1  or user.profile.role.id == 4 or user.profile.role.id == 5 %}
+
+<div id="loader"> </div>
+
+<div id="editForms" class="container-fluid">
+    <h2 class="text-center text-uppercase mb-5">Modulo de actualización de entidad</h2>
+    <div class="row mb-3">
+
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-4 offset-lg-4">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">                
+                    {% if user.is_authenticated and user.profile.role.id == 1  or user.profile.role.id == 4 or user.profile.role.id == 5%}
+                    <a href="{% url 'entities:all_entities' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        {% else %}
+                        <a href="{% url 'entities:publish_entities' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                            {% endif %}
+                            <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                                <span class="ml-2">Volver</span></div>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form method="POST" class="w-100">{% csrf_token %}
+            <hr>
+            <!-- Data entidad -->
+            <div class="form-group">
+                <div class="form-group">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Datos de la entidad</span>
+                        </div>
+
+                        {{ edit_form.codigo }}
+                        {{ edit_form.nombre }}
+                        {{ edit_form.nit }}
+                    </div>
+                </div>
+                <!-- Validaciones error-->
+                {% if edit_form.errors.nit %}
+                <small id="formHelp" class="form-text text-muted">
+                    <div class="d-flex flex-row align-items-start">
+                        <i class="material-icons miReport">
+                            error
+                        </i>
+                        {{ edit_form.errors.nit }}
+                    </div>
+                </small>
+                {% endif %}
+                <!--  end error -->
+
+                <div class="form-row">
+                    <div class="col-12 col-lg-5">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de entidad</span>
+                            </div>
+                            {{ edit_form.tipo_entidad }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Dirección</span>
+                            </div>
+                            {{ edit_form.direccion }}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Teléfono</span>
+                            </div>
+                            <div id="telefono">{{ edit_form.telefono }}</div>
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.telefono %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.telefono }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <div class="col-12 col-lg-9">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Página web</span>
+                            </div>
+                            {{ edit_form.pagina_web }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.pagina_web %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.pagina_web }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Estado</span>
+                            </div>
+                            {{ edit_form.estado }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="input-group input-group-sm mb-3 inst" >
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Orden Territorial</span>
+                            </div>
+                            {{ edit_form.ord_ter }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Data director -->
+            <div class="form-group">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Director de la entidad</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ edit_form.nombre_dir }}
+                            {{ edit_form.cargo_dir }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ edit_form.correo_dir }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.correo_dir %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.correo_dir }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ edit_form.telefono_dir }}
+                            {{ edit_form.extension_dir }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.telefono_dir %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.telefono_dir }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.extension_dir %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.extension_dir }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                </div>
+            </div>
+            <hr>
+            <!-- Data director oficina -->
+            <div class="form-group">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Oficina de información estadística, oficina de planeación o similar</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ edit_form.nombre_pla }}
+                            {{ edit_form.cargo_pla }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ edit_form.correo_pla }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.correo_pla %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.correo_pla }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ edit_form.telefono_pla }}
+                            {{ edit_form.extension_pla }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.telefono_pla %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.telefono_pla }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.extension_pla %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.extension_pla }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                </div>
+            </div>
+            <hr>
+            <!-- Data contacto sen -->
+            <div class="form-group">
+                <div class="form-group backgroundTitle">
+                    <p class="text-center py-1">Delegado para el SEN</p>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            {{ edit_form.nombre_cont }}
+                            {{ edit_form.cargo_cont }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        alternate_email
+                                    </i>
+                                </span>
+                            </div>
+                            {{ edit_form.correo_cont }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.correo_cont %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.correo_cont }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <div class="col-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text">
+                                    <i class="material-icons mi">
+                                        phone
+                                    </i>
+                                </span>
+                            </div>
+                            {{ edit_form.telefono_cont }}
+                            {{ edit_form.extension_cont }}
+                        </div>
+                    </div>
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.telefono_cont %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.telefono_cont }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                    <!-- Validaciones error-->
+                    {% if edit_form.errors.extension_cont %}
+                    <small id="formHelp" class="form-text text-muted">
+                        <div class="d-flex flex-row align-items-start">
+                            <i class="material-icons miReport">
+                                error
+                            </i>
+                            {{ edit_form.errors.extension_cont }}
+                        </div>
+                    </small>
+                    {% endif %}
+                    <!--  end error -->
+                </div>
+            </div>
+            <div class="d-flex flex-row justify-content-start">
+                <button type="submit" onclick="return validateFormCrear(form)"
+                    class="save btn btn_primary btn-sm hvr-shrink">
+                    <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+                        <span class="ml-2">Guardar</span>
+                    </div>
+                </button>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+<script>
+
+//######################### fields codigo para que no lo editen #################//
+        
+    $('input[name=codigo]').attr('readonly', true); 
+    
+//######################### end fields codigo para que no lo editen #################//
+    
+   
+    // Mostrar Mensaje de carga
+        function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("editForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,237 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+#container {
+  display: none;
+}
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/media/backgrounds/load2.gif") 50% 50% no-repeat rgb(249,249,249);
+  opacity: .8;
+  cursor: wait;
+}
+
+
+#top {
+  background-color: $kuler_sistemaInventario-1-hex;
+  color: #fff;
+  padding: 40px;
+  top: -150px;
+  position: absolute; /*El div será ubicado con relación a la pantalla*/
+  font-weight: bold;
+  border-radius: 15px;
+  margin-left: 250px;
+  font-size: 17px;
+}
+
+#tableAll {
+  .table {
+    border: solid 2px $kuler_sistemaInventario-1-hex;
+    border-radius: 4px;
+
+    .kulerTableHead {
+      font-family: $Barlow;
+      font-size: $p;
+      background-color: $kuler_sistemaInventario-1-hex;
+      color: $kuler-white;
+
+      .w-5 {
+        width: 5% !important;
+      }
+
+      .w-20 {
+        width: 20% !important;
+      }
+
+      .w-12 {
+        width: 12% !important;
+      }
+    }
+
+    .textContentTable {
+      font-family: $Open;
+      font-size: 0.9rem;
+    }
+
+    tbody {
+      background-color: $Kuler-GrayScale-5-hex;
+
+      .miKuller {
+        cursor: pointer;
+        color: $kuler_sistemaInventario-4-hex !important;
+
+        &:hover {
+          color: $kuler_sistemaInventario-5-hex !important;
+        }
+      }
+    }
+  }
+
+  .dataTables_length {
+    margin-top: 1vh;
+
+    label {
+      background-color: $Kuler-GrayScale-4-hex;
+      height: 6vh;
+      padding: 0.5vh 0.5vw;
+      border-radius: 4px;
+      font-family: $Barlow;
+
+      @include media(dl) {
+        height: 5vh;
+      }
+
+      @include media(dxl) {
+        height: 5vh;
+      }
+
+      select {
+        border-radius: 4px;
+        height: 5vh;
+
+        @include media(dl) {
+          height: 4vh;
+        }
+
+        @include media(dxl) {
+          height: 4vh;
+        }
+
+        margin-left: 2vw;
+        border: none;
+      }
+    }
+  }
+
+  .dataTables_info {
+    font-size: $ps !important;
+  }
+
+  .dataTables_paginate {
+    font-size: $ps !important;
+
+    .page-item.active .page-link {
+      z-index: 3;
+      color: #fff;
+      background-color: $kuler_sistemaInventario-1-hex;
+      border-color: $kuler_sistemaInventario-1-hex;
+    }
+
+    .page-link {
+      position: relative;
+      display: block;
+      padding: .5rem .75rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: $kuler_sistemaInventario-1-hex;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+  }
+
+    .current {
+      background-color: $kuler_sistemaInventario-1-hex;
+      border-radius: 4px;
+      margin: 0 0.1vw 0;
+      padding: 0.5rem;
+      color: $kuler-white;
+    }
+  }
+}
+
+#allEntities,
+#publishEntities,
+#disableEntities {
+  h2 {
+    font-family: $Barlow;
+    font-size: $h3;
+    font-weight: bold;
+    color: $kuler_sistemaInventario-1-hex;
+  }
+
+  .backgroundTitle {
+    background-color: $kuler_sistemaInventario-1-hex;
+    border-radius: 4px;
+
+    p {
+      font-family: $Barlow;
+      color: $kuler-white;
+    }
+  }
+
+  .input-group-text {
+    background-color: $kuler_sistemaInventario-1-hex;
+    font-family: $Barlow;
+    font-weight: $p;
+    color: $kuler-white;
+  }
+
+  .mi {
+    font-size: $p;
+    color: $kuler-white;
+  }
+}
+
+.dataTables_filter {
+  label {
+    margin-bottom: 0px !important;
+
+    .btn_primarySearch {
+      border-radius: 4px 5px 5px 4px !important;
+      font-family: $Barlow;
+      font-size: $h6;
+      background-color: $kuler_sistemaInventario-4-hex;
+      color: $kuler-white !important;
+
+      &:hover,
+      &:focus {
+        background-color: $kuler_sistemaInventario-5-hex;
+        color: $kuler-white !important;
+      }
+    }
+
+    input {
+      margin-left: 0px !important;
+      padding-top: 0px !important;
+      height: 4vh;
+      border: solid 0.5px $kuler_sistemaInventario-1-hex;
+      border-radius: 0px 4px 4px 0px !important;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+
+      @include media(ds) {
+        height: 6vh;
+      }
+    }
+  }
+}
+
+#form-filter {
+  .input-group-text {
+    background-color: $kuler_sistemaInventario-1-hex;
+    border: solid 1px $kuler_sistemaInventario-1-hex;
+    font-family: $Barlow;
+    font-weight: $p;
+    color: $kuler-white;
+  }
+}
+
+.bkgFiltros {
+  border: solid 2px $kuler_sistemaInventario-1-hex;
+  border-radius: 4px;
+}
+
+
+.btn-warning  {
+  background-color: #005E66 !important;
+  color: white;
+  border-color: #fff !important;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  border: 1px solid #dee2e6;
+}

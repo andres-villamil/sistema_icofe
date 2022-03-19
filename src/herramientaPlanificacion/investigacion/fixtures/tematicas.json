@@ -1,0 +1,23 @@
+[
+    {
+        "model": "ooee.areatematica",
+        "pk": 1, 
+        "fields": {
+            "nombre": "Económica"
+        }
+    }, 
+    {
+        "model": "ooee.areatematica", 
+        "pk": 2,
+        "fields": {
+            "nombre": "Sociodemográfica"
+        }
+    }, 
+    {
+        "model": "ooee.areatematica", 
+        "pk": 3, 
+        "fields": {
+            "nombre": "Ambiental"
+        }
+    }
+]

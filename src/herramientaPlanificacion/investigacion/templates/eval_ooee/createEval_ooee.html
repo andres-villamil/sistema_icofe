@@ -1,0 +1,580 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 6  %} 
+
+<!-- Modulo de evaluación de calidad -->
+
+<div id="loader"></div>
+
+<div id="editForms">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede evaluar una  operación estadística. Todos los campos descritos a continuación deben ser diligenciados.">
+        módulo de evaluación de calidad</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'ooee:all_ooee' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if registered %}
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div class="alert alert-success" role="alert">
+                <h3 class="text-center">La evaluación de calidad de la Operación Estadística</h3>
+                <h4 class="text-center pt-3">ha sido creada con éxito.</h4>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+
+    <div class="col-11">
+
+        <!-- Mensaje de error si el formulario tiene errores-->
+            {% if messages %}
+                {% for message in messages %}
+                <div class="container">
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <div class="alert alert-warning" role="alert">
+                            <h2 class="text-center text-uppercase">Error <span class="material-icons">
+                                warning
+                                </span></h2>
+                            <h4 class="pt-3"> {{ message }}</h4>
+                        </div>
+                    </div>
+                </div>                   
+                {% endfor %}
+            {% endif %}
+        <!--End  Mensaje de error si el formulario tiene errores-->
+
+        <form action="" method="POST" class="w-100" enctype="multipart/form-data">{% csrf_token %}
+            <div class=" container mt-4">
+                <div id="moduleEvaluacion" class="colorBkgTest">
+                    <!-- historial de la evaluación -->
+                    <div class="row">
+                        <div class="col-12 col-lg-12 mt-3">
+                            <div class="accordion" id="accordionExample"  data-step="2"
+        data-intro="Despliegue y visualice las evaluaciones realizadas a la operación estadística ">
+                                <div class="card mb-4  mt-3  ">
+                                    <div>
+                                        <!-- observaciones de la evaluacion -->
+                                        {% if evaluaciones.count == 1 %}
+                                            <h2>
+                                                <button class="btn btn_primary btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                                        Existe: {{ evaluaciones.count }} Evaluación
+                                                        <span class="material-icons">
+                                                            keyboard_arrow_down
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                        {% elif evaluaciones.count == 0 %} 
+                                            <h2 class="text-center">No Evaluada</h2>
+                                        {% else %}
+                                            <h2>
+                                                <button class="btn btn_primary btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <div class="d-flex flex-row align-items-center justify-content-center">
+                                                        Existen: {{ evaluaciones.count }} Evaluaciones
+                                                        <span class="material-icons">
+                                                            keyboard_arrow_down
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                        {% endif %}
+                                    </div>
+                                    <div class="wrapComments collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        {% for eval in evaluaciones %}
+                                        <div class="p-1">
+                                            <div class="d-flex flex-column">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <div class="d-flex flex-column align-items-center">
+                                                            <img class="rounded mx-auto d-block"
+                                                                src="https://ui-avatars.com/api/?name={{ eval.name_evaluador }}&rounded=true&background=607D8B&bold=true&color=ffffff"
+                                                                alt="" />
+                                                            <p class="font-weight-bold text-center">
+                                                                <span
+                                                                    class="text-uppercase">{{ eval.name_evaluador }}
+                                                                </span>
+                                                            </p>
+                                                            <span class=" ml-2 text-muted font-weight-normal dateEval">
+                                                                <i>{{ eval.fecha_eval_sis }}</i>
+                                                            </span>
+                                                            <div class="mt-4">
+                                                                <a id="deleteFilter" href="{% url 'ooee:edit_eval' eval.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                                                                    <div class="d-flex align-items-center hvr-shrink">
+                                                                        <span class="material-icons">
+                                                                            create
+                                                                        </span>
+                                                                        <span class="ml-2 text-left">Editar Evaluación</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <div class="row mb-3">
+                                                            <div class="col-12 col-lg-3">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Año:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right
+                                                                                pl-2 borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.year_eva|date:'Y' }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-lg-9">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Estado
+                                                                            de
+                                                                            la evaluación:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right  pl-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.est_evaluacion }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Observaciones:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right pl-2
+                                                                    borderGreen" style="width: -webkit-fill-available;">
+                                                                    {{ eval.observ_est }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Metodología:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right pl-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        <div class="text-uppercase">{{ eval.metodologia }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% if eval.metodologia == "ntcpe 1000" %}
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Resultado
+                                                                            de la evaluación:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.res_evaluacion }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% elif eval.metodologia == "matriz de requisitos" %}
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Resultado
+                                                                            de la evaluación:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.res_mzrequi }}
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% else %}
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Resultado
+                                                                            de la evaluación:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% endif %}
+                                                                    
+
+                                                               
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Observaciones:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-righ px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.observ_resul }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mi-green"><b>Vigencia</b></p>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-6">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Desde:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right pl-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.vigencia_desde }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Hasta:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right pl-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.vigencia_hasta }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Plan
+                                                                            de
+                                                                            mejoramiento:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.pla_mejoramiento }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Seguimiento 
+                                                                            anual (Vigilancia):</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.seg_vig }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <div class="d-flex flex-row input-group-sm">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Observaciones:</span>
+                                                                    </div>
+                                                                    <div class="ml-2 border rounded-right px-2
+                                                                        borderGreen" style="width: -webkit-fill-available;">
+                                                                        {{ eval.obs_seg_anual }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="my-2">
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>                          
+                        </div>                     
+                    </div>
+                    <!-- End historial de la evaluación -->
+                    <div class="row" >
+                        <div class="col-12 col-lg-12">
+                            <div class="card-body">
+                                <!--Nombre de la operación estadística-->
+                                <h2 class="text-uppercase text-center" data-step="3" data-intro="Diligencie los campos a continuación para elaborar una nueva o crear una evaluación a la operación estadística. ">{{ post_oe }}</h2> 
+                                    <br><br>
+                                
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Estado de la evaluación:</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.est_evaluacion }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group input-group-sm date" id="evaluacion_year"
+                                        data-target-input="nearest">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Año:</span>
+                                        </div>
+                                        {{ evaluacionCalidad_form.year_eva }}
+                                        <div class="input-group-append" data-target="#evaluacion_year"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i
+                                                    class="material-icons misize">calendar_today</i>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Observaciones:</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.observ_est }}
+
+                                    <!-- Validaciones error-->
+                                    {% if  evaluacionCalidad_form.errors.observ_est %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{  evaluacionCalidad_form.errors.observ_est }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Metodología:</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.metodologia }}
+                                </div>
+                                    
+                                <div id="resulBymetod" class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Resultado:</span>
+                                    </div>
+                                    <!--  resultados Norma ntcpe 1000 -->
+                                    {{ evaluacionCalidad_form.res_evaluacion }}
+
+                                    <!--  resultados matriz de requisitos -->
+                                    {{ evaluacionCalidad_form.res_mzrequi }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Observaciones:</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.observ_resul }}
+
+                                    <!-- Validaciones error-->
+                                    {% if  evaluacionCalidad_form.errors.observ_resul %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{  evaluacionCalidad_form.errors.observ_resul }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <div class="bkgInputQuestion1 mb-1">
+                                            <p>Desde</p>
+                                        </div>
+                                        <div class="input-group input-group-sm date" id="evaluacion_vigencia_desde"
+                                            data-target-input="nearest">
+                                            {{ evaluacionCalidad_form.vigencia_desde }}
+                                            <div class="input-group-append" data-target="#evaluacion_vigencia_desde"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i
+                                                        class="material-icons misize">calendar_today</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="bkgInputQuestion1 mb-1">
+                                            <p>Hasta</p>
+                                        </div>
+                                        <div class="input-group input-group-sm date" id="evaluacion_vigencia_hasta"
+                                            data-target-input="nearest">
+                                            {{ evaluacionCalidad_form.vigencia_hasta }}
+                                            <div class="input-group-append" data-target="#evaluacion_vigencia_hasta"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i
+                                                        class="material-icons misize">calendar_today</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Plan de mejoramiento:</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.pla_mejoramiento }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Seguimiento anual (Vigilancia):</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.seg_vig }}
+                                </div>
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Observaciones:</span>
+                                    </div>
+                                    {{ evaluacionCalidad_form.obs_seg_anual }}
+
+                                    <!-- Validaciones error-->
+                                    {% if  evaluacionCalidad_form.errors.obs_seg_anual %}
+                                    <small id="formHelp" class="form-text text-muted">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <i class="material-icons miReport">
+                                                error
+                                            </i>
+                                            {{  evaluacionCalidad_form.errors.obs_seg_anual }}
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <!--  end error -->
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Número de evaluaciones:</span>
+                                    </div>
+                                    <div class="ml-1 p-1">
+                                        {{ evaluaciones.count }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="save btn btn_primary btn-block btn-sm hvr-shrink" data-step="4" data-intro="Envíe la evaluación dando clic">
+                            <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                                <i class="material-icons">send</i>
+                                <span class="ml-2">Enviar evaluación</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>
+
+{% endif %}
+<!-- end  Modulo de evaluación de calidad -->
+
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+<script>
+
+    $(function () {
+            
+            $("#evaluacion_year").datetimepicker({
+                format: 'YYYY',
+                locale: 'es'
+            });
+            $("#evaluacion_vigencia_desde").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#evaluacion_vigencia_hasta").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+    
+           
+            $('#resulBymetod').hide()
+            $('#id_res_evaluacion').hide() //inicializar input oculto
+            $('#id_res_mzrequi').hide()
+
+
+            $("#id_metodologia").change(function () {
+                var status = this.value;
+                console.log("dddddddddddddd0", status)
+                if (status == "ntcpe 1000") {
+                    $('#resulBymetod').show()
+                    $('#id_res_evaluacion').show()
+                    $('#id_res_mzrequi').hide()
+                }
+                else if (status == "matriz de requisitos") {
+                    $('#resulBymetod').show()
+                    $('#id_res_mzrequi').show()
+                    $('#id_res_evaluacion').hide()
+                }
+                else if (status == "") {
+                    $('#resulBymetod').hide()
+                    $('#id_res_mzrequi').hide()
+                    $('#id_res_evaluacion').hide()
+                } 
+            });
+
+            
+    });
+
+
+    // Mostrar Mensaje de carga
+    function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("editForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+    
+    </script>
+
+
+{% endblock %}

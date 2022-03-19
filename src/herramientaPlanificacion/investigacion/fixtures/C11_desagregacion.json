@@ -1,0 +1,23 @@
+[
+    {
+        "model": "ooee.desagregacioninformacion",
+        "pk": 1, 
+        "fields": {
+            "opc_desag": "Geográfica"
+        }
+    }, 
+    {
+        "model": "ooee.desagregacioninformacion", 
+        "pk": 2,
+        "fields": {
+            "opc_desag": "Zona"
+        }
+    }, 
+    {
+        "model": "ooee.desagregacioninformacion", 
+        "pk": 3, 
+        "fields": {
+            "opc_desag": "Grupos"
+        }
+    }
+]

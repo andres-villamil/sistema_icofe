@@ -1,0 +1,207 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+<!-- librerias para paginación de tablas -->
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="{% static 'libraries/dataTables/css/dataTables.bootstrap4.min.css' %}">
+<!-- end -->
+
+
+
+<div id="allEntities" class="container-fluid">
+    <h2 class="text-center text-uppercase mb-5">Nuevos Registros Administrativos </h2>
+</div>
+
+
+
+{% if novedad %}
+
+
+<div id="tableAll">
+    <table class="table table-borderless table-hover table-sm" id="table_rraa_new">
+        <thead class="kulerTableHead">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estado de la actualización</th>
+                <th scope="col">Acciones</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for nov in novedad %}
+            <tr>
+                {% for val in filtros_tema_ra %}
+                    {% if val.pk == nov.ra_identify %}
+                    <td><span class="textContentTable">{{ nov.nombre_ra  }}</span></td>
+
+                    <td><span class="textContentTable">{{ nov.last_novedad }}</span></td>
+
+                    <td class="d-flex flex-row ">
+                        {%  if user.is_authenticated and user.profile.role.id == 4 or user.profile.role.id == 5 or user.profile.role.id == 3 %}
+
+                        <a href="{% url 'rraa:detail_ra' nov.ra_identify %}"  title="Ver ficha de caracterización">
+                            <i class="material-icons miKuller hvr-shrink">add_circle</i>
+                        </a>
+
+                        <a href="{% url 'rraa:rraa_edit' nov.ra_identify %}"  title="Editar">
+                            <i class="material-icons miKuller hvr-shrink">unarchive</i>
+                        </a>
+                    </td>
+                        {% elif user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 6 or user.profile.role.id == 7 %}
+                        
+                        <a href="{% url 'rraa:detail_ra' nov.ra_identify %}"  title="Ver ficha de caracterización">
+                            <i class="material-icons miKuller hvr-shrink">add_circle</i>
+                        </a>
+
+                        <a href="{% url 'rraa:rraa_edit' nov.ra_identify %}"  title="Editar">
+                            <i class="material-icons miKuller hvr-shrink">unarchive</i>
+                        </a>
+
+                        <a href="{% url 'rraa:create_fortal' nov.ra_identify %}" title="Fortalecimiento">
+                            <i class="material-icons miKuller hvr-shrink">assignment_turned_in</i>
+                        </a>
+
+                    </td>
+                    
+
+                    {% else %}
+                    <a href="{% url 'rraa:detail_ra' ra_identify %}"  title="Ver ficha de caracterización">
+                        <p style="font-family:OpenSans, sans-serif; font-size: 0.9rem;">Ver ficha</p>
+                    </a>
+                    </td>
+                    {% endif %}            
+                    {% endif %}
+
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-info" role=" alert">
+            <h2 class="text-center text-uppercase">error 204</h2>
+            <h4 class="pt-3"> No hay Registros Administrativos nuevos en este momento</h4>
+            <div class="d-flex flex-row justify-content-center mt-4">
+                <a href="{% url 'rraa:created_rraa' %}" type="submit" class="save btn btn_primary btn-sm hvr-shrink">
+                    <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+                        <span class="ml-2">Crear Registro Administrativo</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+
+<!-- js -->
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/jquery.dataTables.min.js' %}">
+</script>
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/dataTables.bootstrap4.min.js' %}">
+</script>
+
+
+<!-- Script by tables -->
+<script>
+    $(document).ready(function () {
+        $('#table_rraa_new').DataTable({
+            language: {
+                "decimal": "",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Operaciones Estadísticas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entidades",
+                "infoFiltered": "(Filtrado de _MAX_ total Operaciones Estadísticas)",
+                "infoPostFix": "",
+                "thousands": ",",
+
+                "lengthMenu": "Mostrar _MENU_ ",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "<button id='btn-Big' class='btn btn_primarySearch btn-small' onclick='searchClose()'><div class='d-flex flex-row justify-content-center'><i class = 'material-icons mt-1 pr-2' > search </i> Buscar </div></button>",
+                "searchPlaceholder": "Buscar RRAA",
+                "zeroRecords": "Sin resultados encontrados",
+
+                "paginate": {
+                    "first": " Inicio ",
+                    "last": " Fin ",
+                    "next": " >> ",
+                    "previous": " << "
+                },
+            },
+            "pagingType": "full_numbers",
+            "iDisplayLength": 10,
+            "lengthMenu": [
+                [10, 20, 30, 40, 50, -1],
+                [10, 20, 30, 40, 50, "Todos"]
+            ],
+
+            //pagination center
+            "sDom": '<"d-flex flex-row align-items-center justify-content-between view-filter"<"#btnAdd"><l><"buscador-small"><"buscador-big"f>>t<"d-flex flex-row align-items-center justify-content-between view-pagination"<"#btnReport"><i><p>>',
+            "ordering": false
+        });
+
+
+        //search code
+        $('.buscador-small').append(
+            '<button id="btn-Small" class="btn btn_primary btn-small hvr-shrink" onclick="searchOpen()"><div class=" d-flex flex-row justify-content-center"><i class = "material-icons mt-1 pr-2" > search </i> Buscar </div></button> '
+        )
+        $('.buscador-big').hide()
+        //end search code
+
+        var roleFuente = "3";
+        var roleInvitado = "2";
+        var roleAdministrador = "1";
+        var authenticated = "{{user.is_authenticated}}"
+        var role = "{{user.profile.role.id}}"
+        var entidad = "{{user.profile.entidad.pk}}"
+        console.log("entidad", entidad, "role", role, "roleAdminsitrador", roleAdministrador, "auth", authenticated)
+
+        if (authenticated === 'False' || roleInvitado === role) {
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+        }
+
+       /*  if (roleFuente === role) {
+            var button =
+                '<a id="btnCreateEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">unarchive</i> <span class="ml-2">Editar OOEE</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+
+        } */ else {
+            var button =
+                '<a id="btnCreateEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">create</i> <span class="ml-2">Crear Registro Administrativo</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').click(function () {
+                $("#btnCreateEntities").attr("href", "{% url 'rraa:created_rraa' %}");
+            })
+        }
+
+        var btnReport =
+            '<a id="btnOOEE" class="btn btn_primary hvr-shrink btn-sm"  value="reporfull"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i> <span class="ml-2">Descargue el inventario</span></div></a>';
+        $('#btnReport').append(btnReport);
+        $('#btnReport').click(function () {
+            $("#btnOOEE").attr("href",
+                "{% url 'ooee:report_ooee' %}");
+        })
+
+        //ocultar boton de reporte completo
+        $('#btnReport').hide()
+        
+        
+
+    });
+
+
+
+
+  
+</script>
+
+{% endblock content %}

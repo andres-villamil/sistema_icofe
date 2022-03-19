@@ -1,0 +1,44 @@
+[
+    {
+        "model": "ooee.coberturageografica",
+        "pk": 1, 
+        "fields": {
+           "cob_geo": "Nacional"
+        }
+    }, 
+    {
+        "model": "ooee.coberturageografica", 
+        "pk": 2,
+        "fields": {
+           "cob_geo": "Regional"
+        }
+    }, 
+    {
+        "model": "ooee.coberturageografica", 
+        "pk": 3, 
+        "fields": {
+           "cob_geo": "Departamental"
+        }
+    },
+    {
+        "model": "ooee.coberturageografica", 
+        "pk": 4,
+        "fields": {
+           "cob_geo": "Áreas metropolitanas"            
+        }
+    }, 
+    {
+        "model": "ooee.coberturageografica", 
+        "pk": 5, 
+        "fields": {
+           "cob_geo": "Municipal"
+        }
+    },
+    {
+        "model": "ooee.coberturageografica", 
+        "pk": 6,
+        "fields": {
+           "cob_geo": "Otro (s)"            
+        }
+    }
+]

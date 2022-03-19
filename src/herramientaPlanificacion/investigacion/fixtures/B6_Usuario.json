@@ -1,0 +1,81 @@
+[
+    {
+        "model": "ooee.prinusuarios",
+        "pk": 1, 
+        "fields": {
+            "pri_usuarios": "Organismos internacionales"
+        }
+    }, 
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 2,
+        "fields": {
+            "pri_usuarios": "Presidencia de la República"
+           
+        }
+    }, 
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 3, 
+        "fields": {
+            "pri_usuarios": "Ministerios"
+        }
+    },
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 4,
+        "fields": {
+            "pri_usuarios": "Organismos de Control"            
+        }
+    }, 
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 5, 
+        "fields": {
+            "pri_usuarios": "Otras entidades del orden Nacional"
+        }
+    },
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 6,
+        "fields": {
+            "pri_usuarios": "Entidades de orden Territorial"
+        }
+    }, 
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 7, 
+        "fields": {
+            "pri_usuarios": "Gremios"
+        }
+    },
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 8,
+        "fields": {
+            "pri_usuarios": "Entidades privadas"
+            
+        }
+    },
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 9,
+        "fields": {
+            "pri_usuarios": "Dependencias de la misma entidad"
+        }
+    }, 
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 10, 
+        "fields": {
+            "pri_usuarios": "Academia"            
+        }
+    },
+    {
+        "model": "ooee.prinusuarios", 
+        "pk": 11,
+        "fields": {
+            "pri_usuarios": "Público en General"
+        }
+    }
+]

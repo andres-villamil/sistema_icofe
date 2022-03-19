@@ -1,0 +1,757 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+<!-- librerias para paginación de tablas --> 
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="{% static 'libraries/dataTables/css/dataTables.bootstrap4.min.css' %}">
+<!-- end -->
+
+<div id="loader"></div>
+
+<div id="container">
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-end">
+          <a
+          id="startButton"
+          href="javascript:void(0);"
+          onclick="javascript:introJs().start();"
+          class="btn btn_primary btn-sm hvr-shrink mx-1"
+          >
+          <div class="d-flex align-items-center hvr-shrink">
+              <i class="material-icons">help</i> <span class="ml-2">Instructivo</span>
+          </div>
+          </a>
+    </div>
+</div>
+<div id="allEntities" class="container-fluid">
+    <h2 class="text-center text-uppercase mb-5">inventario de registros administrativos</h2>
+    <p class="text-center">Colombia cuenta con <b>{{ count_total_ra }}</b> registros administrativos generados por <b>{{ count_entities }}</b> entidades de carácter público, privado y mixto.</p>
+</div>
+{% if ras %}
+
+<!-- filtros fields -->
+
+<div class="container bkgFiltros mb-5 shadow-sm" data-step="1"
+      data-intro="De acuerdo a la información de su interés, seleccione uno o varios filtros del buscador. Si su búsqueda está relacionada a un concepto específico seleccione la opción ‘Buscar’ y digítelo.">
+    <p class="w-100 mt-3"> <b>Seleccione la opción de su interés en cada uno de los filtros:</b></p>
+    <hr>
+    <form id="form-filter" action="{% url 'rraa:report_filter_rraa' %}" method="get" class="p-3">
+            
+         
+        <div class="form-row">
+            <div class="col-12 col-lg-8">
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Entidad</span>
+                    </div>
+                    {{ filter.form.entidad_pri  }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Área temática</span>
+                    </div>
+                        {{ filter.form.area_temat }}
+                </div>
+            </div>
+        </div>
+            <div class="form-row">
+                <div class="col-12 col-lg-12">
+                    <div class="input-group mb-3 input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Tema</span>
+                        </div>
+                        {{ filter.form.tema }}
+                    </div>
+                </div>
+            </div>
+            
+        <hr>
+        <div class="form-row">
+            <div class="btn-group" role="group" aria-label="filtros button">
+                <button id="report_filter" class="btn btn_primary btn-sm hvr-shrink mx-1" type="submit" name="report"
+                    value="report">
+                    <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">cloud_download</i>
+                        <span class="ml-2">Descargue el inventario</span>
+                    </div>
+
+                </button>
+                <a id="deleteFilter" href="{% url 'rraa:consulta_rraa' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                    <div class="d-flex align-items-center hvr-shrink">
+                        <i class="material-icons">reply</i>
+                        <span class="ml-2">Borrar filtros</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- end filtros fields -->
+
+<div class="py-3">
+    <p class="text-center">
+        Si desea realizar una búsqueda de acuerdo con un concepto o palabra específica, seleccione ‘buscar’.
+    </p>
+</div>
+
+
+<!---  mensaje si no hay resultados-->
+<div id="message"></div>
+<div id="totalConsulta"></div>
+<!--- end mensaje si no hay resultados-->
+
+<div id="tableAll">
+    <table class="table table-borderless table-hover table-sm" id="table_rraa">
+        <thead class="kulerTableHead" data-step="2"
+      data-intro="Visualice los registros en la siguiente tabla, Si desea realizar una búsqueda de acuerdo a un concepto o palabra específica, seleccione ‘buscar’. Si lo requiere, al final del panel de búsqueda también encuentra la opción de ‘descargar el inventario’ completo.">
+            <tr data-step="3"
+      data-intro="Si lo desea, puede ver e imprimir la ficha de caracterización de cada registro administrativo haciendo clic en el icono (+).">
+                <th scope="col">Nombre</th>
+                <th scope="col">Entidad</th>
+                <th scope="col">Área temática</th>
+                <th scope="col">Tema</th>
+                {% if user.is_authenticated %}
+                <th scope="col">Estado</th>
+                {% endif %}
+                {%  if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 3 or user.profile.role.id == 4 or user.profile.role.id == 5 or user.profile.role.id == 7 %}
+                <th scope="col">Fase</th>
+                {% endif %}
+                <th scope="col" data-step="3"
+      data-intro="Realice diferentes acciones tales acceder al detalle, actualizar y generar un fortalecimiento del registro administrativo, estas acciones están limitadas al rol que se tenga">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ra in registro %}
+            <tr>
+                <td><span class="textContentTable">{{ ra.nombre_ra  }}</span></td>
+
+                <td><span class="textContentTable">{{ ra.entidad_pri  }}</span></td>
+
+                <td><span class="textContentTable"> {{ra.area_temat }}</span></td>
+
+                <td><span class="textContentTable">{{ra.tema}}</span></td>
+                
+                {% if user.is_authenticated %}
+                    {% if ra.ra_activo == True %}
+                        <td><span class="textContentTable">Activo</span></td>
+                    {% else %}
+                        <td><span class="textContentTable">Inactivo</span></td>
+                    {% endif %}
+                {% endif %}
+                
+                {%  if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 3  or user.profile.role.id == 4 or user.profile.role.id == 5 or user.profile.role.id == 7 %}
+                <td><span class="textContentTable"> {{ ra.sist_estado }}</span></td>
+                {% endif %}
+
+                <td class="d-flex flex-row ">
+                    {%  if user.is_authenticated and user.profile.role.id == 5 %}
+
+                    <a href="{% url 'rraa:detail_ra' ra.pk %}"  title="Ver ficha de caracterización">
+                        <i class="material-icons miKuller hvr-shrink">add_circle</i>
+                    </a>
+
+                    <a href="{% url 'rraa:rraa_edit' ra.pk %}" title="Editar">
+                        <i class="material-icons miKuller hvr-shrink">unarchive</i>
+                    </a>
+                </td>
+                    {% elif user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 6 or user.profile.role.id == 7 %}
+                    
+                    <a href="{% url 'rraa:detail_ra' ra.pk %}"  title="Ver ficha de caracterización">
+                        <i class="material-icons miKuller hvr-shrink">add_circle</i>
+                    </a>
+
+                    <a href="{% url 'rraa:rraa_edit' ra.pk %}"  title="Editar">
+                        <i class="material-icons miKuller hvr-shrink">unarchive</i>
+                    </a>
+
+                    <a href="{% url 'rraa:create_fortal' ra.pk %}" title="Fortalecimiento">
+                        <i class="material-icons miKuller hvr-shrink">assignment_turned_in</i>
+                    </a>
+
+                </td>
+                
+
+                {% else %}
+                <a href="{% url 'rraa:detail_ra' ra.pk %}"  title="Ver ficha de caracterización">
+                    <p style="font-family:OpenSans, sans-serif; font-size: 0.75rem;">Ver ficha</p>
+                </a>
+                </td>
+                {% endif %}
+            </tr>
+
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+     <!--- paginacion  -->
+     <div class="row">
+        <div class="col-12 col-md-3">
+
+        </div>
+        <div class="col-12 col-md-3 mt-2">
+            <div id="infoPaginate"><p style="font-size:12px"> Total de registros administrativos: {{ count_total_ra }} </p></div>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-end">
+            <div id="paginateDja" class="dataTables_paginate paging_full_numbers" >
+                <ul class="pagination">
+                {% if registro.has_previous %}
+                <li class="paginate_button page-item">
+                    <a href="?page={{page_start }}" class="page-link">
+                        <span class="hidden-sm-down">Inicio</span> </a></li>
+                
+                <li class="paginate_button page-item">
+                    <a class="page-link" href="?page={{registro.previous_page_number}}">
+                            <span class="hidden-sm-down">Anterior</span> </a></li>
+                {% endif %}
+
+                {% for pg in page_range %}
+                    {% if registro.number == pg %}
+                    <li class="paginate_button page-item">
+                        <a href="?page={{pg}}" class="btn btn-warning">{{pg}}</a>
+                    </li>
+
+                    {% else %}
+                    <li class="paginate_button page-item">
+                        <a href="?page={{pg}}" class="page-link">{{pg}}</a>
+                    </li>
+                    {% endif %}
+                
+                {% endfor %}
+
+                {% if registro.has_next %}
+                <li class="paginate_button page-item">
+                    <a class="page-link" href="?page={{registro.next_page_number}}">
+                        <span class="hidden-sm-down">Siguiente</span>
+                    </a>
+                </li>
+                <li class="paginate_button page-item">
+                    <a href="?page={{page_end }}" class="page-link"> 
+                        <span class="hidden-sm-down">Final</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                    <span class="clear_both"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+   <!--- end paginacion  -->
+</div>
+
+<div id="btnDeleteSearch"></div>
+
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-info" role=" alert">
+            <h2 class="text-center text-uppercase">error 204</h2>
+            <h4 class="pt-3"> No hay Registros Administrativos disponibles en este momento</h4>
+            <div class="d-flex flex-row justify-content-center mt-4">
+                <a href="{% url 'rraa:created_rraa' %}" type="submit" class="save btn btn_primary btn-sm hvr-shrink">
+                    <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">save</i>
+                        <span class="ml-2">Crear Registro Administrativo</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+</div>
+
+<div id="top"></div>
+
+<!-- js -->
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/jquery.dataTables.min.js' %}">
+</script>
+<script type="text/javascript" charset="utf8" src="{% static 'libraries/dataTables/js/dataTables.bootstrap4.min.js' %}">
+</script>
+
+
+<!-- Script by tables -->
+<script>
+    $(document).ready(function () {
+        $('#table_rraa').DataTable({
+            "paging": false,
+            "info": false,
+            language: {
+                "decimal": ",",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Registros Administrativos",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entidades",
+                "infoFiltered": "(Filtrado de _MAX_ totaL Registros Administrativos)",
+                "infoPostFix": "",
+                "thousands": ".",
+                "lengthMenu": "Mostrar _MENU_ ",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "<button id='btn-Big' class='btn btn_primarySearch btn-small' onclick='searchClose()'><div class='d-flex flex-row justify-content-center'><i class = 'material-icons mt-1 pr-2' > search </i> Buscar </div></button>",
+                "searchPlaceholder": "Buscar RRAA",
+                "zeroRecords": "Procesando ...",
+
+                "paginate": {
+                    "first": " Inicio ",
+                    "last": " Fin ",
+                    "next": " >> ",
+                    "previous": " << "
+                },
+            },
+            "pagingType": "full_numbers",
+            "iDisplayLength": 10,
+            "lengthMenu": [
+                [10, 20, 30, 40, 50, -1],
+                [10, 20, 30, 40, 50, "Todos"]
+            ],
+
+            //pagination center
+            "sDom": '<"d-flex flex-row align-items-center justify-content-between view-filter"<"#btnAdd"><"buscador-small"><"buscador-big"f>>t<"d-flex flex-row align-items-center justify-content-between view-pagination"<"#btnReport"><i><p>>',
+            "ordering": false
+        });
+
+
+        //search code
+        $('.buscador-small').append(
+            '<button id="btn-Small" class="btn btn_primary btn-small hvr-shrink" onclick="searchOpen()"><div class=" d-flex flex-row justify-content-center"><i class = "material-icons mt-1 pr-2" > search </i> Buscar </div></button> '
+        )
+        $('.buscador-big').hide()
+        //end search code
+
+        var roleFuente = "3";
+        var roleInvitado = "2";
+        var roleAdministrador = "1";
+        var authenticated = "{{user.is_authenticated}}"
+        var role = "{{user.profile.role.id}}"
+        var entidad = "{{user.profile.entidad.pk}}"
+        console.log("entidad", entidad, "role", role, "roleAdminsitrador", roleAdministrador, "auth", authenticated)
+
+        if (authenticated === 'False' || roleInvitado === role) {
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+        }
+
+       /*  if (roleFuente === role) {
+            var button =
+                '<a id="btnCreateEntities" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">unarchive</i> <span class="ml-2">Editar OOEE</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').addClass("d-none");
+
+        } */ else {
+            var button =
+                '<a id="btnCreateRRAA" class="btn btn_primary hvr-shrink btn-sm"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">create</i> <span class="ml-2">Crear Registro Administrativo</span></div></a>';
+            $('#btnAdd').append(button);
+            $('#btnAdd').click(function () {
+                $("#btnCreateRRAA").attr("href", "{% url 'rraa:created_rraa' %}");
+            })
+        }
+
+        var btnReporte = '<a id="btnRRAA" class="btn btn_primary hvr-shrink btn-sm"  value="reporfull"><div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i> <span class="ml-2">Descargue el inventario</span></div></a>';
+            $('#btnReport').append(btnReporte);
+            $('#btnReport').click(function () {
+                // mensaje al descargar reporte
+                var top = $('#top');
+                    top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                    top.animate({top: "1350"}).delay(7000).animate({top: "-150"})
+                // mensaje al descargar reporte
+                $("#btnRRAA").attr("href", "{% url 'rraa:report_rraa' %}"); // aqui va reporte completo
+        })
+
+        $('#btnReport').css({"margin-bottom": "-34px" });
+        $('#btnReport').css({"margin-top": "14px" });
+        $('#btnReport').css({"z-index": "1000" });
+        //ocultar boton de reporte completo de rraa publica
+        $('#btnReport').show()
+        // Botones de filtros ocultos al cargar pagina   
+        $('#report_filter').hide()
+        $('#deleteFilter').hide()
+        $('input[type="search"]').attr('id', 'nombre_ra')
+
+    });
+
+
+    $(document).ready(function () {
+        $('select').on('change', function () {
+            var entidad = $('select[name=entidad_pri]').val();
+            var tema = $('select[name=tema]').val();
+            var area_tematica = $('select[name=area_temat]').val()
+            var fase = $('select[name=sist_estado]').val()
+            $('#report_filter').show().find('span').text('reporte detallado');
+            $('#report_filter').click(function () {
+                // mensaje al descargar reporte
+                var top = $('#top');
+                    top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+                    top.animate({top: "100"}).delay(4000).animate({top: "-150"})
+                // mensaje al descargar reporte
+            })
+
+            $('#deleteFilter').show()
+            $.ajax({
+                data: {
+                    'entidad': entidad,
+                    'area_tematica': area_tematica,
+                    'tema': tema,
+                    'fase': fase
+                },
+                url: '/rraa/consulta_ajaxModulorraa/',
+                type: 'get',
+                success: function (data) {
+                    if (data.length > 0) {
+                        var roleFuente = "3";
+                        var roleInvitado = "2";
+                        var roleAdministrador = "1";
+                        var roleTematico = "4";
+                        var roleRevisor = "5";
+                        var roleCalidad = "6";
+                        var roleProspectiva = "7";
+                        var authenticated = "{{user.is_authenticated}}"
+                        var role = "{{user.profile.role.id}}"
+                        if(authenticated === 'True' && role === roleAdministrador ||  role == roleRevisor || role == roleProspectiva){
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_rraa">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Nombre</th>' +
+                                                        '<th scope="col">Entidad</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Fase</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+                        }else{
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_rraa">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Nombre</th>' +
+                                                        '<th scope="col">Entidad</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+
+                        }
+
+                        for (var i = 0; i < data.length; i++) {
+                            if (authenticated === 'True' && role === roleAdministrador || role == roleRevisor || role == roleProspectiva){
+                                var activo;
+                                if(data[i].fields.ra_activo === true){
+                                    var activo = "Activo";  
+                                }else{
+                                    var activo = "Inactivo";
+                                }
+                                
+                                html+= '<tr>'+
+                                        '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_ra + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.entidad_pri + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_temat + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ activo 
+                                                +'</span></td>' + 
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.sist_estado + '</span></td>'+
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../rraa/rraa/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">add_circle</i>'+
+                                                '</a>'+
+                                            '<a href="/../rraa/rraa/'+data[i].pk+'/edit/"  title="Editar">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">unarchive</i>'+
+                                                '</a>'+
+                                            '<a href="/../rraa/rraa/'+data[i].pk+'/fortalecimiento/"  title="Fortalecimiento">'+
+                                                    '<i class="material-icons miKuller hvr-shrink"> assignment_turned_in </i>'+
+                                            '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }else if (authenticated === 'True' &&  role === roleFuente || role == roleTematico || role === roleCalidad){
+                                var activo;
+                                if(data[i].fields.ra_activo === true){
+                                    var activo = "Activo";
+                                }else{
+                                    var activo = "Inactivo";
+                                }
+                                html+= '<tr>'+
+                                        '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_ra + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.entidad_pri + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_temat + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ 
+                                                activo +'</span></td>' + 
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../rraa/rraa/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">add_circle</i>'+
+                                                '</a>'+
+                                            /* '<a href="rraa/'+data[i].fields.codigo_rraa.slice(2)+'/edit/"  title="Editar">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">unarchive</i>'+
+                                                '</a>'+ */
+                                            '</td>'+
+                                        '</tr>'
+                            }
+                            else{
+                                var activo;
+                                if(data[i].fields.ra_activo === true){
+                                    var activo = "Activo";
+                                }else{
+                                    var activo = "Inactivo";
+                                }
+                                    html+='<tr>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_ra + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.entidad_pri + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_temat + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ activo
+                                                 +'</span></td>' +
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../rraa/rraa/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<p style="font-family:OpenSans, sans-serif; font-size: 0.75rem;">Ver ficha</p>'+
+                                                '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }
+                        }
+                            $('#tableAll').html(html);
+                            $('#tableAll').show();
+                            $("#message").html('<div id="message"></div>')
+                            $("#totalConsulta").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>filter_list</i>"+  data.length + " Resultados.</p></div>"); 
+                            $("#totalConsulta").show();
+                            
+                    }else{
+                        $('#tableAll').hide();
+                        $('#report_filter').hide();
+                        $("#totalConsulta").hide();
+                        $("#message").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>search_off</i>No hay resultados.</p></div>");
+                        
+                    }
+                }
+            });
+        });
+    }); 
+
+
+    ///filtro por nombre input search datatable
+    $(document).ready(function () {
+
+        function delay(callback, ms) {
+            var timer = 0;
+            return function() {
+                var context = this, args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                callback.apply(context, args);
+                }, ms || 0);
+            };
+        };
+
+        $('#nombre_ra').keyup(delay(function (e) {
+            var nombre_ra = this.value;
+            $.ajax({
+                data: {
+                    'nombre_ra': nombre_ra,         
+                },
+                url: '/rraa/filter_by_name/',
+                type: 'get',
+                success: function (data) {
+                    if (data.length > 0) {
+                        var roleFuente = "3";
+                        var roleInvitado = "2";
+                        var roleAdministrador = "1";
+                        var roleTematico = "4";
+                        var roleRevisor = "5";
+                        var roleCalidad = "6";
+                        var roleProspectiva = "7";
+                        var authenticated = "{{user.is_authenticated}}"
+                        var role = "{{user.profile.role.id}}"
+                        if(authenticated === 'True' && role === roleAdministrador ||  role == roleRevisor || role == roleProspectiva){
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_rraa">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Nombre</th>' +
+                                                        '<th scope="col">Entidad</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Fase</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+                        }else{
+                            var html = '<table class="table table-borderless table-hover table-sm" id="table_rraa">' +
+                                                '<thead class="kulerTableHead">' +
+                                                    '<tr>' +
+                                                        '<th scope="col">Nombre</th>' +
+                                                        '<th scope="col">Entidad</th>' +
+                                                        '<th scope="col">Área temática</th>' +
+                                                        '<th scope="col">Tema</th>' +
+                                                        '<th scope="col">Estado</th>' +
+                                                        '<th scope="col">Acciones</th>' +
+                                                        '</tr>' +
+                                                    '</thead>'+
+                                                    '<tbody>';
+
+                        }
+
+                        for (var i = 0; i < data.length; i++) {
+                            if (authenticated === 'True' && role === roleAdministrador || role == roleRevisor || role == roleProspectiva){
+                                var activo;
+                                if(data[i].fields.ra_activo === true){
+                                    var activo = "Activo";  
+                                }else{
+                                    var activo = "Inactivo";
+                                }
+                                
+                                html+= '<tr>'+
+                                        '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_ra + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.entidad_pri + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_temat + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ activo 
+                                                +'</span></td>' + 
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.sist_estado + '</span></td>'+
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../rraa/rraa/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">add_circle</i>'+
+                                                '</a>'+
+                                            '<a href="/../rraa/rraa/'+data[i].pk+'/edit/"  title="Editar">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">unarchive</i>'+
+                                                '</a>'+
+                                            '<a href="/../rraa/rraa/'+data[i].pk+'/fortalecimiento/"  title="Fortalecimiento">'+
+                                                    '<i class="material-icons miKuller hvr-shrink"> assignment_turned_in </i>'+
+                                            '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }else if (authenticated === 'True' &&  role === roleFuente || role == roleTematico || role === roleCalidad){
+                                var activo;
+                                if(data[i].fields.ra_activo === true){
+                                    var activo = "Activo";
+                                }else{
+                                    var activo = "Inactivo";
+                                }
+                                
+                                html+= '<tr>'+
+                                        '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_ra + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.entidad_pri + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_temat + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ 
+                                                activo +'</span></td>' + 
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../rraa/rraa/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">add_circle</i>'+
+                                                '</a>'+
+                                            /* '<a href="rraa/'+data[i].fields.codigo_rraa.slice(2)+'/edit/"  title="Editar">'+
+                                                    '<i class="material-icons miKuller hvr-shrink">unarchive</i>'+
+                                                '</a>'+ */
+                                            '</td>'+
+                                        '</tr>'
+                            }
+                            else{
+                                var activo;
+                                if(data[i].fields.ra_activo === true){
+                                    var activo = "Activo";
+                                }else{
+                                    var activo = "Inactivo";
+                                }
+                                    html+='<tr>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.nombre_ra + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.entidad_pri + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.area_temat + '</span></td>' +
+                                            '<td><span class="textContentTable">' + data[
+                                                i].fields.tema + '</span></td>' +
+                                            '<td><span class="textContentTable">'+ activo
+                                                 +'</span></td>' +
+                                            '<td class="d-flex flex-row ">'+
+                                                '<a href="/../rraa/rraa/'+data[i].pk+'/"  title="Ver ficha de caracterización">'+
+                                                    '<p style="font-family:OpenSans, sans-serif; font-size: 0.75rem;">Ver ficha</p>'+
+                                                '</a>'+
+                                            '</td>'+
+                                        '</tr>'
+                            }
+                        }
+                            $('#tableAll').html(html);
+                            $('#tableAll').show();
+                            $("#message").html('<div id="message"></div>')
+                            $("#totalConsulta").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>filter_list</i>"+  data.length + " Resultados.</p></div>"); 
+                            $("#totalConsulta").show();
+                            $("#btnDeleteSearch").html('<div><a href="/rraa/consulta_rraa/" class="btn btn_primary btn-sm hvr-shrink mx-1">'+
+                                                            '<div class="d-flex align-items-center hvr-shrink">'+
+                                                            '<i class="material-icons">reply</i>'+
+                                                                '<span class="ml-2">Borrar búsqueda</span>'+
+                                                            '</div>'+
+                                                        '</a></div>')
+                            $("#btnDeleteSearch").show();
+                    }else{
+                        $('#tableAll').hide();
+                        $('#report_filter').hide();
+                        $("#totalConsulta").hide();
+                        $("#message").html("<div class='col-md-12 alert alert-info text-center error_log'><p class='error'><i class='material-icons miKuller hvr-shrink'>search_off</i>No hay resultados.</p></div>");
+                        $("#btnDeleteSearch").html('<div><a href="/rraa/consulta_rraa/" class="btn btn_primary btn-sm hvr-shrink mx-1">'+
+                                                            '<div class="d-flex align-items-center hvr-shrink">'+
+                                                            '<i class="material-icons">reply</i>'+
+                                                                '<span class="ml-2">Borrar búsqueda</span>'+
+                                                            '</div>'+
+                                                        '</a></div>')
+                        $("#btnDeleteSearch").show();
+                    }
+                }
+            })
+        
+        }, 3000));
+    });
+    //filtro por nombre input search datatable
+
+    function openModal(url) {
+        $('#popupOOEE').load(url, function () {
+            $(this).modal('show');
+        });
+        return false;
+    }
+
+    function closeModal() {
+        $('#popupOOEE').modal('hide');
+        return false;
+    }
+
+    function preloader(){
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("container").style.display = "block";
+    }//preloader
+    window.onload = preloader;
+    
+</script>
+
+{% endblock content %}

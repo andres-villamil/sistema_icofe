@@ -1,0 +1,62 @@
+[
+    {
+        "model": "ooee.resultadoevaluacion",
+        "pk": 1, 
+        "fields": {
+            "resultado_eval": "Se otorga certificado"
+          
+        }
+    }, 
+    {
+        "model": "ooee.resultadoevaluacion", 
+        "pk": 2,
+        "fields": {
+            "resultado_eval": "Se otorga certificado con condición"
+         
+        }
+    }, 
+    {
+        "model": "ooee.resultadoevaluacion", 
+        "pk": 3, 
+        "fields": {
+            "resultado_eval": "Se aprueba ampliación del alcance del certificado"
+          
+        }
+    },
+    {
+        "model": "ooee.resultadoevaluacion", 
+        "pk": 4,
+        "fields": {
+            "resultado_eval": "Se aprueba ampliación del alcance del certificado  con condición"
+            
+            
+        }
+    },
+    {
+        "model": "ooee.resultadoevaluacion", 
+        "pk": 5,
+        "fields": {
+            "resultado_eval": "No se otorga Certificado"
+            
+            
+        }
+    },
+    {
+        "model": "ooee.resultadoevaluacion", 
+        "pk": 6,
+        "fields": {
+            "resultado_eval": "No se aprueba ampliación del alcance del certificado"
+            
+            
+        }
+    },
+    {
+        "model": "ooee.resultadoevaluacion", 
+        "pk": 7,
+        "fields": {
+            "resultado_eval": "Se aplaza decisión de la certificación"
+            
+            
+        }
+    }
+]

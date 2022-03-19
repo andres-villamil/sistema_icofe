@@ -1,0 +1,37 @@
+[
+    {
+        "model": "rraa.estadoactualizacionrraa",
+        "pk": 1, 
+        "fields": {
+            "est_actual": "Actualizada" 
+        }
+    }, 
+    {
+        "model": "rraa.estadoactualizacionrraa", 
+        "pk": 2,
+        "fields": {
+            "est_actual": "Sin actualizar"
+        }
+    }, 
+    {
+        "model": "rraa.estadoactualizacionrraa", 
+        "pk": 3, 
+        "fields": {
+            "est_actual": "En proceso" 
+        }
+    },
+    {
+        "model": "rraa.estadoactualizacionrraa", 
+        "pk": 4,
+        "fields": {
+            "est_actual": "Nueva"   
+        }
+    }, 
+    {
+        "model": "rraa.estadoactualizacionrraa", 
+        "pk": 5, 
+        "fields": {
+            "est_actual": "Pendiente"
+        }
+    }
+]

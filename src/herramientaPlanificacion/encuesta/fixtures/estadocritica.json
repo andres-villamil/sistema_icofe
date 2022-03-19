@@ -1,0 +1,23 @@
+[
+    {
+        "model": "rraa.estadocriticarraa",
+        "pk": 1, 
+        "fields": {
+            "estado_critica_ra": "Aprobada" 
+        }
+    }, 
+    {
+        "model": "rraa.estadocriticarraa", 
+        "pk": 2,
+        "fields": {
+            "estado_critica_ra": "En proceso PLE"
+        }
+    }, 
+    {
+        "model": "rraa.estadocriticarraa", 
+        "pk": 3, 
+        "fields": {
+            "estado_critica_ra": "En revisión por la entidad" 
+        }
+    }
+]

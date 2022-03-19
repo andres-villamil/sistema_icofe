@@ -1,0 +1,37 @@
+[
+    {
+        "model": "ooee.estadoactualizacion",
+        "pk": 1, 
+        "fields": {
+            "estado_actuali": "Actualizada" 
+        }
+    }, 
+    {
+        "model": "ooee.estadoactualizacion", 
+        "pk": 2,
+        "fields": {
+            "estado_actuali": "Sin actualizar"
+        }
+    }, 
+    {
+        "model": "ooee.estadoactualizacion", 
+        "pk": 3, 
+        "fields": {
+            "estado_actuali": "En proceso" 
+        }
+    },
+    {
+        "model": "ooee.estadoactualizacion", 
+        "pk": 4,
+        "fields": {
+            "estado_actuali": "Nueva"   
+        }
+    }, 
+    {
+        "model": "ooee.estadoactualizacion", 
+        "pk": 5, 
+        "fields": {
+            "estado_actuali": "Pendiente"
+        }
+    }
+]

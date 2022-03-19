@@ -1,0 +1,388 @@
+{% extends "base/base2.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+   <div class="d-flex flex-row justify-content-center align-items-center">
+      <div class="alert alert-warning" role=" alert">
+         <div class="d-flex flex-row justify-content-center align-items-center mt-2">
+            <h6 class="mr-4">Para ver todas las variables descargue el</h6>
+            <a href="{% url 'ooee:report_ooee' %}" class="save btn btn_primary btn-sm hvr-shrink" onclick="showMessage()">
+               <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">cloud_download</i>
+                  <span class="ml-2">Inventario de operaciones estadísticas</span>
+               </div>
+            </a>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<div id="detalleOOEE" class="container">{% csrf_token %}
+   <div id="warpHeadDetail">
+      <div class="bkg-Green rounded-top p-1">
+         <p class="text-center titleDetail p-0 mt-3"><b>Ficha de caracterización Operación Estadística</b></p>
+      </div>
+      <div class="d-flex flex-row bkg-gray rounded p-1">
+         <div class="d-flex flex-column bkg-grayDark rounded">
+            <div class="d-flex flex-row">
+               <div class="px-5 w-50">
+                  <p class="m-0 py-1"><b>Código:</b></p>
+               </div>
+               <div class="px-5 w-50">
+                  <p class="m-0 py-1">{{oe.codigo_oe }}</p>
+               </div>
+            </div>
+            <div class="border-top my-1"></div>
+            <div class="d-flex flex-row">
+               <div class="px-5 w-50">
+                  <p class="m-0 py-1"><b>Estado:</b></p>
+               </div>
+               <div class="px-5 w-50">
+                  <p class="m-0 py-1 text-capitalize">{{oe.estado_oe_tematico}}</p>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex align-items-center" style="overflow-wrap: anywhere;">
+            <h6 class="pl-3 TitleOOEE">{{ oe.nombre_oe }}</h6>
+         </div>
+      </div>
+   </div>
+   <!---estado de la novedad-->
+
+   {% if estadoNovOE != "" %}
+   <div class="warpInfo d-flex flex-column py-1 px-2 mt-2">
+      <div class="d-flex flex-row">
+         <div class="w-50 mr-1">
+            <div class="head">
+               <p>Estado de la actualización:</p>
+            </div>
+            <div class="body border rounded pt-1 px-2">
+               <p>{{ estadoNovOE }}</p>
+            </div>
+         </div>
+         <div class="w-50 ml-1">
+            <div class="head">
+               <p>Fecha de la actualización:</p>
+            </div>
+            <div class="body border rounded pt-1 px-2">
+               <p>{{ fechaEstado|date:'Y-m-d'}}</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   {% else %}
+   <!--  No muestra nada -->
+   {% endif %}
+   <!---end estado de la novedad-->
+   <div class="d-flex flex-column">
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Nombre de la entidad responsable</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            <p>{{oe.entidad }}</p>
+         </div>
+      </div>
+
+      {% if  oe.entidad_resp2 == None %}
+         <div> </div>
+      {% else %}
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Nombre de la entidad responsable</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            <p>{{oe.entidad_resp2 }}</p>
+         </div>
+      </div>
+      {% endif %}
+
+      {% if  oe.entidad_resp3 == None %}
+         <div> </div>
+
+      {% else %}
+         <div class="warpInfo d-flex flex-column py-1 px-2">
+            <div class="head">
+               <p>Nombre de la entidad responsable</p>
+            </div>
+            <div class="body border rounded pt-1 px-2">
+               <p>{{oe.entidad_resp3 }}</p>
+            </div>
+         </div>
+      {% endif %}
+
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Área temática</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            <p>{{ oe.area_tematica }}</p>
+         </div>
+      </div>
+
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Tema</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            <p>{{ oe.tema }}</p>
+         </div>
+      </div>
+
+      <!-- <div class="warpInfo d-flex flex-column py-1 px-2">
+<div class="head"><p>Tema compartido</p></div>
+
+
+  {% for TemaCompartido in oe.tema_compartido.all  %}
+  
+    <div class="body border rounded pt-1 px-2 mt-1"><p>{{ TemaCompartido.tema_compartido }}</p></div>
+
+  {% endfor %}
+</div> -->
+
+      <!-- <div class="warpInfo d-flex flex-column py-1 px-2">
+<div class="head"><p>Entidades responsables</p></div>
+
+{% if oe.entidad != None and oe.entidad_resp2 == None and oe.entidad_resp3 == None %}
+<div class="body border rounded pt-1 px-2 mt-1"><p>{{ oe.entidad }}</p></div>
+{%elif oe.entidad != None and oe.entidad_resp2 != None and oe.entidad_resp3 == None %}
+<div class="body border rounded pt-1 px-2 mt-1"><p>{{ oe.entidad }}</p></div>
+<div class="body border rounded pt-1 px-2 mt-1"><p>{{ oe.entidad_resp2 }}</p></div>
+{%elif oe.entidad != None and oe.entidad_resp2 != None and oe.entidad_resp3 != None %}
+<div class="body border rounded pt-1 px-2 mt-1"><p>{{ oe.entidad }}</p></div>
+<div class="body border rounded pt-1 px-2 mt-1"><p>{{ oe.entidad_resp2 }}</p></div>
+<div class="body border rounded pt-1 px-2 mt-1"><p>{{ oe.entidad_resp3 }}</p></div>
+{% endif %}
+</div> -->
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Dependencia responsable</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            <p>{{ oe.nombre_dep }}</p>
+         </div>
+      </div>
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Metodología estadística</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            {% for TipoOperacion in oe.tipo_operacion.all  %}
+            <p>{{ TipoOperacion.tipo_operacion }}</p>
+            {% endfor %}
+         </div>
+      </div>
+
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Objetivo de la operación estadística</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            <p>{{ oe.objetivo_oe }}</p>
+         </div>
+      </div>
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Unidad de observación</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            {% for UnidadObservacion in oe.uni_observacion.all  %}
+            <p>{{ UnidadObservacion.uni_observacion }}</p>
+            {% endfor %}
+            {{ uni_observacionFieldText.mc_otra }}
+         </div>
+      </div>
+   </div>
+
+
+
+   <hr>
+   <div class="warpInfo d-flex flex-column py-1 px-2">
+      <div class="head">
+         <p>Página web donde están disponibles los resultados</p>
+      </div>
+      <div class="body border rounded pt-1 px-2" style="overflow-wrap: anywhere;">
+         {% if oe.res_est_url == None %}
+         <p><a href="#" class="btn btn_link_detail hvr-shrink"></a></p>
+         {% else %}
+         <p><a href="{{ oe.res_est_url }}" class="btn btn_link_detail hvr-shrink"
+               target="_blank">{{ oe.res_est_url }}</a>
+         </p>
+         {% endif %}
+
+      </div>
+   </div>
+   <hr>
+   <div class="d-flex flex-row justify-content-center titleSectionDetailNegative mb-3 rounded">
+      <p class="p-0 mt-3">Principales resultados</p>
+   </div>
+   <div class="d-flex flex-wrap">
+      {% for results in resultEstaFieldText   %}
+      <p class="border rounded py-1 px-2 w-25">{{results.resultEstad}}</p>
+      {% endfor %}
+   </div>
+   <hr>
+   <div class="d-flex flex-column">
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Cobertura geográfica</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            {% for CoberturaGeografica in oe.cob_geo.all  %}
+            <p>{{ CoberturaGeografica.cob_geo }}</p>
+            {% endfor %}
+         </div>
+      </div>
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Desagregación geográfica</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            {% for DesagregacionGeografica in oe.des_geo.all  %}
+
+            {% if DesagregacionGeografica.des_geo == "Nacional" %}
+
+            <p>Nacional: </p>
+            <p></p>
+            <hr>
+
+            {% elif DesagregacionGeografica.des_geo == "Regional" %}
+            <p>Regional: </p>
+            <p>{{ opcDesagFieldText.des_tot_regional }} {{ opcDesagFieldText.des_cual_regional }}</p>
+            <hr>
+
+            {% elif DesagregacionGeografica.des_geo == "Departamental" %}
+            <p>Departamental: </p>
+            <p>{{ opcDesagFieldText.des_tot_dep }} {{ opcDesagFieldText.des_cual_dep }} </p>
+            <hr>
+
+            {% elif DesagregacionGeografica.des_geo == "Áreas metropolitanas" %}
+
+            <p>Áreas metropolitanas:</p>
+            <p>{{ opcDesagFieldText.des_tot_are_metr }} {{ opcDesagFieldText.des_cual_are_metr }}</p>
+            <hr>
+
+            {% elif DesagregacionGeografica.des_geo == "Municipal" %}
+
+            <p>Municipal: </p>
+            <p>{{ opcDesagFieldText.des_tot_mun }} {{ opcDesagFieldText.des_cual_mun }}</p>
+            <hr>
+
+            {% elif DesagregacionGeografica.des_geo ==  "Otro (s)" %}
+
+            <p>Otro (s): </p>
+            <p>{{ opcDesagFieldText.des_tot_otro }} {{ opcDesagFieldText.des_cual_otro }}</p>
+            <hr>
+
+            {% endif %}
+
+            {% endfor %}
+
+            <!-- <p>{{ DesagregacionGeografica.des_geo }}</p> -->
+
+
+            <!-- <p>{{ opcDesagFieldText.des_tot_regional }} {{ opcDesagFieldText.des_cual_regional }}</p>
+<p>{{ opcDesagFieldText.des_tot_dep }} {{ opcDesagFieldText.des_cual_dep }} </p>
+<p>{{ opcDesagFieldText.des_tot_are_metr }} {{ opcDesagFieldText.des_cual_are_metr }}</p>
+<p>{{ opcDesagFieldText.des_tot_mun }} {{ opcDesagFieldText.des_cual_mun }}</p>
+<p>{{ opcDesagFieldText.des_tot_otro }} {{ opcDesagFieldText.des_cual_otro }}</p> -->
+         </div>
+      </div>
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Desagregación zona</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            {% for DesagregacionZona in oe.des_zona.all  %}
+            <p>{{ DesagregacionZona.des_zona }}</p>
+            {% endfor %}
+         </div>
+      </div>
+      <div class="warpInfo d-flex flex-column py-1 px-2">
+         <div class="head">
+            <p>Desagregación grupo</p>
+         </div>
+         <div class="body border rounded pt-1 px-2">
+            {% for DesagregacionGrupo in oe.des_grupo.all  %}
+            <p>{{ DesagregacionGrupo.des_grupo }}</p>
+            {% endfor %}
+            <div class="ml-3">
+                {{ opcDesagFieldText.des_grupo_otro }}
+            </div>
+         </div>
+      </div>
+      <div>
+         <hr>
+         <div class="warpInfo d-flex flex-column py-1 px-2">
+            <div class="head">
+               <p>Periodicidad de difusión</p>
+            </div>
+            <div class="body border rounded pt-1 px-2">
+               {% for FrecuenciaDifusion in oe.fre_dif.all  %}
+               <p>{{ FrecuenciaDifusion.fre_dif }}</p>
+               {% endfor %}
+               {{ frecueDifFieldText.no_definido }}
+            </div>
+         </div>
+      </div>
+   </div>
+
+      <!--  Mostrar mensaje de descarga -->
+         <div id="topMessage"></div>
+      <!--  Mostrar mensaje de descarga  -->
+</div>
+<div class="container">
+   <hr>
+   <div class="d-flex flex-row justify-content-end py-3">
+      {%   if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 5  %}
+      <a href="{% url 'ooee:ooee_edit' oe.pk %}" class="btn btn_primary btn-sm hvr-shrink mx-2">
+         <div class="d-flex align-items-center"><i class="material-icons">edit</i>
+            <span class="ml-2">Editar la operación estadística</span>
+         </div>
+      </a>
+      {% endif %}
+
+      <button id="print_btn" type="button" class="btn btn_primary btn-sm hvr-shrink mx-2" onclick="fnc_print()">
+         <div class="d-flex align-items-center"><i class="material-icons">print</i>
+            <span class="ml-2">Imprimir</span>
+         </div>
+      </button>
+
+      <script>
+         var options = {
+            importCSS: true,
+         }
+
+         function fnc_print() {
+            $('#detalleOOEE').printThis(options);
+         }
+
+         $(document).ready(function(){
+            $('#backLink').click(function(){
+               parent.history.back();
+            return false;
+            });
+         });
+
+   // mensaje al descargar reporte
+      function showMessage(){
+         var top = $('#topMessage');
+             top.html("<div>Estamos preparando su reporte por favor espere  ...</div><div>esta acción puede tardar varios minutos</div>");
+             top.animate({top: "50"}).delay(7000).animate({top: "-150"})
+   // mensaje al descargar reporte
+      }
+
+      </script>
+
+      <button id="backLink" class="btn btn_primary btn-sm hvr-shrink mx-1">
+         <div class="d-flex align-items-center justify-content-center">
+            <i class="material-icons">keyboard_return</i>
+            <span class="ml-2">Volver</span>
+         </div>
+      </button>
+   </div>
+</div>
+
+
+{% endblock %}

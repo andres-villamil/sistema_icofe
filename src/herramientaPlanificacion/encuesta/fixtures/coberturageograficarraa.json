@@ -1,0 +1,44 @@
+[
+    {
+        "model": "rraa.coberturageograficarraa",
+        "pk": 1, 
+        "fields": {
+            "cob_geograf": "Nacional"
+        }
+    }, 
+    {
+        "model": "rraa.coberturageograficarraa", 
+        "pk": 2,
+        "fields": {
+            "cob_geograf": "Regional"
+        }
+    }, 
+    {
+        "model": "rraa.coberturageograficarraa", 
+        "pk": 3,
+        "fields": {
+            "cob_geograf": "Departamental"
+        }
+    }, 
+    {
+        "model": "rraa.coberturageograficarraa",
+        "pk": 4, 
+        "fields": {
+            "cob_geograf": "Áreas metropolitanas"
+        }
+    }, 
+    {
+        "model": "rraa.coberturageograficarraa", 
+        "pk": 5,
+        "fields": {
+            "cob_geograf": "Municipal"
+        }
+    },    
+    {
+        "model": "rraa.coberturageograficarraa", 
+        "pk": 6,
+        "fields": {
+            "cob_geograf": "Otro (s)"
+        }
+    }
+]

@@ -1,0 +1,54 @@
+[
+    {
+        "model": "ooee.docsdesarrollo",
+        "pk": 1, 
+        "fields": {
+            "docs_des": " Metodología"
+        }
+    }, 
+    {
+        "model": "ooee.docsdesarrollo", 
+        "pk": 2,
+        "fields": {
+            "docs_des": "Ficha Metodológica (técnica)"
+        }
+    }, 
+    {
+        "model": "ooee.docsdesarrollo", 
+        "pk": 3, 
+        "fields": {
+            "docs_des": "Hojas de vida de indicadores"
+        }
+    },
+    {
+        "model": "ooee.docsdesarrollo", 
+        "pk": 4,
+        "fields": {
+            "docs_des": "Manual operativo"            
+        }
+    }, 
+    {
+        "model": "ooee.docsdesarrollo", 
+        "pk": 5, 
+        "fields": {
+            "docs_des": "Diccionario de datos"
+        }
+    },
+    {
+        "model": "ooee.docsdesarrollo", 
+        "pk": 6,
+        "fields": {
+            "docs_des": "Otro (s)"            
+        }
+    }, 
+    {
+        "model": "ooee.docsdesarrollo", 
+        "pk": 7, 
+        "fields": {
+            "docs_des": "Ninguno"
+        }
+    }
+]
+
+
+

@@ -1,0 +1,345 @@
+{% extends 'base/base2.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.profile.role.id == 1 or user.profile.role.id == 7  %}
+
+<!-- Modulo de fortalecimiento de RRAA -->
+<div id="loader"></div>
+
+<div id="editForms">
+    <h2 class="inst text-center text-uppercase mb-5" data-step="1"
+        data-intro="Bienvenido. En este formulario puede registrar el fortalecimiento del Registro Administrativo. Todos los campos descritos a continuación deben ser diligenciados.">
+        Editar Fortalecimiento del Registro Administrativo</h2>
+    <div class="row mb-3">
+        <div class="col-lg-4 offset-lg-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="btn-group" role="group">
+                    <a id="startButton" href="javascript:void(0);" onclick="javascript:introJs().start();"
+                        class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">help</i>
+                            <span class="ml-2">Instructivo</span></div>
+                    </a>
+                    <a href="{% url 'rraa:all_rraa' %}" class="btn btn_primary btn-sm hvr-shrink mx-1">
+                        <div class="d-flex align-items-center hvr-shrink"><i class="material-icons">reply</i>
+                            <span class="ml-2">Volver</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-11">
+
+       <!-- Mensaje de error o success-->
+       {% for message in messages %}
+       <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+           <p class="d-flex flex-row align-items-center justify-content-center mt-3">
+               {% if message.tags == "alert-danger" %}
+                   <span class="material-icons mr-3">warning</span>
+               {% elif message.tags == "alert-success" %}
+                   <span class="material-icons mr-3">done_outline</span>
+               {% endif %}
+               {{ message }}
+           </p>
+       </div>
+       {% endfor %}
+           <!--End  Mensaje de error o  success-->
+
+
+        <form action="" method="POST" class="w-100" enctype="multipart/form-data">{% csrf_token %}
+            <div class=" container mt-4">
+                <div id="moduleFortalecimiento" class="colorBkgTest">
+                    <div class="row" >
+                        <div class="col-12 col-lg-12">
+                            <div class="card-body">
+                                <!--Nombre del registro administrativo-->
+                                
+                                    <br><br>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Registro Aministrativo al que se realizara fortalecimiento:</span>
+                                    </div>
+                                    {{  editFortalecimiento_ra_form.post_ra }}
+                                </div>
+                                
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Diagnóstico del RA:</span>
+                                    </div>
+                                    {{ editFortalecimiento_ra_form.diagnostico_ra }}
+                                </div>
+                                <div id="dialogSINO_Diagnostico" class="alert alert-primary" role="alert">
+                                    <div class="d-flex flex-row justify-content-center">
+                                        <span class="mr-2">Si la respuesta de la pregunta es <b>"SI"</b> de clic en el switch para habilitar las opciones y viceversa. </span>
+                                        <img class="img-fluid" style="width: 2vw;" src="../../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                                    </div>
+                                </div>
+                                <div  id="fortalecimiento1" style="display: none;">
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group input-group-sm date" id="year_diagnostico"
+                                            data-target-input="nearest">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Año de diagnóstico de rraa:</span>
+                                            </div>
+                                            {{ editFortalecimiento_ra_form.year_diagnostico }}
+                                            <div class="input-group-append" data-target="#year_diagnostico"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i
+                                                        class="material-icons misize">calendar_today</i>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>
+
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Módulo o sección diagnosticado:</span>
+                                        </div>
+                                        {{ editFortalecimiento_ra_form.mod_sec_diagn }}
+
+                                        <!-- Validaciones error-->
+                                        {% if editFortalecimiento_ra_form.errors.mod_sec_diagn %}
+                                        <small id="formHelp" class="form-text text-muted">
+                                            <div class="d-flex flex-row align-items-start">
+                                                <i class="material-icons miReport">
+                                                    error
+                                                </i>
+                                                {{  editFortalecimiento_ra_form.errors.mod_sec_diagn }}
+                                            </div>
+                                        </small>
+                                        {% endif %}
+                                        <!--  end error -->
+                                    </div>
+
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Plan de fortalecimiento
+                                                aprobado por la entidad:</span>
+                                        </div>
+                                        {{ editFortalecimiento_ra_form.plan_fort_aprob }}
+                                    </div>
+                                    <div id="dialogSINO_PlaAprobado" class="alert alert-primary" role="alert">
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <span class="mr-2">Si la respuesta de la pregunta es <b>"SI"</b> de clic en el switch para habilitar las opciones y viceversa. </span>
+                                            <img class="img-fluid" style="width: 2vw;" src="../../../../media/pregunta-si-y-no.gif" alt="Questions Yes and No"> 
+                                        </div>
+                                    </div>
+                                <div id="planAprobado" style="display: none;">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="bkgInputQuestion1 mb-1">
+                                                <p>Fecha de aprobación del Plan de Fortalecimiento</p>
+                                            </div>
+                                            <div class="input-group input-group-sm date" id="fecha_aprobacion"
+                                                data-target-input="nearest">
+                                                {{ editFortalecimiento_ra_form.fecha_aprobacion }}
+                                                <div class="input-group-append" data-target="#fecha_aprobacion"
+                                                    data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i
+                                                            class="material-icons misize">calendar_today</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3 input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Seguimiento a la implementación
+                                                del Plan de fortalecimiento:</span>
+                                        </div>
+                                        {{ editFortalecimiento_ra_form.seg_imple_plan }}
+                                    </div>
+
+                                    <div class="row">
+                                            <div class="col">
+                                                <div class="bkgInputQuestion1 mb-1">
+                                                    <p>Fecha de inicio de la implementación
+                                                        del Plan de Fortaleciemiento</p>
+                                                </div>
+                                                <div class="input-group input-group-sm date" id="fecha_inicio_plan"
+                                                    data-target-input="nearest">
+                                                    {{ editFortalecimiento_ra_form.fecha_inicio_plan }}
+                                                    <div class="input-group-append" data-target="#fecha_inicio_plan"
+                                                        data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i
+                                                                class="material-icons misize">calendar_today</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="bkgInputQuestion1 mb-1">
+                                                    <p>Fecha de último seguimiento 
+                                                        a la implementación del Plan de Fortalecimiento</p>
+                                                </div>
+                                                <div class="input-group input-group-sm date" id="fecha_ultimo_seguimiento"
+                                                    data-target-input="nearest">
+                                                    {{ editFortalecimiento_ra_form.fecha_ultimo_seguimiento }}
+                                                    <div class="input-group-append" data-target="#fecha_ultimo_seguimiento"
+                                                        data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i
+                                                                class="material-icons misize">calendar_today</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="bkgInputQuestion1 mb-1">
+                                                    <p>Fecha de finalización de la implementación Plan de fortalecimiento</p>
+                                                </div>
+                                                <div class="input-group input-group-sm date" id="fecha_finalizacion"
+                                                    data-target-input="nearest">
+                                                    {{ editFortalecimiento_ra_form.fecha_finalizacion }}
+                                                    <div class="input-group-append" data-target="#fecha_finalizacion"
+                                                        data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i
+                                                                class="material-icons misize">calendar_today</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    </div>
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="save btn btn_primary btn-block btn-sm hvr-shrink" data-step="4" data-intro="Envíe la evaluación dando clic">
+                            <div class="d-flex align-items-center justify-content-center hvr-shrink">
+                                <i class="material-icons">send</i>
+                                <span class="ml-2">Enviar fortalecimiento</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </form>
+
+</div>
+<!-- end  Modulo fortalecimiento -->
+
+{% else %}
+<div class="container">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="alert alert-warning" role="alert">
+            <h2 class="text-center text-uppercase">error 401</h2>
+            <h4 class="pt-3">El rol {{ user.profile.role.name }} no tiene permisos para realizar esta acción</h4>
+            <a class="alert-link" href="{% url 'login:loggedin' %}">
+                <p class="text-center mt-3">Por favor regrese a una vista valida</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+<script>
+
+    $(function () {
+            
+            $("#year_diagnostico").datetimepicker({
+                format: 'YYYY',
+                locale: 'es'
+            });
+            $("#fecha_aprobacion").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#fecha_inicio_plan").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#fecha_ultimo_seguimiento").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });
+            $("#fecha_finalizacion").datetimepicker({
+                format: 'DD/MM/YYYY',
+                locale: 'es'
+            });                 
+    });
+
+        $(document).ready(function(){
+
+        //---- cuando se carga ---//
+        ///##############   Diagnostico RRAA -- SI/NO -- ##################
+            var checkDiagnostico = $('input:checkbox[name=diagnostico_ra]:checked').val()
+               
+            if (checkDiagnostico === undefined) {
+                $("#fortalecimiento1").hide() 
+                $('#dialogSINO_Diagnostico').show()  
+            } else {
+                $('#fortalecimiento1').show()
+                $('#dialogSINO_Diagnostico').hide()  
+            }
+        ///############## Plan de fortalecimiento aprobado -- SI/NO -- ##################
+            var checkPlanFor = $('input:checkbox[name=plan_fort_aprob]:checked').val()
+               
+            if (checkPlanFor === undefined) {
+                $("#planAprobado").hide() 
+                $('#dialogSINO_PlaAprobado').show() 
+            } else {
+                $('#planAprobado').show()
+                $('#dialogSINO_PlaAprobado').hide()
+            }
+        //---- end cuando se carga la pagina ---//
+
+            //------------------#### Diagnostico  ####-------------------------------------//
+
+            $('input:checkbox[name=diagnostico_ra]').on('change', function () {
+                var diagnosticoSelected = new Array();
+                $("input:checkbox[name=diagnostico_ra]:checked").each(function () {
+                    diagnosticoSelected.push($(this).val());
+                })
+                if (diagnosticoSelected[0] === "on") {
+                    $('#fortalecimiento1').show()
+                    $('#dialogSINO_Diagnostico').hide()
+                } else {
+                    $("#fortalecimiento1").hide() 
+                    $('#dialogSINO_Diagnostico').show()
+                }
+            });
+            //------------------#### plan aprobado  ####-------------------------------------//
+
+            $('input:checkbox[name=plan_fort_aprob]').on('change', function () {
+                var planFortSelected = new Array();
+                $("input:checkbox[name=plan_fort_aprob]:checked").each(function () {
+                    planFortSelected.push($(this).val());
+                })
+                if (planFortSelected[0] === "on") {
+                    $('#planAprobado').show()
+                    $('#dialogSINO_PlaAprobado').hide()
+                } else {
+                    $("#planAprobado").hide() 
+                    $('#dialogSINO_PlaAprobado').show()
+                }
+            }); 
+
+             // RRAA que se evalua
+            $('#id_post_ra option:not(:selected)').attr('disabled',true);
+            $('#id_post_ra').addClass('form-control form-control-sm')
+        });
+
+         // Mostrar Mensaje de carga
+     function preloader(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("editForms").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+   // End Mensaje de carga
+    
+    </script>
+
+
+{% endblock %}

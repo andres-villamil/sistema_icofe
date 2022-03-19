@@ -1,0 +1,16 @@
+[
+    {
+        "model": "ooee.obtenciondato",
+        "pk": 1, 
+        "fields": {
+            "obt_dato": "Registro Administrativos"
+        }
+    }, 
+    {
+        "model": "ooee.obtenciondato", 
+        "pk": 2,
+        "fields": {
+            "obt_dato": "Operación Estadística"
+        }
+    }
+   ]

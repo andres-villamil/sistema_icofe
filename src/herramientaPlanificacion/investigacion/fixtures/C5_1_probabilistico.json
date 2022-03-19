@@ -1,0 +1,37 @@
+[
+    {
+        "model": "ooee.muestreoprobabilistico",
+        "pk": 1, 
+        "fields": {
+            "tipo_probabilistico": "Muestreo aleatorio simple"
+        }
+    }, 
+    {
+        "model": "ooee.muestreoprobabilistico", 
+        "pk": 2,
+        "fields": {
+            "tipo_probabilistico": "Muestreo aleatorio sistemático"
+        }
+    }, 
+    {
+        "model": "ooee.muestreoprobabilistico", 
+        "pk": 3, 
+        "fields": {
+            "tipo_probabilistico": "Muestreo aleatorio estratificado"
+        }
+    },
+    {
+        "model": "ooee.muestreoprobabilistico", 
+        "pk": 4,
+        "fields": {
+            "tipo_probabilistico": "Muestreo aleatorio por conglomerados"            
+        }
+    }, 
+    {
+        "model": "ooee.muestreoprobabilistico", 
+        "pk": 5, 
+        "fields": {
+            "tipo_probabilistico": "Otro"
+        }
+    }
+]

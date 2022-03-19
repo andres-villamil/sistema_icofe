@@ -1,0 +1,99 @@
+@import "../resources/setting";
+@import "../resources/responsive";
+
+#navOOEE {
+  ul {
+    @include media(ds) {
+      top: 28vh;
+    }
+  }
+
+  .list-group {
+    background-color: $kuler_sistemaInventario-2-hex;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    a {
+      font-family: $Barlow;
+      font-size: $h6;
+      color: $kuler-white;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .red {
+    color: red;
+  }
+
+  .green {
+    color: green;
+  }
+  .white {
+    color: $kuler-white;
+  }
+}
+
+#navOOEEedit {
+  ul {
+    @include media(ds) {
+      top: 20vh;
+    }
+  }
+
+  .list-group {
+    background-color: $kuler_sistemaInventario-2-hex;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    a {
+      font-family: $Barlow;
+      font-size: $h6;
+      color: $kuler-white;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .red {
+    color: red;
+  }
+
+  .green {
+    color: green;
+  }
+
+  .white {
+    color: $kuler-white;
+  }
+}
+
+#messageErrorquestions {
+}
+
+#moduleEvaluacion {
+  .dateEval {
+    font-size: 0.6rem !important;
+  }
+
+  .card {
+    border: none !important;
+  }
+}
+
+.bkg_estado {
+  p {
+    font-family: $Barlow;
+    font-size: $h6;
+  }
+}

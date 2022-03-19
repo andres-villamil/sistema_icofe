@@ -10,7 +10,6 @@ def test_user_creation():
         first_name = 'Diego'
 
     )
-
     assert user.username  == "pruebaBanco"
 
 
@@ -24,5 +23,4 @@ def test_staff_user_creation():
         is_staff = True
 
     )
-
     assert user.is_staff 

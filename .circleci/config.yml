@@ -20,7 +20,7 @@ jobs:
           command: ./manage.py test
           name: test
 
-worflows:
+workflows:
   main:
     jobs:
       - build-and-test

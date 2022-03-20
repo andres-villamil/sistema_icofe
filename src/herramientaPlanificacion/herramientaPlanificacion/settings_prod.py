@@ -76,7 +76,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'herramienta.urls'
+ROOT_URLCONF = 'herramientaPlanificacion.urls'
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -97,7 +97,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'herramienta.wsgi.application'
+WSGI_APPLICATION = 'herramientaPlanificacion.wsgi.application'
 
 
 # Database
@@ -128,7 +128,7 @@ DATABASES = {
 }
 
 
-DATABASE_ROUTERS = ['dem.routers_prod.DemandasdInfoRouter',]
+DATABASE_ROUTERS = ['demandas.routers_prod.DemandasdInfoRouter',]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -164,11 +164,7 @@ logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
 
-AUTH_LDAP_SERVER_URI = ""
-AUTH_LDAP_BIND_DN = ""
-AUTH_LDAP_BIND_PASSWORD = ""
-AUTH_LDAP_USER_SEARCH = LDAPSearch("OU=,DC=,DC=,DC=",
-                                   ldap.SCOPE_SUBTREE, "(&(mail=*)(cn=%(user)s))")  # A user must have an email, this is for avoid duplicated cns
+
 
 
 # Populate the Django user from the LDAP directory.
@@ -209,7 +205,7 @@ STATIC_URL = '/static/'
                                                                                                      
 STATICFILES_DIRS = [                                                                                 
     os.path.join(BASE_DIR, 'static'),                                                                
-    '/usr/static/',        
+    '/usr/share/httpd/portal-herramienta-planificacion/src/herramientaPlanificacion/static/',        
 ]                                                                                                    
 
 #ejecutar estos comandos !importante
@@ -228,13 +224,7 @@ STATICFILES_DIRS = [
 
 # mail configuration
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = ''
-EMAIL_PORT =  ''
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_BACKEND =  'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 # Media Files(Documents uploaded)

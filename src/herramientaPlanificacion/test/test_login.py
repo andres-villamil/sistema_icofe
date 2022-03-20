@@ -1,5 +1,6 @@
 import pytest
-from login.models import User
+from django.test import TestCase
+from login.models import User, Profile
 
 @pytest.mark.django_db
 def test_user_creation():
@@ -10,6 +11,7 @@ def test_user_creation():
         first_name = 'Diego'
 
     )
+
     assert user.username  == "pruebaBanco"
 
 
@@ -23,4 +25,17 @@ def test_staff_user_creation():
         is_staff = True
 
     )
+
     assert user.is_staff 
+
+
+
+
+
+
+
+
+
+
+
+    

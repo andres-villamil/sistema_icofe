@@ -55,10 +55,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sass_processor',
-    '',
-    '',
-    '',
-    ''
+    'entities',
+    'ooee',
+    'rraa',
+    'demandas'
 ]
 
 
@@ -75,7 +75,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'herramienta.urls'
+ROOT_URLCONF = 'herramientaPlanificacion.urls'
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -95,7 +95,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'herramienta.wsgi.application'
+WSGI_APPLICATION = 'herramientaPlanificacion.wsgi.application'
 
 
 # Database
@@ -108,8 +108,8 @@ DATABASES = {
         'OPTIONS': {
             'sql_mode': 'traditional',
         },
-        'NAME': '',
-        'USER': '',
+        'NAME': 'planificacion',
+        'USER': 'root',
         'PASSWORD': '',
     },
     'sen_ddi': {
@@ -117,14 +117,14 @@ DATABASES = {
         'OPTIONS': {
             'sql_mode': 'traditional',
         },
-        'NAME': '',
-        'USER': '',
+        'NAME': 'sen_ddi',
+        'USER': 'root',
         'PASSWORD': ''
     }
 }
 
 
-DATABASE_ROUTERS = ['dsdddd.routers.ddiRouter',]
+DATABASE_ROUTERS = ['demandas.routers.ddiRouter',]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -160,10 +160,11 @@ logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
 
-AUTH_LDAP_SERVER_URI = ""
-AUTH_LDAP_BIND_DN = ""
-AUTH_LDAP_BIND_PASSWORD = ""
-AUTH_LDAP_USER_SEARCH = LDAPSearch("OU=,DC=,DC=,DC=",
+AUTH_LDAP_SERVER_URI = "ldap://dane.gov.co"
+AUTH_LDAP_BIND_DN = "Aplicaciones"
+AUTH_LDAP_BIND_PASSWORD = "app2015"
+#AUTH_LDAP_USER_DN_TEMPLATE = "%(user)s@dane.gov.co"
+AUTH_LDAP_USER_SEARCH = LDAPSearch("OU=DANE,DC=DANE,DC=GOV,DC=CO",
                                    ldap.SCOPE_SUBTREE, "(&(mail=*)(cn=%(user)s))")  # A user must have an email, this is for avoid duplicated cns
 
 
@@ -207,10 +208,10 @@ STATICFILES_DIRS = [
 # mail configuration
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = ''
-EMAIL_PORT = '' 
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_PORT =  587
+EMAIL_HOST_USER = 'sen@dane.gov.co'
+EMAIL_HOST_PASSWORD = '7%m2uYC!1' 
 EMAIL_BACKEND =  'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 

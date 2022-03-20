@@ -59,9 +59,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sass_processor',
-    '',
-    '',
-    '',
+    'entities',
+    'ooee',
+    'rraa',
 ]
 
 
@@ -78,7 +78,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'herramienta.urls'
+ROOT_URLCONF = 'herramientaPlanificacion.urls'
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -99,7 +99,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'herramienta.wsgi.application'
+WSGI_APPLICATION = 'herramientaPlanificacion.wsgi.application'
 
 
 # Database
@@ -151,11 +151,6 @@ logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
 
-AUTH_LDAP_SERVER_URI = ""
-AUTH_LDAP_BIND_DN = ""
-AUTH_LDAP_BIND_PASSWORD = ""
-AUTH_LDAP_USER_SEARCH = LDAPSearch("OU=,DC=,DC=,DC=",
-                                   ldap.SCOPE_SUBTREE, "(&(mail=*)(cn=%(user)s))")  # A user must have an email, this is for avoid duplicated cns
 
 
 # Populate the Django user from the LDAP directory.
@@ -197,13 +192,7 @@ STATICFILES_DIRS = [
 
 # mail configuration
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = ''
-EMAIL_PORT =  999
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_BACKEND =  'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 # Media Files(Documents uploaded)

@@ -85,7 +85,7 @@ def createEmailNewUser(request, pk, passw):
 	recipients.append(user.email)
 	body = 'SISTEMA DE IDENTIFICACIÓN Y CARACTERIZACIÓN DE OFERTA Y DEMANDA ESTADÍSTICA DEL SEN' \
 		'\n\n Bienvenido   '+ user.username + \
-			'\n\n Ahora tiene acceso al Sistema de Información SEN: () '\
+			'\n\n Ahora tiene acceso al Sistema de Información SEN: (https://inventariosen.dane.gov.co/login/inicioSesion) '\
 			 '\n\n Se le ha asignado el Rol de: '+ user.profile.role.name + \
 				 '\n\n para acceder al aplicativo debe ingresar las siguientes credenciales:' \
 					'\n Username: ' + user.username + \
@@ -111,7 +111,7 @@ def createEmailUpdateRole(request, pk):
 
 
 def sendEmail(subject, recipients, body):    
-    send_mail(subject, body, '', recipients,  fail_silently = False)  
+    send_mail(subject, body, 'sen@dane.gov.co', recipients,  fail_silently = False)  
 
 
 @login_required

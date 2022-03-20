@@ -12,7 +12,6 @@ jobs:
       PYTHONPATH=./src
     steps: 
       - checkout
-      - python/load-cache
       - python/install-deps
       - run:
           command: ./manage.py test
